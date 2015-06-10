@@ -1,9 +1,10 @@
-#include <iostream>   /* std::cout */
-#include <iomanip>    /* std::setw */
-#include <cmath>      /* pow       */
-#include <cassert>    /* assert    */
-#include <algorithm>  /* std::max  */
+#include <iostream>   /* std::cout        */
+#include <iomanip>    /* std::setw        */
+#include <cmath>      /* pow              */
+#include <cassert>    /* assert           */
+#include <algorithm>  /* std::max         */
 #include "dyn_prog_helper.h"
+#include "print_utils.h" /* print_table_row */
 
 using namespace std;
 /*
@@ -30,10 +31,13 @@ const int manual_mode = 6;   /* typing A is cheapest till 6 keys */
 void num_keystrokes_calculator(const int n)
 {
 	std::vector<int> table(n+1);  /* memoize results             */
-	table[0] = 0;
+	std::vector<int> manual(n+1); /* Manual keystrokes for print */
+	
+	manual[0] = table[0] = 0;
 	for(int i = 1; i <= n; ++i)
 	{
 		int cpy_max = 0;
+		manual[i] = i;
 		if(i <= manual_mode) {
 			table[i] = i;
 			continue;
@@ -51,20 +55,8 @@ void num_keystrokes_calculator(const int n)
 		table[i] = std::max(i, cpy_max);
 	}
 	cout << "Table calculation results: " << endl;
-
-	cout << std::left << std::setw(20) << std::setfill(' ')
-		 << "manual keystrokes";
-	cout << ": ";
-	for(int i = 0; i <= n; ++i)
-		cout << std::right << std::setw(3) << i << " ";
-	cout << endl;
-
-	cout << std::left << std::setw(20) << std::setfill(' ')
-		 << "cpy_once_paste_many";
-	cout << ": ";
-	for(const auto &val: table)
-		cout << std::right << std::setw(3) << val << " ";
-	cout << endl;
+	print_table_row<int>("manual keystrokes", manual);
+	print_table_row<int>("cpy_once_paste_many", table);
 }
 
 int main()

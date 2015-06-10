@@ -1,7 +1,7 @@
 
 INCLUDES = \
 	-I $(COMMON_ROOT)/math	 \
-	-I $(COMMON_C_ROOT)/utils/ \
+	-I $(COMMON_ROOT)/utils  \
 
 MATH_SQRT_OBJS = \
 	$(COMMON_ROOT)/math/math_sqrt.o \
@@ -11,7 +11,8 @@ MATH_TWO_DIE_PROB_OBJS = \
 
 DEPS = \
 	$(COMMON_ROOT)/math/math_sqrt.h \
-	$(COMMON_C_ROOT)/utils/rand_utils.h \
+	$(COMMON_ROOT)/utils/rand_generator.h \
+	$(COMMON_ROOT)/utils/print_utils.h \
 
 OBJS = $(MATH_SQRT_OBJS) $(MATH_TWO_DIE_PROB_OBJS)
 

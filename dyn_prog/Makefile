@@ -1,6 +1,6 @@
 
 INCLUDES = \
-	-I $(COMMON_C_ROOT)/utils	 \
+	-I $(COMMON_ROOT)/utils	     \
 	-I $(COMMON_ROOT)/dyn_prog   \
 
 DYN_4_KEYS_MAX_PRINT = \
@@ -8,7 +8,7 @@ DYN_4_KEYS_MAX_PRINT = \
 
 DEPS = \
 	$(COMMON_C_ROOT)/utils/compiler_api.h \
-	$(COMMON_C_ROOT)/utils/scan_utils.h \
+	$(COMMON_ROOT)/utils/print_utils.h \
 	$(COMMON_ROOT)/dyn_prog/dyn_prog_helper.h \
 
 
