@@ -2,6 +2,8 @@ COMMON_ROOT = $(shell pwd)/..
 COMMON_C_ROOT = $(COMMON_ROOT)/../C
 EXES = math_sqrt math_two_die_probability                           \
 	dyn_4_keys_max_print                                            \
+	median_two_sorted_arrays                                        \
+
 
 .PHONY: all clean etags $(EXES)
 
@@ -15,6 +17,10 @@ math_two_die_probability:
 	@$(MAKE) -f $(COMMON_ROOT)/math/Makefile \
 		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
 
+median_two_sorted_arrays:
+	@$(MAKE) -f $(COMMON_ROOT)/divide_conquer/Makefile \
+		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
+
 dyn_4_keys_max_print:
 	@$(MAKE) -f $(COMMON_ROOT)/dyn_prog/Makefile \
 		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
@@ -22,6 +28,7 @@ dyn_4_keys_max_print:
 clean:
 	rm -f $(EXES) TAGS 
 	$(MAKE) -C $(COMMON_ROOT)/math/        COMMON_ROOT="$(COMMON_ROOT)" clean
+	$(MAKE) -C $(COMMON_ROOT)/divide_conquer/ COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/dyn_prog/    COMMON_ROOT="$(COMMON_ROOT)" clean
 
 etags:
