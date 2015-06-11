@@ -1,0 +1,29 @@
+CC	:= g++ -std=c++11
+CFLAGS	:= -g -W -Wall -Wextra -pedantic -ggdb3 -Werror \
+		-Wunused-function -fno-strict-aliasing
+
+#OPT	:= -O4
+OPT     := -flto -march=native
+EE	:= $(CC) -E
+LST	:= $(CC) -c $(CFLAGS) -Wa,-a,-ad 
+LDFLAGS	:= -L /usr/lib/x86_64-linux-gnu -pthread
+
+# cancel implicit program rule
+%.o: %.cc $(DEPS)
+	@echo $(CC) $(OPT) $(CFLAGS) $< 
+	@$(CC) $(OPT) $(INCLUDES) $(CFLAGS) -c -o $@ $<
+
+%.o: %.c $(DEPS)
+	@echo $(CC) $(OPT) $(CFLAGS) $< 
+	@$(CC) $(OPT) $(INCLUDES) $(CFLAGS) -c -o $@ $<
+
+%.i: %.cc $(DEPS)
+	$(EE) $(OPT) $(INCLUDES) $(CFLAGS) $< > $@
+
+%.lst: %.cc
+	$(LST) $(OPT) $< > $@
+
+.PHONY: clean
+clean:
+	@rm -f  $(OBJS) *~
+

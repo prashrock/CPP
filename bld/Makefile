@@ -1,0 +1,47 @@
+COMMON_ROOT = $(shell pwd)/..
+COMMON_C_ROOT = $(COMMON_ROOT)/../C
+EXES = math_sqrt math_two_die_probability                           \
+	dyn_4_keys_max_print                                            \
+
+.PHONY: all clean etags $(EXES)
+
+all: $(EXES) etags
+
+math_sqrt:
+	@$(MAKE) -f $(COMMON_ROOT)/math/Makefile \
+		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
+
+math_two_die_probability:
+	@$(MAKE) -f $(COMMON_ROOT)/math/Makefile \
+		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
+
+dyn_4_keys_max_print:
+	@$(MAKE) -f $(COMMON_ROOT)/dyn_prog/Makefile \
+		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
+
+clean:
+	rm -f $(EXES) TAGS 
+	$(MAKE) -C $(COMMON_ROOT)/math/        COMMON_ROOT="$(COMMON_ROOT)" clean
+	$(MAKE) -C $(COMMON_ROOT)/dyn_prog/    COMMON_ROOT="$(COMMON_ROOT)" clean
+
+etags:
+	@echo "--------------------------------------------------"
+	rm -f TAGS
+	$(FIND_HEADERS_CMD) | etags -
+	@echo "--------------------------------------------------"
+
+#create etags file
+#first line of find is to exclude whatever we do not need to be 
+#indexed by etags, add more like:
+#'-or -name $(EXCLUDE_DIR1) -or -name $(EXCLUDE_DIR2)'
+#last line after find 'ls' is to add explicit include directories, 
+#can add more like:
+#'ls $(LIB_DIR)/xulrunner-sdk/include/plugin/np*.h;'
+define FIND_HEADERS_CMD
+( \
+	find $(COMMON_ROOT) '(' -type d -name .svn  ')' -prune  \
+	-or -type f '(' -name '*.c' -or -name '*.h' -or -name '*.cc' ')' -print; \
+	ls /usr/include/*.h; \
+)
+endef
+
