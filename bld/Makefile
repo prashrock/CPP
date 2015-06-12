@@ -1,7 +1,7 @@
 COMMON_ROOT = $(shell pwd)/..
 COMMON_C_ROOT = $(COMMON_ROOT)/../C
 EXES = math_sqrt math_two_die_probability                           \
-	dyn_4_keys_max_print                                            \
+	dyn_4_keys_max_print dyn_partition_set dyn_knapsack_01          \
 	median_two_sorted_arrays                                        \
 
 
@@ -22,6 +22,14 @@ median_two_sorted_arrays:
 		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
 
 dyn_4_keys_max_print:
+	@$(MAKE) -f $(COMMON_ROOT)/dyn_prog/Makefile \
+		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
+
+dyn_partition_set:
+	@$(MAKE) -f $(COMMON_ROOT)/dyn_prog/Makefile \
+		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
+
+dyn_knapsack_01:
 	@$(MAKE) -f $(COMMON_ROOT)/dyn_prog/Makefile \
 		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
 
