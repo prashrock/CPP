@@ -52,8 +52,10 @@ bool partition_set_dp(const T v[], size_t n)
 			int val = v[j-1];
 			/* If previous column is set, then set here as well */
 			table[sum][j] = table[sum][j-1];
-			/* If previous column is set, then set here as well */
-			if(v[j-1] <= sum)
+			/* If previous column is set, then set here as well *
+			 * Note: table[sum-val][j-1], has j-1 and not j  to *
+			 * find if [sum-val] can be reached without using j */
+			if(val <= sum)
 				table[sum][j] = table[sum][j] |
 					table[sum - val][j-1];
 		}
