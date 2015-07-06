@@ -2,8 +2,9 @@ COMMON_ROOT = $(shell pwd)/..
 COMMON_C_ROOT = $(COMMON_ROOT)/../C
 EXES = math_sqrt math_two_die_probability                           \
 	dyn_4_keys_max_print dyn_partition_set dyn_knapsack_01          \
+	dyn_longest_common_subsequence                                  \
 	median_two_sorted_arrays                                        \
-
+	binary_tree_test	                                            \
 
 .PHONY: all clean etags $(EXES)
 
@@ -33,11 +34,20 @@ dyn_knapsack_01:
 	@$(MAKE) -f $(COMMON_ROOT)/dyn_prog/Makefile \
 		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
 
+dyn_longest_common_subsequence:
+	@$(MAKE) -f $(COMMON_ROOT)/dyn_prog/Makefile \
+		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
+
+binary_tree_test:
+	@$(MAKE) -f $(COMMON_ROOT)/tree/Makefile \
+		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
+
 clean:
 	rm -f $(EXES) TAGS 
 	$(MAKE) -C $(COMMON_ROOT)/math/        COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/divide_conquer/ COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/dyn_prog/    COMMON_ROOT="$(COMMON_ROOT)" clean
+	$(MAKE) -C $(COMMON_ROOT)/tree/        COMMON_ROOT="$(COMMON_ROOT)" clean
 
 etags:
 	@echo "--------------------------------------------------"

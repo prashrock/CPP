@@ -12,6 +12,9 @@ DYN_PARTITION_SET = \
 DYN_KNAPSACK_01 = \
 	$(COMMON_ROOT)/dyn_prog/dyn_knapsack_01.o \
 
+DYN_LCS = \
+	$(COMMON_ROOT)/dyn_prog/dyn_longest_common_subsequence.o \
+
 DEPS = \
 	$(COMMON_C_ROOT)/utils/compiler_api.h \
 	$(COMMON_ROOT)/utils/print_utils.h \
@@ -38,6 +41,12 @@ dyn_partition_set: $(DYN_PARTITION_SET)
 	@echo "--------------------------------------------------"
 
 dyn_knapsack_01: $(DYN_KNAPSACK_01)
+	@echo "--------------------------------------------------"
+	@echo $@
+	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	@echo "--------------------------------------------------"
+
+dyn_longest_common_subsequence: $(DYN_LCS)
 	@echo "--------------------------------------------------"
 	@echo $@
 	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^

@@ -1,12 +1,12 @@
-#include <iostream>   /* std::cout        */
-#include <iomanip>    /* std::setw        */
-#include <vector>     /* std::vector      */
-#include <cmath>      /* pow              */
-#include <cassert>    /* assert           */
-#include <algorithm>  /* std::max         */
+#include <iostream>            /* std::cout       */
+#include <iomanip>             /* std::setw       */
+#include <vector>              /* std::vector     */
+#include <cmath>               /* pow             */
+#include <cassert>             /* assert          */
+#include <algorithm>           /* std::max        */
 
 #include "print_utils.h"       /* print_table_row */
-#include "rand_generator.h"    /* init_rand() */
+#include "rand_generator.h"    /* init_rand()     */
 using namespace std;
 
 /* Find the median element in a sorted array   *
