@@ -33,11 +33,12 @@ static inline int get_rand(unsigned int limit)
 
 /* Given an input integer vector, fill it up with random  *
  * numbers in the range [min, max]                        */
-static inline void fill_vector_rand(std::vector<int>& v, int min=0,
+template<typename T = int>
+static inline void fill_vector_rand(std::vector<T>& v, int min=0,
 									int max=RAND_MAX)
 {
 	for(auto &i : v)
-		i = get_rand(min, max);
+		i = static_cast<T> (get_rand(min, max));
 }
 
 #endif //_RAND_GENERATORS_CPP_

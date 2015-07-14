@@ -37,6 +37,7 @@ int main()
 	map<int, int> map_var;
 	unordered_map<int, int> unordermap_var;
 
+	init_rand();
 	cout << "Micro Benchmark for Map/Unordered Map "
 		 << "over 1 Billion iterations:" << endl;
 	cout << "Benchmark for Tree based Map, ";

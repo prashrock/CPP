@@ -6,6 +6,7 @@ EXES = math_sqrt math_two_die_probability                           \
 	median_two_sorted_arrays                                        \
 	binary_tree_test	                                            \
 	bench_stl_map    	                                            \
+	longest_unique_substring                                        \
 
 .PHONY: all clean etags $(EXES)
 
@@ -47,12 +48,17 @@ bench_stl_map:
 	@$(MAKE) -f $(COMMON_ROOT)/micro_benchmarks/Makefile \
 		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
 
+longest_unique_substring:
+	@$(MAKE) -f $(COMMON_ROOT)/string/Makefile \
+		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
+
 clean:
 	rm -f $(EXES) TAGS 
 	$(MAKE) -C $(COMMON_ROOT)/math/        COMMON_ROOT="$(COMMON_ROOT)" clean
-	$(MAKE) -C $(COMMON_ROOT)/divide_conquer/ COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/dyn_prog/    COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/tree/        COMMON_ROOT="$(COMMON_ROOT)" clean
+	$(MAKE) -C $(COMMON_ROOT)/string/      COMMON_ROOT="$(COMMON_ROOT)" clean
+	$(MAKE) -C $(COMMON_ROOT)/divide_conquer/   COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/micro_benchmarks/ COMMON_ROOT="$(COMMON_ROOT)" clean
 
 etags:

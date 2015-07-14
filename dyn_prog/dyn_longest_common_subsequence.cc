@@ -91,15 +91,11 @@ int lcs_dp(const T s1[], size_t m,
 void lcs_tester(size_t set_size)
 {
 	std::vector<char> s1(set_size), s2(set_size);
-	std::vector<int> v(set_size);
 	
 	/* Generate vector contents randomly from A-Z */
-	fill_vector_rand(v, 65, 68);
-	for(size_t i = 0; i < set_size; ++i)
-		s1[i] = static_cast<char> (v[i]);
-	fill_vector_rand(v, 65, 68); //A-D
-	for(size_t i = 0; i < set_size; ++i)
-		s2[i] = static_cast<char> (v[i]);
+	fill_vector_rand(s1, 'A', 'D');
+	fill_vector_rand(s2, 'A', 'D');
+
 	print_table_row<char>("s1", s1);
 	print_table_row<char>("s2", s2);
 	
