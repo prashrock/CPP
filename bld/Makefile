@@ -7,10 +7,12 @@ EXES = math_sqrt math_two_die_probability                           \
 	binary_tree_test	                                            \
 	bench_stl_map    	                                            \
 	longest_unique_substring                                        \
+	bitmap_test                                                     \
 
 .PHONY: all clean etags $(EXES)
 
 all: $(EXES) etags
+MAKE := $(MAKE) --no-print-directory
 
 math_sqrt:
 	@$(MAKE) -f $(COMMON_ROOT)/math/Makefile \
@@ -52,14 +54,20 @@ longest_unique_substring:
 	@$(MAKE) -f $(COMMON_ROOT)/string/Makefile \
 		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
 
+bitmap_test:
+	@$(MAKE) -f $(COMMON_ROOT)/bit_ops/Makefile \
+		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
+
 clean:
 	rm -f $(EXES) TAGS 
 	$(MAKE) -C $(COMMON_ROOT)/math/        COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/dyn_prog/    COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/tree/        COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/string/      COMMON_ROOT="$(COMMON_ROOT)" clean
+	$(MAKE) -C $(COMMON_ROOT)/bit_ops/     COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/divide_conquer/   COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/micro_benchmarks/ COMMON_ROOT="$(COMMON_ROOT)" clean
+
 
 etags:
 	@echo "--------------------------------------------------"
