@@ -9,9 +9,12 @@
 #include "bitmap.h"          /* bitmap  functions            */
 using namespace std;
 
-const int number_of_inserts = 10;
-const int max_rand_val      = 63;
-
+/* Number of inserts == Coupon Collector problem = n ln(n)   *
+ * inserts to ensure every bitmap position [1, max_rand_val] *
+ * is covered                                                */
+const int number_of_inserts = 620; //~n ln(n)
+const int max_rand_val      = 128;
+const int num_test_iters    = 1;
 
 /* Generate a sequence of random numbers. Insert them into   *
  * the bitmap and then manually check if all the bits are set*/
@@ -20,7 +23,7 @@ void bitmap_auto_test()
 	vector<int> v(number_of_inserts);
 	class bitmap bitmap(max_rand_val);
 	
-	fill_vector_rand(v, 0, number_of_inserts);
+	fill_vector_rand(v, 0, max_rand_val);
 	
 	/* Sort the random input vector and remove duplicates */
 	sort(v.begin(), v.end());
@@ -30,7 +33,7 @@ void bitmap_auto_test()
 	for(unsigned i = 0; i < v.size(); ++i) {
 		if(bitmap.get(v[i]) == false)
 			bitmap.set(v[i]);
-		cout << v[i] << ", ";
+		    cout << v[i] << ", ";
 	}
 	cout << endl;
 	for(unsigned i = 0; i < v.size(); ++i) {
@@ -39,8 +42,6 @@ void bitmap_auto_test()
 				 << endl;
 		bitmap.reset(v[i]);
 	}
-	//cout << v[i] << ", ";
-	cout << endl;
 }
 
 
@@ -49,5 +50,6 @@ int main()
 	init_rand();
 
 	/* Auto test cases   */
-	bitmap_auto_test();
+	for(auto i = 0; i < num_test_iters; ++i)
+		bitmap_auto_test();
 }
