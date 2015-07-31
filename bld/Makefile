@@ -1,25 +1,22 @@
 COMMON_ROOT = $(shell pwd)/..
 COMMON_C_ROOT = $(COMMON_ROOT)/../C
-EXES = math_sqrt math_two_die_probability                           \
+EXES = math_sqrt math_two_die_probability math_prime                \
 	dyn_4_keys_max_print dyn_partition_set dyn_knapsack_01          \
 	dyn_longest_common_subsequence                                  \
 	median_two_sorted_arrays                                        \
 	binary_tree_test	                                            \
 	bench_stl_map    	                                            \
-	longest_unique_substring  substr_match                          \
+	longest_unique_substring  substr_match word_freq_cnt            \
 	nqueens_backtrack                                               \
 	bitmap_test                                                     \
+
 
 .PHONY: all clean etags $(EXES)
 
 all: $(EXES) etags
 MAKE := $(MAKE) --no-print-directory
 
-math_sqrt:
-	@$(MAKE) -f $(COMMON_ROOT)/math/Makefile \
-		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
-
-math_two_die_probability:
+math_sqrt math_two_die_probability math_prime:
 	@$(MAKE) -f $(COMMON_ROOT)/math/Makefile \
 		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
 
@@ -27,19 +24,8 @@ median_two_sorted_arrays:
 	@$(MAKE) -f $(COMMON_ROOT)/divide_conquer/Makefile \
 		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
 
-dyn_4_keys_max_print:
-	@$(MAKE) -f $(COMMON_ROOT)/dyn_prog/Makefile \
-		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
-
-dyn_partition_set:
-	@$(MAKE) -f $(COMMON_ROOT)/dyn_prog/Makefile \
-		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
-
-dyn_knapsack_01:
-	@$(MAKE) -f $(COMMON_ROOT)/dyn_prog/Makefile \
-		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
-
-dyn_longest_common_subsequence:
+dyn_4_keys_max_print dyn_partition_set dyn_knapsack_01 \
+	dyn_longest_common_subsequence:
 	@$(MAKE) -f $(COMMON_ROOT)/dyn_prog/Makefile \
 		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
 
@@ -51,11 +37,7 @@ bench_stl_map:
 	@$(MAKE) -f $(COMMON_ROOT)/micro_benchmarks/Makefile \
 		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
 
-longest_unique_substring:
-	@$(MAKE) -f $(COMMON_ROOT)/string/Makefile \
-		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
-
-substr_match:
+longest_unique_substring substr_match word_freq_cnt:
 	@$(MAKE) -f $(COMMON_ROOT)/string/Makefile \
 		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
 

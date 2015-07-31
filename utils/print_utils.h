@@ -4,6 +4,13 @@
 #include <iostream>       /* std::cout               */
 #include <iomanip>        /* std::setw               */
 
+#ifndef MILLION
+#define MILLION (1000000)          /* 10^6           */
+#endif
+#ifndef BILLION
+#define BILLION (1000000000ULL)    /* 10^9           */
+#endif
+
 /* Nice print a table row by row                     */
 template<typename T>
 static inline void print_table_row(std::string name,

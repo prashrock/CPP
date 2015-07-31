@@ -10,6 +10,9 @@ LONGEST_UNIQUE_SUBSTR = \
 SUBSTR_MATCH = \
 	$(COMMON_ROOT)/string/substr_match.o \
 
+WORD_FREQ_CNT = \
+	$(COMMON_ROOT)/string/word_freq_cnt.o \
+
 DEPS = \
 	$(COMMON_C_ROOT)/utils/compiler_api.h \
 	$(COMMON_C_ROOT)/utils/time_api.h \
@@ -29,6 +32,12 @@ longest_unique_substring: $(LONGEST_UNIQUE_SUBSTR)
 	@echo "--------------------------------------------------"
 
 substr_match: $(SUBSTR_MATCH)
+	@echo "--------------------------------------------------"
+	@echo $@
+	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	@echo "--------------------------------------------------"
+
+word_freq_cnt: $(WORD_FREQ_CNT)
 	@echo "--------------------------------------------------"
 	@echo $@
 	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
