@@ -52,14 +52,11 @@ void substring_match_randomized_test()
 		string txt_str(text.begin(), text.end());
 		string pat_str(pattern.begin(), pattern.end());
 
-		rt_measure_start(&time[0], true);
-		tsc_measure_start(&tsc[0]);
-		int brute_pos = substring_brute(txt_str, pat_str);
-		tsc_measure_end(&tsc[0]);
-		rt_measure_end(&time[0], true);
-		
+
+		int brute_pos = txt_str.find(pat_str);
 		if(brute_pos != -1) num_substr_matches++;
-		for(int j = 1; j < num_substring_algo; ++j)
+		
+		for(int j = 0; j < num_substring_algo; ++j)
 		{
 			rt_measure_start(&time[j], true);
 			tsc_measure_start(&tsc[j]);
@@ -81,8 +78,9 @@ void substring_match_randomized_test()
 	}
 	if(pass)
 	{
-		cout << "Info: All Randomized test-cases passed ("
-			 << num_substr_matches << ") matches found." << endl;
+		cout << "Info: " << number_of_iterations
+			 << " iterations of Randomized test-cases passed ("
+			 << num_substr_matches << " matches found)." << endl;
 		cout << "Statistics for each substring algo: " << endl;
 		for(int i = 0; i < num_substring_algo; ++i) {
 			time_print_api(&time[i], substr_types[i]);
