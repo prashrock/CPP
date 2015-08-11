@@ -13,16 +13,21 @@
 using namespace std;
 
 /* Check if pattern occurs in text. If yes return first idx  */
-const int number_of_iterations = MILLION;
-const int text_length          = 50;
-const int pattern_length       = 4;
+const int number_of_iterations = MILLION/10;
+const int text_length          = 3000;
+const int pattern_length       = 100;
+const size_t RADIX             = 256; /* Extended ASCII      */
 
 /* Maintain a table of substring algo's for test purposes    */
-const char *substr_types[] = {"Brute", "Brute Opt"};
+const char *substr_types[] = {"Brute", "Brute Opt", "KMP",
+							  "Boyer-Moore", "Rabin-Karp"};
 std::function<int(std::string, std::string)> substr[] =
 {
 	substring_brute<std::string>,
 	substring_opt<std::string>,
+	substring_kmp<std::string>,
+	substring_boyer_moore<std::string, RADIX>,
+	substring_rabin_karp<std::string, RADIX>,
 };
 const int num_substring_algo =
 	sizeof(substr)/sizeof(std::function<int(std::string, std::string)>);
@@ -47,8 +52,8 @@ void substring_match_randomized_test()
 	{
 		vector<char> text(text_length);
 		vector<char> pattern(pattern_length);
-		fill_vector_rand<char>(text, 'A', 'D');
-		fill_vector_rand<char>(pattern, 'A', 'D');
+		fill_vector_rand<char>(text, 'A', 'B');
+		fill_vector_rand<char>(pattern, 'A', 'B');
 		string txt_str(text.begin(), text.end());
 		string pat_str(pattern.begin(), pattern.end());
 
@@ -78,22 +83,24 @@ void substring_match_randomized_test()
 	}
 	if(pass)
 	{
-		cout << "Info: " << number_of_iterations
-			 << " iterations of Randomized test-cases passed ("
-			 << num_substr_matches << " matches found)." << endl;
+		cout << "Info: All Auto randomized test-cases passed" << endl;
+		cout << "      " << number_of_iterations
+			 << " iterations with txt_length="<< text_length
+			 << " and pattern_length="  << pattern_length
+			 << " (" << num_substr_matches
+			 << " matches found)." << endl;
 		cout << "Statistics for each substring algo: " << endl;
 		for(int i = 0; i < num_substring_algo; ++i) {
 			time_print_api(&time[i], substr_types[i]);
 			time_tsc_statistics_print(number_of_iterations, &time[i], &tsc[i]);
 		}
 	}
-	
 }
 
 /* Manual test-cases:                                        *
  * Run some hand-crafted test-cases against each substring   *
  * algo. This helps Cover known corner-cases for each algo   */
-void substring_match_manual_test()
+bool substring_match_manual_test()
 {
 	int j;
 	bool pass = false;
@@ -110,9 +117,9 @@ void substring_match_manual_test()
 		else if(substr[j]("ABC", "AB") != 0)
 			cout << "Error: Pattern at start of text not detected ";
 		else if(substr[j]("AADDDDAA", "DDA") != 4)
-			cout << "Error: Repeating pattern case not detected ";
+			cout << "Error: Last Repeating pattern case not detected ";
 		else if(substr[j]("AAABCD", "AAB") != 1)
-			cout << "Error: Repeating case not detected ";
+			cout << "Error: First Repeating case not detected ";
 		else {
 			pass = true;
 			continue;
@@ -122,11 +129,12 @@ void substring_match_manual_test()
 	}
 	if(pass) cout << "Info: All Manual test-cases passed" << endl;
 	else     cout << "for '" << substr_types[j] << "' method." << endl;
+	return pass;
 }
 
 int main()
 {
 	init_rand();
-	substring_match_manual_test();
-	substring_match_randomized_test();
+	if(substring_match_manual_test())
+		substring_match_randomized_test();
 }

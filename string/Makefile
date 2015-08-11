@@ -17,6 +17,7 @@ DEPS = \
 	$(COMMON_C_ROOT)/utils/compiler_api.h \
 	$(COMMON_C_ROOT)/utils/time_api.h \
 	$(COMMON_ROOT)/utils/print_utils.h \
+	$(COMMON_ROOT)/utils/hash_fns.h \
 	$(COMMON_ROOT)/string/substring.h \
 
 OBJS = $(LONGEST_UNIQUE_SUBSTR) $(SUBSTR_MATCH) \

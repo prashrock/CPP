@@ -1,3 +1,5 @@
+#ifndef _MATH_PRIME_CPP
+#define _MATH_PRIME_CPP
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
 #include <cmath>             /* pow                          */
@@ -32,6 +34,4 @@ void prime_seive_eratosthenes(size_t primes[N],
 			  << " with Seive of Erathosthenes" << std::endl;
 }
 
-
-
-
+#endif //_MATH_PRIME_CPP
