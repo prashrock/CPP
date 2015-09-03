@@ -1,0 +1,25 @@
+
+INCLUDES = \
+	-I $(COMMON_ROOT)/utils	                       \
+
+
+TRIE_TEST = \
+	$(COMMON_ROOT)/trie/trie_test.o                \
+
+DEPS = \
+	$(COMMON_C_ROOT)/utils/compiler_api.h          \
+	$(COMMON_ROOT)/utils/print_utils.h             \
+	$(COMMON_ROOT)/trie/rway_trie.h                \
+
+
+OBJS = $(TRIE_TEST)
+
+#order is important to have dependencies work, declare DEPS before include
+include $(COMMON_ROOT)/bld/Makefile.common
+
+# cancel implicit program rule
+trie_test: $(TRIE_TEST)
+	@echo "--------------------------------------------------"
+	@echo $@
+	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	@echo "--------------------------------------------------"
