@@ -9,7 +9,7 @@
 #include <cmath>             /* pow              */
 #include <algorithm>         /* std::swap        */
 
-#include "./utils/print_utils.h"     /* print_table_row  */
+#include "../utils/print_utils.h"     /* print_table_row  */
 using namespace std;
 
 void even_odd_sorter(std::vector<int> val)
