@@ -1,21 +1,28 @@
 #include <algorithm>           /* std::max                   */
+#include <queue>               /* std::queue                 */
 
 namespace bt
 {
-	
+
+enum class Traversal { PREORDER, INORDER, POSTORDER, BFS,
+		DFS_NODE_PATH};
+
 template<typename Tkey=int, typename Tval=int>
 class node
 {
 public:
 node(Tkey k, Tval v) :
 	key(k), val(v), left(nullptr), right(nullptr), cnt(1){}
-~node() { //kp_cnt++; //std::cout << "del " << key << std::endl;
+~node() { //kp_cnt++;
+	      //std::cout << "del " << key << std::endl;
 		  left = nullptr; right = nullptr; key = 0;}
+unsigned size()  { return cnt; }
 	Tkey key;          /* node's key                         */
 	Tval val;          /* node's val                         */
 	class node *left;  /* left branch                        */
 	class node *right; /* right branch                       */
 	unsigned cnt;      /* number of children + 1             */
+    std::pair<int,int> loc;  /* (row, col) print info        */
 };
 
 template<typename Tkey, typename Tval>
@@ -31,9 +38,11 @@ public:
     binary_tree(): ins_cnt(0),del_cnt(0),dup_ins_cnt(0),root(nullptr){}
     unsigned size()     { return get_size(root);    }
     unsigned height()   { return calc_height(root); } /* 1-based */
-	node<Tkey, Tval>* get_root() {return root;      }
+    node<Tkey, Tval>* get_root() {return root;      }
     void ins(Tkey key, Tval val) { root = ins(root, key, val); }
     void del(Tkey key)           { root = del(root, key); }
+    unsigned depth(node<Tkey, Tval> *x) {return calc_depth(root, x, 1);}
+    std::vector<Tkey> get_keys(Traversal t) {return key_traversal(t); } 
 
 	/* Check if given node is the root-node                  */
 	bool is_root(node<Tkey, Tval> *x)
@@ -52,7 +61,7 @@ public:
     /* Get #keys in BT. Time Complexity = O(1)               */
 	unsigned get_size(node<Tkey, Tval> *x) {
 		if(x == nullptr) return 0;
-		else   			 return x->cnt;
+		else   			 return x->size();
 	}
 
     /* Calculate #Keys after Ins/Del. Time Complexity = O(1) */
@@ -61,15 +70,26 @@ public:
 		else return (1 + get_size(x->left) + get_size(x->right));
 	}
 
-    /* Get #Levels in BT(zero-based). Time Complexity=O(lg n)*
+    /* Get #Levels in BT(1-based). Time Complexity=O(lg n)   *
 	 * This logic can be slightly modified to achieve tail   *
 	 * recursion, but keeping as such for easy readability   */
-	int calc_height(node<Tkey, Tval> *x)
+	unsigned calc_height(node<Tkey, Tval> *x)
 	{
 		if(x == nullptr) return 0;
 		else
 			return (1 + std::max(calc_height(x->left),
 								 calc_height(x->right)));
+	}
+
+    /* Get Node Depth @ BT(1-based). Time Complexity=O(lg n) */
+    unsigned calc_depth(node<Tkey, Tval> *rt, node<Tkey, Tval> *x,
+						unsigned cur_depth)
+	{
+		if(x == nullptr || rt == nullptr) return 0;
+		else if(rt == x)                  return cur_depth;
+		else
+			return (std::max(calc_depth(rt->left, x, cur_depth + 1),
+							 calc_depth(rt->right, x, cur_depth + 1)));
 	}
 	
     /* Get the deepest leaf node in the entire Binary Tree   *
@@ -82,6 +102,134 @@ public:
 		else
 			return get_deepest_leaf_node(x->left);
 	}
+
+    /* Do a pre-order traversal of all the nodes and store   *
+	 * all the node pointers in a vector                     */
+    void preorder(node<Tkey,Tval> *x,
+					  std::vector<node<Tkey,Tval> *> &vec)
+    {
+		if(x == nullptr) return;
+		vec.push_back(x);
+		preorder(x->left, vec);
+		preorder(x->right, vec);
+	}
+
+    /* Do an in-order traversal of all the nodes and store   *
+	 * all the node pointers in a vector                     */
+    void inorder(node<Tkey,Tval> *x,
+					  std::vector<node<Tkey,Tval> *> &vec)
+    {
+		if(x == nullptr) return;
+		inorder(x->left, vec);
+		vec.push_back(x);
+		inorder(x->right, vec);
+	}
+
+    /* Do a post-order traversal of all the nodes and store  *
+	 * all the node pointers in a vector                     */
+    void postorder(node<Tkey,Tval> *x,
+					  std::vector<node<Tkey,Tval> *> &vec)
+    {
+		if(x == nullptr) return;
+		postorder(x->left, vec);
+		postorder(x->right, vec);
+		vec.push_back(x);
+	}
+
+    /* Do a BFS traversal of all the nodes and store all the *
+	 * node pointers in a vector.                            *
+	 * Note: Using a head and tail index, we can avoid the   *
+	 * queue, but in interest of keeping code readable, use q*/
+    void bfs(node<Tkey,Tval> *rt,
+			 std::vector<node<Tkey, Tval> *> &vec)
+    {
+		/* Temporary queue to go over all elements           */
+		std::queue<node<Tkey, Tval> *> q;
+		/* max# nodes = 2^h - 1 (h = 1 based height)         */
+		//unsigned max_nodes = std::pow(2, calc_height(rt)) - 1;
+		if(rt == nullptr) return;
+		q.push(rt);
+		while(q.empty() == false) /* Visit each element once */
+		{
+			auto x = q.front();  /* BF = Queue traversal     */
+			q.pop();
+			/* If leaf element, dont go any further          */
+			if(x && is_leaf(x) == false) {
+				q.push(x->left);
+				q.push(x->right);
+			}
+			/* After adding all children to q, x -> output   */
+			vec.push_back(x);
+		}
+	}
+
+    /* Given root to node DFS path for a given node 'x'      *
+	 * Note: x can be a leaf node or a regular node.         */
+    //std::vector<Tkey> dfs_root_to_node(node<Tkey,Tval> *rt,
+	//		 std::vector<node<Tkey, Tval> *> &vec)
+    //{
+	//}
+
+    /* Given a traversal order, traverse nodes and get keys  */
+    std::vector<Tkey> key_traversal(Traversal t)
+    {
+		std::vector<Tkey> keys;
+		std::vector<node<Tkey, Tval> *> nodes;
+		if     (t == Traversal::PREORDER)  preorder(root, nodes);
+		else if(t == Traversal::INORDER)   inorder(root, nodes);
+		else if(t == Traversal::POSTORDER) postorder(root, nodes);
+		else if(t == Traversal::BFS)       bfs(root, nodes);
+		for (auto x : nodes) {
+			if(x)
+				keys.push_back(x->key);
+			else
+				keys.push_back(-1);
+		}
+		return keys;
+	}
+
+    /* Pretty print BT. Time Complexity = O(n lg n)          *
+	 * Straightforward logic:                                *
+	 *    = Row #: Depth of node                             *
+	 *    = Col #: In-order Traversal idx                    *
+	 * Output can be made more "pretty"/aligned by tweaking  *
+	 * In-order traversal to keep track of ghost nodes (i.e) *
+	 * if left node is present & right node absent, account  *
+	 * right node in column number calculation               */
+    void pretty_print(unsigned width=4)
+    {
+		unsigned print_row = 0, print_col = 0; 
+		if(root == nullptr) return;
+		
+		std::vector<node<Tkey, Tval> *> inorder_nodes, bfs_nodes;
+        /* 1) Do BFS traversal to get row#                   */
+		bfs(root, bfs_nodes);
+		for(auto x: bfs_nodes)
+			if(x) x->loc.first = depth(x);
+
+		/* 2) Do Inorder traversal to get col#               */
+		inorder(root, inorder_nodes);
+		for(auto x : inorder_nodes)
+			if(x) x->loc.second = ++print_col;
+
+		/* 3) Use BFS traversal to print nodes               */
+		print_row = print_col = 0;
+		for(auto x: bfs_nodes) {
+			if(x == nullptr) continue;
+			auto row = x->loc.first;
+			auto col = x->loc.second;
+			if(row == print_row + 1) {
+				print_col = 0;
+				std::cout << std::endl;
+			}
+			for(auto i = print_col; i < col; ++i)
+				std::cout << std::setw(width) << " ";
+			std::cout << std::setw(width) << x->key;
+			print_col = col + 1;
+			print_row = row;
+		}
+		std::cout << std::endl;
+    }
 
     /* BT_ONLY - Get Parent node of given node 'x'           */
     node<Tkey,Tval> *get_parent_node(node<Tkey,Tval> *parent,
@@ -161,5 +309,14 @@ private:
 	unsigned dup_ins_cnt;
 	node<Tkey, Tval> *root;
 };
+
+template<typename Tkey, typename Tval>
+std::ostream& operator<<(std::ostream& os, binary_tree<Tkey, Tval>& bin)
+{
+	bin.pretty_print();
+	os << std::endl;
+	//os << x.key << ':' << x.val ;
+	return os;
+}
 
 } //end namespace

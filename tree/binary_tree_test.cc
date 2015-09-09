@@ -12,9 +12,9 @@ using namespace std;
 using namespace bt;
 
 const int num_iters   =  10;
-const int num_inserts = 100;
+const int num_inserts =  10;
 const int min_key     =   0;
-const int max_key     = 100;
+const int max_key     =  10;
 
 /* Walk through BT creation and deletion process  */
 void bt_walkthrough()
@@ -33,10 +33,19 @@ void bt_walkthrough()
 			 << " size  = " << bt.size()
 			 << " levels= " << bt.height() << endl;
 	}
+
+	print_table_row<int>("Preorder", bt.get_keys(Traversal::PREORDER));
+	print_table_row<int>("Inorder", bt.get_keys(Traversal::INORDER));
+	print_table_row<int>("Postorder", bt.get_keys(Traversal::POSTORDER));
+	print_table_row<int>("BFS", bt.get_keys(Traversal::BFS));
+
+	cout << "Pretty Printer:" << endl;
+	cout << bt;
+	
 	std::shuffle(vec.begin(), vec.end(),
 				 std::default_random_engine(get_rand(max_key)));
 
-	print_table_row<int>("Del in order", vec);
+	print_table_row<int>("Del order", vec);
 	for(auto key : vec) {
 		bt.del(key);
 		cout << "size   = " << bt.size()
@@ -91,9 +100,9 @@ int main()
 {
 	init_rand();
 
-	//bt_walkthrough();
+	bt_walkthrough();
 	
 	for(int i = 0; i < num_iters; ++i)
 		if(bt_manual_test() == false)     exit(1);
-	cout << "Info: Manual test passed successfully" << endl;
+	cout << "Info: Manual tests passed successfully" << endl;
 }
