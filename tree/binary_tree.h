@@ -1,11 +1,13 @@
 #include <algorithm>           /* std::max                   */
 #include <queue>               /* std::queue                 */
+#include <stack>               /* std::stack                 */
 
 namespace bt
 {
 
+/* Implement all possible traversal orders for a tree        */
 enum class Traversal { PREORDER, INORDER, POSTORDER, BFS,
-		DFS_NODE_PATH};
+		SPIRALORDER, BOTTOMUPORDER};
 
 template<typename Tkey=int, typename Tval=int>
 class node
@@ -33,6 +35,10 @@ std::ostream& operator<<(std::ostream& os, const node<Tkey, Tval>& x)
 }
 
 template<typename Tkey=int, typename Tval=int>
+/* Binary Tree Implementation                                *
+ * Most API's defined here will directly be inherited by BST *
+ * Height = Number of levels below (1-based)                 *
+ * Depth  = Number of levels above (1-based)                 */
 class binary_tree{
 public:
     binary_tree(): ins_cnt(0),del_cnt(0),dup_ins_cnt(0),root(nullptr){}
@@ -41,6 +47,7 @@ public:
     node<Tkey, Tval>* get_root() {return root;      }
     void ins(Tkey key, Tval val) { root = ins(root, key, val); }
     void del(Tkey key)           { root = del(root, key); }
+    bool find(Tkey key)          { return find(root, key, nullptr); }
     unsigned depth(node<Tkey, Tval> *x) {return calc_depth(root, x, 1);}
     std::vector<Tkey> get_keys(Traversal t) {return key_traversal(t); } 
 
@@ -103,8 +110,9 @@ public:
 			return get_deepest_leaf_node(x->left);
 	}
 
-    /* Do a pre-order traversal of all the nodes and store   *
-	 * all the node pointers in a vector                     */
+    /* Recursive pre-order traversal of all nodes.           *
+	 * @param x   - root node of current sub-tree            *
+	 * @param vec - output vec to populate nodes @ level     */
     void preorder(node<Tkey,Tval> *x,
 					  std::vector<node<Tkey,Tval> *> &vec)
     {
@@ -114,8 +122,9 @@ public:
 		preorder(x->right, vec);
 	}
 
-    /* Do an in-order traversal of all the nodes and store   *
-	 * all the node pointers in a vector                     */
+    /* Recursive in-order traversal of all nodes.            *
+	 * @param x   - root node of current sub-tree            *
+	 * @param vec - output vec to populate nodes @ level     */
     void inorder(node<Tkey,Tval> *x,
 					  std::vector<node<Tkey,Tval> *> &vec)
     {
@@ -125,8 +134,9 @@ public:
 		inorder(x->right, vec);
 	}
 
-    /* Do a post-order traversal of all the nodes and store  *
-	 * all the node pointers in a vector                     */
+    /* Recursive post-order traversal of all nodes.          *
+	 * @param x   - root node of current sub-tree            *
+	 * @param vec - output vec to populate nodes @ level     */
     void postorder(node<Tkey,Tval> *x,
 					  std::vector<node<Tkey,Tval> *> &vec)
     {
@@ -136,8 +146,24 @@ public:
 		vec.push_back(x);
 	}
 
-    /* Do a BFS traversal of all the nodes and store all the *
-	 * node pointers in a vector.                            *
+    /* Recursive Level Order traversal - Given a level get   *
+	 * all nodes in that level.                              *
+	 * @param rt  - root node of current sub-tree            *
+	 * @param vec - output vec to populate nodes @ level     *
+	 * @param level - 1-based level number                   */
+    void levelorder(node<Tkey,Tval> *rt, std::vector<node<Tkey,Tval> *>
+					&vec, unsigned level)
+    {
+		if(rt == nullptr || level < 1) return;
+		else if(level == 1) vec.push_back(rt);
+		else {
+			levelorder(rt->left, vec, level-1);
+			levelorder(rt->right, vec, level-1);
+		}
+	}
+
+    /* Iterative BFS (level-order) traversal of all the      *
+	 * nodes and returns all the node pointers in a vector.  *
 	 * Note: Using a head and tail index, we can avoid the   *
 	 * queue, but in interest of keeping code readable, use q*/
     void bfs(node<Tkey,Tval> *rt,
@@ -151,7 +177,7 @@ public:
 		q.push(rt);
 		while(q.empty() == false) /* Visit each element once */
 		{
-			auto x = q.front();  /* BF = Queue traversal     */
+			auto x = q.front();  /* BFS = Queue traversal    */
 			q.pop();
 			/* If leaf element, dont go any further          */
 			if(x && is_leaf(x) == false) {
@@ -163,22 +189,71 @@ public:
 		}
 	}
 
-    /* Given root to node DFS path for a given node 'x'      *
-	 * Note: x can be a leaf node or a regular node.         */
-    //std::vector<Tkey> dfs_root_to_node(node<Tkey,Tval> *rt,
-	//		 std::vector<node<Tkey, Tval> *> &vec)
-    //{
-	//}
+    /* Iterative spiral-order traversal of all nodes with    *
+	 * the help of two stacks. This function returns all     *
+	 * node pointers in a vector                             *
+	 * Time Complexity = O(n)                                *
+     * Space Complexity = O(2^h) (h = height(0 based))       *
+     * space complexity is to accomodate  max # nodes that   *
+	 * each stack would have to hold = maximum possible      *
+	 * number of leaf nodes                                  */
+    void spiralorder(node<Tkey,Tval> *rt,
+					  std::vector<node<Tkey,Tval> *> &vec)
+    {
+		/* Temporary stack to go over L2R and R2L elements   */
+		std::stack<node<Tkey, Tval> *> l2r, r2l, *q1, *q2;
+		if(rt == nullptr) return;
+		l2r.push(rt);
+		q1 = &l2r;
+		q2 = &r2l;
+		/* Visit each element once and use 2 stacks and LIFO *
+		 * ordering to change direction across levels        */
+		while(l2r.size() != 0 || r2l.size() != 0)
+		{
+			while(q1->empty() == false) {
+				auto x = q1->top();
+				q1->pop();
+				if(x == nullptr) continue;
+				/* If leaf element, dont go any further      */
+				if(is_leaf(x) == false) {
+					if(q1 == &l2r) {
+						q2->push(x->right); q2->push(x->left);
+					}
+					else {
+						q2->push(x->left);  q2->push(x->right);
+					}
+				}
+				/* After adding all children to q, x->output */
+				vec.push_back(x);
+			}
+			/* Toggle queues after iterating over each queue */
+			if(q1 == &l2r) { q1 = &r2l; q2 = &l2r; }
+			else           { q1 = &l2r; q2 = &r2l; }
+		}
+	}
 
+    /* Recursive bottom-up order traversal of all nodes.     *
+	 * This function returns all node pointers in a vector   */
+    void bottomuporder(node<Tkey,Tval> *rt,
+					  std::vector<node<Tkey,Tval> *> &vec)
+    {
+		auto nlevels = height();
+		/* Go from last level to first level, get all nodes  */
+		for (int level = nlevels; level >= 1; level--)
+			levelorder(rt, vec, level);
+	}
+		
     /* Given a traversal order, traverse nodes and get keys  */
     std::vector<Tkey> key_traversal(Traversal t)
     {
 		std::vector<Tkey> keys;
 		std::vector<node<Tkey, Tval> *> nodes;
-		if     (t == Traversal::PREORDER)  preorder(root, nodes);
-		else if(t == Traversal::INORDER)   inorder(root, nodes);
-		else if(t == Traversal::POSTORDER) postorder(root, nodes);
-		else if(t == Traversal::BFS)       bfs(root, nodes);
+		if     (t == Traversal::PREORDER)      preorder(root, nodes);
+		else if(t == Traversal::INORDER)       inorder(root, nodes);
+		else if(t == Traversal::POSTORDER)     postorder(root, nodes);
+		else if(t == Traversal::BFS)           bfs(root, nodes);
+		else if(t == Traversal::SPIRALORDER)   spiralorder(root, nodes);
+		else if(t == Traversal::BOTTOMUPORDER) bottomuporder(root, nodes);
 		for (auto x : nodes) {
 			if(x)
 				keys.push_back(x->key);
@@ -230,6 +305,32 @@ public:
 		}
 		std::cout << std::endl;
     }
+
+    /* BT_ONLY - Find first node that has the key.           */
+    node<Tkey,Tval> *find(node<Tkey,Tval> *rt, Tkey key)
+    {
+		auto x = rt;
+		if(x == nullptr || x->key == key)     return x;
+		else if(x = find(rt->left, key))      return x;
+		else if(x = find(rt->right, key))     return x;
+		else                                  return nullptr;
+	}
+    /* BT_ONLY - Recursive find all keys implementation.     *
+	 * Returns bool to indicate success/fail and also        *
+	 * populates a vector of values                          */
+    bool find(node<Tkey,Tval> *x, Tkey key,
+			  std::vector<Tval> *valvec)
+    {
+		bool ret = false;
+		if(x == nullptr)                             return ret;
+		if(x->key == key)  {
+			if(valvec) valvec->push_back(x->val);
+			ret = true;
+		}
+		ret |= find(x->left, key, valvec);
+		ret |= find(x->right, key, valvec);
+		return ret;
+	}
 
     /* BT_ONLY - Get Parent node of given node 'x'           */
     node<Tkey,Tval> *get_parent_node(node<Tkey,Tval> *parent,

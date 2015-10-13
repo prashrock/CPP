@@ -27,3 +27,7 @@
 *~
 [#]*[#]
 .\#*
+
+# Doxygen
+docs/html/
+latex/

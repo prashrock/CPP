@@ -1,9 +1,21 @@
 #ifndef _SUBSTRING_UTILS_CPP_
 #define _SUBSTRING_UTILS_CPP_
 
+/**
+ * @file  Substring
+ * @brief Substring functions
+ */
+
 #include "hash_fns.h"           /* rolling_hash()            */
 
-/* Naive method:                                             *
+/**
+ * Naive Substring method:                                   *
+ * @param text                                               *
+ *   Text in which to search for pattern (haystack)          *
+ * @param pattern                                            *
+ *   Pattern to search for (needle)                          *
+ * @return                                                   *
+ *   0-based pattern start idx  or -1 if pattern not found   *
  * For every position in text, consider it as a starting     *
  * position for pattern and see if there is a match.         *
  * Best for : Short text and pattern                         *
@@ -24,7 +36,14 @@ static inline int substring_brute(T text, T pattern)
 	return -1;
 }
 
-/* Optimized Naive method:                                   *
+/**
+ * Optimized Naive method:                                   *
+ * @param text                                               *
+ *   Text in which to search for pattern (haystack)          *
+ * @param pattern                                            *
+ *   Pattern to search for (needle)                          *
+ * @return                                                   *
+ *   0-based pattern start idx  or -1 if pattern not found   *
  * Use one for-loop to iterate over the text and backup text *
  * explicitly everytime there is a mismatch (rewind pattern  *
  * as well).                                                 *
@@ -50,11 +69,19 @@ static inline int substring_opt(T text, T pattern)
 }
 
 
-/* Knuth Morris Pratt Discrete Finite State Machine Algo:    *
+/**
+ * Knuth Morris Pratt Discrete Finite State Machine Algo:    *
+ * @param pat                                                *
+ *   Pattern to search for (needle)                          *
+ * @param lps                                                *
+ *   Int arr = Longest Proper Prefix which is also a suffix  *
+ * @param n                                                  *
+ *   Pattern length                                          *
+ * @return                                                   *
+ *   0 on success and -1 on failure                          *
  * DFA preprocessing involves constructing an auxiliary array*
- * lps[pattern_size].                                        *
- * lps = longest proper prefix which is also suffix.         *
- * For each sub-pattern pat[0 - i] where i = 0 to m-1,       *
+ * lps[pattern_size]. For each sub-pattern pat[0 - i] where  *
+ * i = 0 to m-1:                                             *
  * lps[i] = ln of longest matching proper prefix which is    *
  * also a suffix of the sub-pattern pat[0..i].               *
  * There are three cases handled below:                      *
@@ -97,7 +124,14 @@ void kmp_lps_dump_helper(const std::string pattern_str)
 	print_table_row<int>("KMP Result", val);
 }
 	
-/* Knuth Morris Pratt Search Algo:                           *
+/**
+ * Knuth Morris Pratt Search Algo:                           *
+ * @param text                                               *
+ *   Text in which to search for pattern (haystack)          *
+ * @param pattern                                            *
+ *   Pattern to search for (needle)                          *
+ * @return                                                   *
+ *   0-based pattern start idx  or -1 if pattern not found   *
  * Build pattern prefix table - Longest proper prefix which  *
  * is also a suffix                                          *
  * Best for : Long text + Pattern with small radix and lot   *
@@ -126,7 +160,14 @@ static inline int substring_kmp(T text, T pattern)
 	else         return -1;
 }
 
-/* Boyer-Moore Substring Match Algo:                         *
+/**
+ * Boyer-Moore Substring Match Algo:                         *
+ * @param text                                               *
+ *   Text in which to search for pattern (haystack)          *
+ * @param pattern                                            *
+ *   Pattern to search for (needle)                          *
+ * @return                                                   *
+ *   0-based pattern start idx  or -1 if pattern not found   *
  * Scan pattern chars from right to left. Skip as many as M  *
  * text chars when finding one not in the pattern            *
  * Best for :Long pattern resembling natural text(eg:English)*
@@ -167,7 +208,14 @@ static inline int substring_boyer_moore(T text, T pattern)
 	return -1;
 }
 
-/* Rabin-Karp Substring Match Algo(Monte-Carlo approach):    *
+/**
+ * Rabin-Karp Substring Match Algo(Monte-Carlo approach):    *
+ * @param text                                               *
+ *   Text in which to search for pattern (haystack)          *
+ * @param pattern                                            *
+ *   Pattern to search for (needle)                          *
+ * @return                                                   *
+ *   0-based pattern start idx  or -1 if pattern not found   *
  * Modular Hashing approach. Compute hash of pattern[0, M-1] *
  * For each i, compute hash of text[i, M+i-1].               *
  * If pattern_hash==text_substring_hash --> potential match. *

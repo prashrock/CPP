@@ -13,7 +13,7 @@ EXES = math_sqrt math_two_die_probability math_prime                \
 	bitmap_test                                                     \
 
 
-.PHONY: all clean etags $(EXES)
+.PHONY: all clean docs docs-clean etags $(EXES)
 
 all: $(EXES) etags
 MAKE := $(MAKE) --no-print-directory
@@ -66,7 +66,13 @@ clean:
 	$(MAKE) -C $(COMMON_ROOT)/bit_ops/      COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/divide_conquer/   COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/micro_benchmarks/ COMMON_ROOT="$(COMMON_ROOT)" clean
+	$(MAKE) docs-clean
 
+docs-clean:
+	rm -rf ../docs/html/*
+
+docs:
+	doxygen ../docs/Doxyfile
 
 etags:
 	@echo "--------------------------------------------------"

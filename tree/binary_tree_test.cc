@@ -11,8 +11,8 @@
 using namespace std;
 using namespace bt;
 
-const int num_iters   =  10;
-const int num_inserts =  10;
+const int num_iters   =  100;
+const int num_inserts =  20;
 const int min_key     =   0;
 const int max_key     =  10;
 
@@ -38,7 +38,9 @@ void bt_walkthrough()
 	print_table_row<int>("Inorder", bt.get_keys(Traversal::INORDER));
 	print_table_row<int>("Postorder", bt.get_keys(Traversal::POSTORDER));
 	print_table_row<int>("BFS", bt.get_keys(Traversal::BFS));
-
+	print_table_row<int>("Spiral", bt.get_keys(Traversal::SPIRALORDER));
+	print_table_row<int>("Bottom-up", bt.get_keys(Traversal::BOTTOMUPORDER));
+	
 	cout << "Pretty Printer:" << endl;
 	cout << bt;
 	
@@ -65,7 +67,7 @@ bool bt_manual_test()
 	/*  Generate vector contents randomly */
 	//kp_cnt = 0;
     fill_vector_rand(vec, min_key, max_key);
-	
+	auto del_vec = vec;	
 	auto expected_height = static_cast<unsigned>
 		( ceil(log2(vec.size())) );
 											
@@ -82,10 +84,19 @@ bool bt_manual_test()
 	if(ret == false) goto manual_test_end;
 	
 	/* Delete operation and associated test-cases            */
-	std::shuffle(vec.begin(), vec.end(),
-				 std::default_random_engine(get_rand(max_key)));
-	for(auto key : vec) bt.del(key);
-	if(bt.size() != 0)
+	//std::shuffle(vec.begin(), vec.end(),
+	//			 std::default_random_engine(get_rand(max_key)));
+	sort(del_vec.begin(), del_vec.end());
+	del_vec.erase(unique(del_vec.begin(), del_vec.end()), del_vec.end());
+	for(auto key : del_vec) {
+		if(bt.find(key) == false) {
+			cout << "Error: key " << key << " missing." << endl;
+			ret = false;
+			goto manual_test_end;
+		}
+		bt.del(key);
+	}	
+if(bt.size() != 0)
 		cout << "Error: After delete, BT size incorrect. Expecting "
 			 << 0 << " got " << bt.size() << endl;
 	//if(kp_cnt != vec.size())
@@ -93,6 +104,10 @@ bool bt_manual_test()
 	//		 << vec.size() << " got " << kp_cnt << endl;
 	
 manual_test_end:
+	if(ret == false) {
+		print_table_row<int>("Input_vec", vec);
+		print_table_row<int>("Del_vec", del_vec);
+	}
 	return ret;
 }
 
