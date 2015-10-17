@@ -13,7 +13,7 @@ template<typename Tkey=int, typename Tval=int>
 class node
 {
 public:
-node(Tkey k, Tval v) :
+explicit node(Tkey k, Tval v) :
 	key(k), val(v), left(nullptr), right(nullptr), cnt(1){}
 ~node() { //kp_cnt++;
 	      //std::cout << "del " << key << std::endl;

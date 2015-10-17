@@ -21,7 +21,7 @@ template<typename Tval, unsigned R=256>
 class node
 {
 public:
-     node() : bmp(), next(0), hasval(false) {}
+    explicit node() : bmp(), next(0), hasval(false) {}
     ~node() { next.clear(); }
     size_t get_num_branches() { return bmp.count();  }
     bool has_val()            { return hasval;       }

@@ -1,10 +1,9 @@
-#include <iostream>   /* std::cout        */
-#include <iomanip>    /* std::setw        */
-#include <cmath>      /* pow              */
-#include <cassert>    /* assert           */
-#include <algorithm>  /* std::max         */
-#include "dyn_prog_helper.h"
-#include "print_utils.h" /* print_table_row */
+#include <iostream>   /* std::cout                           */
+#include <iomanip>    /* std::setw                           */
+#include <cmath>      /* pow                                 */
+#include <cassert>    /* assert                              */
+#include <algorithm>  /* std::max                            */
+#include "print_utils.h" /* print_table_row                  */
 
 using namespace std;
 /*
@@ -20,18 +19,23 @@ say, the input parameter is N (No. of keys that you can press), the
 output is M (No. of As that you can produce).
 */
 
-const int copy_overhead = 2;       /* select + copy              */
-const int copy_paste_overhead = 3; /* select + copy + paste      */
-const int manual_mode = 6;   /* typing A is cheapest till 6 keys */
+const int copy_overhead = 2;       /* select + copy          */
+const int copy_paste_overhead = 3; /* select + copy + paste  */
+const int manual_mode = 6; /*typing A is cheapest till 6 keys*/
 
-/* Use Dynamic Prog to identify at which character we should     *
- * switch from typing A's to one of below two methods:           *
- * Method: select, copy once and paste many times                *
- * Time complexity = O(n^2). Space Complexity = O(n)             */
+/**
+ * Dynamic Programming based approach to calculate #m        *
+ * @param n                                                  *
+ *   Number of keystrokes                                    *
+ * Use Dynamic Prog to identify at which character we should *
+ * switch from typing A's to one of below two methods:       *
+ * Method-1: select, copy once and paste many times          *
+ * Method-2: repeat (select, copy, paste)                    *
+ * Time complexity = O(n^2). Space Complexity = O(n)         */
 void num_keystrokes_calculator(const int n)
 {
-	std::vector<int> table(n+1);  /* memoize results             */
-	std::vector<int> manual(n+1); /* Manual keystrokes for print */
+	std::vector<int> table(n+1);  /* memoize results         */
+	std::vector<int> manual(n+1); /* Record Manual keystrokes*/
 	
 	manual[0] = table[0] = 0;
 	for(int i = 1; i <= n; ++i)
