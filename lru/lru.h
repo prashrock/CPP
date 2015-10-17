@@ -8,7 +8,7 @@ namespace lru_space
 
 /**
  * @class lru
- * @brief Least Recently Used DS implementation
+ * @brief STL based Least Recently Used Cache implementation
  * @note  Inspired by Tim Day(http://timday.bitbucket.org/lru.html)
 
  * This class uses 2 STL containers (List + Unordered_MAP) and
