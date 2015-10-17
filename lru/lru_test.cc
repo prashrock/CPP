@@ -36,6 +36,11 @@ void lru_walkthrough()
 
 	cout << "Dumping the LRU cache before any remove:" << endl;
 	cout << lru;
+	int oldest_key = -1, newest_key = -1;
+	lru.peekOldest(oldest_key);
+	lru.peekNewest(newest_key);
+	cout << "Oldest Key in LRU = " << oldest_key  << endl;
+	cout << "Newest Key in LRU = " << newest_key  << endl;
 	
 	std::shuffle(vec.begin(), vec.end(),
 				 std::default_random_engine(get_rand(max_key)));

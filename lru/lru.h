@@ -19,20 +19,59 @@ class lru
 {
 public:
     explicit lru(size_t size) : sz_(size), map_(size)      {}
-             ~lru()          { list_.clear(); map_.clear(); }
+            ~lru()               { clear();                 }
 
    /**
-    * @brief Returns the key list (as constant)             */
+    * @brief Returns the key list (as constant)              */
     const std::list<Tkey>& get_keys() const { return list_; }
 
    /**
-    * @brief Get the #entries present in LRU                 */
-    size_t size() const          { return map_.size();      }
+    * @brief Get #entries currently present in LRU           */
+    size_t count() const         { return map_.size();      }
+
+   /**
+    * @brief Get LRU Container size (max #entries)           */
+    size_t size() const          { return sz_;              }
+
+   /**
+    * @brief Check if LRU is full                            */
+    bool isFull() const          { return count() == size();}
+
+   /**
+    * @brief Check if LRU is empty                           */
+    bool isEmpty() const         { return count() == 0;     }
 
    /**
     * @brief Manually remove a key and value from LRU        *
     * @note  Time Complexity = O(1)                          */
     void remove(Tkey k)          { if(exist(k))   evict(k); }
+
+   /**
+    * @brief Peek at the oldest key in LRU                   */
+    bool peekOldest(Tkey &k) const {
+		if(isEmpty())  return false;
+		else {
+			k = list_.front();
+			return true;
+		}
+	}
+
+   /**
+    * @brief Peek at the newest key in LRU                   */
+    bool peekNewest(Tkey &k) const {
+		if(isEmpty())  return false;
+		else {
+			k = list_.back();
+			return true;
+		}
+	}
+
+   /**
+    * @brief Clear the contents of the LRU (clear keys+vals) */
+    void clear() {
+		list_.clear();  /* Clear the list of keys            */
+		map_.clear();   /* Clear unordered_map of val+itr    */
+	}
 
    /**
     * @brief Check if a given key exists in LRU              *
@@ -90,7 +129,7 @@ private:
 	 * val and location of val in list (an iterator)         */
     typedef std::unordered_map< Tkey,
         std::pair<Tval, typename std::list<Tkey>::iterator> > lru_map_t;
-    size_t sz_;             /**< Size                        */
+    size_t sz_;             /**< Container Size              */
     std::list<Tkey> list_;  /**< List to maintain ins order  */
     lru_map_t map_;         /**< Map to locate Key in O(1)   */
 
@@ -113,8 +152,7 @@ private:
    /**
     * @brief Insert key+val into the LRU                     */
     void lru_insert(Tkey k, Tval val) {
-		/* If LRU is full, evict the oldest element (first)  */
-		if(size() == sz_) {
+		if(isFull()) { /* If full, evict oldest (first) elem */
 			Tkey oldest_key = list_.front();
 			evict(oldest_key);
 		}
