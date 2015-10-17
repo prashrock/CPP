@@ -12,7 +12,7 @@ namespace lru_space
  * @note  Inspired by Tim Day(http://timday.bitbucket.org/lru.html)
 
  * This class uses 2 STL containers (List + Unordered_MAP) and
- * implements a basic LRU container.
+ * implements a basic O(1) LRU container.
  */
 template<typename Tkey=int, typename Tval=int>
 class lru
@@ -30,18 +30,21 @@ public:
     size_t size() const          { return map_.size();      }
 
    /**
-    * @brief Manually remove a key and value from LRU        */
+    * @brief Manually remove a key and value from LRU        *
+    * @note  Time Complexity = O(1)                          */
     void remove(Tkey k)          { if(exist(k))   evict(k); }
 
    /**
-    * @brief Check if a given key exists in LRU              */
+    * @brief Check if a given key exists in LRU              *
+    * @note  Time Complexity = O(1) (bcoz of unordered_map)  */
     bool exist(Tkey k) const {
 		if(map_.find(k) != map_.end()) return true;
 		else                           return false;
 	}
 
    /**
-    * @brief Inserts a Key + Value Pair                      */
+    * @brief Inserts a Key + Value Pair                      *
+    * @note  Time Complexity = O(1) (bcoz of unordered_map)  */
     bool insert(Tkey k, Tval val) {
 		/* This key is already present                       */
 		if(exist(k))   map_[k].first = val;
@@ -51,7 +54,8 @@ public:
 	}
 
    /**
-    * @brief Get the value for a key (also refresh age)      */
+    * @brief Get the value for a key (also refresh age)      *
+    * @note  Time Complexity = O(1) (bcoz of unordered_map)  */
     bool get(Tkey k, Tval &val) {
 		if(exist(k) == false)  return false;
 		else {
