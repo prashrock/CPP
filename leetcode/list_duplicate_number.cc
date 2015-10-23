@@ -6,7 +6,13 @@
  */
 
 /**
-
+ * Given an array containing n + 1 integers where each integer
+ * is between [1, n], and given that there is only one
+ * duplicate number
+ * Note:
+ * - Cannot modify array, use only constant O(1) extra space,
+ * - have run-time complexity less than O(n^2)
+ * - Even though there is only one duplicate number, this number could be repeated more than once.
  */
 
 #include <iostream>          /* std::cout                    */
