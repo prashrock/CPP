@@ -12,9 +12,9 @@ using namespace std;
 using namespace bt;
 
 const int num_iters   =  100;
-const int num_inserts =  20;
+const int num_inserts =  15;
 const int min_key     =   0;
-const int max_key     =  10;
+const int max_key     =  30;
 
 /* Walk through BT creation and deletion process  */
 void bt_walkthrough()
@@ -47,7 +47,14 @@ void bt_walkthrough()
 	std::shuffle(vec.begin(), vec.end(),
 				 std::default_random_engine(get_rand(max_key)));
 
+	int lcp;
+	if(bt.find_lcp(vec[0], vec[1], lcp))
+		cout << "LCP of " << vec[0] << "," << vec[1] << " is " << lcp << endl;
+	else
+		cout << "No LCP for " << vec[0] << "," << vec[1] << " failed" << endl;
+	
 	print_table_row<int>("Del order", vec);
+
 	for(auto key : vec) {
 		bt.del(key);
 		cout << "size   = " << bt.size()
@@ -69,7 +76,7 @@ bool bt_manual_test()
     fill_vector_rand(vec, min_key, max_key);
 	auto del_vec = vec;	
 	auto expected_height = static_cast<unsigned>
-		( ceil(log2(vec.size())) );
+		( ceil(log2(vec.size() + 1)) );
 											
 	/* Insert operation and associated test-cases            */
 	for(auto key : vec) bt.ins(key, key);
