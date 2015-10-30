@@ -11,7 +11,7 @@
 using namespace std;
 using namespace bt;
 
-const int num_iters   =  100;
+const int num_iters   =  1;
 const int num_inserts =  15;
 const int min_key     =   0;
 const int max_key     =  30;
@@ -52,6 +52,15 @@ void bt_walkthrough()
 		cout << "LCP of " << vec[0] << "," << vec[1] << " is " << lcp << endl;
 	else
 		cout << "No LCP for " << vec[0] << "," << vec[1] << " failed" << endl;
+
+	/* Verify Serialize/DeSerialize APIs                     */
+	string serial;
+	bt.serialize(bt.get_root(), serial);
+	cout << "serialized string:" << serial << endl;
+	binary_tree<int, int> serial_bt(serial);
+	cout << "Below is Deserialized BT:"    << endl;
+	cout << serial_bt;
+	cout << "Size = " << serial_bt.size()  << endl;
 	
 	print_table_row<int>("Del order", vec);
 
@@ -61,7 +70,8 @@ void bt_walkthrough()
 			 << " levels= " << bt.height()
 			 << endl;
 	}
-	cout << "-----------------------" << endl << endl;
+	cout << "-----------------------" << endl;
+	cout << "Info: BT Walkthrough complete" << endl << endl;
 }
 
 /* Manually crafted test-cases to validate BT functionality  */
@@ -123,7 +133,7 @@ int main()
 	init_rand();
 
 	bt_walkthrough();
-	
+
 	for(int i = 0; i < num_iters; ++i)
 		if(bt_manual_test() == false)     exit(1);
 	cout << "Info: Manual tests passed successfully" << endl;

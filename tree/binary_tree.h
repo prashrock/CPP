@@ -1,6 +1,7 @@
 #include <algorithm>           /* std::max                   */
 #include <queue>               /* std::queue                 */
 #include <stack>               /* std::stack                 */
+#include <sstream>             /* std::stringstream          */
 
 namespace bt
 {
@@ -41,7 +42,13 @@ template<typename Tkey=int, typename Tval=int>
  * Depth  = Number of levels above (1-based)                 */
 class binary_tree{
 public:
+    /* Two constructors - Empty, Deserialize                 */
     binary_tree(): ins_cnt(0),del_cnt(0),dup_ins_cnt(0),root(nullptr){}
+    binary_tree(std::string &s): ins_cnt(s.size()) {
+		unsigned i = 0;
+		root = deserialize(s, i);
+	}
+
     unsigned size()     { return get_size(root);    }
     unsigned height()   { return calc_height(root); } /* 1-based */
     node<Tkey, Tval>* get_root() {return root;      }
@@ -50,6 +57,7 @@ public:
     bool find(Tkey key)          { return find(get_root(), key, nullptr); }
     unsigned depth(node<Tkey, Tval> *x) {return calc_depth(get_root(), x, 1);}
     std::vector<Tkey> get_keys(Traversal t) {return key_traversal(t); } 
+
 
 	/* Check if given node is the root-node                  */
 	bool is_root(node<Tkey, Tval> *x)
@@ -451,6 +459,59 @@ public:
 		return x;
 	}
 
+    /* @brief Uses pre-order traversal to serialize the BT   *
+	 * @param x   - current node to serialize                *
+	 * @param ser - String which holds serialized values     *
+	 * @param tok - inter-value token (optional parameter)   *
+	 * Note: BT val should be serializable (via sstream) and *
+	 * should not contain tok.                               */
+    void serialize(node<Tkey,Tval> *x, std::string &s, char tok='#')
+    {
+		if(x) {
+			std::stringstream ss;   /* avoid sprintf with ss */
+			ss << x->val << tok;    /* add val + token to ss */
+			s.append(ss.str());     /* serialize cur node    */
+			serialize(x->left, s);  /* pre-order traverse    */
+			serialize(x->right, s); /* pre-order traverse    */
+		}
+		else
+			s += tok;  /* Empty node, append tok char to str */
+    }
+
+    /* @brief Uses pre-order output to re-construct BT       *
+	 * @param s   - String which holds serialized values     *
+	 * @param i   - Current idx reference being parsed in str*
+	 * @param tok - inter-value token (optional parameter)   *
+	 * Note: BT element should not contain Serialize token   */
+    node<Tkey,Tval> *deserialize(std::string &s, unsigned &i, char tok='#')
+    {
+		Tkey k;
+		unsigned len = 0;    /* Length of current node       */
+		unsigned start = i;  /* Start index where we started */
+
+		/* First handle all cases where we can have a leaf nd*
+	     * 1) Index exceeds serial string bounds             *
+		 * 2) Two consecutive 'tok' characters               */
+		if(i >= s.size())   return nullptr;  /* Leaf Node    */
+		while(s[i++] != tok) ++len;  /* Calc cur node length */
+		if(len == 0)   return nullptr; /* If empty, Leaf Node*/
+		
+		/* If not empty, extract key from substring & create *
+		 * a new element. Traverse sub-tree from this node   */
+		else {
+			/* Extract substring to StringStream to handle   *
+			 * keys of different types (due to template)     */
+			std::stringstream ss(s.substr(start, len));
+			ss >> k; /* Let Stringstream convert key to type */
+			auto x = new node<Tkey, Tval>(k, k);
+			
+			if(!x)     return nullptr;
+			x->left  = deserialize(s, i); /* i passed by ref */
+			x->right = deserialize(s, i); /* i passed by ref */
+			x->cnt = calc_size(x);        /* Update cnts     */
+			return x;
+		}
+    }
 
 private:
 	unsigned ins_cnt;
