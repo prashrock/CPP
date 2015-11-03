@@ -68,9 +68,7 @@ int DP_lengthOfLIS(vector<int>& nums) {
  * @param nums                                               *
  *   Input unsorted integer vector                           *
  * @ret   Max length of the LIS                              *
- * Time Complexity = O(n^2), Space Complexity = O(n)         *
- * Note, if input is not worst-case (descending order) this  *
- * algorithm will tend towards O(nlgn)                       *
+ * Time Complexity = O(nlgn), Space Complexity = O(n)        *
  * Inspired by Patience sort in Geeks4Geeks + Wiki           *
  * http://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n */
 int PatienceSortBased_lengthOfLIS(vector<int>& nums) {
