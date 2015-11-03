@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o stack_valid_parantheses stack_valid_parantheses.cc
+//g++ --std=c++11 -g -o ds_stack_valid_parantheses ds_stack_valid_parantheses.cc
 
 /**
  * @file  Valid Parantheses (stack test)

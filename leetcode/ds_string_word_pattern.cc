@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o string_word_pattern string_word_pattern.cc
+//g++ --std=c++11 -g -o ds_string_word_pattern ds_string_word_pattern.cc
 
 /**
  * @file  String Word Pattern

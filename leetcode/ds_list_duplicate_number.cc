@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o distrib_duplicate_number distrib_duplicate_number.cc
+//g++ --std=c++11 -g -o ds_list_duplicate_number ds_list_duplicate_number.cc
 
 /**
  * @file  Duplicate Number

@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o heap_find_median_in_stream heap_find_median_in_stream.cc
+//g++ --std=c++11 -g -o ds_heap_find_median_in_stream ds_heap_find_median_in_stream.cc
 
 /**
  * @file  Heap Find Median in Stream

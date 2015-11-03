@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o dp_easy_house_robber dp_easy_house_robber.cc
+//g++ --std=c++11 -g -o algo_dp_easy_house_robber algo_dp_easy_house_robber.cc
 
 /**
  * @file  House Robber

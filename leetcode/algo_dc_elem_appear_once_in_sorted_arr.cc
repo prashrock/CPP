@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o divconq_elem_appear_once_in_sorted_arr divconq_elem_appear_once_in_sorted_arr.cc
+//g++ --std=c++11 -g -o algo_dc_elem_appear_once_in_sorted_arr algo_dc_elem_appear_once_in_sorted_arr.cc
 
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
