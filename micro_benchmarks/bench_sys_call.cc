@@ -8,7 +8,7 @@
 #include <sys/syscall.h>     /* syscall                      */
 #include <unistd.h>          /* getpid                       */
 
-#include "../../C/utils/time_api.h"  /* C based time mgmt API        */
+#include "../../C/utils/time_api.h" /* C based time mgmt API */
 using namespace std;
 
 /* Check if pattern occurs in text. If yes return first idx  */
@@ -21,7 +21,6 @@ void measure_rdtsc(unsigned num_of_iters=number_of_iterations)
 	struct time_api_t time;
 	struct tsc_api_t tsc;
 
-
 	/* Init */
 	rt_measure_init(&time);
 	tsc_measure_init(&tsc);
@@ -29,23 +28,26 @@ void measure_rdtsc(unsigned num_of_iters=number_of_iterations)
 	/* Prime TLB/Cache before going to the actual loop */
 	res = rdtsc();
 
+	/* Measure the time taken for the loop */
 	rt_measure_start(&time, true);
 	tsc_measure_start(&tsc);
-	
 	for (unsigned i = 0; i < num_of_iters; i++) {
 		res += rdtsc();
 	}
-	
 	tsc_measure_end(&tsc);
 	rt_measure_end(&time, true);
+
+	/* Dump the statistics */
 	time_print_api(&time, "   Info: rdtsc");
 	time_tsc_statistics_print(num_of_iters, &time, &tsc);
 }
 
-void sys_call_overhead_calculate(unsigned num_of_iters=number_of_iterations)
+void measure_sys_call_overhead(unsigned num_of_iters=number_of_iterations)
 {
 	struct time_api_t time;
 	struct tsc_api_t tsc;
+
+	/* Init */
 	rt_measure_init(&time);
 	tsc_measure_init(&tsc);
 
@@ -55,8 +57,7 @@ void sys_call_overhead_calculate(unsigned num_of_iters=number_of_iterations)
 	/* Measure the time taken for the loop */
 	rt_measure_start(&time, true);
 	tsc_measure_start(&tsc);
-	for(unsigned i = 0; i < num_of_iters; ++i)
-	{
+	for(unsigned i = 0; i < num_of_iters; ++i) {
 		gtid = syscall(SYS_gettid);
 	}
 	tsc_measure_end(&tsc);
@@ -74,6 +75,6 @@ int main()
 	measure_rdtsc();
 	cout << endl << "Running " << number_of_iterations
 		 << " iterations of syscall(gettid):" << endl;
-	sys_call_overhead_calculate();
+	measure_sys_call_overhead();
 	return 0;
 }

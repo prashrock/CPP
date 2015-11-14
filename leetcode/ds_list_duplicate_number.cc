@@ -45,6 +45,8 @@ int booyerMooreMethod(vector<int>& nums) {
 }
 
 /* Use Linked List cycle detection algorithm.                *
+ * note, should have started from last element since that    *
+ * index will not be visited otherwise using 1-n as index    *
  * - Credit: Tortoise & Hair algo (Don. Knuth, Floyd)        */
 int findDuplicate(vector<int>& nums) {
 	int hair = 0, tortoise = 0;
@@ -67,7 +69,7 @@ int main()
 	vector<int> a = {1, 1, 2};
 	ret = findDuplicate(a);
 	if(ret != 1) goto Errmain;
-
+	
 	a.clear();
 	a = {3, 1, 3, 4, 2};
 	ret = findDuplicate(a);

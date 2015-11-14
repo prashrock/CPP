@@ -8,7 +8,7 @@ EXES = math_sqrt math_two_die_probability math_prime                \
 	binary_tree_test	                                            \
 	trie_test                                                       \
 	lru_test                                                        \
-	bench_stl_map    	                                            \
+	bench_stl_map bench_gettime                                     \
 	longest_unique_substring  substr_match word_freq_cnt            \
 	nqueens_backtrack                                               \
 	bitmap_test                                                     \
@@ -44,7 +44,7 @@ lru_test:
 	@$(MAKE) -f $(COMMON_ROOT)/lru/Makefile \
 		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
 
-bench_stl_map:
+bench_stl_map bench_gettime:
 	@$(MAKE) -f $(COMMON_ROOT)/micro_benchmarks/Makefile \
 		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
 
