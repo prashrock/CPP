@@ -1,8 +1,8 @@
-//g++ --std=c++11 -g -o ds_tree_preorder_traversal_iterative_bt ds_tree_preorder_traversal_iterative_bt.cc
+//g++ --std=c++11 -g -o ds_tree_traversal_pre_in_order_iterative_bt ds_tree_traversal_pre_in_order_iterative_bt.cc
 
 /**
- * @file  BT - Preorder Traversal
- * @brief Given a tree return preorder traversal of nodes
+ * @file  BT - Preorder/Inorder Traversal
+ * @brief Given a tree return pre/in order traversal of nodes
  */
 
 #include <iostream>          /* std::cout                    */
@@ -16,7 +16,7 @@
 using namespace std;
 
 /*
- * Given a binary tree, return the preorder traversal of its nodes' values.
+ * Given a binary tree, return the pre/in order traversal of its nodes' values.
  * For example:
  * Given binary tree {1,#,2,3},
  *  1
@@ -24,7 +24,7 @@ using namespace std;
  *    2
  *   /
  *  3
- * return [1,2,3].
+ * return [1,2,3] for pre-order and [1,3,2] for in-order
  * Note: Recursive solution is trivial, could you do it iteratively?
  */
 
@@ -48,12 +48,34 @@ vector<int> preorderTraversal(TreeNode* root) {
 	stack<TreeNode*> st;
 	vector<int> ans;
 	if(root) st.push(root);
-	while(!st.empty()) { /* Cover all nods in stack           */
+	while(!st.empty()) { /* Cover all nods in stack          */
 		auto x = st.top();
 		st.pop();
-		ans.push_back(x->val);  /* Preorder = root,left,right */
+		ans.push_back(x->val); /* Preorder = root,left,right */
 		if(x->right) st.push(x->right);
 		if(x->left)  st.push(x->left);
+	}
+	return ans;
+}
+
+/**
+ * @brief Iterative solution using stack. The trick is to   *
+ * push all left-leaning nodes and maintaining a separate   *
+ * current node pointer. At each stage process current node *
+ * @param Root of the tree                                  *
+ * @ret   In-order traversal result vector                  *
+ */
+vector<int> inorderTraversal(TreeNode* root) {
+	vector<int> ans;
+	stack<TreeNode *> st;
+	TreeNode *cur = root;
+
+	while(!st.empty() || cur) {
+		while(cur) {st.push(cur); cur = cur->left;}
+		cur = st.top();
+		st.pop();
+		ans.push_back(cur->val);
+		cur = cur->right;
 	}
 	return ans;
 }
@@ -69,7 +91,12 @@ int manual_test()
 	struct TreeNode *root = NULL;
 	auto ans = preorderTraversal(root);
 	if(match(ans, {}) == false) {
-		cout << "Error: Null Tree test-case failed" << endl;
+		cout << "Error: Preorder Null Tree test-case failed" << endl;
+		return -1;
+	}
+	ans = inorderTraversal(root);
+	if(match(ans, {}) == false) {
+		cout << "Error: Inorder Null Tree test-case failed" << endl;
 		return -1;
 	}
 
@@ -77,7 +104,12 @@ int manual_test()
 	root = &one; root->right = &two; root->right->left = &three;
 	ans = preorderTraversal(root);
 	if(match(ans, {1, 2, 3}) == false) {
-		cout << "Error: Null Tree test-case failed" << endl;
+		cout << "Error: Preorder 3-node test-case failed" << endl;
+		return -1;
+	}
+	ans = inorderTraversal(root);
+	if(match(ans, {1, 3, 2}) == false) {
+		cout << "Error: Inorder 3-node test-case failed" << endl;
 		return -1;
 	}
 
