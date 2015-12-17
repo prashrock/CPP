@@ -62,6 +62,7 @@ vector<int> preorderTraversal(TreeNode* root) {
  * @brief Iterative solution using stack. The trick is to   *
  * push all left-leaning nodes and maintaining a separate   *
  * current node pointer. At each stage process current node *
+ * Note: Could use Morris traversal approach for O(1) space *
  * @param Root of the tree                                  *
  * @ret   In-order traversal result vector                  *
  */
@@ -80,8 +81,33 @@ vector<int> inorderTraversal(TreeNode* root) {
 	return ans;
 }
 
-bool match(const vector<int> &a, const vector<int> &b)
-{
+/* BST Inorder iterator based on Inorder iterative traversal *
+ * Same as above code, but split into different functions.   *
+ * Time complexity for hasNext and next is O(1)              *
+ * Space complexity for iterator = O(h) where h=tree_height  */
+class BSTIterator {
+private:
+	stack<TreeNode *> st;
+public:
+	BSTIterator(TreeNode *root) {
+		while(root) {st.push(root); root = root->left;}
+	}
+
+	/** @return whether we have a next smallest number */
+	bool hasNext() { return (!st.empty()); }
+
+	/** @return the next smallest number */
+	int next() {
+		auto cur = st.top();
+		st.pop();
+		int x = cur->val;
+		cur = cur->right;
+		while(cur) {st.push(cur); cur = cur->left;}
+		return x;
+	}
+};
+
+bool match(const vector<int> &a, const vector<int> &b) {
 	return std::equal(a.begin(), a.end(), b.begin());
 }
 
