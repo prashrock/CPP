@@ -48,6 +48,8 @@ string intToRoman(int num) {
 	string ans;
 	int max_numeral = numerals[numerals.size() - 1].first;
 	while(num) {
+		/* Returns an iterator pointing to the first element in  *
+		 * the range [first, last) that is greater/equal to value*/
 		auto it = std::lower_bound(numerals.begin(), numerals.end(), std::make_pair(num, string(" ")));
 		/* If number is bigger than max, lower bound corner case */
 		if(max_numeral < num)            it = std::prev(it, 1);
