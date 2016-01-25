@@ -46,7 +46,7 @@ vector<int> countSmaller1(vector<int>& nums) {
 
 /* --------------------Approach:2--------------------------- */
 /** Insertion sort based approach with STL vectors           *
- * Avg Time Complexity = O(n lg n). Space Complexity = O(n)  *
+ * Time Complexity = O(n^2). Space Complexity = O(n)         *
  * Note: worst case complexity of insertion sort is O(n^2)   *
  * but average case is O(n lg n), so this is acceptable      *
  * Note: Distance in random access iterator is O(1)          */

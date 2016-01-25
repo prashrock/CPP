@@ -1,0 +1,32 @@
+# This is a Travis CI build script created with help from http://docs.travis-ci.com/user/languages/CPP/
+# Check http://genbattle.bitbucket.org/blog/2016/01/17/c++-travis-ci/ for more info
+
+# Author: Prashanth Kannan
+language: cpp
+compiler: 
+  - gcc
+  - clang
+
+env:
+  global:
+  # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+  #   via the "travis encrypt" command using the project repo's public key
+  - secure: "sGv81991Y1wsb8UasDslqT6zsE+fNVYSjtBvKNqqS+HOpZMQ8LlOPUI60YyKTh9qij/kM/c6J8p02u2ZQ1irVXNvfaNUTmu0evNWqeMSjlkulRyb9L3zrIFCSS/FM5mfwKTMZkg1VBH81voIkT0/K6T8DPLgP5LsA6FZ3lYyOcM="
+
+addons:
+  coverity_scan:
+    project:
+      name: "prashrock/CPP"
+      token: "TyshG46igXH6SERgKss8jg"
+      description: "CPP Algorithms"
+    notification_email: "prashrock@gmail.com"
+    #build_command_prepend: "cd bld"
+    # The command that will be added as an argument to "cov-build" to compile your project for analysis,
+    build_command: "make"
+    #   https://scan.coverity.com/faq#frequency
+    branch_pattern: "master"
+
+#What to do before compiling
+before_install: cd bld
+script: make
+
