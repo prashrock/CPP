@@ -14,13 +14,17 @@ using namespace std;
 const int number_of_trials = 1;
 const size_t num_rands     = 1000;
 const int max_rand_val     = 100*MILLION;
-const string ans_file      = "../math/1000_prime.txt";
+const string ans_file      = "../math/1000_primes.txt";
 
 /* Parse the result file and copy all primes to a vector     */
 void parse_result_file(string file_name, std::vector<size_t> &vect)
 {
 	std::ifstream infile(file_name); /* Input file stream    */
 	size_t word;
+	if(infile.is_open() == false) {
+		cout << "Error: " << file_name << " not found" << endl;
+		return;
+	}
 	while(infile >> word)            /* Get next prime num   */
 		vect.push_back(word);        /* Add prime to a vect  */
 	cout << "Info: Input file '" << file_name

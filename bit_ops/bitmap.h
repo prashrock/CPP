@@ -55,34 +55,25 @@ public:
 	 * @param pos - position idx. Can be zero/one based      *
  	 * @param next_pos - reference variable for next_pos     */
 	bool get_next_set_pos(size_t pos, size_t &next_pos) {
-		uint64_t *word = get_word(pos); /*  Get current word */
-		/* If current pos is not valid, nothing to do        */
-		if(!word) return false; 
-		bool ret = false;
-		/* Get the word index for current position_idx       *
-		 * To handle 64-bit bitmap case = do-while construct */
-		size_t word_idx = get_word_idx(pos);
-		/* Mask with only 1's in left of pos in current_word *
-		 * Example: 101100 -> 111000                         */
-		uint64_t mask = clear_lsb(~(wordmask(pos) - 1));
-		/* Do-While handles case single 64B bitmap case      */
-		do
-		{
-			/* Check if any remaining bits in current word   */
-			uint64_t remaining = *word & mask;
-			if(!remaining) {
-				word_idx++; /* Move to next word             */
-				mask = -1;  /*Going to next word, full bitmap*/
-				word = &words[word_idx];
+		next_pos = pos + 1;
+		/* If next pos is not valid, nothing to do           */
+		uint64_t *word = get_word(next_pos); /*Get word      */
+		if(!word) return false;
+		/* If lucky, cur_word has nextsetbit, check cur_word */
+		int ffs = bit_ffs(*word >> (next_pos % u64_bit));
+		if(ffs >= 0)  {
+			next_pos += ffs;
+			return true;
+		}
+		/* Start from next word till length & find_first_bit */
+		for(auto i = get_word_idx(next_pos)+1; i < length; ++i) {
+			ffs = bit_ffs(words[i]);
+			if(ffs >= 0)  {
+				next_pos = i * u64_bit + ffs;
+				return true;
 			}
-			else {
-				ret = true; /* We found the next set bit pos */
-				next_pos = word_idx * u64_bit
-					+ get_lsb_word_pos(remaining);
-				break;
-			}
-		} while(length && word_idx < length);
-		return ret;
+		}
+		return false;
 	}
 	/* Set Bitmap at specified position                      *
 	 * @param pos - position idx. Can be zero/one based      */
@@ -92,6 +83,11 @@ public:
 	void reset(size_t pos) {set(pos, false);}
 	
 private:
+	/* Use GCC built-in FFS. Note, returns 1 based idx       */
+	int bit_ffs(uint64_t word) {
+		return __builtin_ffsll(word) - 1;
+	}
+		
 	/* Clear the Lowest set bit of given word                */
 	uint64_t clear_lsb(uint64_t n) {
 		return (n & (n - 1));

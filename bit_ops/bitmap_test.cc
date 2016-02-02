@@ -16,9 +16,18 @@ const int number_of_inserts = 620; //~n ln(n)
 const int max_rand_val      = 128;
 const int num_test_iters    = 1;
 
+/* Compare performance of STL Bitmap and my Bitmap           */
+void bitmap_perf_test()
+{
+	//unsigned long max_bit = 1000000 //Million
+	//std::bitset<max_bit> stlb;
+	//class bitmap myb(max_bit);
+	cout << "Need to implement a micro-benchmark" << endl;
+}
+
 /* Generate a sequence of random numbers. Insert them into   *
  * the bitmap and then manually check if all the bits are set*/
-void bitmap_auto_test()
+bool bitmap_auto_test()
 {
 	vector<int> v(number_of_inserts);
 	class bitmap bitmap(max_rand_val);
@@ -36,13 +45,14 @@ void bitmap_auto_test()
 		    cout << v[i] << ", ";
 	}
 	cout << endl;
+	return true;
 }
 
 
 int main()
 {
 	init_rand();
-
+	bool ret = true;
 	/* Manual test-case  */
 	size_t x;
 	class bitmap bitmap(128);
@@ -51,12 +61,17 @@ int main()
 		cout << "Error: 1st set bit not found" <<endl;
 	else if(bitmap.get(127) == false)
 		cout << "Error: last set bit not found" <<endl;
+	/* Note, there is no elaborate test-case for             *
+	 * get_next_set_pos, as math_prime.cc does thorough test */
 	else if(bitmap.get_next_set_pos(1, x) == false || x != 127)
-		cout << "Error: next_set_pos failed. Expecting 127, got "
-			 << x << endl;  
-	cout << "Info: All manual test-cases passed" << endl;
-	
-	/* Auto test cases   */
-	for(auto i = 0; i < num_test_iters; ++i)
-		bitmap_auto_test();
+		cout << "Error: get_next_set_pos failed. Expecting 127, got "
+			 << x << endl;
+	else {
+		cout << "Info: All manual test-cases passed" << endl;
+		/* Auto test cases   */
+		for(auto i = 0; i < num_test_iters && ret; ++i)
+			ret = bitmap_auto_test();
+		//if(ret)
+		//bitmap_perf_test();
+	}
 }

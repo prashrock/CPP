@@ -1,19 +1,22 @@
-//g++ --std=c++11 -g -o algo_backtrack_flipgame2 algo_backtrack_flipgame2.cc
+//g++ -Wall --std=c++11 -g -o algo_backtrack_flipgame2 algo_backtrack_flipgame2.cc
 
 /**
  * @file  Flip Game II
  * @brief Alternate moves and play till one player has no move.
  */
 
-/**
- * You are playing the following Flip Game with your friend: Given a string that contains only these two characters:
- * + and -, you and your friend take turns to flip two consecutive "++" into "--".
- * The game ends when a person can no longer make a move and therefore the other person will be the winner.
- *
- * Write a function to determine if the starting player can guarantee a win.
- * For example, given s = "++++", return true. The starting player can guarantee a win by flipping the middle "++" to become "+--+".
- */
+//https://leetcode.com/problems/flip-game-ii/
 
+/**
+ * You are playing the following Flip Game with your friend: Given
+ * a string that contains only these two characters:  + and -,
+ * you and your friend take turns to flip two consecutive "++" into "--".
+ * The game ends when a person can no longer make a move and therefore
+ * the other person will be the winner.
+ * Write a function to determine if the starting player can guarantee a win.
+ * For example, given s = "++++", return true. The starting player can
+ * guarantee a win by flipping the middle "++" to become "+--+".
+ */
 
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
@@ -41,46 +44,46 @@ bool chkPos(string &s, int idx)   {return (s[idx]=='+'&&s[idx+1]=='+');}
  */
 bool canWinBT(string &s)
 {
-	bool ret = false; /* I have to move first, assume fail   */
-    /* Loop till last but 1 character (check 2 chars at time)*/
-	for(int i = 0; i < s.size()-1; ++i) {
-		/* Chk if we can make valid move at current idx      */
-		if(chkPos(s, i)) {
-			setPos(s, i);       /* Make move at current idx  */
-			/* Each recursion implies other player's move    *
-			 * So current player's success is tied to other  *
-			 * player's failure (backtracking algo)          */
-			ret = !canWinBT(s);
-			unsetPos(s, i);     /* Undo move at current idx  */
-			if(ret == true)  break; /* Break if winning move */
-		}
-	}
-	/* return true if 1 winning move found else return false */
-	return ret;
+   bool ret = false; /* I have to move first, assume fail    */
+   /* Loop till last but 1 character (check 2 chars at time) */
+   for(int i = 0; i < (int)s.size()-1; ++i) {
+      /* Chk if we can make valid move at current idx        */
+      if(chkPos(s, i)) {
+         setPos(s, i);       /* Make move at current idx     */
+         /* Each recursion implies other player's move       *
+          * So current player's success is tied to other     *
+          * player's failure (backtracking algo)             */
+         ret = !canWinBT(s);
+         unsetPos(s, i);     /* Undo move at current idx     */
+         if(ret == true)  break; /* Break if winning move    */
+      }
+   }
+   /* return true if 1 winning move found else return false  */
+   return ret;
 }
 
 bool canWin(string s) {
-	if(s.size() == 0) return false;
-	else              return canWinBT(s);
+   if(s.size() == 0) return false;
+   else              return canWinBT(s);
 }
 
 bool tester(string s, bool exp_res)
 {
-	if(canWin(s) != exp_res) {
-		cout << "Error: expected " << exp_res << " for " << s << endl;
-		return false;
-	}
-	return true;
+   if(canWin(s) != exp_res) {
+      cout << "Error: expected " << exp_res << " for " << s << endl;
+      return false;
+   }
+   return true;
 }
 
 int main()
 {
-	if   (tester("++++",  true) == false) {goto end;}
-	else if(tester("+",  false) == false) {goto end;}
-	else if(tester("--", false) == false) {goto end;}
-	else if(tester("", false)   == false) {goto end;}
-	else if(tester("+++--++++--++++", true) == false) {goto end;}
-	cout << "Info: All manual test cases passed" << endl;
+   if   (tester("++++",  true) == false) {goto end;}
+   else if(tester("+",  false) == false) {goto end;}
+   else if(tester("--", false) == false) {goto end;}
+   else if(tester("", false)   == false) {goto end;}
+   else if(tester("+++--++++--++++", true) == false) {goto end;}
+   cout << "Info: All manual test cases passed" << endl;
 end:
-	return 0;
+   return 0;
 }
