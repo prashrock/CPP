@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o algo_dc_search_2D_matrix algo_dc_search_2D_matrix.cc
+//g++ --std=c++11 -Wall -g -o algo_dc_search_2D_matrix_i_ii algo_dc_search_2D_matrix_i_ii.cc
 
 /**
  * @file  Search a 2D Matrix
@@ -17,6 +17,7 @@ using namespace std;
 
 
 // https://leetcode.com/problems/search-a-2d-matrix/
+// https://leetcode.com/problems/search-a-2d-matrix-ii/
 
 /**
  * Write an efficient algorithm that searches for a value in an
@@ -43,7 +44,8 @@ bool searchMatrix(vector<vector<int>>& matrix, int target) {
    for(int first = 0, last = (m * n) - 1; first <= last;) {
       int mid = first + (last - first) / 2,
          i   = mid / n,  /* j < n. So mid / n will give us i */
-         j   = mid - (i * n); /* Find 1 unknown with 1 eq    */
+         /* Find 1 unknown with 1 eq. Eqvn to j = mid % n    */
+         j   = mid - (i * n); 
       /* Next do binary search with i, j + find new mid-point*/
       if     (matrix[i][j] < target) first = mid + 1;
       else if(matrix[i][j] > target) last  = mid - 1;
@@ -51,6 +53,39 @@ bool searchMatrix(vector<vector<int>>& matrix, int target) {
    }
    return false;
 }
+
+/**
+ * Write an efficient algorithm that searches for a value in an m x n matrix.
+ * This matrix has the following properties:
+ * - Integers in each row are sorted in ascending from left to right.
+ * - Integers in each column are sorted in ascending from top to bottom.
+ * For example, given
+ * [ [1,   4,  7, 11, 15],
+ *   [2,   5,  8, 12, 19],
+ *   [3,   6,  9, 16, 22],
+ *   [10, 13, 14, 17, 24],
+ *   [18, 21, 23, 26, 30]]
+ * Given target = 5, return true.
+ * Given target = 20, return false.
+ */
+
+/* Start at either bottom-left or top-right corner           *
+ * In each step rule out one row or column until we          *
+ * hit boundary conditions or find the answer                *
+ * Time Complexity = O(m+n), Space Complexity = O(1)         *
+ * Note: Need to add test-cases for this question.           */
+bool searchMatrix_ii(vector<vector<int>>& matrix, int target) {
+   if(matrix.size() == 0) return false;
+   int m = matrix.size(), n = matrix[0].size();
+   /* Start at the bottom-left corner                  */
+   for(int i = m-1, j = 0; i >= 0 && j < n;) {
+      if     (matrix[i][j] < target) j++; /* next col */
+      else if(matrix[i][j] > target) i--; /* prev row */
+      else   return true;                 /* found it!*/
+   }
+   return false;  /* Hit boundary condition, not found */
+}
+
 
 int main() {
    vector<vector<int>> matrix;
