@@ -1,9 +1,11 @@
-//g++ --std=c++11 -g -o ds_stack_valid_parantheses ds_stack_valid_parantheses.cc
+//g++ --std=c++11 -Wall -g -o ds_stack_valid_parantheses ds_stack_valid_parantheses.cc
 
 /**
  * @file  Valid Parantheses (stack test)
  * @brief Given a string match start and end parantheses
  */
+
+// https://leetcode.com/problems/valid-parentheses/
 
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
@@ -26,19 +28,19 @@ using namespace std;
  */
 
 bool isValidEnd(char e) {
-	return e == ')' || e == '}' || e == ']';
+   return e == ')' || e == '}' || e == ']';
 }
 
 bool isValidStart(char e) {
-	return e == '(' || e == '{' || e == '[';
+   return e == '(' || e == '{' || e == '[';
 }
 
 bool isMatch(char b, char e) {
-	//cout << b << " " << e << endl;
-	if(b == '(')      return e == ')';
-	else if(b == '[') return e == ']';
-	else if(b == '{') return e == '}';
-	else              return false;
+   //cout << b << " " << e << endl;
+   if(b == '(')      return e == ')';
+   else if(b == '[') return e == ']';
+   else if(b == '{') return e == '}';
+   else              return false;
 }
 
 /* Use stack to store all the forward paranthesis            *
@@ -47,32 +49,32 @@ bool isMatch(char b, char e) {
  * Time Complexity = O(n)                                    *
  * Space Complexity = O(n)                                   */
 bool isValid(string s) {
-	std::stack<char> stk; /* Stack of start paran */
+   std::stack<char> stk; /* Stack of start paran             */
 
-	for (int i = 0; i < s.size(); ++i) {
-		char c = s[i];
-		/* Add forward paran to stack */
-		if(isValidStart(c)) stk.push(c);
-		/* When reverse paran is found, pop forward paren    *
-		 * (note, this will be the latest/last forward paren)*
-		 * and validate.                                     */
-		else if(isValidEnd(c)) {
-			if(stk.size() == 0)        return false;
-			auto b = stk.top();
-			stk.pop();
-			if(isMatch(b, c) == false) return false;
-		}
-	}
+   for(unsigned int i = 0; i < s.size(); ++i) {
+      char c = s[i];
+      /* Add forward paran to stack                          */
+      if(isValidStart(c)) stk.push(c);
+      /* When reverse paran is found, pop forward paren      *
+       * (note, this will be the latest/last forward paren)  *
+       * and validate.                                       */
+      else if(isValidEnd(c)) {
+         if(stk.size() == 0)        return false;
+         auto b = stk.top();
+         stk.pop();
+         if(isMatch(b, c) == false) return false;
+      }
+   }
 
-	if(stk.size())  return false;
-	else            return true;
+   if(stk.size())  return false;
+   else            return true;
 }
 
 int main()
 {
-	cout << isValid("()[]{}") << endl;
-	cout << isValid("([{}]){}") << endl;
-	cout << isValid("()[]{}") << endl;
-	cout << isValid("()[){}") << endl;
-	return 0;
+   cout << isValid("()[]{}") << endl;
+   cout << isValid("([{}]){}") << endl;
+   cout << isValid("()[]{}") << endl;
+   cout << isValid("()[){}") << endl;
+   return 0;
 }

@@ -5,6 +5,8 @@
  * @brief Populate next pointer (level order right pointer) for each node
  */
 
+// https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
+
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
 #include <cmath>             /* pow                          */
@@ -14,8 +16,6 @@
 #include <cstring>           /* std::strtok                  */
 #include <queue>             /* std::priority_queue          */
 using namespace std;
-
-// https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
 
 /**
  * Populate each next pointer to point to its next right node.
@@ -40,11 +40,11 @@ using namespace std;
  */
 
 struct TreeLinkNode {
-	int val;
-	TreeLinkNode *left;
-	TreeLinkNode *right;
-	TreeLinkNode *next;
-	TreeLinkNode(int x) : val(x), left(NULL), right(NULL), next(NULL) {}
+   int val;
+   TreeLinkNode *left;
+   TreeLinkNode *right;
+   TreeLinkNode *next;
+   TreeLinkNode(int x) : val(x), left(NULL), right(NULL), next(NULL) {}
 };
 
 /**
@@ -52,40 +52,40 @@ struct TreeLinkNode {
  * @param root node of the BT                                *
  */
 void connect(TreeLinkNode *left, TreeLinkNode *right) {
-	if(left == NULL || right == NULL) return;
-	left->next = right;
-	connect(left->left, left->right);
-	connect(left->right, right->left);
-	connect(right->left, right->right);
+   if(left == NULL || right == NULL) return;
+   left->next = right;
+   connect(left->left, left->right);
+   connect(left->right, right->left);
+   connect(right->left, right->right);
 }
 
 void connectRecurse(TreeLinkNode *root) {
-	if(root == NULL)    return;
-	else                return connect(root->left, root->right);
+   if(root == NULL)    return;
+   else                return connect(root->left, root->right);
 }
 
 /**
  * @brief Iterative DFS based approach to construct next ptr *
  * This is inspired from Leet solution posted @ below link   *
- * https://leetcode.com/discuss/26868/my-simple-non-iterative-c-code-with-o-1-memory                                                        *
+ * https://leetcode.com/discuss/26868/my-simple-non-iterative-c-code-with-o-1-memory  *
  * @param root node of the BT                                *
  */
 void connectIterative(TreeLinkNode *root) {
-	while(root && root->left) {
-		TreeLinkNode *cur = root;
-		/* Complete all elements in this level */
-		while(cur) {
-			cur->left->next = cur->right;
-			if(cur->next)
-				cur->right->next = cur->next->left;
-			cur = cur->next;
-		}
-		root = root->left;
-	}
+   while(root && root->left) {
+      TreeLinkNode *cur = root;
+      /* Complete all elements in this level */
+      while(cur) {
+         cur->left->next = cur->right;
+         if(cur->next)
+            cur->right->next = cur->next->left;
+         cur = cur->next;
+      }
+      root = root->left;
+   }
 }
 
 int main()
 {
-	cout << "Info: All manual test-cases yet to be written" << endl;
-	return 0;
+   cout << "Info: All manual test-cases yet to be written" << endl;
+   return 0;
 }

@@ -5,6 +5,8 @@
  * @brief Given BT, find total sum of all root-to-leaf numbers.
  */
 
+// https://leetcode.com/problems/sum-root-to-leaf-numbers/
+
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
 #include <cmath>             /* pow                          */
@@ -31,10 +33,10 @@ using namespace std;
  */
 
 struct TreeNode {
-	int val;
-	TreeNode *left;
-	TreeNode *right;
-	TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+   int val;
+   TreeNode *left;
+   TreeNode *right;
+   TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
 /**
@@ -43,15 +45,15 @@ struct TreeNode {
  * @ret Sum of all root->leaf paths                          *
  */
 int sumNumbers(TreeNode* root, int num = 0) {
-	if(root == NULL) return 0;
-	num = num * 10 + root->val; /* left-shift and add cur num*/
-	/* If this is a leaf node, return and let parent add sum */
-	if(root->left == NULL && root->right == NULL) return num;
-	else return sumNumbers(root->left,  num) + sumNumbers(root->right, num);
+   if(root == NULL) return 0;
+   num = num * 10 + root->val; /* left-shift and add cur num*/
+   /* If this is a leaf node, return and let parent add sum */
+   if(root->left == NULL && root->right == NULL) return num;
+   else return sumNumbers(root->left,  num) + sumNumbers(root->right, num);
 }
 	
 int main()
 {
-	cout << "Info: Need to implement sum root->leaf paths" << endl;
-	return 0;
+   cout << "Info: Need to implement sum root->leaf paths" << endl;
+   return 0;
 }
