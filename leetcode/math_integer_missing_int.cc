@@ -14,7 +14,7 @@
 #include <cstring>           /* std::strtok                  */
 using namespace std;
 
-//2 questions
+//https://leetcode.com/problems/single-number/
 
 /**
  * Given an array of integers, every element appears twice   *
@@ -54,9 +54,9 @@ using namespace std;
 template<typename T=int>
 T find_lone_element(vector<T> &nums)
 {
-	T result = 0;
-	for(auto val:nums) result ^= val;
-	return result;
+   T result = 0;
+   for(auto val:nums) result ^= val;
+   return result;
 }
 
 
@@ -83,39 +83,39 @@ T find_lone_element(vector<T> &nums)
 template<typename T=int>
 vector<T> find_two_lone_elements(vector<T> &nums)
 {
-	vector<T> result(2, 0);
-	T a_xor_b = 0;
+   vector<T> result(2, 0);
+   T a_xor_b = 0;
 
-    /* 1) Repeat find_lone_element ops to get a_xor_b        */
-	for(int i = 0; i < nums.size(); i++) a_xor_b ^= nums[i];
+   /* 1) Repeat find_lone_element ops to get a_xor_b         */
+   for(int i = 0; i < nums.size(); i++) a_xor_b ^= nums[i];
 
-	/* 2) get the least set bit, to partition xor result.    *
-	 * Note: this is the same as bit_get_lsb_val()           */
-	T partition_bit = (a_xor_b & -a_xor_b);
-	for(int i = 0; i < nums.size(); i++) {
-		if(nums[i] & partition_bit)
-			result[0] ^= nums[i];
-		else
-			result[1] ^= nums[i];
-	}
-	return result;
+   /* 2) get the least set bit, to partition xor result.     *
+    * Note: this is the same as bit_get_lsb_val()            */
+   T partition_bit = (a_xor_b & -a_xor_b);
+   for(int i = 0; i < nums.size(); i++) {
+      if(nums[i] & partition_bit)
+         result[0] ^= nums[i];
+      else
+         result[1] ^= nums[i];
+   }
+   return result;
 }
 
 
 
 int main()
 {
-	/* Find lone element test-case                           */
-	cout << "Find one missing element in array:" <<endl;
-	int arr[] = {1, 2, 3, 4, 5, 1, 3, 2, 4};
-	vector<int> vec(arr, arr + sizeof(arr)/sizeof(int));
-	cout << find_lone_element(vec) << endl;
+   /* Find lone element test-case                            */
+   cout << "Find one missing element in array:" <<endl;
+   int arr[] = {1, 2, 3, 4, 5, 1, 3, 2, 4};
+   vector<int> vec(arr, arr + sizeof(arr)/sizeof(int));
+   cout << find_lone_element(vec) << endl;
 
-	cout << "Find 2 missing elements in array:" <<endl;
-	int arr1[] = {1, 2, 1, 3, 2, 5};
-	vector<int> vec1(arr1, arr1 + sizeof(arr1)/sizeof(int));
-	auto ans1 = find_two_lone_elements(vec1);
-	for(auto val:ans1) 	cout << val << endl;
+   cout << "Find 2 missing elements in array:" <<endl;
+   int arr1[] = {1, 2, 1, 3, 2, 5};
+   vector<int> vec1(arr1, arr1 + sizeof(arr1)/sizeof(int));
+   auto ans1 = find_two_lone_elements(vec1);
+   for(auto val:ans1) 	cout << val << endl;
 	
-	return 0;
+   return 0;
 }

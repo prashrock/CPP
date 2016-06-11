@@ -56,7 +56,7 @@ int integerBreak(int n) {
  * broken into any smaller real positive numbers. We now try *
  * to calculate which real number generates the largest      *
  * product. Assume we break n into (n / x) x's, then the     *
- * product will be xn/x, and we want to maximize it.         *
+ * product will be x^(n/x), and we want to maximize it.      *
  *                                                           *
  * Taking its derivative gives us n * x^(n/x-2) * (1-ln(x)). *
  * The derivative is positive when 0 < x < e, and equal to 0 *
