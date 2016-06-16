@@ -5,6 +5,18 @@
  * @brief Given unsorted int arr, find len of longest increasing subsequence
  */
 
+// https://leetcode.com/problems/longest-increasing-subsequence/
+
+#include <iostream>          /* std::cout                    */
+#include <iomanip>           /* std::setw                    */
+#include <cmath>             /* pow                          */
+#include <cassert>           /* assert                       */
+#include <algorithm>         /* std::max                     */
+#include <string>            /* std::string,                 */
+#include <cstring>           /* std::strtok                  */
+#include <unordered_map>     /* std::unordered_map container */
+using namespace std;
+
 /**
  * Given an unsorted array of integers, find the length of longest
  * increasing subsequence. For example,
@@ -18,16 +30,6 @@
  */
 
 
-#include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
-#include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
-#include <unordered_map>     /* std::unordered_map container */
-using namespace std;
-
 /**
  * DP approach to construct length memoization table. At     *
  * each element, the max length is either the max length @   *
@@ -37,26 +39,26 @@ using namespace std;
  * @ret   Max length of the LIS                              *
  * Time Complexity = O(n^2), Space Complexity = O(n)         */
 int DP_lengthOfLIS(vector<int>& nums) {
-	/* First handle base-case where input is empty           */
-	if(nums.size() == 0) return 0;
+   /* First handle base-case where input is empty            */
+   if(nums.size() == 0) return 0;
 
-	/* We do not need a 2D DP Memoization table as we only   *
-	 * need to compute the length of the LIS. Init table     *
-	 * to 1, bcoz each element is an LIS by itself           */
-	int max_len = 1;
-	vector<int> dp(nums.size(), 1);
+   /* We do not need a 2D DP Memoization table as we only    *
+    * need to compute the length of the LIS. Init table      *
+    * to 1, bcoz each element is an LIS by itself            */
+   int max_len = 1;
+   vector<int> dp(nums.size(), 1);
 
-	/* O(n^2) loop to check each element against all prev    *
-	 * elements while maintaining max length at each node    */
-	for(int i = 0; i < nums.size(); ++i) {
-		for(int j = 0; j < i; ++j) {
-			if(nums[i] > nums[j])
-				dp[i] = std::max(dp[i], dp[j] + 1);
-		}
-		max_len = std::max(max_len, dp[i]);
-	}
+   /* O(n^2) loop to check each element against all prev     *
+    * elements while maintaining max length at each node     */
+   for(int i = 0; i < nums.size(); ++i) {
+      for(int j = 0; j < i; ++j) {
+         if(nums[i] > nums[j])
+            dp[i] = std::max(dp[i], dp[j] + 1);
+      }
+      max_len = std::max(max_len, dp[i]);
+   }
 
-	return max_len;
+   return max_len;
 }
 
 /**
@@ -72,34 +74,34 @@ int DP_lengthOfLIS(vector<int>& nums) {
  * Inspired by Patience sort in Geeks4Geeks + Wiki           *
  * http://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n */
 int PatienceSortBased_lengthOfLIS(vector<int>& nums) {
-	/* First handle base-case where input is empty           */
-	if(nums.size() == 0) return 0;
+   /* First handle base-case where input is empty            */
+   if(nums.size() == 0) return 0;
 
-	vector<int> v;
-	v.reserve(nums.size()); /* Max size == nums.size         */
-	v.push_back(nums[0]);
+   vector<int> v;
+   v.reserve(nums.size()); /* Max size == nums.size          */
+   v.push_back(nums[0]);
 
-	for(int i = 1; i < nums.size(); ++i) {
-        /* 1) New smallest value found. Replace cur smallest */
-		if(nums[i] < v[0])
-			v[0] = nums[i];
-		/* 2) If not smallest, find out where to put it      */
-		auto it = std::lower_bound(v.begin(), v.end(), nums[i]);
-		/* 2-a) Largest element. Add to end of vector        */
-		if(it == v.end())
-			v.push_back(nums[i]);
-		/* 2-b) Take over next largest element found         */
-		else
-			*it = nums[i];
-	}
-	/* The number of elements in this result vector gives us *
-	 * the longest increasing subsequence length             */
-	return v.size();
+   for(int i = 1; i < nums.size(); ++i) {
+      /* 1) New smallest value found. Replace cur smallest   */
+      if(nums[i] < v[0])
+         v[0] = nums[i];
+      /* 2) If not smallest, find out where to put it        */
+      auto it = std::lower_bound(v.begin(), v.end(), nums[i]);
+      /* 2-a) Largest element. Add to end of vector          */
+      if(it == v.end())
+         v.push_back(nums[i]);
+      /* 2-b) Take over next largest element found           */
+      else
+         *it = nums[i];
+   }
+   /* The number of elements in this result vector gives us  *
+    * the longest increasing subsequence length              */
+   return v.size();
 }
 
 int main()
 {
-	vector<int> a = {10, 9, 2, 5, 3, 7, 101, 18};
-	cout << DP_lengthOfLIS(a) << endl;
-	cout << PatienceSortBased_lengthOfLIS(a) << endl;
+   vector<int> a = {10, 9, 2, 5, 3, 7, 101, 18};
+   cout << DP_lengthOfLIS(a) << endl;
+   cout << PatienceSortBased_lengthOfLIS(a) << endl;
 }

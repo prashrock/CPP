@@ -1,3 +1,4 @@
+
 //g++ --std=c++11 -g -o ds_string_additive_number ds_string_additive_number.cc
 
 /**
@@ -5,6 +6,7 @@
  * @brief Given string, check if it forms additive sequence
  */
 
+// https://leetcode.com/problems/additive-number/
 
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
@@ -35,53 +37,58 @@ using namespace std;
  * Follow up: How would you handle overflow for very large input integers?
  */
 
-
-/**
- * Check additive number for the remaining elements in seq   *
- */
+/* Check additive number for the remaining elements in seq   */
 bool check_remaining_string(string num, unsigned n1, unsigned n2) {
-	for(int i = 0; i < num.size();) {
-		unsigned n3 = n1 + n2;
-		string s = std::to_string(n3);
-		if(num.find(s, i) != i)        return false;
-		i += s.size();
-		n1 = n2;
-		n2 = n3;
-	}
-	return true;
+   for(int i = 0; i < num.size();) {
+      unsigned n3 = n1 + n2;
+      string s = std::to_string(n3);
+      if(num.find(s, i) != i)        return false;
+      i += s.size();
+      n1 = n2;
+      n2 = n3;
+   }
+   return true;
 }
 
-/**
- * Check if the given string is additive sequence            *
- */
+/* Check if the given string is additive sequence            */
 bool isAdditiveNumber(string num) {
-	for(int l1 = 1; l1 <= num.size(); ++l1) {
-		if(num[0] == '0' && l1 != 1) break;
-		for(int l2 = 1; l1 + l2 <= num.size() - std::max(l1, l2); ++l2) {
-			if(num[l1] == '0' && l2 != 1) break;
-			unsigned n1 = stoul(num.substr(0, l1));
-			unsigned n2 = stoul(num.substr(l1, l2));
-			if(check_remaining_string(num.substr(l1 + l2), n1, n2) == true)
-				return true;
-			//cout << num.substr(0, l1) << " " << num.substr(l1, l2);
-			//cout << endl;
-		}
-	}
-	return false;
+   for(int l1 = 1; l1 <= num.size(); ++l1) {
+      if(num[0] == '0' && l1 != 1) break;
+      /* There is no limit on 2nd num size, so start from 1  */
+      for(int l2 = 1; l1 + l2 <= num.size() - std::max(l1, l2); ++l2) {
+         if(num[l1] == '0' && l2 != 1) break;
+         unsigned n1 = stoul(num.substr(0, l1));
+         unsigned n2 = stoul(num.substr(l1, l2));
+         if(check_remaining_string(num.substr(l1 + l2), n1, n2) == true)
+            return true;
+      }
+   }
+   return false;
 }
+
+struct test_vector {
+   std::string X;
+   bool exp;
+};
+
+const struct test_vector test[4] =  {
+   { "120122436",   false },
+   { "12012122436", true  },
+   { "101",         true  },
+   { "221474836472147483649",  true },
+};
 
 int main()
 {
-    /* Manual case                                           */
-	if(isAdditiveNumber("120122436") != false)
-		cout << "Error: Test-case 120122436 failed" << endl;
-	else if(isAdditiveNumber("12012122436") != true)
-		cout << "Error: Test-case 12012122436 failed" << endl;
-	else if(isAdditiveNumber("101") != true)
-		cout << "Error: Test-case 101 failed" << endl;
-	else if(isAdditiveNumber("221474836472147483649") != true)
-		cout << "Error: Test-case 221474836472147483649 failed" << endl;
-	else
-		cout << "Info: All manual test-cases passed" << endl;
-	return 0;
+   for(auto tst : test) {
+      auto ans = isAdditiveNumber(tst.X);
+      if(ans != tst.exp) {
+         cout << "Error: AdditiveNumber failed for "
+              << tst.X   << " exp " << tst.exp
+              << " got " << ans << endl;
+         return -1;
+      }
+   }
+   cout << "Info: All manual test-cases passed" << endl;
+   return 0;
 }

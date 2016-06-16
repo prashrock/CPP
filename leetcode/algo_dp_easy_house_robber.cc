@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o algo_dp_easy_house_robber algo_dp_easy_house_robber.cc
+//g++ -Wall --std=c++11 -g -o algo_dp_easy_house_robber algo_dp_easy_house_robber.cc
 
 /**
  * @file  House Robber
@@ -17,6 +17,7 @@
  * without alerting the police.
  */
 
+// https://leetcode.com/problems/house-robber/
 
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
@@ -29,27 +30,41 @@
 using namespace std;
 
 int rob(vector<int>& nums) {
-	vector<int> dp(nums.size());
+   vector<int> dp(nums.size());
 
-	/* First handle base cases */
-	if(nums.size() == 0)      return 0;
-	else if(nums.size() == 1) return nums[0];
+   /* First handle base cases */
+   if(nums.size() == 0)      return 0;
+   else if(nums.size() == 1) return nums[0];
 
-	dp[0] = nums[0];
-	dp[1] = std::max(nums[0], nums[1]);
+   dp[0] = nums[0];
+   dp[1] = std::max(nums[0], nums[1]);
 
-	for(int i = 2; i < nums.size(); ++i)
-		dp[i] = std::max(dp[i-1], dp[i-2] + nums[i]);
+   for(int i = 2; i < (int)nums.size(); ++i)
+      dp[i] = std::max(dp[i-1], dp[i-2] + nums[i]);
 
-	return dp[nums.size() - 1];
+   return dp[nums.size() - 1];
 }
+
+struct test_vector {
+   std::vector<int> nums;
+   int exp;
+};
+
+const struct test_vector test[2] =  {
+   { {1, 3, 1},    3},
+   { {2, 1, 1, 2}, 4},
+};
 
 int main()
 {
-	vector<int> a = {1, 3, 1};
-	cout << rob(a) << endl;
-
-	vector<int> b = {2, 1, 1, 2};
-	cout << rob(b) << endl;
-	
+   for(auto tst : test) {
+      int ans = rob(tst.nums);
+      if(ans != tst.exp) {
+         cout << "Error: House Robber failed for case:" << endl;
+         for(auto v : tst.nums) cout << v << ",";  cout << endl;
+         return -1;
+      }
+   }
+   cout << "Info: All manual test-cases for House Robber passed." << endl;
+   return 0;
 }

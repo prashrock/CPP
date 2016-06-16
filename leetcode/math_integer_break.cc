@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o math_integer_break math_integer_break.cc
+//g++ --std=c++11 -Wall -g -o math_integer_break math_integer_break.cc -I../utils/
 
 /**
  * @file  Math Integer Break
@@ -27,6 +27,7 @@
 #include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
 #include <string>            /* std::string                  */
+#include "print_utils.h"     /* print_table_row              */
 using namespace std;
 
 /* DP based ~O(n^2) approach. Look at math after this func   */
@@ -46,8 +47,8 @@ int integerBreak(int n) {
          dp[i] = std::max(dp[i], (val1 * val2));
       }
    }
-   //for (auto val : dp) cout << val << ",";
-   //cout << endl;
+   for (auto val : dp) cout << val << ",";
+   cout << endl;
    return dp[n];
 }
 
@@ -77,10 +78,12 @@ struct test_vector {
    int exp;
 };
 
-const struct test_vector test[3] =  {
+const struct test_vector test[5] =  {
    { 4, 4 },
    { 5, 6 },
    { 6, 9 },
+   { 10, 36 },
+   { 17, 180 },
 };
 
 int main()
@@ -89,7 +92,7 @@ int main()
       int ans = integerBreak(tst.X);
       if(ans != tst.exp) {
          cout << "Error:IntegerBreak failed for " << tst.X 
-              << " exp " << tst.exp << " got " << ans;
+              << " exp " << tst.exp << " got " << ans << endl;
          return -1;
       }
    }
