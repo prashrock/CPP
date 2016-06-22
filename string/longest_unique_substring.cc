@@ -25,70 +25,67 @@ const int string_length        = 10;
 template<typename T>
 int longest_unique_substring(const std::vector<T>& inp)
 {
-	int max_len = 0, cur_len = 0;
-	int max_start_idx = 0, cur_start_idx = 0;
-	unordered_map<T, int> map;
-	for(int i = 0; i <= inp.size(); ++i)
-	{
-		/* Book-keeping. Update max_len if required first    */
-		if(max_len < cur_len) {
-			max_len = cur_len;
-			max_start_idx = cur_start_idx;
-		}
-		/* Above book-keeping will get missed out after last *
-		 * character. Instead of redoing bookkeeping outside *
-		 * loop, just enter loop 1 more time and then break  */
-		if(i == inp.size()) break;
+   int max_len = 0, cur_len = 0;
+   int max_start_idx = 0, cur_start_idx = 0;
+   unordered_map<T, int> map;
+   for(int i = 0; i <= inp.size(); ++i) {
+      /* Book-keeping. Update max_len if required first      */
+      if(max_len < cur_len) {
+         max_len = cur_len;
+         max_start_idx = cur_start_idx;
+      }
+      /* Above book-keeping will get missed out after last   *
+       * character. Instead of redoing bookkeeping outside   *
+       * loop, just enter loop 1 more time and then break    */
+      if(i == inp.size()) break;
 
-		T val = inp[i];
+      T val = inp[i];
 		
-		/* 1st option - in current substring, we have 1 more *
-		 * unique element. Add it to cur_len and continue    */
-		if(map.find(val) == map.end())
-			cur_len++;
+      /* 1st option - in current substring, we have 1 more   *
+       * unique element. Add it to cur_len and continue      */
+      if(map.find(val) == map.end())
+         cur_len++;
 	
-		/* We found a repeat character in our current window *
-		 * There are 2 cases:                                *
-		 * Case 1 - Older occurence outside current window   *
-		 *        - safe, continue with current substring    *
-		 * Case 2 - Older occurence within current window    *
-		 *        - shift window to start after prev occur   */
-		else {
-			/* case 1: Outside current window, no action     */
-			if(map[val] < cur_start_idx)
-				cur_len++;
-			/* case 2: Within current window, shift window   */
-			else {
-				cur_start_idx = map[val] + 1;
-				cur_len = i - cur_start_idx + 1;
-			}
-		}
-		map[val] = i;  /* Mark where cur inp was fnd  */
-	}
-	cout << "Longest Unique Substring starts @ " << max_start_idx
-		 << " with length = " << max_len << endl;
-	return max_len;
+      /* We found a repeat character in our current window   *
+       * There are 2 cases:                                  *
+       * Case 1 - Older occurence outside current window     *
+       *        - safe, continue with current substring      *
+       * Case 2 - Older occurence within current window      *
+       *        - shift window to start after prev occur     */
+      else {
+         /* case 1: Outside current window, no action        */
+         if(map[val] < cur_start_idx)
+            cur_len++;
+         /* case 2: Within current window, shift window      */
+         else {
+            cur_start_idx = map[val] + 1;
+            cur_len = i - cur_start_idx + 1;
+         }
+      }
+      map[val] = i;  /* Mark where cur inp was fnd           */
+   }
+   cout << "Longest Unique Substring starts @ " << max_start_idx
+        << " with length = " << max_len << endl;
+   return max_len;
 }
 
 void longest_unique_substring_test()
 {
-	for(int i = 0; i < number_of_iterations; ++i)
-	{
-		std::vector<char> str(string_length);
-		fill_vector_rand<char>(str, 'A', 'D');
-		print_table_row<char>("input", str);
-		longest_unique_substring<char>(str);
-	}
+   for(int i = 0; i < number_of_iterations; ++i)
+      {
+         std::vector<char> str(string_length);
+         fill_vector_rand<char>(str, 'A', 'D');
+         print_table_row<char>("input", str);
+         longest_unique_substring<char>(str);
+      }
 }
 
 int main()
 {
-	init_rand();
-
-	longest_unique_substring_test();
-
-	/* Manual test cases */
-	//std::string inp = "BCBCDB";
-	//std::vector<char> str(inp.begin(), inp.end());
-	//longest_unique_substring<char>(str);
+   init_rand();
+   longest_unique_substring_test();
+   /* Manual test cases */
+   //std::string inp = "BCBCDB";
+   //std::vector<char> str(inp.begin(), inp.end());
+   //longest_unique_substring<char>(str);
 }
