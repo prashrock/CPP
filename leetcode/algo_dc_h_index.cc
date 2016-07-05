@@ -5,6 +5,8 @@
  * @brief Find index H-index (atleast H numbers greater than H)
  */
 
+// https://leetcode.com/problems/h-index/
+
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
 #include <cmath>             /* pow                          */
@@ -14,9 +16,6 @@
 #include <cstring>           /* std::strtok                  */
 #include <unordered_map>     /* std::unordered_map container */
 using namespace std;
-
-
-// https://leetcode.com/problems/h-index/
 
 /**
  * Given an array of citations (each citation is a non-negative integer)
@@ -47,6 +46,7 @@ int hIndex(vector<int>& citations) {
    /* Loop invariant: first <= last. Each time, list size is *
     * reduced into half and we search only 1 half            */
    for(int n = citations.size(), first = 0, last = n-1; first <= last;) {
+      /* if n is even, mid will point to smaller mid element */
       int mid = first + (last - first) / 2;
       if(citations[mid] >= n-mid) ans   = n - mid;
       if(citations[mid] < n-mid)  first = mid + 1;

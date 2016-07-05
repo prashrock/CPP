@@ -41,8 +41,7 @@ int searchInsertSTL(vector<int>& nums, int target) {
       if(nums.size() == 0 || target < nums[0]) return 0;
       else                                     return nums.size();
    }
-   else if(*it < target)       return it - nums.begin() + 1;
-   else                        return it - nums.begin();
+   else                                return (it - nums.begin());
 }
 
 /**

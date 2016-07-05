@@ -17,7 +17,6 @@
 #include <stack>             /* std::stack                   */
 using namespace std;
 
-
 /**
  * Given a string containing just the characters
  * '(', ')', '{', '}', '[' and ']', determine if the input
@@ -27,16 +26,11 @@ using namespace std;
  * are all valid but "(]" and "([)]" are not.
  */
 
-bool isValidEnd(char e) {
-   return e == ')' || e == '}' || e == ']';
-}
+bool isValidEnd(char e)   { return e == ')' || e == '}' || e == ']'; }
 
-bool isValidStart(char e) {
-   return e == '(' || e == '{' || e == '[';
-}
+bool isValidStart(char e) { return e == '(' || e == '{' || e == '['; }
 
 bool isMatch(char b, char e) {
-   //cout << b << " " << e << endl;
    if(b == '(')      return e == ')';
    else if(b == '[') return e == ']';
    else if(b == '{') return e == '}';
@@ -46,8 +40,7 @@ bool isMatch(char b, char e) {
 /* Use stack to store all the forward paranthesis            *
  * Every time we encounter a reverse paranthesis, pop stack  *
  * and validate.                                             *
- * Time Complexity = O(n)                                    *
- * Space Complexity = O(n)                                   */
+ * Time Complexity = O(n)    Space Complexity = O(n)         */
 bool isValid(string s) {
    std::stack<char> stk; /* Stack of start paran             */
 
@@ -59,10 +52,9 @@ bool isValid(string s) {
        * (note, this will be the latest/last forward paren)  *
        * and validate.                                       */
       else if(isValidEnd(c)) {
-         if(stk.size() == 0)        return false;
-         auto b = stk.top();
+         if(stk.size() == 0 || isMatch(stk.top(), c) == false)
+            return false;
          stk.pop();
-         if(isMatch(b, c) == false) return false;
       }
    }
 
@@ -70,11 +62,28 @@ bool isValid(string s) {
    else            return true;
 }
 
+struct test_vector {
+   std::string inp;
+   bool exp;
+};
+
+const struct test_vector test[4] =  {
+   {"()[]{}",         true},
+   {"([{}]){}",       true},
+   {"()[]{}",         true},
+   {"()[){}",        false},
+};
+
 int main()
 {
-   cout << isValid("()[]{}") << endl;
-   cout << isValid("([{}]){}") << endl;
-   cout << isValid("()[]{}") << endl;
-   cout << isValid("()[){}") << endl;
+   for(auto tst : test) {
+      auto ans = isValid(tst.inp);
+      if(ans != tst.exp) {
+         cout << "Error: isValid failed for " << tst.inp
+              << " Expected " << tst.exp << " Got " << ans << endl;
+         return -1;
+      }
+   }
+   cout << "Info: All manual test-cases passed." << endl;
    return 0;
 }

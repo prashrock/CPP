@@ -57,8 +57,8 @@ bool isAdditiveNumber(string num) {
       /* There is no limit on 2nd num size, so start from 1  */
       for(int l2 = 1; l1 + l2 <= num.size() - std::max(l1, l2); ++l2) {
          if(num[l1] == '0' && l2 != 1) break;
-         unsigned n1 = stoul(num.substr(0, l1));
-         unsigned n2 = stoul(num.substr(l1, l2));
+         unsigned n1 = stoul(num.substr(0, l1));  /* substr(pos, len) */
+         unsigned n2 = stoul(num.substr(l1, l2)); /* substr(pos, len) */
          if(check_remaining_string(num.substr(l1 + l2), n1, n2) == true)
             return true;
       }

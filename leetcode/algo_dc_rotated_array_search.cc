@@ -29,7 +29,7 @@ using namespace std;
  */
 
 
- /**
+/**
  * @brief - Iterative Binary Search implementation. Returns  *
  * the index of target if found, else returns -1             *
  * Time Complexity = O(lg n).   Space Complexity = O(1)      */
@@ -52,11 +52,13 @@ int search(vector<int>& nums, int target) {
    /* If input is rotated, find index of smallest element    *
     * with Binary Search                                     */
    for(int first = 0, last = nums.size() - 1;
-       first < last && nums[first] > nums[last]; ) {
-      mid = first + (last - first) / 2 + 1;
-      /* [first, mid] is not-rotated  */
+       first <= last && nums[first] > nums[last]; ) {
+      /* If len is even, mid needs to be higher element      */
+      mid = first + (last - first) / 2;
+      if((last - first + 1) % 2 == 0) mid++;
+      /* Is [first, mid]  not-rotated                        */
       if(nums[mid] > nums[first])  first = mid;
-      /* [mid, last]  is not-rotated  */
+      /* Is [mid, last]   not-rotated                        */
       else                         last  = mid-1;
    }
    int pivot = mid;

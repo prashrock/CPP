@@ -33,54 +33,53 @@ const int max_set_size         = 5;
  * Space Complexity= O(m*n)                      */
 template<typename T>
 int lcs_dp(const T s1[], size_t m,
-		   const T s2[], size_t n)
+           const T s2[], size_t n)
 {
-	/*C++11 create 2D vector and initialize to 0*/
-	vector<vector<int> > table(m+1, vector<int>(n+1, 0));
+   /*C++11 create 2D vector and initialize to 0*/
+   vector<vector<int> > table(m+1, vector<int>(n+1, 0));
 
-
-	for(int i = 0; i <= m; ++i) {
-		for(int j = 0; j <= n; ++j) {
-			/* Initialize DP table               */
-			if(i == 0 || j == 0)
-				table[i][j] = 0;
-			/* If elements are equal             */
-			else if(s1[i - 1] == s2[j - 1])
-				table[i][j] = table[i-1][j-1] + 1;
-			/* Else, use max of previous row/col */
-			else				
-				table[i][j] = std::max(table[i][j-1],
-									   table[i-1][j]);
-		}
-	}
-	/* After DP completes, we can deduce LCS len */
-	int lcs_len = table[m][n];
+   for(size_t    i = 0; i <= m; ++i) {
+      for(size_t j = 0; j <= n; ++j) {
+         /* Initialize DP table               */
+         if(i == 0 || j == 0)
+            table[i][j] = 0;
+         /* If elements are equal             */
+         else if(s1[i - 1] == s2[j - 1])
+            table[i][j] = table[i-1][j-1] + 1;
+         /* Else, use max of previous row/col */
+         else				
+            table[i][j] = std::max(table[i][j-1],
+                                   table[i-1][j]);
+      }
+   }
+   /* After DP completes, we can deduce LCS len */
+   int lcs_len = table[m][n];
 	
-	/* LCS Backtracking                          */
-	vector<T> lcs_output;
-	for(int i = m, j = n; i > 0 && j > 0;) {
-		/* If elements are equal                 */
-		if(s1[i - 1] == s2[j - 1]) {
-			lcs_output.insert(lcs_output.begin(),
-							   s1[i - 1]);
-			i--; j--;
-		}
-		/* Chose which side to go. Remember this *
-		 * has to be consistent. Pick the idx    *
-		 * which is greater for traversing       */
-		else if(table[i][j - 1] > table[i - 1][j]) j--;
-		else                                       i--;
-	}
+   /* LCS Backtracking                          */
+   vector<T> lcs_output;
+   for(int i = m, j = n; i > 0 && j > 0;) {
+      /* If elements are equal                 */
+      if(s1[i - 1] == s2[j - 1]) {
+         lcs_output.insert(lcs_output.begin(),
+                           s1[i - 1]);
+         i--; j--;
+      }
+      /* Chose which side to go. Remember this *
+       * has to be consistent. Pick the idx    *
+       * which is greater for traversing       */
+      else if(table[i][j - 1] > table[i - 1][j]) j--;
+      else                                       i--;
+   }
 	
-	/* Print output table                        */
-	cout << "DP Table:" << endl;
-	for(int i = 0; i <= m; ++i)
-		print_table_row<int>("dp", table[i]);
-	cout << "LCS of length " << lcs_len
-		 << " found between two inputs" << endl;
-	print_table_row<T>("LCS result", lcs_output);
-	cout << endl;
-	return lcs_len;
+   /* Print output table                        */
+   cout << "DP Table:" << endl;
+   for(size_t i = 0; i <= m; ++i)
+      print_table_row<int>("dp", table[i]);
+   cout << "LCS of length " << lcs_len
+        << " found between two inputs" << endl;
+   print_table_row<T>("LCS result", lcs_output);
+   cout << endl;
+   return lcs_len;
 	
 }
 
@@ -90,25 +89,25 @@ int lcs_dp(const T s1[], size_t m,
  * subsequence with backtracking                 */
 void lcs_tester(size_t set_size)
 {
-	std::vector<char> s1(set_size), s2(set_size);
+   std::vector<char> s1(set_size), s2(set_size);
 	
-	/* Generate vector contents randomly from A-Z */
-	fill_vector_rand(s1, 'A', 'D');
-	fill_vector_rand(s2, 'A', 'D');
+   /* Generate vector contents randomly from A-Z */
+   fill_vector_rand(s1, 'A', 'D');
+   fill_vector_rand(s2, 'A', 'D');
 
-	print_table_row<char>("s1", s1);
-	print_table_row<char>("s2", s2);
+   print_table_row<char>("s1", s1);
+   print_table_row<char>("s2", s2);
 	
-	lcs_dp(&s1[0], s1.size(),
-		   &s2[0], s2.size());
+   lcs_dp(&s1[0], s1.size(),
+          &s2[0], s2.size());
 
 }
 
 int main()
 {
-	cout << "Running " << number_of_iterations << " iterations "
-		 << "each with set size " << max_set_size << endl;
-	init_rand();
-	for(int i = 1; i <= number_of_iterations; i++)
-		lcs_tester(max_set_size);
+   cout << "Running " << number_of_iterations << " iterations "
+        << "each with set size " << max_set_size << endl;
+   init_rand();
+   for(int i = 1; i <= number_of_iterations; i++)
+      lcs_tester(max_set_size);
 }

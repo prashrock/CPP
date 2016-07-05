@@ -82,7 +82,7 @@ const struct test_vector test[4] =  {
 int main()
 {
    for(auto tst : test) {
-      int ans = minPatches(tst.nums, tst.n);
+      auto ans = minPatches(tst.nums, tst.n);
       if(ans != tst.exp_num_patches) {
          cout << "Error:minPatches failed. Exp "
               << tst.exp_num_patches << " Got " << ans << " for ";

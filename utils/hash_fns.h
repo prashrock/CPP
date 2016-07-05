@@ -9,10 +9,10 @@
 template<typename T=std::string, typename Tret=unsigned long>
 Tret rolling_hash(T inp, unsigned radix=256, Tret prime=1009)
 {
-	Tret h = 0;
-	for(int i = 0; i < inp.size(); ++i)
-		h = (h * radix + inp[i]) % prime;
-	return h;
+   Tret h = 0;
+   for(size_t i = 0; i < inp.size(); ++i)
+      h = (h * radix + inp[i]) % prime;
+   return h;
 }
 
 #endif //_HASH_FNS_CPP_

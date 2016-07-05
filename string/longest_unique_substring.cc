@@ -28,7 +28,7 @@ int longest_unique_substring(const std::vector<T>& inp)
    int max_len = 0, cur_len = 0;
    int max_start_idx = 0, cur_start_idx = 0;
    unordered_map<T, int> map;
-   for(int i = 0; i <= inp.size(); ++i) {
+   for(size_t i = 0; i <= inp.size(); ++i) {
       /* Book-keeping. Update max_len if required first      */
       if(max_len < cur_len) {
          max_len = cur_len;
@@ -54,8 +54,7 @@ int longest_unique_substring(const std::vector<T>& inp)
        *        - shift window to start after prev occur     */
       else {
          /* case 1: Outside current window, no action        */
-         if(map[val] < cur_start_idx)
-            cur_len++;
+         if(map[val] < cur_start_idx)  cur_len++;
          /* case 2: Within current window, shift window      */
          else {
             cur_start_idx = map[val] + 1;
@@ -71,13 +70,12 @@ int longest_unique_substring(const std::vector<T>& inp)
 
 void longest_unique_substring_test()
 {
-   for(int i = 0; i < number_of_iterations; ++i)
-      {
-         std::vector<char> str(string_length);
-         fill_vector_rand<char>(str, 'A', 'D');
-         print_table_row<char>("input", str);
-         longest_unique_substring<char>(str);
-      }
+   for(int i = 0; i < number_of_iterations; ++i) {
+      std::vector<char> str(string_length);
+      fill_vector_rand<char>(str, 'A', 'D');
+      print_table_row<char>("input", str);
+      longest_unique_substring<char>(str);
+   }
 }
 
 int main()
