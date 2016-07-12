@@ -12,6 +12,7 @@ EXES = math_sqrt math_two_die_probability math_prime                    \
 	longest_unique_substring  substr_match word_freq_cnt            \
 	nqueens_backtrack                                               \
 	bitmap_test                                                     \
+	leetcode_progs							\
 
 .PHONY: all clean docs docs-clean etags $(EXES)
 
@@ -59,6 +60,9 @@ bitmap_test:
 	@$(MAKE) -f $(COMMON_ROOT)/bit_ops/Makefile \
 		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
 
+leetcode_progs:
+	@$(MAKE) -C $(COMMON_ROOT)/leetcode all
+
 clean:
 	rm -f $(EXES) TAGS 
 	$(MAKE) -C $(COMMON_ROOT)/math/         COMMON_ROOT="$(COMMON_ROOT)" clean
@@ -69,6 +73,7 @@ clean:
 	$(MAKE) -C $(COMMON_ROOT)/string/       COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/backtracking/ COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/bit_ops/      COMMON_ROOT="$(COMMON_ROOT)" clean
+	$(MAKE) -C $(COMMON_ROOT)/leetcode/     COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/divide_conquer/   COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/micro_benchmarks/ COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) docs-clean

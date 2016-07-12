@@ -43,7 +43,7 @@ using namespace std;
 static vector<int> directions = {0, -1, 0, 1, 0};
 /* Below are 8 directions from center (0,0) in a single list:*
  * Use this to go propagate along diagonal directions as well*/
-static vector<int> directions8= {-1, 0, -1, -1, 1, 0, 1, 1, -1};}
+static vector<int> directions8= {-1, 0, -1, -1, 1, 0, 1, 1, -1};
 
 /* Given a current point which is set, use DFS to visit all  *
  * of its neighbors (in 4 directions) and clear them         */

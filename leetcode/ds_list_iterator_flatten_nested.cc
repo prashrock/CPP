@@ -32,6 +32,7 @@ using namespace std;
  * elements returned by next should be: [1,4,6].
  */
 
+#if 0
 /**
  * Definition for Integer Class.
  */
@@ -88,6 +89,7 @@ private:
    std::stack<pitit_t> st; /* LIFO order for recursion       */
 };
 
+#endif
 
 int main()
 {

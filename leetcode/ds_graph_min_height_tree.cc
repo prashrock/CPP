@@ -87,11 +87,15 @@ private:
 
 int main()
 {
-	vector<pair<int, int>> v;
-	/* Manual test-cases                                     */
-	if(findMinHeightTrees(4, v = {{1, 0}, {1, 2}, {1, 3}}) != (vector<int>){1})
-		cout << "Error: 1st Manual test failed" << endl;
-	else
-		cout << "Info: All manual test-cases passed" << endl;	
-	return 0;
+   vector<pair<int, int>> v;
+#if 1
+   cout << "Note: This program is not complete yet !!!!" << endl;
+#else
+   /* Manual test-cases                                     */
+   if(findMinHeightTrees(4, v = {{1, 0}, {1, 2}, {1, 3}}) != (vector<int>){1})
+      cout << "Error: 1st Manual test failed" << endl;
+   else
+      cout << "Info: All manual test-cases passed" << endl;
+#endif
+   return 0;
 }
