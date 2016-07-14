@@ -5,6 +5,8 @@
  * @brief Remove duplicates in place in sorted array.
  */
 
+// https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
 #include <cmath>             /* pow                          */
@@ -15,7 +17,6 @@
 #include <unordered_map>     /* std::unordered_map container */
 using namespace std;
 
-// https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 /**
  * Given a sorted array, remove the duplicates in place such that
  * each element appear only once and return the new length.

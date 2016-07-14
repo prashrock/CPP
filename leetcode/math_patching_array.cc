@@ -7,6 +7,14 @@
 
 // https://leetcode.com/problems/patching-array/
 
+#include <iostream>          /* std::cout                    */
+#include <iomanip>           /* std::setw                    */
+#include <cmath>             /* pow, tgamma(factorial)       */
+#include <cassert>           /* assert                       */
+#include <algorithm>         /* std::max                     */
+#include <string>            /* std::string                  */
+using namespace std;
+
 /**
  * Given a sorted positive integer array nums and an integer n,
  * add/patch elements to the array such that any number in range [1, n]
@@ -31,14 +39,6 @@
  * nums = [1, 2, 2], n = 5
  * Return 0.
  */
-
-#include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow, tgamma(factorial)       */
-#include <cassert>           /* assert                       */
-#include <algorithm>         /* std::max                     */
-#include <string>            /* std::string                  */
-using namespace std;
 
 /**
  * @brief - can use DP or Binary Indexed Tree approach, but  *

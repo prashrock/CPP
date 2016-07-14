@@ -5,13 +5,7 @@
  * @brief Given array of meetings, can one attend all meetings
  */
 
-/**
- * Given an array of meeting time intervals consisting of start
- * and end times [[s1,e1],[s2,e2],...] (si < ei), determine if
- * a person could attend all meetings.
- * For example - Given [[0, 30],[5, 10],[15, 20]],
- *  return false.
- */
+// https://leetcode.com/problems/meeting-rooms/
 
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
@@ -22,19 +16,27 @@
 #include <cstring>           /* std::strtok                  */
 using namespace std;
 
+/**
+ * Given an array of meeting time intervals consisting of start
+ * and end times [[s1,e1],[s2,e2],...] (si < ei), determine if
+ * a person could attend all meetings.
+ * For example - Given [[0, 30],[5, 10],[15, 20]],
+ *  return false.
+ */
+
 /* Create a type for Interval specification                  */
 struct Interval {
-	int start;
-	int end;
-	Interval() : start(0), end(0) {}
-	Interval(int s, int e) : start(s), end(e) {}
+   int start;
+   int end;
+   Interval() : start(0), end(0) {}
+   Interval(int s, int e) : start(s), end(e) {}
 };
 
 /* Create a custom comparator without using any classes      */
 struct less_than_start {
-	inline bool operator() (const Interval& a, const Interval& b) {
-		return (a.start < b.start);
-	}
+   inline bool operator() (const Interval& a, const Interval& b) {
+      return (a.start < b.start);
+   }
 };
 
 /**
@@ -53,21 +55,21 @@ struct less_than_start {
  * Note: this routine assumes that input is valid:           *
  *     meaning for each element, elem.start <= elem.end      */
 bool canAttendMeetings(vector<Interval>& intervals) {
-	std::sort(intervals.begin(), intervals.end(), less_than_start());
-	for(int i = 1; i < intervals.size(); ++i)
-		if(intervals[i].start < intervals[i-1].end)      return false;
-	return true;
+   std::sort(intervals.begin(), intervals.end(), less_than_start());
+   for(int i = 1; i < intervals.size(); ++i)
+      if(intervals[i].start < intervals[i-1].end)      return false;
+   return true;
 }
 
 int main()
 {
-	vector<Interval> input 
-		= {{0, 30}, {5, 10}, {15, 20}};
-		//= {{0, 30}, {31, 40}, {45, 50}};
-	bool res = canAttendMeetings(input);
-	if(res)
-		cout << "For given intervals, can attend all!" << endl;
-	else
-		cout << "For given intervals, cannot attend all!" << endl;
-	return 0;
+   vector<Interval> input 
+      = {{0, 30}, {5, 10}, {15, 20}};
+   //= {{0, 30}, {31, 40}, {45, 50}};
+   bool res = canAttendMeetings(input);
+   if(res)
+      cout << "For given intervals, can attend all!" << endl;
+   else
+      cout << "For given intervals, cannot attend all!" << endl;
+   return 0;
 }

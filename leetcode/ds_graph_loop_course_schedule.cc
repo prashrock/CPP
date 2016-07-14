@@ -6,6 +6,7 @@
  * finish all the courses
  */
 
+// https://leetcode.com/problems/course-schedule/
 
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
@@ -43,29 +44,29 @@ using namespace std;
  */
 class Graph {
 public:
-	Graph(int v) : V(v), adj(V, vector<int>()){}
-	void addEdge(int v, int w) {adj[v].push_back(w);}
-	/* Given a node, find if there are any loops in subgraph */
-	bool DFSHasLoop(int v, vector<int> &visited) {
-		visited[v] = 1; /* Grey -- Currently processing node */
-		for(auto e: adj[v]) {
-			/* If an adjacent node is also in currently      *
-			 * processing state, we have a loop. return imm  */
-			if(visited[e] == 1)       return true;
-			/* If we've already seen adjacent, nothing todo  */
-			else if(visited[e] == 2)  continue;
-			/* If adj node is unvisited, visit recursively   */
-			else {
-				bool ret = DFSHasLoop(e, visited);
-				if(ret == true)       return true;
-			}
-		}
-		visited[v] = 2; /* Black -- finished processing node */
-		return false;
-	}
+   Graph(int v) : V(v), adj(V, vector<int>()){}
+   void addEdge(int v, int w) {adj[v].push_back(w);}
+   /* Given a node, find if there are any loops in subgraph  */
+   bool DFSHasLoop(int v, vector<int> &visited) {
+      visited[v] = 1; /* Grey -- Currently processing node   */
+      for(auto e: adj[v]) {
+         /* If an adjacent node is also in currently         *
+          * processing state, we have a loop. return imm     */
+         if(visited[e] == 1)       return true;
+         /* If we've already seen adjacent, nothing todo     */
+         else if(visited[e] == 2)  continue;
+         /* If adj node is unvisited, visit recursively      */
+         else {
+            bool ret = DFSHasLoop(e, visited);
+            if(ret == true)       return true;
+         }
+      }
+      visited[v] = 2; /* Black -- finished processing node   */
+      return false;
+   }
 private:
-	int V;
-	vector<vector<int>> adj;
+   int V;
+   vector<vector<int>> adj;
 };
 
 /**
@@ -76,33 +77,33 @@ private:
  *   True if there is no loop in the graph                   *
  */
 bool canFinish(int numCourses, vector<pair<int, int>>& prereq) {
-	Graph g(numCourses);
-	/* 0=unvisited, 1=currently_visiting, 2=finished_node    */
-	vector<int> visited(numCourses, 0);
-	for(unsigned i = 0; i < prereq.size(); ++i)
-		g.addEdge(prereq[i].first, prereq[i].second);
-	for(int i = 0; i < numCourses; ++i) {
-		if(visited[i] == 0) /* If unvisited node, start DFS  */
-			if(g.DFSHasLoop(i, visited) == true)
-				return false;
-	}
-	return true;
+   Graph g(numCourses);
+   /* 0=unvisited, 1=currently_visiting, 2=finished_node    */
+   vector<int> visited(numCourses, 0);
+   for(unsigned i = 0; i < prereq.size(); ++i)
+      g.addEdge(prereq[i].first, prereq[i].second);
+   for(int i = 0; i < numCourses; ++i) {
+      if(visited[i] == 0) /* If unvisited node, start DFS    */
+         if(g.DFSHasLoop(i, visited) == true)
+            return false;
+   }
+   return true;
 }
 
 
 int main()
 {
-	vector<pair<int, int>> v;
-	/* Manual test-cases                                     */
-	if(canFinish(2, v = {{0, 1}}) != true)
-		cout << "Error: 1st Manual test failed" << endl;
-	else if(canFinish(2, v = {{1, 0}, {0, 1}}) != false)
-		cout << "Error: 2nd Manual test failed" << endl;
-	else if(canFinish(3, v = {{1, 0}, {0, 2}, {2, 1}}) != false)
-		cout << "Error: 3rd Manual test failed" << endl;
-	else if(canFinish(4, v = {{0, 1}, {1, 2}, {2, 3}}) != true)
-		cout << "Error: 4th Manual test failed" << endl;
-	else
-		cout << "Info: All manual test-cases passed" << endl;	
-	return 0;
+   vector<pair<int, int>> v;
+   /* Manual test-cases                                     */
+   if(canFinish(2, v = {{0, 1}}) != true)
+      cout << "Error: 1st Manual test failed" << endl;
+   else if(canFinish(2, v = {{1, 0}, {0, 1}}) != false)
+      cout << "Error: 2nd Manual test failed" << endl;
+   else if(canFinish(3, v = {{1, 0}, {0, 2}, {2, 1}}) != false)
+      cout << "Error: 3rd Manual test failed" << endl;
+   else if(canFinish(4, v = {{0, 1}, {1, 2}, {2, 3}}) != true)
+      cout << "Error: 4th Manual test failed" << endl;
+   else
+      cout << "Info: All manual test-cases passed" << endl;	
+   return 0;
 }

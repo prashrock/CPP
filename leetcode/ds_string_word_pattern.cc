@@ -5,6 +5,7 @@
  * @brief Given a pattern and a STring find if String follows same pattern
  */
 
+// https://leetcode.com/problems/word-pattern/
 
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
@@ -44,76 +45,75 @@ using namespace std;
  * Note: Linear time worst case, sublinear time typical case */
 bool bijection_check(string leftc, string rights, string delim=" ")
 {
-	/* Init variables  */
-	bool ret = true;
-	unordered_set<char> lset(leftc.size());  /* leftc hash   */
-	unordered_set<string> rset(leftc.size()); /* rights hash */
-	auto t_it = leftc.begin(); /* Iter over leftc char-char  */
-	auto *tok = strtok((char *)rights.c_str(), (char *)delim.c_str());
+   /* Init variables  */
+   bool ret = true;
+   unordered_set<char> lset(leftc.size());  /* leftc hash   */
+   unordered_set<string> rset(leftc.size()); /* rights hash */
+   auto t_it = leftc.begin(); /* Iter over leftc char-char  */
+   auto *tok = strtok((char *)rights.c_str(), (char *)delim.c_str());
 
-	/* Ideally we could have checked if the                  *
-	 * cardinality(leftc) == cardinality(rights), but        *
-	 * getting cardinality of rights would mean iterating    *
-	 * over all the tokens one more time.                    */
+   /* Ideally we could have checked if the                  *
+    * cardinality(leftc) == cardinality(rights), but        *
+    * getting cardinality of rights would mean iterating    *
+    * over all the tokens one more time.                    */
 
-	/* Go over each token + char, till we run out of either  */
-	while(tok != NULL && t_it != leftc.end())
-	{
-		auto lfind = lset.find(*t_it);
-		auto rfind = rset.find(tok);
+   /* Go over each token + char, till we run out of either  */
+   while(tok != NULL && t_it != leftc.end()) {
+      auto lfind = lset.find(*t_it);
+      auto rfind = rset.find(tok);
 		
-		/* case 1: New token and char                        */
-		if(lfind == lset.end() && rfind == rset.end()) {
-			lset.insert(*t_it);
-			rset.insert(tok);
-		}
-		/* case 2: check if left/right entry missing         */
-		else if((lfind == lset.end() || rfind == rset.end()) || 
-				(*lfind != *t_it     || *rfind != tok)) {
-			ret = false;
-			break;
-		}
-		/* case 3: Both token and char are old and match     *
-		 *         nothing to check or do here               */
+      /* case 1: New token and char                        */
+      if(lfind == lset.end() && rfind == rset.end()) {
+         lset.insert(*t_it);
+         rset.insert(tok);
+      }
+      /* case 2: check if left/right entry missing         */
+      else if((lfind == lset.end() || rfind == rset.end()) || 
+              (*lfind != *t_it     || *rfind != tok)) {
+         ret = false;
+         break;
+      }
+      /* case 3: Both token and char are old and match     *
+       *         nothing to check or do here               */
 		
 		
-		/* Get the next word and next token from template    */
-		tok = strtok(NULL, (char *)delim.c_str());
-		t_it++;
-	}
+      /* Get the next word and next token from template    */
+      tok = strtok(NULL, (char *)delim.c_str());
+      t_it++;
+   }
 
-	/* If we reach here, it could mean one of the following  *
-	 * 1) bijection false (ret == false) nothing more to do  *
-	 * 2) run out of words in str or char in templ. If we've *
-	 *    run out of only one of the above two, return false *
-	 * 3) words and char over, (1) not true, so return true  */
-	if(ret)
-		ret = ((tok == NULL) && t_it == leftc.end());
+   /* If we reach here, it could mean one of the following  *
+    * 1) bijection false (ret == false) nothing more to do  *
+    * 2) run out of words in str or char in templ. If we've *
+    *    run out of only one of the above two, return false *
+    * 3) words and char over, (1) not true, so return true  */
+   if(ret)
+      ret = ((tok == NULL) && t_it == leftc.end());
 	
-	return ret;
+   return ret;
 }
 
 int main()
 {
-	string rights, leftc;
+   string rights, leftc;
 
-	/* Standard cases                                        */
-	if(bijection_check("abba", "dog cat cat dog") != true)
-		cout << "Error: Manual test - 'abba:dog cat cat dog'" << endl;
-	else if(bijection_check("abba", "dog cat cat fish") != false)
-		cout << "Error: Manual test - 'abba:dog cat cat fish'" << endl;
-	else if(bijection_check("aaaa", "dog cat cat dog") != false)
-		cout << "Error: Manual test - 'aaaa:dog cat cat dog'" << endl;
-	else if(bijection_check("abba", "dog dog dog dog") != false)
-		cout << "Error: Manual test - 'abba:dog dog dog dog'" << endl;
+   /* Standard cases                                        */
+   if(bijection_check("abba", "dog cat cat dog") != true)
+      cout << "Error: Manual test - 'abba:dog cat cat dog'" << endl;
+   else if(bijection_check("abba", "dog cat cat fish") != false)
+      cout << "Error: Manual test - 'abba:dog cat cat fish'" << endl;
+   else if(bijection_check("aaaa", "dog cat cat dog") != false)
+      cout << "Error: Manual test - 'aaaa:dog cat cat dog'" << endl;
+   else if(bijection_check("abba", "dog dog dog dog") != false)
+      cout << "Error: Manual test - 'abba:dog dog dog dog'" << endl;
 
-    /* Manual case                                           */
-	cout << "Enter the string:" << endl;
-	getline(std::cin, rights);
-	cout << "Enter the template:" << endl;
-	getline(std::cin, leftc);
-	if(bijection_check(leftc, rights))
-		cout << "Bijection found between left and right" << endl;
+   /* Manual case                                           */
+   cout << "Enter the string:" << endl;
+   getline(std::cin, rights);
+   cout << "Enter the template:" << endl;
+   getline(std::cin, leftc);
+   if(bijection_check(leftc, rights))
+      cout << "Bijection found between left and right" << endl;
 	
-	return 0;
+   return 0;
 }

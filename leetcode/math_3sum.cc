@@ -5,6 +5,9 @@
  * @brief Given an array of unsorted integers, find out all a+b+c<=t
  */
 
+// https://leetcode.com/problems/3sum-smaller/
+// https://leetcode.com/problems/3sum/
+
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
 #include <cmath>             /* pow                          */
@@ -13,8 +16,6 @@
 #include <string>            /* std::string,                 */
 #include <cstring>           /* std::strtok                  */
 using namespace std;
-
-//https://leetcode.com/problems/3sum-smaller/
 
 /**
  * Given an array of n integers nums and a target, find the number of index triplets
@@ -88,9 +89,7 @@ bool threeSumSmaller_test(){
    return true;
 }
 
-
-//https://leetcode.com/problems/3sum/
-
+// https://leetcode.com/problems/3sum/
 /**
  * Use a sorted list traversal approach. First sort input.   *
  * Run an index from start to len-2. Let this index mark the *

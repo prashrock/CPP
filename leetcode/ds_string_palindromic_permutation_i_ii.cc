@@ -5,6 +5,7 @@
  * @brief Given string, determine of permutation can form palindrome
  */
 
+// https://leetcode.com/problems/palindrome-permutation/
 
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
@@ -30,29 +31,29 @@ using namespace std;
  * Time Complexity = O(n),  n=len(s)                         *
  * Space Complexity= O(n),  n=len(s)                         */
 bool canPermutePalindrome(string s) {
-	/* enough space to hold Unicode UTF-8 encoding           */
-	std::bitset<256> bits;
-	for(auto c : s) bits.flip((unsigned char)c);
-	return bits.count() < 2;
+   /* enough space to hold Unicode UTF-8 encoding            */
+   std::bitset<256> bits;
+   for(auto c : s) bits.flip((unsigned char)c);
+   return bits.count() < 2;
 }
 
 bool canPermutePalindromeTest() {
-	if     (canPermutePalindrome("code") != false)
-		cout << "Error: Palindrome chk failed for 'code'" << endl;
-	else if(canPermutePalindrome("aab") != true)
-		cout << "Error: Palindrome chk failed for 'aab'" << endl;
-	else if(canPermutePalindrome("carerac") != true)
-		cout << "Error: Palindrome chk failed for 'carerac'" << endl;
-	else if(canPermutePalindrome("as") != false)
-		cout << "Error: Palindrome chk failed for 'as'" << endl;
-	else
-		return true;
-	return false;
+   if     (canPermutePalindrome("code") != false)
+      cout << "Error: Palindrome chk failed for 'code'" << endl;
+   else if(canPermutePalindrome("aab") != true)
+      cout << "Error: Palindrome chk failed for 'aab'" << endl;
+   else if(canPermutePalindrome("carerac") != true)
+      cout << "Error: Palindrome chk failed for 'carerac'" << endl;
+   else if(canPermutePalindrome("as") != false)
+      cout << "Error: Palindrome chk failed for 'as'" << endl;
+   else
+      return true;
+   return false;
 }
 
 int main()
 {
-	if(canPermutePalindromeTest())
-		cout << "Info: All Palindrome Check cases passed" << endl;
-	return 0;
+   if(canPermutePalindromeTest())
+      cout << "Info: All Palindrome Check cases passed" << endl;
+   return 0;
 }

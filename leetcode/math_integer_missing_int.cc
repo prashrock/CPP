@@ -5,6 +5,8 @@
  * @brief Given an array of pairwise elments find odd one out
  */
 
+// https://leetcode.com/problems/single-number/
+
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
 #include <cmath>             /* pow                          */
@@ -13,8 +15,6 @@
 #include <string>            /* std::string,                 */
 #include <cstring>           /* std::strtok                  */
 using namespace std;
-
-//https://leetcode.com/problems/single-number/
 
 /**
  * Given an array of integers, every element appears twice   *

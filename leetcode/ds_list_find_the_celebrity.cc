@@ -5,6 +5,8 @@
  * @brief Special majority element problem
  */
 
+// https://leetcode.com/problems/find-the-celebrity/
+
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
 #include <cmath>             /* pow                          */
@@ -64,18 +66,18 @@ int findCelebrity(int n) {
  * find the majority element (element occuring > half times) *
  * Since this problem doesnt make this claim, cant use this  */
 int booyerMooreMethod(vector<int>& nums) {
-	int candidate, cnt = 0;
-	for(int i = 0; i < (int)nums.size(); ++i) {
-		if(cnt == 0)              candidate = nums[i];
-		if(candidate == nums[i])  cnt++;
-		else                      cnt--;
-	}
-	int verify_cnt = 0;
-	for(int i = 0; i < (int)nums.size(); ++i)
-		if(candidate == nums[i]) verify_cnt++;
-		
-	if(verify_cnt >= (int)(nums.size()+1)/2) return candidate;
-	else                                     return -1;
+   int candidate, cnt = 0;
+   for(int i = 0; i < (int)nums.size(); ++i) {
+      if(cnt == 0)              candidate = nums[i];
+      if(candidate == nums[i])  cnt++;
+      else                      cnt--;
+   }
+   int verify_cnt = 0;
+   for(int i = 0; i < (int)nums.size(); ++i)
+      if(candidate == nums[i]) verify_cnt++;
+   
+   if(verify_cnt >= (int)(nums.size()+1)/2) return candidate;
+   else                                     return -1;
 }
 
 int main()

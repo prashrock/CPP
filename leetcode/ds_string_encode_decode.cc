@@ -5,6 +5,7 @@
  * @brief Given a list of strings serialize and de-serialize them
  */
 
+// https://leetcode.com/problems/encode-and-decode-strings/
 
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
@@ -15,8 +16,6 @@
 #include <cstring>           /* std::strtok                  */
 #include <unordered_map>     /* std::unordered_map container */
 using namespace std;
-
-// https://leetcode.com/problems/encode-and-decode-strings/
 
 /*
  * Design an algorithm to encode a list of strings to a string. The
@@ -31,8 +30,6 @@ using namespace std;
  * ascii characters. Your algorithm should be generalized enough to
  * work on any possible characters.
  */
-
-
 
 /**
  * Just like malloc metadata at beginning of buffer, maintain*

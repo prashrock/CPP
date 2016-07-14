@@ -29,41 +29,41 @@ using namespace std;
 
 /* Two pointers in opposite direction approach.              */
 vector<int> productExceptSelf(vector<int>& nums) {
-	int size = nums.size();
-	vector<int> result(nums.size(), 1);
-	for(int i = 0, j=nums.size()-1, fwd=1, rev=1; i < size; ++i, --j) {
-		result[i] *= fwd;
-		fwd       *= nums[i];
-		result[j] *= rev;
-		rev       *= nums[j];
-	}
-	return result;
+   int size = nums.size();
+   vector<int> result(nums.size(), 1);
+   for(int i = 0, j=nums.size()-1, fwd=1, rev=1; i < size; ++i, --j) {
+      result[i] *= fwd;
+      fwd       *= nums[i];
+      result[j] *= rev;
+      rev       *= nums[j];
+   }
+   return result;
 }
 
 int main()
 {
-	vector<int> nums, result, exp;
+   vector<int> nums, result, exp;
 
-	nums = { 1, 2, 3, 4 };
-	exp  = {24, 12, 8, 6};
-	result = productExceptSelf(nums);
-	if(result != exp) goto Errmain;
+   nums = { 1, 2, 3, 4 };
+   exp  = {24, 12, 8, 6};
+   result = productExceptSelf(nums);
+   if(result != exp) goto Errmain;
+   
+   nums = { 1, 2, 3, 4, 5 };
+   exp  = { 120, 60, 40, 30, 24};
+   result = productExceptSelf(nums);
+   if(result != exp) goto Errmain;
 
-	nums = { 1, 2, 3, 4, 5 };
-	exp  = { 120, 60, 40, 30, 24};
-	result = productExceptSelf(nums);
-	if(result != exp) goto Errmain;
-
-	nums = { 1, 2, 0, 4, 5 };
-	exp  = { 0, 0, 40,0, 0};
-	result = productExceptSelf(nums);
-	if(result != exp) goto Errmain;
-	cout << "All test-cases passed." << endl;
-	return 0;
-Errmain:
-	cout << "Error: Product Except Self returned failed for - ";
-	for(auto val: nums) cout << val << ", "; cout << endl;
-	cout << "Expected - "; 	for(auto val: exp)    cout << val << ", "; cout << endl;
-	cout << "Got      - "; 	for(auto val: result) cout << val << ", "; cout << endl;
-	return -1;
+   nums = { 1, 2, 0, 4, 5 };
+   exp  = { 0, 0, 40,0, 0};
+   result = productExceptSelf(nums);
+   if(result != exp) goto Errmain;
+   cout << "All test-cases passed." << endl;
+   return 0;
+ Errmain:
+   cout << "Error: Product Except Self returned failed for - ";
+   for(auto val: nums) cout << val << ", "; cout << endl;
+   cout << "Expected - "; 	for(auto val: exp)    cout << val << ", "; cout << endl;
+   cout << "Got      - "; 	for(auto val: result) cout << val << ", "; cout << endl;
+   return -1;
 }

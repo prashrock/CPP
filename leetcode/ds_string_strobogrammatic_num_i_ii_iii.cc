@@ -5,6 +5,9 @@
  * @brief Construct and Verify Strobogrammatic Numbers
  */
 
+// https://leetcode.com/problems/strobogrammatic-number/
+// https://leetcode.com/problems/strobogrammatic-number-ii/
+// https://leetcode.com/problems/strobogrammatic-number-iii/
 
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
@@ -29,10 +32,10 @@ using namespace std;
 const std::vector<char> stchar = {'0', '1', '6', '8', '9'};
 static std::unordered_map<char, char> stmap = {
       {'0', '0'},  /* Cannot occur in first/last pos         */
-	  {'1', '1'},
-	  {'6', '9'},  /* 6, 9 and 9,6 need to occur as a pair   */
-	  {'8', '8'},
-	  {'9', '6'}
+      {'1', '1'},
+      {'6', '9'},  /* 6, 9 and 9,6 need to occur as a pair   */
+      {'8', '8'},
+      {'9', '6'}
 }; 
 
 /**
@@ -43,35 +46,35 @@ static std::unordered_map<char, char> stmap = {
  * Time Complexity = O(n),  n=len(num)                       *
  * Space Complexity= O(1)                                    */
 bool isStrobogrammatic(string num) {
-	auto fit = num.begin();
-	auto rit = num.rbegin();
-	for(; fit != num.end() && rit != num.rend(); ++fit, ++rit) {
-		if     (stmap.find(*fit) == stmap.end()) return false;
-		else if(stmap.find(*rit) == stmap.end()) return false;
-		else if(stmap[*fit] != *rit)             return false;
-		if(fit == rit.base())      break;  /* half-way there */
-	}
-	return true;
+   auto fit = num.begin();
+   auto rit = num.rbegin();
+   for(; fit != num.end() && rit != num.rend(); ++fit, ++rit) {
+      if     (stmap.find(*fit) == stmap.end()) return false;
+      else if(stmap.find(*rit) == stmap.end()) return false;
+      else if(stmap[*fit] != *rit)             return false;
+      if(fit == rit.base())      break;  /* half-way there */
+   }
+   return true;
 }
 
 bool isStrobogrammatic_test() {
-	if(isStrobogrammatic("2") == true)
-		cout << "Error: '2' case failed (returned true)" << endl;
-	else if(isStrobogrammatic("6") == true)
-		cout << "Error: '6' case failed (returned true)" << endl;
-	else if(isStrobogrammatic("69") == false)
-		cout << "Error: '69' case failed (returned false)" << endl;
-	else if(isStrobogrammatic("69") == false)
-		cout << "Error: '69' case failed (returned false)" << endl;
-	else if(isStrobogrammatic("88") == false)
-		cout << "Error: '88' case failed (returned false)" << endl;
-	else if(isStrobogrammatic("818") == false)
-		cout << "Error: '818' case failed (returned false)" << endl;
-	else {
-		cout << "Info: All Strobogrammatic check cases passed." << endl;
-		return true;
-	}
-	return false;
+   if(isStrobogrammatic("2") == true)
+      cout << "Error: '2' case failed (returned true)" << endl;
+   else if(isStrobogrammatic("6") == true)
+      cout << "Error: '6' case failed (returned true)" << endl;
+   else if(isStrobogrammatic("69") == false)
+      cout << "Error: '69' case failed (returned false)" << endl;
+   else if(isStrobogrammatic("69") == false)
+      cout << "Error: '69' case failed (returned false)" << endl;
+   else if(isStrobogrammatic("88") == false)
+      cout << "Error: '88' case failed (returned false)" << endl;
+   else if(isStrobogrammatic("818") == false)
+      cout << "Error: '818' case failed (returned false)" << endl;
+   else {
+      cout << "Info: All Strobogrammatic check cases passed." << endl;
+      return true;
+   }
+   return false;
 }
 
 /**
@@ -87,59 +90,59 @@ bool isStrobogrammatic_test() {
  *    s        - current Strobogrammatic number being created*
  *    ans      - result vect with all Strobogrammatic numbers*/
 void Strobo_recurse_generate(int fwd, int rev,
-							 string &s, vector<string> &ans) {
-	/* If fwd has crossed reverse, we are done constructing  *
-	 * Push this result to the ans vector and return immdtly */
-	if(fwd > rev)  {
-		ans.push_back(s);
-		return;
-	}
-	/* Else condition, try all combinations @fwd, @rev       */
-	for(int i = 0; i < (int)stchar.size(); ++i) {
-		/* 0 cannot be in first pos (except when len == 1).  *
-		 * 6/9 cannot be in middle (i.e.,it has to be pairs) */
-		if(fwd == 0  && (stchar[i] == '0') && s.size() != 1)      continue;
-		else if(fwd == rev && (stchar[i]=='6' || stchar[i]=='9')) continue;
-		s[fwd] = stchar[i];
-		s[rev] = stmap[stchar[i]];
-		Strobo_recurse_generate(fwd+1, rev-1, s, ans);
-	}
+                             string &s, vector<string> &ans) {
+   /* If fwd has crossed reverse, we are done constructing   *
+    * Push this result to the ans vector and return immdtly  */
+   if(fwd > rev)  {
+      ans.push_back(s);
+      return;
+   }
+   /* Else condition, try all combinations @fwd, @rev        */
+   for(int i = 0; i < (int)stchar.size(); ++i) {
+      /* 0 cannot be in first pos (except when len == 1).    *
+       * 6/9 cannot be in middle (i.e.,it has to be pairs)   */
+      if(fwd == 0  && (stchar[i] == '0') && s.size() != 1)      continue;
+      else if(fwd == rev && (stchar[i]=='6' || stchar[i]=='9')) continue;
+      s[fwd] = stchar[i];
+      s[rev] = stmap[stchar[i]];
+      Strobo_recurse_generate(fwd+1, rev-1, s, ans);
+   }
 }
 
 /* Wrapper function to invoke recursive Strobo generator     */
 vector<string> findStrobogrammatic(int n) {
-	vector<string> ans;
-	string s(n, '0');
-	if(n != 0)    Strobo_recurse_generate(0, n-1, s, ans);
-	return ans;
+   vector<string> ans;
+   string s(n, '0');
+   if(n != 0)    Strobo_recurse_generate(0, n-1, s, ans);
+   return ans;
 }
 
 bool findStrobogrammatic_test() {
-	int num;
-	vector<string> res, exp;
+   int num;
+   vector<string> res, exp;
 
-	num = 1;
-	res = findStrobogrammatic(num);
-	exp = {"0", "1", "8"};
-	if(res != exp) goto Err_FindStrobo;
-	num = 2;
-	res = findStrobogrammatic(num);
-	exp = {"11", "69", "88", "96"};
-	if(res != exp) goto Err_FindStrobo;
-	num = 3;
-	res = findStrobogrammatic(num);
-	exp = {"101", "111", "181", "609", "619", "689", "808",
-		   "818", "888", "906", "916", "986"};
-	if(res != exp) goto Err_FindStrobo;
+   num = 1;
+   res = findStrobogrammatic(num);
+   exp = {"0", "1", "8"};
+   if(res != exp) goto Err_FindStrobo;
+   num = 2;
+   res = findStrobogrammatic(num);
+   exp = {"11", "69", "88", "96"};
+   if(res != exp) goto Err_FindStrobo;
+   num = 3;
+   res = findStrobogrammatic(num);
+   exp = {"101", "111", "181", "609", "619", "689", "808",
+          "818", "888", "906", "916", "986"};
+   if(res != exp) goto Err_FindStrobo;
 	
-	cout << "Info: All Strobogrammatic generated successfully." << endl;
-	return true;
-Err_FindStrobo:
-	cout << "Error: Strobogrammatic number generation failed for n="
-		 << num << ", res=";
-	for(auto elem : res) cout << elem << ", ";
-	cout << endl;
-	return false;
+   cout << "Info: All Strobogrammatic generated successfully." << endl;
+   return true;
+ Err_FindStrobo:
+   cout << "Error: Strobogrammatic number generation failed for n="
+        << num << ", res=";
+   for(auto elem : res) cout << elem << ", ";
+   cout << endl;
+   return false;
 }
 
 /**
@@ -161,62 +164,62 @@ Err_FindStrobo:
  *    cnt      - #Strobogrammatic numbers found within range *
  *    low,high - Low and High Range for Strobogrammatic nums */
 void Strobo_recurse_count(int fwd, int rev, string &s, int &cnt,
-						  const string &low, const string &high) {
-	/* If any iteration goes outofbounds, cancel recursion   */
-	/* If end is reached, validate if this is within range   */
-	if(fwd > rev)  {
-		unsigned long val = stoul(s);
-		if(val >= stoul(low) && val <= stoul(high)) cnt++;
-		return;
-	}
-	/* Else condition, try all combinations @fwd, @rev       */	
-	for(int i = 0; i < (int)stchar.size(); ++i) {
-		/* 0 cannot be in first pos (except when len == 1).  *
-		 * 6/9 cannot be in middle (i.e.,it has to be pairs) *
-		 * If for any iteration, we go out of bounds, return */
-		if(fwd == 0   && (stchar[i]=='0') && s.size() != 1)       continue;
-		else if(fwd == rev && (stchar[i]=='6' || stchar[i]=='9')) continue;
-		s[fwd] = stchar[i];
-		s[rev] = stmap[stchar[i]];
-		Strobo_recurse_count(fwd+1, rev-1, s, cnt, low, high);
-	}
+                          const string &low, const string &high) {
+   /* If any iteration goes outofbounds, cancel recursion    */
+   /* If end is reached, validate if this is within range    */
+   if(fwd > rev)  {
+      unsigned long val = stoul(s);
+      if(val >= stoul(low) && val <= stoul(high)) cnt++;
+      return;
+   }
+   /* Else condition, try all combinations @fwd, @rev        */	
+   for(int i = 0; i < (int)stchar.size(); ++i) {
+      /* 0 cannot be in first pos (except when len == 1).    *
+       * 6/9 cannot be in middle (i.e.,it has to be pairs)   *
+       * If for any iteration, we go out of bounds, return   */
+      if(fwd == 0   && (stchar[i]=='0') && s.size() != 1)       continue;
+      else if(fwd == rev && (stchar[i]=='6' || stchar[i]=='9')) continue;
+      s[fwd] = stchar[i];
+      s[rev] = stmap[stchar[i]];
+      Strobo_recurse_count(fwd+1, rev-1, s, cnt, low, high);
+   }
 }
 /* Wrapper function to invoke recursive Strobo generator     */
 int strobogrammaticInRange(string low, string high) {
-	int cnt = 0;
-	for(int n = low.size(); n <= (int)high.size(); ++n) {
-		string s(n, '0');
-		Strobo_recurse_count(0, n-1, s, cnt, low, high);
-	}
-	return cnt;
+   int cnt = 0;
+   for(int n = low.size(); n <= (int)high.size(); ++n) {
+      string s(n, '0');
+      Strobo_recurse_count(0, n-1, s, cnt, low, high);
+   }
+   return cnt;
 }
 
 bool strobogrammaticInRange_test() {
-	string low, high;
-	int cnt, exp;
+   string low, high;
+   int cnt, exp;
 
-	low = "1"; high = "1";
-	cnt = strobogrammaticInRange(low, high);
-	exp = 1;
-	if(cnt != exp) goto Err_FindStroboRange;
+   low = "1"; high = "1";
+   cnt = strobogrammaticInRange(low, high);
+   exp = 1;
+   if(cnt != exp) goto Err_FindStroboRange;
 	
-	low = "50"; high = "100";
-	cnt = strobogrammaticInRange(low, high);
-	exp = 3;
-	if(cnt != exp) goto Err_FindStroboRange;
+   low = "50"; high = "100";
+   cnt = strobogrammaticInRange(low, high);
+   exp = 3;
+   if(cnt != exp) goto Err_FindStroboRange;
 	
-	cout << "Info: All Strobogrammatic Range cnt successful." << endl;
-	return true;
-Err_FindStroboRange:
-	cout << "Error: Strobogrammatic number Range cnt failed for low="
-		 << low << ", high=" << high << ", cnt=" << cnt << endl;
-	return false;
+   cout << "Info: All Strobogrammatic Range cnt successful." << endl;
+   return true;
+ Err_FindStroboRange:
+   cout << "Error: Strobogrammatic number Range cnt failed for low="
+        << low << ", high=" << high << ", cnt=" << cnt << endl;
+   return false;
 }
 
 int main()
 {
-	if     (isStrobogrammatic_test() == false)      return -1;
-	else if(findStrobogrammatic_test() == false)    return -1;
-	else if(strobogrammaticInRange_test() == false) return -1;
-	return 0;
+   if     (isStrobogrammatic_test() == false)      return -1;
+   else if(findStrobogrammatic_test() == false)    return -1;
+   else if(strobogrammaticInRange_test() == false) return -1;
+   return 0;
 }

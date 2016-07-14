@@ -5,6 +5,7 @@
  * @brief Given two numbers in String return multiplication of numbers
  */
 
+// https://leetcode.com/problems/multiply-strings/
 
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
@@ -15,8 +16,6 @@
 #include <cstring>           /* std::strtok                  */
 #include <unordered_map>     /* std::unordered_map container */
 using namespace std;
-
-// https://leetcode.com/problems/multiply-strings/
 
 /**
  * Given two numbers represented as strings, return multiplication

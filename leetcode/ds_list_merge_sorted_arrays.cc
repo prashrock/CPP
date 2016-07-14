@@ -5,6 +5,8 @@
  * @brief Given 2 sorted integer arrays, merge them as one sorted array
  */
 
+// https://leetcode.com/problems/merge-sorted-array/
+
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
 #include <cmath>             /* pow                          */
@@ -14,8 +16,6 @@
 #include <cstring>           /* std::strtok                  */
 #include <unordered_map>     /* std::unordered_map container */
 using namespace std;
-
-// https://leetcode.com/problems/merge-sorted-array/
 
 /**
  * Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1

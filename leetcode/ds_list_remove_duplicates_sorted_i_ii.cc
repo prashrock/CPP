@@ -5,6 +5,9 @@
  * @brief Given sorted array remove duplicates in place.
  */
 
+// https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+// https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
+
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
 #include <cmath>             /* pow                          */

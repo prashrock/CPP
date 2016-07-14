@@ -1,9 +1,11 @@
-//g++ -Wall --std=c++11 -g -o ds_list_reverse_linkedlist ds_list_reverse_linkedlist.cc
+//g++ -Wall --std=c++11 -g -o ds_linkedlist_reverse ds_linkedlist_reverse.cc
 
 /**
  * @file  Reverse LinkedList
  * @brief Reverse a singly linked-list
  */
+
+// https://leetcode.com/problems/reverse-linked-list/
 
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
@@ -14,8 +16,6 @@
 #include <cstring>           /* std::strtok                  */
 #include <unordered_map>     /* std::unordered_map container */
 using namespace std;
-
-// https://leetcode.com/problems/reverse-linked-list/
 
 
 /**
