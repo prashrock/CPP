@@ -49,6 +49,7 @@ Algorithm based
 |4. | Medium     | [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) ([solution](./algo_sort_quick_select.cc))                                                                                             |
 |5. | Hard       | [Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) ([solution](./algo_sort_num_smaller_elements_in_right.cc))                                                                            |
 
+----------------------------------------------------------------------------------------
 Data Structure based
 --------------------------------------------
 ###Graph###
@@ -129,6 +130,7 @@ Data Structure based
 |8. | Medium     | [Binary Tree Preorder traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)  <br> [Binary Tree Inorder traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) ([solution](./ds_tree_traversal_pre_in_order_iterative_bt.cc))                                                                       |
 |9. | Medium     | [Verify Preorder sequence in BST ](https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree) ([soln](./ds_tree_verify_preorder_sequence_bst.cc))  |
 
+----------------------------------------------------------------------------------------
 Math based
 --------------------------------------------
 |#  | Difficulty | Problem and Soution                          |
