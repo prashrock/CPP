@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [89 Leetcode solutions](./) with comments. Most programs have test-cases and few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [90 Leetcode solutions](./) with comments. Most programs have test-cases and few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -124,11 +124,12 @@ Data Structure based
 |2. | Easy       | [Is Symmetric Binary Tree](https://leetcode.com/problems/symmetric-tree/)    ([solution](./ds_tree_is_symmetric_bt.cc))                                                                                           |
 |3. | Easy       | [Level order BT traversal](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/) ([solution](./ds_tree_traversal_levelorder_bt.cc))                                                                                   |
 |4. | Easy       | [Is BT Height Balanced](https://leetcode.com/problems/balanced-binary-tree/) <br> [Min Depth of BT](https://leetcode.com/problems/minimum-depth-of-binary-tree/) <br> [Max Depth of BT](https://leetcode.com/problems/maximum-depth-of-binary-tree/)   ([solution](./ds_tree_min_max_depth_bt.cc))                       |
-|5. | Medium     | [Longest Consecutive Sequence BT](https://leetcode.com/problems/binary-tree-longest-consecutive-sequence/) ([soln](./ds_tree_longest_consecutive_sequence_bt.cc))  |
-|6. | Medium     | [Lowest Common Ancestor of Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) <br> [Lowest Common Ancestor of Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) ([solution](./ds_tree_lca_bt_bst.cc))                  |
-|7. | Medium     | [Populate Right pointers in BT](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/) ([solution](./ds_tree_populate_next_pointer.cc))     |
-|8. | Medium     | [Binary Tree Preorder traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)  <br> [Binary Tree Inorder traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) ([solution](./ds_tree_traversal_pre_in_order_iterative_bt.cc))                                                                       |
-|9. | Medium     | [Verify Preorder sequence in BST ](https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree) ([soln](./ds_tree_verify_preorder_sequence_bst.cc))  |
+|5. | Easy       | [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) ([solution](./ds_tree_invert_bt.cc))  |
+|6. | Medium     | [Longest Consecutive Sequence BT](https://leetcode.com/problems/binary-tree-longest-consecutive-sequence/) ([soln](./ds_tree_longest_consecutive_sequence_bt.cc))  |
+|7. | Medium     | [Lowest Common Ancestor of Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) <br> [Lowest Common Ancestor of Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) ([solution](./ds_tree_lca_bt_bst.cc))                  |
+|8. | Medium     | [Populate Right pointers in BT](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/) ([solution](./ds_tree_populate_next_pointer.cc))     |
+|9. | Medium     | [Binary Tree Preorder traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)  <br> [Binary Tree Inorder traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) ([solution](./ds_tree_traversal_pre_in_order_iterative_bt.cc))                                                                       |
+|10.| Medium     | [Verify Preorder sequence in BST ](https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree) ([soln](./ds_tree_verify_preorder_sequence_bst.cc))  |
 
 ----------------------------------------------------------------------------------------
 Math based
