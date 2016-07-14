@@ -8,7 +8,7 @@
 // https://leetcode.com/problems/invert-binary-tree/
 
 #include <iostream>          /* std::cout                    */
-#include <algorithm>         /* std::max, swap               */
+#include <algorithm>         /* std::vector                  */
 using namespace std;
 
 /**
@@ -51,6 +51,8 @@ TreeNode* invertTreeRecursiveDFS(TreeNode* root) {
 /**
  * @brief Iterative level order approach to create mirror img*
  * Traverse the BT one level at a time with a queue          *
+ * Check out the stack based implementation in Discussions @ *
+ * https://discuss.leetcode.com/topic/16138/recursive-and-non-recursive-c-both-4ms/2 *
  * @param root node of the BT                                *
  */
 TreeNode* invertTreeIterativeLevelOrder(TreeNode* root) {

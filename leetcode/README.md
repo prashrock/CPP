@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [90 Leetcode solutions](./) with comments. Most programs have test-cases and few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [91 Leetcode solutions](./) with comments. Most programs have test-cases and few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -130,6 +130,7 @@ Data Structure based
 |8. | Medium     | [Populate Right pointers in BT](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/) ([solution](./ds_tree_populate_next_pointer.cc))     |
 |9. | Medium     | [Binary Tree Preorder traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)  <br> [Binary Tree Inorder traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) ([solution](./ds_tree_traversal_pre_in_order_iterative_bt.cc))                                                                       |
 |10.| Medium     | [Verify Preorder sequence in BST ](https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree) ([soln](./ds_tree_verify_preorder_sequence_bst.cc))  |
+|11.| Medium     | [Right side view in BT(level-order)](https://leetcode.com/problems/binary-tree-right-side-view/) ([solution](./ds_tree_right_side_view_bt.cc))  |
 
 ----------------------------------------------------------------------------------------
 Math based
