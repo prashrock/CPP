@@ -5,17 +5,11 @@
  * @brief Count islands with 1s in the 2D array
  */
 
-#include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
-#include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
-#include <unordered_map>     /* std::unordered_map container */
-using namespace std;
-
 // https://leetcode.com/problems/number-of-islands/
+
+#include <iostream>          /* std::cout                    */
+#include <algorithm>         /* std::max                     */
+using namespace std;
 
 /**
  * Given a 2d grid map of '1's (land) and '0's (water), count the
@@ -26,14 +20,12 @@ using namespace std;
  * 11110
  * 11010
  * 11000
- * 00000
- *      Answer: 1
+ * 00000                    Answer: 1
  * Example 2:
  * 11000
  * 11000
  * 00100
- * 00011
- *      Answer: 3
+ * 00011                    Answer: 3
  */
 
 
@@ -75,43 +67,37 @@ int numIslands(vector<vector<char>>& grid) {
    return cnt;
 }
 
+struct test_vector {
+   std::vector<std::vector<char>> grid;
+   int exp;
+};
+
+const struct test_vector test[4] =  {
+   { { {'1','1','1','1','0'},
+       {'1','1','0','1','0'},
+       {'1','1','0','0','0'},
+       {'0','0','0','0','0'} } ,         1 },
+   { { {'1','0','1','1','0','1','1' } }, 3 },
+   { { {'1','1','1'},
+       {'0','1','0'},
+       {'1','1','1'} },                  1 },
+   { { {'1','1','0','0','0'},
+       {'1','1','0','0','0'},
+       {'0','0','1','0','0'},
+       {'0','0','0','1','1'} },          3},
+   
+};
+
 int main()
 {
-   /* Manual test-cases */
-   vector<vector<char>> grid;
-   int ans, exp, num = 0;
-
-   grid = { {'1','1','1','1','0'},
-            {'1','1','0','1','0'},
-            {'1','1','0','0','0'},
-            {'0','0','0','0','0'} };
-   exp = 1; num++;
-   ans = numIslands(grid);
-   if(ans != exp) goto ErrMain;
-
-   grid = { {'1','0','1','1','0','1','1' } };
-   exp = 3; num++;
-   ans = numIslands(grid);
-   if(ans != exp) goto ErrMain;
-
-   grid = { {'1','1','1'},
-            {'0','1','0'},
-            {'1','1','1'} };
-   exp = 1; num++;
-   ans = numIslands(grid);
-   if(ans != exp) goto ErrMain;
-
-   grid = { {'1','1','0','0','0'},
-            {'1','1','0','0','0'},
-            {'0','0','1','0','0'},
-            {'0','0','0','1','1'} };
-   exp = 3; num++;
-   ans = numIslands(grid);
-   if(ans != exp) goto ErrMain;
-   cout << "Info: All manual test-cases passed" << endl;
+   for(auto tst : test) {
+      auto ans = numIslands(tst.grid);
+      if(ans != tst.exp) {
+         cout << "Error:numIslands failed. Exp "  
+              << tst.exp << " got " << ans << endl;
+         return -1;
+      }
+   }
+   cout << "Info: All manual testcases passed" << endl;
    return 0;
- ErrMain:
-   cout << "Error: In Grid " << num << " expected " << exp
-        << " got " << ans << endl;
-   return -1;
 }

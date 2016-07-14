@@ -89,7 +89,7 @@ const struct test_vector test[5] =  {
 int main()
 {
    for(auto tst : test) {
-      int ans = integerBreak(tst.X);
+      auto ans = integerBreak(tst.X);
       if(ans != tst.exp) {
          cout << "Error:IntegerBreak failed for " << tst.X 
               << " exp " << tst.exp << " got " << ans << endl;

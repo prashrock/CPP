@@ -19,13 +19,7 @@
  */
 
 #include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
-#include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
-#include <unordered_map>     /* std::unordered_map container */
+#include <string>            /* std::string                  */
 using namespace std;
 
 void setPos(string &s, int idx)   { s[idx] = s[idx + 1] = '-'; }
@@ -42,7 +36,7 @@ bool chkPos(string &s, int idx)   {return (s[idx]=='+'&&s[idx+1]=='+');}
  * calculating results of sub-strings and storing results in *
  * a hash table.                                             *
  */
-bool canWinBT(string &s)
+bool canWinBT(std::string &s)
 {
    bool ret = false; /* I have to move first, assume fail    */
    /* Loop till last but 1 character (check 2 chars at time) */
@@ -62,28 +56,36 @@ bool canWinBT(string &s)
    return ret;
 }
 
-bool canWin(string s) {
+bool canWin(std::string &s) {
    if(s.size() == 0) return false;
    else              return canWinBT(s);
 }
 
-bool tester(string s, bool exp_res)
-{
-   if(canWin(s) != exp_res) {
-      cout << "Error: expected " << exp_res << " for " << s << endl;
-      return false;
-   }
-   return true;
-}
+
+struct test_vector {
+   std::string inp;
+   bool exp;
+};
+
+const struct test_vector test[6] =  {
+   {"",                      false},
+   {"+",                     false},
+   {"--",                    false},
+   {"++++",                  true },
+   {"++++--++++--++++",      true },
+   {"+++--++++--++++",       true },
+};
 
 int main()
 {
-   if   (tester("++++",  true) == false) {goto end;}
-   else if(tester("+",  false) == false) {goto end;}
-   else if(tester("--", false) == false) {goto end;}
-   else if(tester("", false)   == false) {goto end;}
-   else if(tester("+++--++++--++++", true) == false) {goto end;}
-   cout << "Info: All manual test cases passed" << endl;
-end:
+   for(auto tst : test) {
+      auto ans = canWin(tst.inp);
+      if(ans != tst.exp) {
+         cout << "Error:canWin failed for " << tst.inp
+              << " exp " << tst.exp << " got " << ans << endl;
+         return -1;
+      }
+   }
+   cout << "Info: All manual testcases passed" << endl;
    return 0;
 }
