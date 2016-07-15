@@ -9,12 +9,7 @@
 // https://leetcode.com/problems/binary-tree-inorder-traversal/
 
 #include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
 #include <stack>             /* std::stack                   */
 using namespace std;
 

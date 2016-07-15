@@ -7,6 +7,10 @@
 
 // https://leetcode.com/problems/symmetric-tree/
 
+#include <iostream>          /* std::cout                    */
+#include <algorithm>         /* std::max                     */
+using namespace std;
+
 /**
  * Given a binary tree, check whether it is a mirror of itself
  * (ie, symmetric around its center).
@@ -23,16 +27,6 @@
  *     \   \
  *     3    3
  */
-
-#include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
-#include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
-#include <queue>             /* std::priority_queue          */
-using namespace std;
 
 struct TreeNode {
    int val;

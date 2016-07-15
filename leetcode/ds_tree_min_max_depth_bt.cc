@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o ds_tree_min_max_depth_bt ds_tree_min_max_depth_bt.cc
+//g++ --std=c++11 -Wall -g -o ds_tree_min_max_depth_bt ds_tree_min_max_depth_bt.cc
 
 /**
  * @file  BT Find min and max depth
@@ -11,13 +11,7 @@
 // https://leetcode.com/problems/balanced-binary-tree/
 
 #include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
-#include <queue>             /* std::priority_queue          */
 using namespace std;
 
 struct TreeNode {

@@ -8,21 +8,15 @@
  * @brief Find Lowest Commmon Parent/Ancestor given two nodes
  */
 
+#include <iostream>          /* std::cout                    */
+#include <algorithm>         /* std::max                     */
+using namespace std;
+
 /**
  * The lowest common ancestor is defined between two nodes v and w
  * as the lowest node in T that has both v and w as descendants
  * (where we allow a node to be a descendant of itself)..
  */
-
-#include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
-#include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
-#include <queue>             /* std::priority_queue          */
-using namespace std;
 
 struct TreeNode {
    int val;
@@ -67,8 +61,6 @@ TreeNode* bst_lca(TreeNode* root, TreeNode* p, TreeNode* q) {
    else return root;
 }
 
-
-	
 int main()
 {
    cout << "Need to Implement LCP test-cases" << endl;

@@ -59,6 +59,11 @@ std::vector<int> rightSideViewIterativeLevelOrder(TreeNode* root) {
    return ans;
 }
 
+//Sample test-vectors
+//{1}       {1}
+//{1,2}     {1,2}
+//}1,2,3,4} {1,3,4}
+
 int main()
 {
    cout << "Info: Manual test-cases yet to be written." << endl;

@@ -8,13 +8,7 @@
 // https://leetcode.com/problems/sum-root-to-leaf-numbers/
 
 #include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
-#include <queue>             /* std::priority_queue          */
 using namespace std;
 
 /**

@@ -7,21 +7,16 @@
 
 // https://leetcode.com/problems/binary-tree-level-order-traversal-ii/
 
+#include <iostream>          /* std::cout                    */
+#include <algorithm>         /* std::max                     */
+#include <queue>             /* std::queue                   */
+using namespace std;
+
 /**
  * Given a binary tree, return the bottom-up level order traversal of
  * its nodes' values. (ie, from left to right, level by level from
  * leaf to root).
  */
-
-#include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
-#include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
-#include <queue>             /* std::priority_queue          */
-using namespace std;
 
 struct TreeNode {
    int val;

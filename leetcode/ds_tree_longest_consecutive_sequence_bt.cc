@@ -7,6 +7,9 @@
 
 // https://leetcode.com/problems/binary-tree-longest-consecutive-sequence/
 
+#include <iostream>          /* std::cout                    */
+using namespace std;
+
 /**
  * Given a binary tree, find the length of the longest consecutive
  * sequence path.
@@ -31,16 +34,6 @@
  *   1
  * Longest consecutive sequence path is 2-3,not3-2-1, so return 2.
  */
-
-#include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
-#include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
-#include <queue>             /* std::priority_queue          */
-using namespace std;
 
 struct TreeNode {
    int val;
@@ -81,6 +74,6 @@ int longestConsecutive(TreeNode* root) {
 	
 int main()
 {
-   cout << "Need to implement Longest Consequtive Sequence length test-cases" << endl;
+   cout << "Info: Manual test-cases yet to be implemented." << endl;
    return 0;
 }

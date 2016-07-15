@@ -7,22 +7,16 @@
 
 // https://leetcode.com/problems/same-tree/
 
+#include <iostream>          /* std::cout                    */
+#include <algorithm>         /* std::max                     */
+using namespace std;
+
 /**
  * Given two binary trees, write a function to check if they
  * are equal or not.
  * Two binary trees are considered equal if they are structurally
  * identical and the nodes have the same value.
  */
-
-#include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
-#include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
-#include <queue>             /* std::priority_queue          */
-using namespace std;
 
 struct TreeNode {
    int val;
@@ -61,7 +55,7 @@ bool isSameTreeBFS(TreeNode* p, TreeNode* q) {
    while(p_lev.size() > 0) {
       int n = p_lev.size();
       /* The number of nodes in cur-level must match         */
-      if(p_lev.size() != q_lev.size())           return false;
+      if(p_lev.size() != q_lev.size())         return false;
       /* Match all level elements and add children to vector */
       for(int i = 0; i < n; ++i) {
          /* Make sure current element is valid in p / q tree */

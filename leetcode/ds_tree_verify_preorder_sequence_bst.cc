@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o ds_tree_verify_preorder_sequence_bst ds_tree_verify_preorder_sequence_bst.cc
+//g++ -Wall --std=c++11 -g -o ds_tree_verify_preorder_sequence_bst ds_tree_verify_preorder_sequence_bst.cc
 
 /**
  * @file  BST verify pre-order sequence
@@ -8,13 +8,7 @@
 // https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree/
 
 #include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
-#include <queue>             /* std::priority_queue          */
 using namespace std;
 
 /*
