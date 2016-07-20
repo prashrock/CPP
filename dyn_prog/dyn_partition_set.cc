@@ -9,7 +9,7 @@
 #include "rand_generator.h"  /* init_rand()      */
 using namespace std;
 
-/* Determine whether given Set can be partitioned*
+/* Determine whether given set can be partitioned*
  * into two subsets such that the sum of elements*
  * in both subsets is same.                      */
 

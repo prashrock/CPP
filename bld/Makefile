@@ -3,7 +3,7 @@ COMMON_C_ROOT = $(COMMON_ROOT)/../C
 EXES = math_sqrt math_two_die_probability math_prime                    \
 	math_perm_comb_test                                             \
 	dyn_4_keys_max_print dyn_partition_set dyn_knapsack_01          \
-	dyn_longest_common_subsequence                                  \
+	dyn_longest_common_subsequence dyn_subset_sum                   \
 	median_two_sorted_arrays                                        \
 	binary_tree_test	                                        \
 	trie_test                                                       \
@@ -28,7 +28,7 @@ median_two_sorted_arrays:
 		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
 
 dyn_4_keys_max_print dyn_partition_set dyn_knapsack_01 \
-	dyn_longest_common_subsequence:
+	dyn_longest_common_subsequence dyn_subset_sum:
 	@$(MAKE) -f $(COMMON_ROOT)/dyn_prog/Makefile \
 		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
 

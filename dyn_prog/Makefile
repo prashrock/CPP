@@ -1,3 +1,9 @@
+ifndef COMMON_ROOT
+COMMON_ROOT = $(shell pwd)/..
+endif
+ifndef COMMON_C_ROOT
+COMMON_C_ROOT = $(COMMON_ROOT)/../C
+endif
 
 INCLUDES = \
 	-I $(COMMON_ROOT)/utils	     \
@@ -12,6 +18,9 @@ DYN_PARTITION_SET = \
 DYN_KNAPSACK_01 = \
 	$(COMMON_ROOT)/dyn_prog/dyn_knapsack_01.o \
 
+DYN_SUBSET_SUM = \
+	$(COMMON_ROOT)/dyn_prog/dyn_subset_sum.o \
+
 DYN_LCS = \
 	$(COMMON_ROOT)/dyn_prog/dyn_longest_common_subsequence.o \
 
@@ -22,7 +31,11 @@ DEPS = \
 
 
 OBJS = $(DYN_4_KEYS_MAX_PRINT) $(DYN_PARTITION_SET) \
-	$(DYN_KNAPSACK_01)                              \
+       $(DYN_KNAPSACK_01)                           \
+
+DYN_OBJS = dyn_4_keys_max_print dyn_partition_set   \
+	   dyn_knapsack_01 dyn_subset_sum           \
+	   dyn_longest_common_subsequence           \
 
 #order is important to have dependencies work, declare DEPS before include
 include $(COMMON_ROOT)/bld/Makefile.common
@@ -31,7 +44,7 @@ include $(COMMON_ROOT)/bld/Makefile.common
 dyn_4_keys_max_print: $(DYN_4_KEYS_MAX_PRINT)
 	@echo "--------------------------------------------------"
 	@echo $@
-	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -I $(DEPS) -o $@ $^
 	@echo "--------------------------------------------------"
 
 dyn_partition_set: $(DYN_PARTITION_SET)
@@ -46,8 +59,16 @@ dyn_knapsack_01: $(DYN_KNAPSACK_01)
 	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
 	@echo "--------------------------------------------------"
 
+dyn_subset_sum: $(DYN_SUBSET_SUM)
+	@echo "--------------------------------------------------"
+	@echo $@
+	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	@echo "--------------------------------------------------"
+
 dyn_longest_common_subsequence: $(DYN_LCS)
 	@echo "--------------------------------------------------"
 	@echo $@
 	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
 	@echo "--------------------------------------------------"
+
+

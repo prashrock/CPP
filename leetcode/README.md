@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [92 Leetcode solutions](./) with comments. Most programs have test-cases and few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [92 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 

@@ -1,12 +1,12 @@
-CC	     := g++ -std=c++11
+CC	 := g++ -std=c++11
 CXXFLAGS := -g3 -fno-inline -O0
 CFLAGS	 := -g -W -Wall -Wextra -pedantic -ggdb3 -Werror \
-		-Wunused-function -fno-strict-aliasing
+            -Wunused-function -fno-strict-aliasing
 
 #OPT	 := -O4
 OPT      := -flto -march=native
-EE	     := $(CC) -E
-LST	     := $(CC) -c $(CFLAGS) -Wa,-a,-ad 
+EE	 := $(CC) -E
+LST	 := $(CC) -c $(CFLAGS) -Wa,-a,-ad 
 LDFLAGS	 := -L /usr/lib/x86_64-linux-gnu -pthread
 
 # cancel implicit program rule
@@ -26,5 +26,4 @@ LDFLAGS	 := -L /usr/lib/x86_64-linux-gnu -pthread
 
 .PHONY: clean
 clean:
-	@rm -f  $(OBJS) *~
-
+	@rm -f  $(OBJS) *~ *.o

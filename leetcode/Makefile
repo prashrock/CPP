@@ -1,11 +1,8 @@
-#order is important to have dependencies work, declare DEPS before include
-#include $(COMMON_ROOT)/bld/Makefile.common
-
 #Make one obj for each .cc file found in the current directory
 all: $(patsubst %.cc, %, $(wildcard *.cc))
 
-#Make rule for each individual .cc. Since each cc is embedded
-#With its own compilation rule, extract 1st line, remove comment
+#Each individual program (.cc) has its own make rule embedded in the
+#first line as a comment. Just extract this line, remove the comment
 #and directly execute the make target
 %: %.cc Makefile
 	@echo "Building " $@
