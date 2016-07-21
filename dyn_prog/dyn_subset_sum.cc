@@ -1,8 +1,5 @@
 #include <iostream>          /* std::cout        */
-#include <cmath>             /* pow              */
-#include <cassert>           /* assert           */
 #include <algorithm>         /* std::max         */
-
 #include "print_utils.h"     /* print_table_row  */
 #include "rand_generator.h"  /* init_rand()      */
 using namespace std;

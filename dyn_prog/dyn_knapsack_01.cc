@@ -1,10 +1,6 @@
 #include <iostream>          /* std::cout        */
-#include <iomanip>           /* std::setw        */
-#include <cmath>             /* pow              */
-#include <cassert>           /* assert           */
 #include <algorithm>         /* std::max         */
 #include <string>            /* std::string      */
-
 #include "print_utils.h"     /* print_table_row  */
 #include "rand_generator.h"  /* init_rand()      */
 using namespace std;
@@ -55,18 +51,18 @@ int knapsack_01_dp(const std::vector<int>& v, const std::vector<int>& wt,
    }
    if(print_dp_table) {
       /* Print the DP Matrix                                 */
-      printf("Rows = Sum_of_weights and Columns = input_elements\n");
-      for (int j = 0; j <= n; j++) {
+      cout << "Rows = Sum_of_weights and Columns = input_elements" << endl;
+      for (int j = 0; j <= n; ++j) {
          if(j == 0)  printf("--- | [-] ");
          else	     printf("%3d ", j);
       }
-      printf("\n--------------------------------------------\n");
-      for (int w = 0; w <= W; w++) {
+      cout << endl << "--------------------------------------------" << endl;
+      for (int w = 0; w <= W; ++w) {
          if(w == 0)  printf("  0 | ");
          else        printf("%3d | ", w);
-         for (int j = 0; j <= n; j++)
+         for (int j = 0; j <= n; ++j)
             printf ("%3d ", dp[w][j]);
-         printf("\n");
+         cout << endl;
       }
    }
    /* Check if we should print the result backtrace          */
