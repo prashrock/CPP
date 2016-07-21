@@ -27,14 +27,14 @@ bool subset_sum(const std::vector<int>& set, const int sum,
    /* First column, pre-init for empty set[], except row 0   */
    for(int i = 1; i <= sum; i++)  dp[i][0] = false;
    
-   /* Calculate all dp indexes with Dynamic Programming  */
-   for   (int i = 1; i <= sum; i++) {
+   /* Calculate all dp indexes with Dynamic Programming      */
+   for   (int s = 1; s <= sum; s++) {
       for(int j = 1; j <= n; j++) {
          int set_idx = j-1;
-         if (set[set_idx] > i) /* Skip out of bounds subset  */
-            dp[i][j] = dp[i][j-1];
+         if(set[set_idx] > s) /* Skip out of bounds subset   */
+            dp[s][j] = dp[s][j-1];
          else
-            dp[i][j] = dp[i][j-1] || dp[i-set[set_idx]][j-1];
+            dp[s][j] = dp[s][j-1] || dp[s-set[set_idx]][j-1];
       }
    }
    
@@ -84,7 +84,7 @@ bool subset_sum_brute(const std::vector<int>& set, int n, int sum)
    int idx = n-1;         /* idx is 0 based                  */
    if(sum == 0)           return true;
    if(n == 0 && sum != 0) return false;
-   /* Remove this if to handle negative numbers in set       */
+   /* Skip out of bounds subset                              */
    if(set[idx] > sum)
       return subset_sum_brute(set, n-1, sum);
    /* 2 cases in dynamic programming:                        *

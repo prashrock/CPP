@@ -5,7 +5,10 @@
 #include <unistd.h>       /* getpid()                        */
 
 
-/* Include PID + current time for seed initialization        */
+/* Include PID + current time for seed initialization        *
+ * Look at REDIS getRandomHexChars() implementation to see   *
+ * how to generate a random Hex string                       *
+ * https://github.com/antirez/redis/blob/current-client-fix/src/util.c */
 static inline void init_rand()
 {
    struct timeval time;
