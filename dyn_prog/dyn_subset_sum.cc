@@ -4,6 +4,9 @@
 #include "rand_generator.h"  /* init_rand()      */
 using namespace std;
 
+/* Given a set of integers & a target sum, find out if there *
+ * is a subset whose sum equals to the target sum.           */
+
 const int number_of_iterations    =   10;
 const int number_of_items_in_iter =   20; /* input vector sz */
 const int max_item_value          =   10;
