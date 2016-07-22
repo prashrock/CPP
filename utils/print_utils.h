@@ -3,6 +3,8 @@
 
 #include <iostream>       /* std::cout               */
 #include <iomanip>        /* std::setw               */
+#include <algorithm>      /* std::vector             */
+using namespace std;
 
 #ifndef MILLION
 #define MILLION (1000000)          /* 10^6           */

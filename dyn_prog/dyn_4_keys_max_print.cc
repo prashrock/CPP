@@ -4,7 +4,6 @@
 #include <cassert>    /* assert                              */
 #include <algorithm>  /* std::max                            */
 #include "print_utils.h" /* print_table_row                  */
-
 using namespace std;
 /*
 Imagine you have a special keyboard with the following keys:
@@ -34,39 +33,35 @@ const int manual_mode = 6; /*typing A is cheapest till 6 keys*/
  * Time complexity = O(n^2). Space Complexity = O(n)         */
 void num_keystrokes_calculator(const int n)
 {
-	std::vector<int> table(n+1);  /* memoize results         */
-	std::vector<int> manual(n+1); /* Record Manual keystrokes*/
+   std::vector<int> table(n+1);  /* memoize results          */
 	
-	manual[0] = table[0] = 0;
-	for(int i = 1; i <= n; ++i)
-	{
-		int cpy_max = 0;
-		manual[i] = i;
-		if(i <= manual_mode) {
-			table[i] = i;
-			continue;
-		}
-        /* select, Copy once paste many tried at different offsets */
-        /* From which keystroke should we stop typing 'A''s and do *
-		 * Ctrl+A Ctrl-C --> Ctrl-V, Ctrl-V, Ctrl-V....            */
-		for(int j = i-copy_paste_overhead; j >= 1; --j)
-		{
-			int num_paste_ops = (i-j+1) - copy_overhead; /* [j, i] */
-			int cnt_cpyonce_pstmany = num_paste_ops * table[j];
-			cpy_max = std::max(cpy_max, cnt_cpyonce_pstmany);
-		}
-		/* Is typing better or is copy once paste many better ?   */
-		table[i] = std::max(i, cpy_max);
-	}
-	cout << "Table calculation results: " << endl;
-	print_table_row<int>("manual keystrokes", manual);
-	print_table_row<int>("cpy_once_paste_many", table);
+   table[0] = 0;
+   for(int i = 1; i <= n; ++i) {
+      int cpy_max = 0;
+      if(i <= manual_mode) {
+         table[i] = i;
+         continue;
+      }
+      /* select, Copy once paste many tried at different offsets */
+      /* From which keystroke should we stop typing 'A''s and do *
+       * Ctrl+A Ctrl-C --> Ctrl-V, Ctrl-V, Ctrl-V....            */
+      for(int j = i-copy_paste_overhead; j >= 1; --j) {
+         int num_paste_ops = (i-j+1) - copy_overhead; /* [j, i] */
+         int cnt_cpyonce_pstmany = num_paste_ops * table[j];
+         cpy_max = std::max(cpy_max, cnt_cpyonce_pstmany);
+      }
+      /* Is typing better or is copy once paste many better ?   */
+      table[i] = std::max(i, cpy_max);
+   }
+   cout << "Maximum number of 'A's = " << table[n] << endl;
+   cout << "Table calculation results: " << endl;
+   print_table_row<int>("cpy_once_paste_many", table);
 }
 
 int main()
 {
-	int n;
-	cout << "Please enter the number of key strokes: ";
-	cin >> n;
-	num_keystrokes_calculator(n);
+   int n;
+   cout << "Please enter the number of key strokes: ";
+   cin >> n;
+   num_keystrokes_calculator(n);
 }

@@ -7,6 +7,7 @@ endif
 
 INCLUDES = \
 	-I $(COMMON_ROOT)/utils	     \
+	-I $(COMMON_C_ROOT)/utils    \
 	-I $(COMMON_ROOT)/dyn_prog   \
 
 DYN_4_KEYS_MAX_PRINT = \
@@ -24,11 +25,12 @@ DYN_SUBSET_SUM = \
 DYN_LCS = \
 	$(COMMON_ROOT)/dyn_prog/dyn_longest_common_subsequence.o \
 
+DYN_STR_MIN_EDIT_DISTANCE = \
+	$(COMMON_ROOT)/dyn_prog/dyn_str_min_edit_distance.o \
+
 DEPS = \
 	$(COMMON_C_ROOT)/utils/compiler_api.h \
 	$(COMMON_ROOT)/utils/print_utils.h \
-	$(COMMON_ROOT)/dyn_prog/dyn_prog_helper.h \
-
 
 OBJS = $(DYN_4_KEYS_MAX_PRINT) $(DYN_PARTITION_SET) \
        $(DYN_KNAPSACK_01)                           \
@@ -36,6 +38,7 @@ OBJS = $(DYN_4_KEYS_MAX_PRINT) $(DYN_PARTITION_SET) \
 DYN_OBJS = dyn_4_keys_max_print dyn_partition_set   \
 	   dyn_knapsack_01 dyn_subset_sum           \
 	   dyn_longest_common_subsequence           \
+	   dyn_str_min_edit_distance		    \
 
 #order is important to have dependencies work, declare DEPS before include
 include $(COMMON_ROOT)/bld/Makefile.common
@@ -44,7 +47,7 @@ include $(COMMON_ROOT)/bld/Makefile.common
 dyn_4_keys_max_print: $(DYN_4_KEYS_MAX_PRINT)
 	@echo "--------------------------------------------------"
 	@echo $@
-	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -I $(DEPS) -o $@ $^
+	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
 	@echo "--------------------------------------------------"
 
 dyn_partition_set: $(DYN_PARTITION_SET)
@@ -66,6 +69,12 @@ dyn_subset_sum: $(DYN_SUBSET_SUM)
 	@echo "--------------------------------------------------"
 
 dyn_longest_common_subsequence: $(DYN_LCS)
+	@echo "--------------------------------------------------"
+	@echo $@
+	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	@echo "--------------------------------------------------"
+
+dyn_str_min_edit_distance: $(DYN_STR_MIN_EDIT_DISTANCE)
 	@echo "--------------------------------------------------"
 	@echo $@
 	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
