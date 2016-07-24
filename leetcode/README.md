@@ -35,7 +35,7 @@ Algorithm based
 |1. | Easy       | [House Robber](https://leetcode.com/problems/house-robber/) ([solution](./algo_dp_easy_house_robber.cc))           |
 |2. | Easy       | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) ([solution](./algo_dp_number_of_1_2_steps.cc))   |
 |3. | Medium     | [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) ([solution](./algo_dp_longest_increasing_subsequence.cc))                                                                             |
-|4. | Medium     | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) ([solution](./algo_dp_maximum_sum_product_subarray.cc))                                                                               |
+|4. | Medium     | [Maximum Subarray Sum](https://leetcode.com/problems/maximum-subarray/) ([solution](./algo_dp_maximum_sum_product_subarray.cc)) <br> [Maximum Subarray Product](https://leetcode.com/problems/maximum-product-subarray/) ([solution](./algo_dp_maximum_sum_product_subarray.cc))                                                   |
 |5. | Medium     | [Paint House](https://leetcode.com/problems/paint-house/) ([solution](./algo_dp_medium_paint_house.cc))            |
 |6. | Medium     | [Perfect Squares](https://leetcode.com/problems/perfect-squares/) ([solution](./algo_dp_perfect_squares.cc))       |
 |7. | Medium     | [Structurally Unique BST](https://leetcode.com/problems/unique-binary-search-trees/) ([solution](./algo_dp_unique_binary_search_trees.cc))                                                                                 |
