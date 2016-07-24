@@ -8,13 +8,7 @@
 // https://leetcode.com/problems/unique-binary-search-trees/
 
 #include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
-#include <unordered_map>     /* std::unordered_map container */
 using namespace std;
 
 /**
@@ -58,26 +52,29 @@ int numTrees(int n) {
    return cost[n];
 }
 
+struct test_vector {
+   int n;
+   int exp;
+};
+
+const struct test_vector test[4] =  {
+   {0,   1},
+   {1,   1},
+   {3,   5},
+   {5,  42},
+};
+
 int main()
 {
-   int ans, n, exp;
-   n = 0; exp = 1;
-   ans = numTrees(n);
-   if(ans != exp) goto ErrMain;
-   n = 1; exp = 1;
-   ans = numTrees(n);
-   if(ans != exp) goto ErrMain;
-   n = 3; exp = 5;
-   ans = numTrees(n);
-   if(ans != exp) goto ErrMain;
-   n = 5; exp = 42;
-   ans = numTrees(n);
-   if(ans != exp) goto ErrMain;
-
-   cout << "Info: All manual test-cases passed" << endl;
+   for(auto tst : test) {
+      auto ans = numTrees(tst.n);
+      if(ans != tst.exp) {
+         cout << "Error:numTrees failed. Exp "
+              << tst.exp << " Got " << ans << " for "
+              << tst.n   << endl;
+         return -1;
+      }
+   }
+   cout << "Info: All manual testcases passed" << endl;
    return 0;
-ErrMain:
-   cout << "Error: numTrees failed for n = " << n
-        << " expected=" << exp << " ans=" << ans << endl;
-   return -1;
 }

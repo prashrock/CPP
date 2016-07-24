@@ -7,6 +7,10 @@
 
 // https://leetcode.com/problems/paint-house/
 
+#include <iostream>          /* std::cout                    */
+#include <algorithm>         /* std::max                     */
+using namespace std;
+
 /**
  * There are a row of n houses, each house can be painted with one of
  * the three colors: red, blue or green. The cost of painting each house
@@ -19,72 +23,54 @@
  * Note: All costs are positive integers.
  */
 
-
-#include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
-#include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
-#include <unordered_map>     /* std::unordered_map container */
-using namespace std;
-
 /**
  * DP based solution:                                        *
  * Maintain sum of costs for each color. Iterate over all    *
- * houses and update the sum of costs
+ * houses and update the sum of costs                        *
  * For each house, what is the cost of painting it a given   *
- * color, depends on what is min cost of painting prev 
- 
- * When n <= 0 the number of ways we can climb is 0          *
- * When n = 1, there is exactly 1 way to climb the stairs    *
- * When n = 2, there are exactly 2 ways to climb the stairs  *
- * When n > 2, the number of ways to reach n, is the number  *
- * of ways to reach n-1 + number of ways to reach n-2 pos.   *
- * This is because, n-1 and n-2 do not overlap (1 step from  *
- * n-1 to reach n and 2 steps from n-2 to reach n)           *
- * Time Complexity = O(n), Space Complexity = O(1)           */
+ * color, depends on what is min cost of painting prev houses*/
 int minCost(vector<vector<int>>& costs) {
-	if(costs.size() == 0) return 0;
-	vector<int> cur(3, 0), prev(3, 0);
-
-	for(int i = 0; i < (int)costs.size(); ++i) {
-		for(int j = 0; j < 3; ++j)  cur[j] = prev[j] + costs[i][j];
-		/* Propagate current to prev, for next iteration     */
-		prev[0] = std::min(cur[1], cur[2]);
-		prev[1] = std::min(cur[0], cur[2]);
-		prev[2] = std::min(cur[0], cur[1]);
-	}
-	return std::min(cur[0], std::min(cur[1], cur[2]));
+   if(costs.size() == 0) return 0;
+   int n_colors = costs[0].size();
+   vector<int> cur(n_colors, 0), prev(n_colors, 0); /* sums  */
+   
+   for(size_t i = 0; i < costs.size(); ++i) {
+      for(int j = 0; j < n_colors; ++j) cur[j] = prev[j] + costs[i][j];
+      /* Propagate current to prev, for next iteration       */
+      prev[0] = std::min(cur[1], cur[2]);
+      prev[1] = std::min(cur[0], cur[2]);
+      prev[2] = std::min(cur[0], cur[1]);
+   }
+   return std::min({cur[0], cur[1], cur[2]});
 }
+
+struct test_vector {
+   std::vector<std::vector<int>> nums;
+   int exp;
+};
+
+const struct test_vector test[4] =  {
+   { {},                                    0},
+   { {{7,6,2}},                             2},
+   { {{20,18,4},{9,9,10}},                 13},
+   { {{17,2,17},{16,16,5}, {14,3,19}},     10},
+};
 
 int main()
 {
-	int cost, exp;
-	vector<vector<int>> inp;
-
-	exp  = 0;
-	cost = minCost(inp);
-	if(exp != cost) goto ErrMain;
-
-	inp = {{7,6,2}}; exp  = 2;
-	cost = minCost(inp);
-	if(exp != cost) goto ErrMain;
-
-	inp = {{20,18,4},{9,9,10}}; exp = 13;
-	cost = minCost(inp);
-	if(exp != cost) goto ErrMain;
-
-	inp = {{17,2,17},{16,16,5}, {14,3,19}}; exp = 10;
-	cost = minCost(inp);
-	if(exp != cost) goto ErrMain;
-	
-	cout << "Info: All manual cases passed." << endl;
-	return 0;
-ErrMain:
-	cout << "Error: Failed for case: " << endl;
-	for(auto v:inp) for(auto e:v) cout << e << " ,"; 
-	cout << "\t exp_cost=" << exp << " calc_cost=" << cost << endl;
-	return -1;
+   for(auto tst : test) {
+      auto ans = minCost(tst.nums);
+      if(ans != tst.exp) {
+         cout << "Error:minCost failed. Exp "
+              << tst.exp << " Got " << ans << " for ";
+         for(auto v:tst.nums) {
+            for(auto e:v) cout << e << " ,";
+            cout << endl;
+         }
+         cout << endl;
+         return -1;
+      }
+   }
+   cout << "Info: All manual testcases passed" << endl;
+   return 0;
 }

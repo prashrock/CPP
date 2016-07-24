@@ -29,7 +29,7 @@ int min_edit_dp(const T s1[], size_t m, const T s2[], size_t n,
 
    /* First row/col, pre-init with add cost of s1, s2 alone  */
    for(size_t i = 0; i <= m; i++) dp[i][0] = i;
-   for(size_t j = 0; j <= m; j++) dp[0][j] = j;
+   for(size_t j = 0; j <= n; j++) dp[0][j] = j;
    
    for(size_t i = 1; i <= m; ++i) {
       for(size_t j = 1; j <= n; ++j) {
@@ -42,6 +42,7 @@ int min_edit_dp(const T s1[], size_t m, const T s2[], size_t n,
          }
       }
    }
+   
    int min_edit_cost = dp[m][n];
    /* Core DP Logic done, now deduce min-edit dist and print */
    if(print_dp_table) {

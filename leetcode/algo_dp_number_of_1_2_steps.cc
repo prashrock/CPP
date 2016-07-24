@@ -7,17 +7,9 @@
 
 // https://leetcode.com/problems/climbing-stairs/
 
-
 #include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
-#include <unordered_map>     /* std::unordered_map container */
 using namespace std;
-
 
 /**
  * You are climbing a stair case. It takes n steps to reach to the top.
@@ -25,8 +17,7 @@ using namespace std;
  * can you climb to the top ?
  */
 
-
-/* Quick factorial implementation.                           */
+/* Quick Recursive factorial implementation.                 */
 static int fact(int n)
 {
    return (n == 1 || n == 0) ? 1 : n * fact(n - 1);
@@ -56,7 +47,6 @@ int climbStairsFibonacci(int n) {
    return fib;
 }
 
-
 /**
  * Permutation Calculation Solution:                         *
  * Calculate the number of 2's and number of 1's in set (n)  *
@@ -64,22 +54,17 @@ int climbStairsFibonacci(int n) {
  * summation_over_all_two_cnt ( (n!)/(one_cnt! * two_cnt!) ) *
  * Note, factorial grows fast, so above calc might overflow  */
 int climbStairsPermutation(int n) {
-   int num_twos = 0, res = 0, ntmp = n;
-   
-   if(n == 0)           return 0;
-   if(n == 1 || n == 2) return n;
-   
-   /* Calculate #2s in the given input (set).                */
-   while(ntmp >= 2) { num_twos++; ntmp -= 2; }
-   
-   /* Cnt all one outcome separately.                        */
-   res = 1;
+   int num_twos = 0, res = 0;
+
+   if(n == 0 || n == 1 || n == 2) return n;
+   for(int i = n; i >= 2; i-= 2, num_twos++); /* #2's in inp */
+   res = 1;             /* Cnt all one outcome separately.   */
 	
    /* Loop over all other outcomes varying #2s to get to next*
     * outcome & calculate the #arrangements of each outcome  */
    for(int i = 1; i <= num_twos; i++) {
       int twos = i;               /* #2s in this outcome     */
-      int ones = n - (twos * 2);  /* #1s in this outcome     */
+      int ones = n - (twos * 2);  /* remaining #1s in outcome*/
       int num_arrange;
       
       /* Calculate #arrangements of this outcome with formua *
@@ -90,18 +75,22 @@ int climbStairsPermutation(int n) {
    return res;
 }
 
+const int staircase_size = 12;
+
 int main()
 {
-   int n = 12;
-   for(int i = 0; i < n; ++i) {
-      if(climbStairsFibonacci(i) != climbStairsPermutation(i)) {
+   for(int i = 0; i <= staircase_size; ++i) {
+      auto ans_fib  = climbStairsFibonacci(i);
+      auto ans_perm = climbStairsPermutation(i);
+      if(ans_fib != ans_perm) {
          cout << "Error: for i = " << i
-              << " Fib mode = " << climbStairsFibonacci(i)
-              << " Perm mode = " << climbStairsPermutation(i) << endl;
-         break;
+              << " Fib mode = "    << ans_fib
+              << " Perm mode = "   << ans_perm << endl;
+         return -1;
       }
-      else cout << "#ways to climb " << i << " stairs = "
-                << climbStairsPermutation(i) << endl;
+      else
+         cout << "#ways to climb " << i << " stairs = "
+              << ans_fib << endl;
    }
    return 0;
 }

@@ -8,13 +8,7 @@
 // https://leetcode.com/problems/perfect-squares/
 
 #include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
-#include <unordered_map>     /* std::unordered_map container */
 //#include "../utils/print_utils.h" /* print_table_row       */
 using namespace std;
 
@@ -32,27 +26,26 @@ using namespace std;
  * Time Complexity = O(nm) Space Complexity = O(nm)          *
  */
 int numSquaresDPTable(int n) {
-   vector<int> elems;
-   for(int i = 0; i * i <= n; ++i) elems.push_back(i*i);
-
+   vector<int> sqr; 
+   for(int i = 0; i * i <= n; ++i) sqr.push_back(i*i);
+   int m = sqr.size();
+   
    /* DP Subset sum starts here. Initialize DP table to max  */
-   vector<vector<int>> dp(n+1, vector<int>(elems.size()+1,
-                                           std::numeric_limits<int>::max()-1));
-   for(auto val : elems) if(val && val <= n) dp[val][0] = 1;
+   std::vector<std::vector<int>>
+      dp(n+1, vector<int>(m+1, std::numeric_limits<int>::max()-1));
+   for(auto v : sqr)     dp[v][0] = 1;  /* Init DP table     */
    for(int i = 1; i <= n; ++i) {
-      for(int j = 1; j <= (int)elems.size(); ++j) {
+      for(int j = 1; j <= m; ++j) {
          int ej = j-1;
-         if(i > elems[ej])
-            dp[i][j] = std::min(dp[i][j-1], dp[i-elems[ej]][j] + 1);
-         else
-            dp[i][j] = dp[i][j-1];
+         if(i > sqr[ej]) dp[i][j] = std::min(dp[i][j-1], dp[i-sqr[ej]][j] + 1);
+         else            dp[i][j] = dp[i][j-1];
       }
    }
    /* Dump the entire DP table for analysis                  */
    //print_table_row<int>("\t elems:", elems);
    //for(int i = 0; i <= n; ++i)
    //print_table_row<int>("\t "+to_string(i)+":", dp[i]);
-   return dp[n][elems.size()];
+   return dp[n][m];
 }
 
 /**
@@ -84,37 +77,38 @@ int numSquaresDP(int n) {
  * i.e., p = a2 + b2 + c2 + d2                               *
  * https://leetcode.com/discuss/58056/summary-of-different-solutions-bfs-static-and-mathematics
  * https://leetcode.com/discuss/56982/o-sqrt-n-in-ruby-c-c   */
+struct test_vector {
+   int n;
+   int exp;
+};
 
-bool numSquaresTest() {
-   int v1, v2;
-   v1 = numSquaresDPTable(1);
-   v2 = numSquaresDP(1);
-   if(v1 != 1)
-   {  cout << "Error: 1 test-case failed v1 " << v1 << endl; return false;}
-   else if(v2 != 1)
-   {  cout << "Error: 1 test-case failed v2 " << v2 << endl; return false;}
+const struct test_vector test[6] =  {
+   { 1,      1},
+   { 3,      3},
+   {13,      2},
+   {1535,    4},
+   {1729,    3}, //Ramanujan Number
+   {8609,    2},
+};
    
-   v1 = numSquaresDPTable(3);
-   v2 = numSquaresDP(3);
-   if(v1 != 3)
-   {  cout << "Error: 3 test-case failed v1 " << v1 << endl; return false;}
-   else if(v2 != 3)
-   {  cout << "Error: 3 test-case failed v2 " << v2 << endl; return false;}
-	
-   v1 = numSquaresDPTable(13);
-   v2 = numSquaresDP(13);
-   if(v1 != 2)
-   {  cout << "Error: 13 test-case failed v1 " << v1 << endl; return false;}
-   else if(v2 != 2)
-   {  cout << "Error: 13 test-case failed v2 " << v2 << endl; return false;}
-	
-   //v = numSquaresDP(8609);
-   //v = numSquaresDP(1535);
-   cout << "All manual test-cases passed" << endl;
-   return true;
-}
-
 int main()
 {
-   numSquaresTest();
+   for(auto tst : test) {
+      auto ans = numSquaresDPTable(tst.n);
+      if(ans != tst.exp) {
+         cout << "Error:numSquaresDPTable failed. Exp "
+              << tst.exp << " Got " << ans << " for "
+              << tst.n   << endl;
+         return -1;
+      }
+      ans = numSquaresDP(tst.n);
+      if(ans != tst.exp) {
+         cout << "Error:numSquaresDP failed. Exp "
+              << tst.exp << " Got " << ans << " for "
+              << tst.n   << endl;
+         return -1;
+      }
+   }
+   cout << "Info: All manual testcases passed" << endl;
+   return 0;
 }
