@@ -1,3 +1,9 @@
+ifndef COMMON_ROOT
+COMMON_ROOT = $(shell pwd)/..
+endif
+ifndef COMMON_C_ROOT
+COMMON_C_ROOT = $(COMMON_ROOT)/../C
+endif
 
 INCLUDES = \
 	-I $(COMMON_ROOT)/utils	                       \
@@ -9,7 +15,6 @@ DEPS = \
 	$(COMMON_C_ROOT)/utils/compiler_api.h          \
 	$(COMMON_ROOT)/utils/print_utils.h             \
 	$(COMMON_ROOT)/lru/lru.h                       \
-
 
 OBJS = $(LRU_TEST)
 

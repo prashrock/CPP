@@ -9,52 +9,51 @@
 #include "lru.h"               /* LRU API                    */
 #include "print_utils.h"       /*print_table_row             */
 using namespace std;
-using namespace lru_space;
 
 const int num_inserts =  10;
 const int lru_size    =   5;
 const int min_key     =   0;
 const int max_key     =  10;
 
-/* Walk through BT creation and deletion process             */
+/* Walk through LRU creation and deletion process             */
 void lru_walkthrough()
 {
-	std::vector<int> vec(num_inserts);
-    lru<int, int>    lru(lru_size);
+   std::vector<int> vec(num_inserts);
+   lru<int, int>    lru(lru_size);
 
-    fill_vector_rand(vec, min_key, max_key);
-	print_table_row<int>("Insert order", vec);
+   fill_vector_rand(vec, min_key, max_key);
+   print_table_row<int>("Insert order", vec);
 	
-	cout << "Walkthrough of LRU operations:" << endl;
-	cout << "Current LRU Size is: " << lru.size() << endl;
-	cout << "Inserting " << vec.size() << " elements" << endl;
-	for(auto key : vec) {
-		lru.insert(key, key);
-		cout <<   "elem = " << key
-			 << " size  = " << lru.size() << endl;
-	}
+   cout << "Walkthrough of LRU operations:" << endl;
+   cout << "Current LRU Size is: " << lru.size() << endl;
+   cout << "Inserting " << vec.size() << " elements" << endl;
+   for(auto key : vec) {
+      lru.insert(key, key);
+      cout <<   "elem = " << key
+           << " size  = " << lru.size() << endl;
+   }
 
-	cout << "Dumping the LRU cache before any remove:" << endl;
-	cout << lru;
-	int oldest_key = -1, newest_key = -1;
-	lru.peekOldest(oldest_key);
-	lru.peekNewest(newest_key);
-	cout << "Oldest Key in LRU = " << oldest_key  << endl;
-	cout << "Newest Key in LRU = " << newest_key  << endl;
+   cout << "Dumping the LRU cache before any remove:" << endl;
+   cout << lru;
+   int oldest_key = -1, newest_key = -1;
+   lru.peekOldest(oldest_key);
+   lru.peekNewest(newest_key);
+   cout << "Oldest Key in LRU = " << oldest_key  << endl;
+   cout << "Newest Key in LRU = " << newest_key  << endl;
 	
-	std::shuffle(vec.begin(), vec.end(),
-				 std::default_random_engine(get_rand(max_key)));
+   std::shuffle(vec.begin(), vec.end(),
+                std::default_random_engine(get_rand(max_key)));
 
-	print_table_row<int>("Del order", vec);
-	for(auto key : vec) {
-		lru.remove(key);
-		cout << "size   = " << lru.size() << endl;
-	}
-	cout << "-----------------------" << endl << endl;
+   print_table_row<int>("Del order", vec);
+   for(auto key : vec) {
+      lru.remove(key);
+      cout << "size   = " << lru.size() << endl;
+   }
+   cout << "-----------------------" << endl << endl;
 }
 
 int main()
 {
-	init_rand();
-	lru_walkthrough();
+   init_rand();
+   lru_walkthrough();
 }
