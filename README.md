@@ -23,6 +23,14 @@ Algo - BIT Operations
 ----------------------------------------------------------------------------------------
 Data Structures - Bitmap
 --------------------------------------------
-- Comment
+- Simple resizable Bitmap implementation in under 200 lines using STL Vector as underlying container.
+- Supports bitmap resize and get_next_set_bit operation which are not available in STL Bitset.
+- Comparable in performance to STL Bitset, simple microbenchmark with 1 Million get/set/clear operations (code-included) shows:
+
+  | Measure                           |  STL Bitset | Bitmap      |
+  |:----------------------------------|:------------|:------------|
+  | Total time taken (1 million loop) |  71 ms      | 72 ms       | 
+  | Avg #Cycles per loop              |  189 cycles | 192 cycles  |
+  - Note: micro-benchmarks were measured on an Ubuntu 16.04 VM running on Intel(R) Xeon(R) CPU X5650 @ 2.67GHz.
 
 ----------------------------------------------------------------------------------------
