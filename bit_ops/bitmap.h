@@ -17,23 +17,42 @@ class Bitmap
 public:
    /* Create bitmap based on max capacity [0-max_n]          *
     * @param max_n - maximum value in this static bitmap     */
-   Bitmap(size_t max_n) : bw((max_n >> u64_shift) + 1 , 0)      {       }
+   Bitmap(size_t max_n) : bw((max_n >> u64_shift) + 1 , 0) { }
    ~Bitmap() { }    /* Destructor for the bitmap class       */
    /* Check if a given position is valid within bitmap       */
-   bool isValid(size_t pos) const { return get_word_idx(pos)<bw.size(); }
+   bool isValid(size_t pos) const {
+      return get_word_idx(pos)<bw.size();
+   }
    /* Bitmap Set operations (set, set vector, set all)       */
-   void set(size_t pos)            { set(pos, true);                    }
-   void set(const std::vector<size_t>& pv) { for(auto p : pv) set(p);   }
-   void setAll() { std::fill(bw.begin(), bw.end(), (uint64_t) - 1);     }
+   void set(size_t pos)  {
+      set(pos, true);
+   }
+   void set(const std::vector<size_t>& pv) {
+      for(auto p : pv) set(p);
+   }
+   void setAll() {
+      std::fill(bw.begin(), bw.end(), (uint64_t) - 1);
+   }
    /* Bitmap Reset operations (reset,reset vector, clear all)*/
-   void reset(size_t pos)          { set(pos, false);                   }
-   void reset(const std::vector<size_t>& pv) { for(auto p:pv) reset(p); }
-   void reset()         { std::fill(bw.begin(), bw.end(),  0);          }
+   void reset(size_t pos) {
+      set(pos, false);
+   }
+   void reset(const std::vector<size_t>& pv) {
+      for(auto p:pv) reset(p);
+   }
+   void reset() {
+      std::fill(bw.begin(), bw.end(),  0);
+   }
    /* Bitmap Size ops (container size, #set bits, is empty? */
-   inline size_t size()  const { return (bw.size() << u64_shift);       }
-   inline size_t count() const { return cnt();                          }
-   inline bool isEmpty() const { return (count() == 0);                 }
-   inline void resize(size_t n){ bw.resize((n >> u64_shift) + 1 , 0);   }
+   inline size_t size()  const {
+      return (bw.size() << u64_shift);
+   }
+   inline size_t count() const {
+      return cnt();
+   }
+   inline bool isEmpty() const {
+      return (count() == 0);
+   }
    /* Bitmap class get API (get if a bit is set or not)      */
    bool get(size_t pos) const {
       if(isValid(pos) == false) return false;
@@ -43,18 +62,23 @@ public:
     * @param pos - position idx. Can be zero/one based       *
     * @param next_pos - reference variable for next_pos      */
    bool get_next_set_pos(size_t pos, size_t &next_pos) {
-      if(isValid(pos+1) == false) return false; /* not last chk */
+      if(isValid(pos+1) == false) return false; /* not last  */
       uint64_t mask = ~bit_propagate_ones_right(wordmask(pos));
       for(auto i = get_word_idx(pos); i < bw.size(); ++i, mask = -1) {
-         int ffs = bit_ffs(bw[i] & mask); /* 1st set bit pos    */
-         if(ffs >= 0)  { /* If there is a bit, calc global idx  */
+         int ffs = bit_ffs(bw[i] & mask); /* 1st set bit pos */
+         if(ffs >= 0)  { /* If there is a bit,get global idx */
             next_pos = (i << u64_shift) + ffs;
             return true;
          }
       }
       return false;
    }
-   void dump() const { for(auto v:bw) cout<<std::bitset<u64_bit>(v)<<endl; }
+   inline void resize(size_t n) {
+      bw.resize((n >> u64_shift) + 1 , 0);
+   }
+   void dump() const {
+      for(auto v:bw) cout << std::bitset<u64_bit>(v) << endl;
+   }
 private:
    /* Bitmap class member variables                          */
    std::vector<uint64_t> bw; /* Underlying bitmap container  */
@@ -78,8 +102,9 @@ private:
    /* Given position [0-n], find the 64-bit word index       */
    inline size_t get_word_idx(size_t pos) const { return (pos >> u64_shift);}
    /* Given a bit position [0-63) create a mask              */
-   inline uint64_t wordmask(size_t pos) const
-   { return ((uint64_t)1 << (pos % u64_bit));                            }
+   inline uint64_t wordmask(size_t pos) const   {
+      return ((uint64_t)1 << (pos % u64_bit));
+   }
    /* Given position[0-n), set/clear bit in that position    */
    inline void set(size_t pos, bool on) {
       if(isValid(pos)) {
