@@ -23,11 +23,11 @@ Data Structures - Bitmap
 - Supports bitmap resize and get_next_set_bit operation which are not available in STL Bitset.
 - Comparable in performance to STL Bitset, simple microbenchmark with 1 Million get/set/clear operations (code-included) shows:
 
-  | Measure                           |  STL Bitset | Bitmap      |
+  | Measure                           |  STL Bitset | [Bitmap](./bit_ops/bitmap.h)      |
   |:----------------------------------|:------------|:------------|
   | Total time taken (1 million loop) |  71 ms      | 60 ms       | 
   | Avg #Cycles per loop              |  189 cycles | 162 cycles  |
   - Note: micro-benchmarks were measured on an Ubuntu 16.04 VM running on Intel(R) Xeon(R) CPU X5650 @ 2.67GHz.
-- Refer to [C bit_ops header file](../C/bit_ops/bit_ops.h) for some simple BIT manipulation functions (e.g., bit_reverse, bit_propagate_ones_to_right, bit_get_msb, bit_get_lsb, bit_population_cnt, bit_parity, bit_num_leading_zeros, bit_num_trailing_zeros, bit_snoob, bit_log2 (floor, ceil), bit_is_pow2, bit_in_place_permutate)
+- Refer to [C bit_ops header file](../C/bit_ops/bit_ops.h) for BIT manipulation functions (e.g., bit_reverse, bit_propagate_ones_to_right, bit_get_msb, bit_get_lsb, bit_population_cnt, bit_parity, bit_num_leading_zeros, bit_num_trailing_zeros, bit_snoob, bit_log2 (floor, ceil), bit_is_pow2, bit_in_place_permutate)
 
 ----------------------------------------------------------------------------------------
