@@ -16,10 +16,6 @@ Algo - Dynamic Programming
 |3. |  [Longest Common Subsequence](./dyn_prog/dyn_longest_common_subsequence.cc)  | - Given two sequences (chars/numbers/etc) find the longest common subsequence (subsequence = sequence that appears in same relative order but not necessarily contiguous). <br> - This is similar to [Longest Increasing Subsequence](./leetcode/algo_dp_longest_increasing_subsequence.cc) whose length can be calulated in O(n lg n) time complexity with Patience sort.  <br> - For contiguous length (sub-array instead of subsequence) refer to [Maximum Sum in Subarray(Leetcode)](./leetcode/algo_dp_maximum_sum_product_subarray.cc)            |
 |4. |  [Levenstein Minimum edit distance](./dyn_prog/dyn_str_min_edit_distance.cc) | Given two strings, determine minimum number of operations to change 1 string to the other (add, del, sub).                        |
 
-Algo - BIT Operations
---------------------------------------------
-- Port from C
-
 ----------------------------------------------------------------------------------------
 Data Structures - Bitmap
 --------------------------------------------
@@ -33,4 +29,5 @@ Data Structures - Bitmap
   | Avg #Cycles per loop              |  189 cycles | 162 cycles  |
   - Note: micro-benchmarks were measured on an Ubuntu 16.04 VM running on Intel(R) Xeon(R) CPU X5650 @ 2.67GHz.
 - Refer to [C bit_ops header file](../C/bit_ops/bit_ops.h) for some simple BIT manipulation functions (e.g., bit_reverse, bit_propagate_ones_to_right, bit_get_msb, bit_get_lsb, bit_population_cnt, bit_parity, bit_num_leading_zeros, bit_num_trailing_zeros, bit_snoob, bit_log2 (floor, ceil), bit_is_pow2, bit_in_place_permutate)
+
 ----------------------------------------------------------------------------------------
