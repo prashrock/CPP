@@ -6,7 +6,7 @@
 #include <list>                /* std::list                  */
 
 /**
- * @class lru
+ * @class LRU
  * @brief STL based Least Recently Used Cache implementation
  * @note  Inspired by Tim Day(http://timday.bitbucket.org/lru.html)
 

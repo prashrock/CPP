@@ -1,7 +1,12 @@
+ifndef COMMON_ROOT
+COMMON_ROOT = $(shell pwd)/..
+endif
+ifndef COMMON_C_ROOT
+COMMON_C_ROOT = $(COMMON_ROOT)/../C
+endif
 
 INCLUDES = \
 	-I $(COMMON_ROOT)/utils	                       \
-
 
 BIN_TREE_TEST = \
 	$(COMMON_ROOT)/tree/binary_tree_test.o         \
@@ -10,7 +15,6 @@ DEPS = \
 	$(COMMON_C_ROOT)/utils/compiler_api.h          \
 	$(COMMON_ROOT)/utils/print_utils.h             \
 	$(COMMON_ROOT)/tree/binary_tree.h              \
-
 
 OBJS = $(BIN_TREE_TEST)
 
