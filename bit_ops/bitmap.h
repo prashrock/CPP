@@ -17,11 +17,11 @@ class Bitmap
 public:
    /* Create bitmap based on max capacity [0-max_n]          *
     * @param max_n - maximum value in this static bitmap     */
-   Bitmap(size_t max_n) : bw((max_n >> u64_shift) + 1 , 0) { }
+    Bitmap(size_t max_n) : n(max_n), bw((n >> u64_shift) + 1 , 0) {}
    ~Bitmap() { }    /* Destructor for the bitmap class       */
    /* Check if a given position is valid within bitmap       */
-   bool isValid(size_t pos) const {
-      return get_word_idx(pos)<bw.size();
+   inline bool isValid(size_t pos) const {
+      return (pos <= n);
    }
    /* Bitmap Set operations (set, set vector, set all)       */
    void set(size_t pos)  {
@@ -73,14 +73,18 @@ public:
       }
       return false;
    }
-   inline void resize(size_t n) {
-      bw.resize((n >> u64_shift) + 1 , 0);
+   inline void resize(size_t new_n) {
+      if(new_n < n) /* Clear off all higher bits in last word*/
+         bw[get_word_idx(new_n)] &=  bit_propagate_ones_right(wordmask(new_n));
+      bw.resize((new_n >> u64_shift) + 1 , 0);
+      n = new_n;
    }
    void dump() const {
       for(auto v:bw) cout << std::bitset<u64_bit>(v) << endl;
    }
 private:
    /* Bitmap class member variables                          */
+   size_t n;             /* specifies #bits in bitmap [0, n] */
    std::vector<uint64_t> bw; /* Underlying bitmap container  */
    const static int u64_bit   = (CHAR_BIT * sizeof(uint64_t));
    const static int u64_shift = 6; /* use 2^6 = 64, no divide*/ 

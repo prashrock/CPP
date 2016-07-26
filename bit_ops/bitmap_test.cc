@@ -27,7 +27,7 @@ void bitmap_perf_test()
    std::vector<size_t> val(perf_size);
    /* Fill vector with an increasing sequence 0, 1,...,10^6  */
    std::iota (std::begin(val), std::end(val), 0);
-   //std::shuffle(val.begin(), val.end(), std::default_random_engine{});
+   std::shuffle(val.begin(), val.end(), std::default_random_engine{});
    struct time_api_t stl_time, my_time;
    struct tsc_api_t stl_tsc, my_tsc;
    
