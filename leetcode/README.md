@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [92 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [93 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -125,7 +125,7 @@ Data Structure based
 |3. | Easy       | [Level order BT traversal](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/) ([solution](./ds_tree_traversal_levelorder_bt.cc))                                                                                   |
 |4. | Easy       | [Is BT Height Balanced](https://leetcode.com/problems/balanced-binary-tree/) <br> [Min Depth of BT](https://leetcode.com/problems/minimum-depth-of-binary-tree/) <br> [Max Depth of BT](https://leetcode.com/problems/maximum-depth-of-binary-tree/)   ([solution](./ds_tree_min_max_depth_bt.cc))                       |
 |5. | Easy       | [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) ([solution](./ds_tree_invert_bt.cc))  |
-|6. | Easy       | [Path Sum](https://leetcode.com/problems/path-sum/) ([solution](./ds_tree_path_sum.cc))                                        |
+|6. | Medium     | Path Sum [I](https://leetcode.com/problems/path-sum/) and [II](https://leetcode.com/problems/path-sum-ii/) ([solution](./ds_tree_path_sum_i_ii.cc))                |
 |7. | Medium     | [Longest Consecutive Sequence BT](https://leetcode.com/problems/binary-tree-longest-consecutive-sequence/) ([soln](./ds_tree_longest_consecutive_sequence_bt.cc))  |
 |8. | Medium     | [Lowest Common Ancestor of Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) <br> [Lowest Common Ancestor of Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) ([solution](./ds_tree_lca_bt_bst.cc))                  |
 |9. | Medium     | [Populate Right pointers in BT](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/) ([solution](./ds_tree_populate_next_pointer.cc))     |
