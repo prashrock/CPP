@@ -50,8 +50,9 @@ namespace bt
   * @param rt  - root node of current sub-tree               *
   * @param vec - output vec to populate nodes @ level        *
   * @param level - 1-based level number                      *
-  * Refer to https://github.com/prashrock/CPP/blob/master/leetcode/ds_tree_traversal_levelorder_bt.cc
-  * for an iterative implementation                          */
+  * Refer to https://github.com/prashrock/CPP/blob/master/leetcode/ds_tree_traversal_levelorder_bt.cc *
+  * and      https://github.com/prashrock/CPP/blob/master/leetcode/ds_tree_right_side_view_bt.cc      *
+  * for iterative implementations                            */
  template<typename Tkey=int, typename Tval=int>
  void levelorder(node<Tkey,Tval> *rt, std::vector<node<Tkey,Tval> *>
                  &vec, unsigned int level) {
