@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [93 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [94 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -57,6 +57,11 @@ Data Structure based
 |:--|:-----------|:---------------------------------------------|
 |1. | Medium     | [Course Schedule](https://leetcode.com/problems/course-schedule/) ([solution](./ds_graph_loop_course_schedule.cc)) |
 |2. | Medium     | [Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) ([solution](./ds_graph_loop_course_schedule_ii.cc))                                                                                   |
+
+###LRU###
+|#  | Difficulty | Problem and Soution                          |
+|:--|:-----------|:---------------------------------------------|
+|1. | Hard       | [LRU Cache](https://leetcode.com/problems/lru-cache/) ([solution](./ds_lru_cache.cc))        |
 
 ###Hash###
 |#  | Difficulty | Problem and Soution                          |

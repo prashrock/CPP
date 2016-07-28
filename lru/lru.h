@@ -9,7 +9,9 @@
  * @class LRU
  * @brief STL based Least Recently Used Cache implementation
  * @note  Inspired by Tim Day(http://timday.bitbucket.org/lru.html)
-
+ * @note  Minimal implementation can be found @
+ *        https://github.com/prashrock/CPP/tree/master/leetcode/ds_lru_cache.cc
+ 
  * This class uses 2 STL containers (List + Unordered_MAP) and
  * implements a basic O(1) LRU container.
  */
