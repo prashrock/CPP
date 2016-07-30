@@ -8,8 +8,9 @@
 /**
  * @class LRU
  * @brief STL based Least Recently Used Cache implementation
+ *        Evicts items with the greatest "idle time"
  * @note  Inspired by Tim Day(http://timday.bitbucket.org/lru.html)
- * @note  Minimal implementation can be found @
+ * @note  Minimal leetcode implementation  @
  *        https://github.com/prashrock/CPP/tree/master/leetcode/ds_lru_cache.cc
  
  * This class uses 2 STL containers (List + Unordered_MAP) and
