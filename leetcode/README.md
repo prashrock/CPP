@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [94 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [96 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -20,9 +20,9 @@ Algorithm based
 |1. | Easy       | Find Duplicate([solution](./algo_dc_elem_appear_once_in_sorted_arr.cc))                                            |
 |2. | Medium     | [Equal Range](https://leetcode.com/problems/search-for-a-range/) ([solution](./algo_dc_equal_range.cc))            |
 |3. | Medium     | [H-Index](https://leetcode.com/problems/h-index/) ([solution](./algo_dc_h_index.cc))           |
-|4. | Hard       | [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) ([solution](./algo_dc_rotated_array_search.cc))                                                                                       |
+|3. | Medium     | [Guess number higher or lower](https://leetcode.com/problems/guess-number-higher-or-lower/) ([solution](./algo_dc_guess_number.cc))       |
 |5. | Medium     | Search a 2D Matrix [I](https://leetcode.com/problems/search-a-2d-matrix/),  [II](https://leetcode.com/problems/search-a-2d-matrix-ii/) ([solution](./algo_dc_search_2D_matrix_i_ii.cc))                           |
-|6. | Medium     | [Search insert position](https://leetcode.com/problems/search-insert-position/) ([solution](./algo_dc_search_insert_position.cc))                                                                                     |
+|6. | Medium     | [Search insert position](https://leetcode.com/problems/search-insert-position/) ([solution](./algo_dc_search_insert_position.cc))                                      |7. | Hard       | [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) <br> [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) ([solution](./algo_dc_rotated_array_search.cc))  |                         |
 
 ###Design###
 |#  | Difficulty | Problem and Soution                          |

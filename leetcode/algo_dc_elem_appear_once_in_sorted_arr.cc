@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o algo_dc_elem_appear_once_in_sorted_arr algo_dc_elem_appear_once_in_sorted_arr.cc
+//g++ --std=c++11 -Wall -g -o algo_dc_elem_appear_once_in_sorted_arr algo_dc_elem_appear_once_in_sorted_arr.cc
 
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
@@ -27,30 +27,25 @@ using namespace std;
 
 /**
  * @brief:                                                   *
- * Note, input must be sorted, all elements must occur twice *
- * except one and the length of input must be odd (1 elem    *
- * without pair)                                             *
+ * Recursive find-duplicate implementation. Expects input to *
+ * be sorted, all elements must occur in pairs except one and*
+ * the length of input must be odd (1 elem without pair)     *
  * Time Complexity = O(lg n).   Space Complexity = O(1)      */
-int findDuplicate(const vector<int>& nums, int start, int end) {
-   int len = end - start + 1;
-   int mid = start + (len/2);
-
-   /* Base-case                                              */
-   if(len == 1)  return nums[start];
+int findDuplicate(const vector<int>& nums, int b, int e) {
+   int len = e - b + 1;
+   if(len == 1)  return nums[b];                /* Base case */
 	
    /* Check middle element match condition                   */
-   if(nums[mid] == nums[mid-1])              mid = mid - 1;
-   else if(nums[mid] != nums[mid+1])         return nums[mid];
+   int m = b + (e - b) /2;
+   if(nums[m] == nums[m-1])              m = m - 1;
+   else if(nums[m] != nums[m+1])         return nums[m];
 	
-   int left_len  = (mid - 1) - start + 1;
-   int right_len = end - (mid + 2)   + 1; 
-
-   //cout << "left:"  << start       << " " << left_len  << endl;
-   //cout << "right:" << (mid + 2)   << " " << right_len << endl;
+   int l_len  = (m - 1) - b + 1;
+   //cout << "left:"  << b       << " " << l_len  << endl;
 	
    /* Now check which half has odd-len and recurse           */
-   if(left_len % 2) return findDuplicate(nums, start,  mid - 1);
-   else             return findDuplicate(nums, mid + 2, end);
+   if(l_len % 2) return findDuplicate(nums, b,  m - 1);
+   else          return findDuplicate(nums, m + 2, e);
 }
 
 void dump_vector(const vector<int> &a)
@@ -80,7 +75,6 @@ int test_driver(const vector<int> &a, int result) {
  * 1, 1, 2, 2, 3                                             */
 int auto_test(int n)
 {
-   int idx, ret;
    int cnt = 2*n - 1;
    vector<int> ab(cnt, 0);
    for(int i = 0; i < n; ++i) {
@@ -96,13 +90,11 @@ int auto_test(int n)
 
 int manual_test()
 {
-   int ret;
    vector<int> a = {1, 1, 3, 3, 4, 5, 5, 7, 7, 8, 8};
    if(test_driver(a, 4) != 0) return -1;
    a.clear();
 
    a = {1, 1, 3, 3, 4, 4, 5, 5, 7, 7, 8};
-   ret = findDuplicate(a, 0, a.size()-1);
    if(test_driver(a, 8) != 0) return -1;
 
    return 0;

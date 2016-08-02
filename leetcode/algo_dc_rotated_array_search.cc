@@ -1,23 +1,56 @@
 //g++ --std=c++11 -Wall -g -o algo_dc_rotated_array_search algo_dc_rotated_array_search.cc
 
-#include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
-#include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
-#include <unordered_map>     /* std::unordered_map container */
-using namespace std;
-
 /**
  * @file  Search in Rotated Sorted Array
  * @brief Given a rotated sorted array, search for value
  */
 
+// https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 // https://leetcode.com/problems/search-in-rotated-sorted-array/
 
+#include <iostream>          /* std::cout                    */
+#include <algorithm>         /* std::max                     */
+using namespace std;
 
+// https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+/**
+ * Suppose a sorted array is rotated at some pivot unknown to you beforehand.
+ * (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+ * Find the minimum element. You may assume no duplicate exists in the array.
+ */
+
+/**
+ * @brief - Modified Iterative Binary Search implementation. *
+ * Additional check to check we are in rotated array along   *
+ * with incrementing begin position only each loop.          *
+ * Time Complexity = O(lg n).   Space Complexity = O(1)      */
+int findMin(vector<int>& nums) {
+   int b = 0;
+   /* Create an iterative loop (similar to binary search) */
+   for(int e = nums.size() - 1; b < e && nums[b] > nums[e]; ) {
+      int m = b + (e - b) / 2;       /* calc mid point   */
+      if(nums[m] < nums[e]) e = m;   /* go to left half  */
+      else                  b = m+1; /* go to right half */
+   }
+   return nums[b];
+}
+
+struct test_vector_min {
+   std::vector<int> nums;
+   int exp;
+};
+
+const struct test_vector_min test_min[7] =  {
+   { {0},                       0},
+   { {4, 5, 6, 7, 0, 1, 2},     0},
+   { {0, 1, 2, 4, 5, 6, 7},     0},
+   { {1, 2, 4, 5, 6, 7, 0},     0},
+   { {4, 5, 6, 7, 8, 0, 1, 2},  0},
+   { {0, 1, 2, 4, 5, 6, 7, 8},  0},
+   { {1, 2, 4, 5, 6, 7, 8, 0},  0},
+};
+
+//https://leetcode.com/problems/search-in-rotated-sorted-array/
 /**
  * Suppose a sorted array is rotated at some pivot unknown to you
  * beforehand.
@@ -27,7 +60,6 @@ using namespace std;
  * 
  * You may assume no duplicate exists in the array.
  */
-
 
 /**
  * @brief - Iterative Binary Search implementation. Returns  *
@@ -47,21 +79,17 @@ int binarySearch(vector<int>& nums, int first, int last, int target) {
 
 int search(vector<int>& nums, int target) {
    if(nums.size() == 0)  return 0;
-   int mid = 0;
-
+   int m = 0;
    /* If input is rotated, find index of smallest element    *
     * with Binary Search                                     */
-   for(int first = 0, last = nums.size() - 1;
-       first <= last && nums[first] > nums[last]; ) {
+   for(int b = 0, e = nums.size() - 1; b <= e && nums[b] > nums[e]; ) {
       /* If len is even, mid needs to be higher element      */
-      mid = first + (last - first) / 2;
-      if((last - first + 1) % 2 == 0) mid++;
-      /* Is [first, mid]  not-rotated                        */
-      if(nums[mid] > nums[first])  first = mid;
-      /* Is [mid, last]   not-rotated                        */
-      else                         last  = mid-1;
+      m = b + (e - b) / 2;
+      if((e-b+1) % 2 == 0)   m++;
+      if(nums[m] > nums[b])  b = m;  /* Is [b, m] not-rotated*/
+      else                   e = m-1;/* Is [m, e] not-rotated*/
    }
-   int pivot = mid;
+   int pivot = m;
    //cout << endl << "smallest @ " << pivot << endl;
    int ret = binarySearch(nums, 0, pivot-1, target);
    if(ret == -1)  ret = binarySearch(nums, pivot, nums.size()-1, target);
@@ -92,6 +120,17 @@ const struct test_vector test[12] =  {
 
 int main()
 {
+   /* First handle find minimum test-case                    */
+   for(auto tst : test_min) {
+      auto ans = findMin(tst.nums);
+      if(ans != tst.exp) {
+         cout << "Error: Find Minimum number in sorted rotated array failed: ";
+         for(auto e : tst.nums) cout << e << ","; cout << endl;
+         cout << "Expected = " << tst.exp << " Got   = " << ans << endl;
+         return -1;
+      }
+   }
+   /* Second handle search in rotated sorted array test-case */
    for(auto tst : test) {
       int ans = search(tst.nums, tst.target);
       if(ans != tst.exp) {
