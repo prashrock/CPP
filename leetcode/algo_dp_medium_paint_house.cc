@@ -29,7 +29,7 @@ using namespace std;
  * houses and update the sum of costs                        *
  * For each house, what is the cost of painting it a given   *
  * color, depends on what is min cost of painting prev houses*/
-int minCost(vector<vector<int>>& costs) {
+int minCost(const vector<vector<int>>& costs) {
    if(costs.size() == 0) return 0;
    int n_colors = costs[0].size();
    vector<int> cur(n_colors, 0), prev(n_colors, 0); /* sums  */
@@ -58,7 +58,7 @@ const struct test_vector test[4] =  {
 
 int main()
 {
-   for(auto tst : test) {
+   for(auto const &tst : test) {
       auto ans = minCost(tst.nums);
       if(ans != tst.exp) {
          cout << "Error:minCost failed. Exp "

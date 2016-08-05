@@ -55,6 +55,10 @@ ListNode* mergeKLists(vector<ListNode*>& lists) {
    return ansb;
 }
 
+/* Another approach is to merge 2 lists at a time till there *
+ * are no more lists. With this approach, an approach close  *
+ * to ./ds_list_merge_sorted_arrays.cc can be used           */
+
 /* Some test-cases which I used in Leetcode                  */
 //[[]]   //[]
 //[[1]]  //[1]
