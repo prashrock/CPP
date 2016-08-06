@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [97 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [99 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -108,19 +108,20 @@ Data Structure based
 ###String###
 |#  | Difficulty | Problem and Soution                          |
 |:--|:-----------|:---------------------------------------------|
-|1. | Easy       | [Add Binary](https://leetcode.com/problems/add-binary/)  ([solution](./ds_string_easy_add_binary.cc))              |
-|2. | Easy       | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)  ([solution](./ds_string_easy_valid_palindrome.cc))                                                                                    |
-|3. | Easy       | [Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)  ([solution](./ds_string_isomorphic.cc))   |
-|4. | Easy       | [Bijection Check Word Pattern](https://leetcode.com/problems/word-pattern/)  ([solution](./ds_string_word_pattern.cc))                                                                                             |
-|5. | Easy       | [Palindrome Permutation](https://leetcode.com/problems/palindrome-permutation/)  ([solution](./ds_string_palindromic_permutation_i_ii.cc))                                                                             |
-|6. | Medium     | [Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)  ([solution](./ds_string_encode_decode.cc))                                                                                            |
-|7. | Medium     | [Integer to Roman](https://leetcode.com/problems/integer-to-roman/)  ([solution](./ds_string_int_to_roman_numerals.cc))                                                                                    |
-|8. | Medium     | [Multiply Strings](https://leetcode.com/problems/multiply-strings/)    ([soln](./ds_string_multiply_strings.cc))   |
-|9. | Medium     | [One Edit Distance](https://leetcode.com/problems/one-edit-distance/)    ([solution](./ds_string_one_edit_distance.cc))                                                                                        |
-|10.| Medium     | [Reverse String](https://leetcode.com/problems/reverse-string/) <br> [Reverse vowels of string](https://leetcode.com/problems/reverse-vowels-of-a-string/) <br>  [Reverse words in string](https://leetcode.com/problems/reverse-words-in-a-string/)    ([solution](./ds_string_reverse_words.cc))                       |
-|11.| Hard       | [Is Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/) <br> [Find Strobogrammatic Numbers of length n](https://leetcode.com/problems/strobogrammatic-number-ii/) <br> [Find Strobogrammatic Numbers within range](https://leetcode.com/problems/strobogrammatic-number-iii/)    ([solution](./ds_string_strobogrammatic_num_i_ii_iii.cc)) |
-|12.| Hard       | [Integer to Words](https://leetcode.com/problems/integer-to-english-words/)  ([solution](./ds_string_int_to_words.cc))                                                                                             |
-|13.| Hard       | [Text Justification](https://leetcode.com/problems/text-justification/)    ([solution](./ds_string_text_justification.cc))                                                                                       |
+|1. | Easy       | [Add Binary](https://leetcode.com/problems/add-binary/)  ([solution](./ds_string_easy_add_binary.cc))                                                      |
+|2. | Easy       | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)  ([solution](./ds_string_easy_valid_palindrome.cc))                                    |
+|3. | Easy       | [Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)  ([solution](./ds_string_isomorphic.cc))                                           |
+|4. | Easy       | [Bijection Check Word Pattern](https://leetcode.com/problems/word-pattern/)  ([solution](./ds_string_word_pattern.cc))                                     |
+|5. | Easy       | [Palindrome Permutation](https://leetcode.com/problems/palindrome-permutation/)  ([solution](./ds_string_palindromic_permutation_i_ii.cc))                 |
+|6. | Easy       | [atoi](https://leetcode.com/problems/string-to-integer-atoi/)  ([solution](./ds_string_atoi.cc))                                                           |
+|7. | Medium     | [Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)  ([solution](./ds_string_encode_decode.cc))                          |
+|8. | Medium     | [Integer to Roman](https://leetcode.com/problems/integer-to-roman/)  ([solution](./ds_string_int_to_roman_numerals.cc))                                    |
+|9. | Medium     | [Multiply Strings](https://leetcode.com/problems/multiply-strings/)    ([soln](./ds_string_multiply_strings.cc))                                           |
+|10.| Medium     | [One Edit Distance](https://leetcode.com/problems/one-edit-distance/)    ([solution](./ds_string_one_edit_distance.cc))                                    |
+|11.| Medium     | [Reverse String](https://leetcode.com/problems/reverse-string/) <br> [Reverse vowels of string](https://leetcode.com/problems/reverse-vowels-of-a-string/) <br>  [Reverse words in string](https://leetcode.com/problems/reverse-words-in-a-string/)    ([solution](./ds_string_reverse_words.cc))                                                     |
+|12.| Hard       | [Is Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/) <br> [Find Strobogrammatic Numbers of length n](https://leetcode.com/problems/strobogrammatic-number-ii/) <br> [Find Strobogrammatic Numbers within range](https://leetcode.com/problems/strobogrammatic-number-iii/)  ([solution](./ds_string_strobogrammatic_num_i_ii_iii.cc)) |
+|13.| Hard       | [Integer to Words](https://leetcode.com/problems/integer-to-english-words/)  ([solution](./ds_string_int_to_words.cc))                                     |
+|14.| Hard       | [Text Justification](https://leetcode.com/problems/text-justification/)    ([solution](./ds_string_text_justification.cc))                                 |
 
 ###Tree###
 |#  | Difficulty | Problem and Soution                          |
@@ -144,12 +145,13 @@ Math based
 |#  | Difficulty | Problem and Soution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | [Happy Number](https://leetcode.com/problems/happy-number/) ([soln](./math_happy_number.cc))                      |
-|2. | Medium     | [3 sum smaller](https://leetcode.com/problems/3sum-smaller/) <br> [3 sum ](https://leetcode.com/problems/3sum/) ([solution](./math_3sum.cc))                                                                                                         |
+|2. | Medium     | [3 sum smaller](https://leetcode.com/problems/3sum-smaller/) <br> [3 sum ](https://leetcode.com/problems/3sum/) ([solution](./math_3sum.cc))                      |
 |3. | Medium     | [Find Sqrt](https://leetcode.com/problems/sqrtx/) ([solution](./math_find_sqrt.cc))                               |
 |4. | Medium     | [Integer Break](https://leetcode.com/problems/integer-break/) ([solution](./math_integer_break.cc))               |
 |5. | Medium     | [Single Number](https://leetcode.com/problems/single-number/) ([solution](./math_integer_missing_int.cc))         |
 |6. | Medium     | [Letter Combinations of Phone number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) ([solution](./math_letter_combinations_phone.cc))      |
-|7. | Medium     | [Validate Perfect Square](https://leetcode.com/problems/valid-perfect-square/) ([solution](./math_validate_perfect_square.cc))                                                                                      |
-|8. | Hard     | [Patching Array](https://leetcode.com/problems/patching-array/) ([solution](./math_patching_array.cc))              |
+|7. | Medium     | [Validate Perfect Square](https://leetcode.com/problems/valid-perfect-square/) ([solution](./math_validate_perfect_square.cc))        |
+|8. | Hard       | [Patching Array](https://leetcode.com/problems/patching-array/) ([solution](./math_patching_array.cc))              |
+|9. | Hard       | [Max 2D points on line](https://leetcode.com/problems/max-points-on-a-line/) ([solution](./math_geometry_max_2Dpoints_line.cc))       |
 
 ----------------------------------------------------------------------------------------
