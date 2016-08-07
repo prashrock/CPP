@@ -65,18 +65,18 @@ int maxPoints(vector<Point>& p) {
     * or have the same slope as this point                   */
    for(int i = 0; i < (int)p.size(); ++i) {
       std::unordered_map<float, int> slope_map; /* #points   */
-      int horizontal = 0, local_ans = 0, same_pt = 1;
+      int h_pts = 0, slope_pts = 0, same_pts = 1;
       for(int j = i + 1; j < (int)p.size(); ++j) {
-         if(p[i].x == p[j].x) { /* same point and horizontal */
-            if(p[i].y == p[j].y) ++same_pt;
-            else                 ++horizontal;
+         if(p[i].x == p[j].x) { /* same/horizontal points    */
+            if(p[i].y == p[j].y) ++same_pts;
+            else                 ++h_pts;
          }
          else {
             float slope = ((float)(p[j].y-p[i].y))/(p[j].x-p[i].x);
-            local_ans   = std::max(local_ans, ++slope_map[slope]);
+            slope_pts   = std::max(slope_pts, ++slope_map[slope]);
          }
       }
-      ans = std::max(ans, (std::max(local_ans, horizontal) + same_pt));
+      ans = std::max(ans, (std::max(slope_pts, h_pts) + same_pts));
    }
    return ans;
 }
