@@ -16,7 +16,7 @@ env:
 addons:
   coverity_scan:
     project:
-      name: "prashrock/CPP"
+      name: "prashrock-CPP"
       token: "dvX_A9zwuQ5E3qF2SS_JFw"
       description: "CPP Algo/DS/Leetcode"
     notification_email: "prashrock@gmail.com"
