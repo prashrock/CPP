@@ -7,7 +7,7 @@ Note: Solutions inspired from Leetcode discussions have explicit comments and li
 Algorithm based
 --------------------------------------------
 ###Backtracking###
-|#  | Difficulty | Problem and Soution                          |
+|#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Medium     | [Number of 2D Islands](https://leetcode.com/problems/number-of-islands/) ([solution](./algo_backtrack_2D_number_of_islands.cc))                                                                                |
 |2. | Medium     | [Flip Game II](https://leetcode.com/problems/flip-game-ii/) ([solution](./algo_backtrack_flipgame2.cc))            |
@@ -15,7 +15,7 @@ Algorithm based
 |4. | Medium     | [Word Search](https://leetcode.com/problems/word-search/) ([solution](./algo_backtrack_word_search.cc))            |
 
 ###Divide and Conquer###
-|#  | Difficulty | Problem and Soution                          |
+|#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | Find Duplicate([solution](./algo_dc_elem_appear_once_in_sorted_arr.cc))                                            |
 |2. | Medium     | [Equal Range](https://leetcode.com/problems/search-for-a-range/) ([solution](./algo_dc_equal_range.cc))            |
@@ -25,12 +25,12 @@ Algorithm based
 |6. | Medium     | [Search insert position](https://leetcode.com/problems/search-insert-position/) ([solution](./algo_dc_search_insert_position.cc))                                      |7. | Hard       | [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) <br> [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) ([solution](./algo_dc_rotated_array_search.cc))  |                         |
 
 ###Design###
-|#  | Difficulty | Problem and Soution                          |
+|#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Medium     | [Hit counter](https://leetcode.com/problems/design-hit-counter/) ([solution](./algo_design_hit_counter.cc))        |
 
 ###Dynamic Programming###
-|#  | Difficulty | Problem and Soution                          |
+|#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | [House Robber](https://leetcode.com/problems/house-robber/) ([solution](./algo_dp_easy_house_robber.cc))           |
 |2. | Easy       | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) ([solution](./algo_dp_number_of_1_2_steps.cc))   |
@@ -41,7 +41,7 @@ Algorithm based
 |7. | Medium     | [Structurally Unique BST](https://leetcode.com/problems/unique-binary-search-trees/) ([solution](./algo_dp_unique_binary_search_trees.cc))                                                                                 |
 
 ###Sort###
-|#  | Difficulty | Problem and Soution                          |
+|#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | [Meeting Rooms](https://leetcode.com/problems/meeting-rooms/) ([solution](./algo_sort_meeting_rooms.cc))           |
 |2. | Medium     | [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/) ([solution](./algo_sort_meeting_rooms_ii.cc))  |
@@ -53,37 +53,37 @@ Algorithm based
 Data Structure based
 --------------------------------------------
 ###Graph###
-|#  | Difficulty | Problem and Soution                          |
+|#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Medium     | [Course Schedule](https://leetcode.com/problems/course-schedule/) ([solution](./ds_graph_loop_course_schedule.cc)) |
 |2. | Medium     | [Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) ([solution](./ds_graph_loop_course_schedule_ii.cc))                                                                                   |
 
 ###LRU###
-|#  | Difficulty | Problem and Soution                          |
+|#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Hard       | [LRU Cache](https://leetcode.com/problems/lru-cache/) ([solution](./ds_lru_cache.cc))        |
 
 ###Hash###
-|#  | Difficulty | Problem and Soution                          |
+|#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Hard       | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) ([solution](./ds_hash_longest_consecutive_seq.cc))                                                                                    |
 
 ###Heap###
-|#  | Difficulty | Problem and Soution                          |
+|#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Medium     | [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) ([solution](./ds_heap_top_k_frequent_elements.cc))                                                                                    |
 |2. | Hard       | [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) ([solution](./ds_heap_find_median_in_stream.cc))                                                                                      |
 
 
 ###Linked List###
-|#  | Difficulty | Problem and Soution                          |
+|#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | [Reverse Linked-List](https://leetcode.com/problems/reverse-linked-list/) ([solution](./ds_linkedlist_reverse.cc)) |
 |2. | Medium     | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) ([solution](./ds_linkedlist_add_two_nums.cc))    |
 |3. | Medium     | [Rotate List](https://leetcode.com/problems/rotate-list/) ([solution](./ds_linkedlist_rotate_list.cc))             |
 
 ###List###
-|#  | Difficulty | Problem and Soution                          |
+|#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) ([solution](./ds_list_easy_remove_duplicate_number.cc))                                                                               |
 |2. | Medium     | [Walls and Gates](https://leetcode.com/problems/walls-and-gates/) ([solution](./ds_list_2D_walls_and_gates.cc))    |
@@ -99,14 +99,14 @@ Data Structure based
 |12.| Hard       | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) ([solution](./ds_list_merge_sorted_arrays.cc)) <br> [Merge K Sorted Array](https://leetcode.com/problems/merge-k-sorted-lists/) ([solution](./ds_list_merge_k_sorted_lists.cc))      |
 
 ###Stack###
-|#  | Difficulty | Problem and Soution                          |
+|#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy      | [Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/) <br> [Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)  ([solution](./ds_stack_using_queue.cc))                   |
 |2. | Easy       | [Valid Parantheses](https://leetcode.com/problems/valid-parentheses/) ([solution](./ds_stack_valid_parantheses.cc))|
 |3. | Medium     | [Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/)  ([solution](./ds_stack_math_reverse_polish_notation.cc))                                                                              |
 
 ###String###
-|#  | Difficulty | Problem and Soution                          |
+|#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | [Add Binary](https://leetcode.com/problems/add-binary/)  ([solution](./ds_string_easy_add_binary.cc))                                                      |
 |2. | Easy       | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)  ([solution](./ds_string_easy_valid_palindrome.cc))                                    |
@@ -124,7 +124,7 @@ Data Structure based
 |14.| Hard       | [Text Justification](https://leetcode.com/problems/text-justification/)    ([solution](./ds_string_text_justification.cc))                                 |
 
 ###Tree###
-|#  | Difficulty | Problem and Soution                          |
+|#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | [Is Same Binary Tree](https://leetcode.com/problems/same-tree/)    ([solution](./ds_tree_is_same_tree_bt.cc))     |
 |2. | Easy       | [Is Symmetric Binary Tree](https://leetcode.com/problems/symmetric-tree/)    ([solution](./ds_tree_is_symmetric_bt.cc))                                                                                           |
@@ -142,7 +142,7 @@ Data Structure based
 ----------------------------------------------------------------------------------------
 Math based
 --------------------------------------------
-|#  | Difficulty | Problem and Soution                          |
+|#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | [Happy Number](https://leetcode.com/problems/happy-number/) ([soln](./math_happy_number.cc))                      |
 |2. | Easy       | [Moving Average from Data Stream](https://leetcode.com/problems/moving-average-from-data-stream/) ([soln](./math_moving_average.cc))                  |
