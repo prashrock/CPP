@@ -27,7 +27,8 @@ Algorithm based
 ###Design###
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
-|1. | Medium     | [Hit counter](https://leetcode.com/problems/design-hit-counter/) ([solution](./algo_design_hit_counter.cc))        |
+|1. | Easy       | [Moving Average from Data Stream](https://leetcode.com/problems/moving-average-from-data-stream/) ([soln](./algo_design_moving_average.cc))   |
+|2. | Medium     | [Hit counter](https://leetcode.com/problems/design-hit-counter/) ([solution](./algo_design_hit_counter.cc))                                   |
 
 ###Dynamic Programming###
 |#  | Difficulty | Problem and Solution                          |
@@ -145,14 +146,13 @@ Math based
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | [Happy Number](https://leetcode.com/problems/happy-number/) ([soln](./math_happy_number.cc))                      |
-|2. | Easy       | [Moving Average from Data Stream](https://leetcode.com/problems/moving-average-from-data-stream/) ([soln](./math_moving_average.cc))                  |
-|3. | Medium     | [3 sum smaller](https://leetcode.com/problems/3sum-smaller/) <br> [3 sum ](https://leetcode.com/problems/3sum/) ([solution](./math_3sum.cc))          |
-|4. | Medium     | [Find Sqrt](https://leetcode.com/problems/sqrtx/) ([solution](./math_find_sqrt.cc))                               |
-|5. | Medium     | [Integer Break](https://leetcode.com/problems/integer-break/) ([solution](./math_integer_break.cc))               |
-|6. | Medium     | [Single Number](https://leetcode.com/problems/single-number/) ([solution](./math_integer_missing_int.cc))         |
-|7. | Medium     | [Letter Combinations of Phone number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) ([solution](./math_letter_combinations_phone.cc))      |
-|8. | Medium     | [Validate Perfect Square](https://leetcode.com/problems/valid-perfect-square/) ([solution](./math_validate_perfect_square.cc))        |
-|9. | Hard       | [Patching Array](https://leetcode.com/problems/patching-array/) ([solution](./math_patching_array.cc))              |
-|10.| Hard       | [Max 2D points on line](https://leetcode.com/problems/max-points-on-a-line/) ([solution](./math_geometry_max_2Dpoints_line.cc))       |
+|2. | Medium     | [3 sum smaller](https://leetcode.com/problems/3sum-smaller/) <br> [3 sum ](https://leetcode.com/problems/3sum/) ([solution](./math_3sum.cc))          |
+|3. | Medium     | [Find Sqrt](https://leetcode.com/problems/sqrtx/) ([solution](./math_find_sqrt.cc))                               |
+|4. | Medium     | [Integer Break](https://leetcode.com/problems/integer-break/) ([solution](./math_integer_break.cc))               |
+|5. | Medium     | [Single Number](https://leetcode.com/problems/single-number/) ([solution](./math_integer_missing_int.cc))         |
+|6. | Medium     | [Letter Combinations of Phone number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) ([solution](./math_letter_combinations_phone.cc))      |
+|7. | Medium     | [Validate Perfect Square](https://leetcode.com/problems/valid-perfect-square/) ([solution](./math_validate_perfect_square.cc))        |
+|8. | Hard       | [Patching Array](https://leetcode.com/problems/patching-array/) ([solution](./math_patching_array.cc))              |
+|9. | Hard       | [Max 2D points on line](https://leetcode.com/problems/max-points-on-a-line/) ([solution](./math_geometry_max_2Dpoints_line.cc))       |
 
 ----------------------------------------------------------------------------------------
