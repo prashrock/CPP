@@ -5,7 +5,7 @@ all: $(patsubst %.cc, %, $(wildcard *.cc))
 #first line as a comment. Just extract this line, remove the comment
 #and directly execute the make target
 %: %.cc Makefile
-	@echo "Building " $@
+	@echo "CC   " $@
 	@$(shell head -n 1 $@.cc | cut -c 3-)
 
 clean:

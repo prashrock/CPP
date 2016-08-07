@@ -1,3 +1,9 @@
+ifndef COMMON_ROOT
+COMMON_ROOT = $(shell pwd)/..
+endif
+ifndef COMMON_C_ROOT
+COMMON_C_ROOT = $(COMMON_ROOT)/../C
+endif
 
 INCLUDES = \
 	-I $(COMMON_ROOT)/utils	     \
@@ -27,19 +33,16 @@ include $(COMMON_ROOT)/bld/Makefile.common
 
 # cancel implicit program rule
 longest_unique_substring: $(LONGEST_UNIQUE_SUBSTR)
-	@echo "--------------------------------------------------"
-	@echo $@
-	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	@echo "LD   " $@
+	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
 	@echo "--------------------------------------------------"
 
 substr_match: $(SUBSTR_MATCH)
-	@echo "--------------------------------------------------"
-	@echo $@
-	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	@echo "LD   " $@
+	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
 	@echo "--------------------------------------------------"
 
 word_freq_cnt: $(WORD_FREQ_CNT)
-	@echo "--------------------------------------------------"
-	@echo $@
-	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	@echo "LD   " $@
+	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
 	@echo "--------------------------------------------------"

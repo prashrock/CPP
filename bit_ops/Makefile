@@ -27,7 +27,6 @@ include $(COMMON_ROOT)/bld/Makefile.common
 
 # cancel implicit program rule
 bitmap_test: $(BITMAP_TEST)
-	@echo "--------------------------------------------------"
-	@echo $@
-	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -O3 -Os -march=native -o $@ $^
+	@echo "LD   " $@
+	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -O3 -Os -march=native -o $@ $^
 	@echo "--------------------------------------------------"

@@ -45,39 +45,33 @@ include $(COMMON_ROOT)/bld/Makefile.common
 
 # cancel implicit program rule
 dyn_4_keys_max_print: $(DYN_4_KEYS_MAX_PRINT)
-	@echo "--------------------------------------------------"
-	@echo $@
-	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	@echo "LD   " $@
+	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
 	@echo "--------------------------------------------------"
 
 dyn_partition_set: $(DYN_PARTITION_SET)
-	@echo "--------------------------------------------------"
-	@echo $@
-	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	@echo "LD   " $@
+	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
 	@echo "--------------------------------------------------"
 
 dyn_knapsack_01: $(DYN_KNAPSACK_01)
-	@echo "--------------------------------------------------"
-	@echo $@
-	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	@echo "LD   " $@
+	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
 	@echo "--------------------------------------------------"
 
 dyn_subset_sum: $(DYN_SUBSET_SUM)
-	@echo "--------------------------------------------------"
-	@echo $@
-	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	@echo "LD   " $@
+	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
 	@echo "--------------------------------------------------"
 
 dyn_longest_common_subsequence: $(DYN_LCS)
-	@echo "--------------------------------------------------"
-	@echo $@
-	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	@echo "LD   " $@
+	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
 	@echo "--------------------------------------------------"
 
 dyn_str_min_edit_distance: $(DYN_STR_MIN_EDIT_DISTANCE)
-	@echo "--------------------------------------------------"
-	@echo $@
-	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	@echo "LD   " $@
+	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
 	@echo "--------------------------------------------------"
 
 

@@ -1,3 +1,9 @@
+ifndef COMMON_ROOT
+COMMON_ROOT = $(shell pwd)/..
+endif
+ifndef COMMON_C_ROOT
+COMMON_C_ROOT = $(COMMON_ROOT)/../C
+endif
 
 INCLUDES = \
 	-I $(COMMON_ROOT)/utils	                       \
@@ -19,7 +25,6 @@ include $(COMMON_ROOT)/bld/Makefile.common
 
 # cancel implicit program rule
 trie_test: $(TRIE_TEST)
-	@echo "--------------------------------------------------"
-	@echo $@
-	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	@echo "LD   " $@
+	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
 	@echo "--------------------------------------------------"

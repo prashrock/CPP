@@ -4,22 +4,22 @@ CFLAGS	 := -g -W -Wall -Wextra -pedantic -ggdb3 -Werror \
             -Wunused-function -fno-strict-aliasing
 
 #OPT	 := -O4
-OPT      := -flto -march=native
+OPT      := -O3 -flto -march=native
 EE	 := $(CC) -E
 LST	 := $(CC) -c $(CFLAGS) -Wa,-a,-ad 
 LDFLAGS	 := -L /usr/lib/x86_64-linux-gnu -pthread
 
 # cancel implicit program rule
 %.o: %.cc $(DEPS)
-	@echo $(CC) $(OPT) $(CXXFLAGS) $(CFLAGS) $< 
-	@$(CC) $(OPT) $(INCLUDES) $(CXXFLAGS) $(CFLAGS) -c -o $@ $<
+	@echo "CC    $(shell  echo '$< ' | rev | cut -d'/' -f 1 | rev)"
+	@$(CC) $(INCLUDES) $(CXXFLAGS) $(CFLAGS) $(OPT) -c -o $@ $<
 
 %.o: %.c $(DEPS)
-	@echo $(CC) $(OPT) $(CFLAGS) $< 
-	@$(CC) $(OPT) $(INCLUDES) $(CFLAGS) -c -o $@ $<
+	@echo "CC " $< 
+	@$(CC) $(INCLUDES) $(CFLAGS) $(OPT) -c -o $@ $<
 
 %.i: %.cc $(DEPS)
-	$(EE) $(OPT) $(INCLUDES) $(CXXFLAGS) $(CFLAGS) $< > $@
+	$(EE) $(INCLUDES) $(CXXFLAGS) $(CFLAGS) $(OPT) $< > $@
 
 %.lst: %.cc
 	$(LST) $(OPT) $< > $@

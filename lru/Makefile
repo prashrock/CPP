@@ -23,7 +23,6 @@ include $(COMMON_ROOT)/bld/Makefile.common
 
 # cancel implicit program rule
 lru_test: $(LRU_TEST)
-	@echo "--------------------------------------------------"
-	@echo $@
-	$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	@echo "LD   " $@
+	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
 	@echo "--------------------------------------------------"
