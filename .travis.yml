@@ -17,8 +17,8 @@ addons:
   coverity_scan:
     project:
       name: "prashrock/CPP"
-      token: "TyshG46igXH6SERgKss8jg"
-      description: "CPP Algorithms"
+      token: "dvX_A9zwuQ5E3qF2SS_JFw"
+      description: "CPP Algo/DS/Leetcode"
     notification_email: "prashrock@gmail.com"
     #build_command_prepend: "cd bld"
     # The command that will be added as an argument to "cov-build" to compile your project for analysis,
