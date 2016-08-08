@@ -6,6 +6,12 @@ language: cpp
 compiler: 
   - gcc
   - clang
+sudo: required
+script:
+  - sudo unlink /usr/bin/gcc && sudo ln -s /usr/bin/gcc-5 /usr/bin/gcc
+  - sudo unlink /usr/bin/g++ && sudo ln -s /usr/bin/g++-5 /usr/bin/g++
+  - gcc --version
+
 
 env:
   global:
@@ -15,17 +21,23 @@ env:
 
 
 addons:
-  coverity_scan:
-    project:
-      name: "prashrock/CPP"
-      token: "dvX_A9zwuQ5E3qF2SS_JFw"
-      description: "CPP Algo/DS/Leetcode"
-    notification_email: "prashrock@gmail.com"
-    #build_command_prepend: "cd bld"
-    # The command that will be added as an argument to "cov-build" to compile your project for analysis,
-    build_command: "make -j 4"
-    #   https://scan.coverity.com/faq#frequency
-    branch_pattern: "master"
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-5
+    - g++-5
+  #coverity_scan:
+  #  project:
+  #    name: "prashrock/CPP"
+  #    token: "dvX_A9zwuQ5E3qF2SS_JFw"
+  #    description: "CPP Algo/DS/Leetcode"
+  #  notification_email: "prashrock@gmail.com"
+  #  #build_command_prepend: "cd bld"
+  #  # The command that will be added as an argument to "cov-build" to compile your project for analysis,
+  #  build_command: "make -j 4"
+  #  #   https://scan.coverity.com/faq#frequency
+  #  branch_pattern: "master"
 
 #What to do before compiling
 before_install: cd bld
