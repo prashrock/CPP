@@ -5,8 +5,8 @@
 language: cpp
 sudo:     required
 compiler: 
-  - gcc
-  - clang
+  - gcc-5.3
+  - clang-3.8
 
 env:
   global:
@@ -22,13 +22,13 @@ install:
 script: make
 
 addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    packages:
-    - gcc-5
-    - g++-5
-    - clang
+#  apt:
+#    sources:
+#    - ubuntu-toolchain-r-test
+#    packages:
+#    - gcc-5
+#    - g++-5
+#    - clang
   #coverity_scan:
   #  project:
   #    name: "prashrock/CPP"
