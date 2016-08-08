@@ -15,11 +15,14 @@ env:
   - secure: "cKVBy6R8P5jGv+25g20vL+03WbeUJTu+1fvJkSwbV0UIg8eoVtLhSJPdMj8PF5LUHmsZVjqrmn5TfEK6IN4ybf2ndT/RETgyyRqAcqf+awAVJ4RbTQAswtgP0SRYBcFOzbSo9XbBGTjk0vsGt7Z81uqojE9a9WRVIGGzhvql5pyNCk2g+kkT0D8B1F/Eb+IvJI55TLwFWP4epqHC2+RRQzEzUET4QESuixbp5s2BN9nVUXpfEBSOgGgHlFHkE3MGGtrrah9qjh+HtPUV0a4WMUTMGPgI+VKK0mcKYv76H4DecU10VwpF0Lp3rxbXITdxcmh2PO4EMHMJinBM/tuOzJhtcfQrBrb5fZ8C3qDHSGES9PojPAzyNxvWZQYAR5RCWMO0UsBpMtJAVCKNEB9SgxWz5n9lHdKQFpWs+uA0+iM2fP6kvA+FnisSWnY1xo68GTvutBRSVcs3/5x3h1KxyNioyGFpqu+4FVwFm20w2f4Klv+PYBc8a+9stQm94EUYO8ngKwFi1ojkjTAq1MtqVXVRpME23zBfAPfbo0dqBKFZjgpy37ylyDMUiWDulrtY8M7c2SGW7cVZ6OnAlaCYaEk4fV8R9/ABQR3cFOFRZD9sBb9YmEv6hJa+ixX4TBOLdsx4TxGwnIdtuqSDB5UxZ/yZS21LLVev0AWchX2qtVw="
 
 #What to do before compiling
-before_install: cd bld
+before_install:
+  - cd bld
 install:
 # Use g++5 and not 4.6 (C++11 missing)
   - if [ "$CXX" = "g++" ]; then export CXX="g++-5" CC="gcc-5"; fi
-script: make
+script:
+  - g++ -v
+  - make
 
 addons:
   apt:
