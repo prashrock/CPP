@@ -11,18 +11,19 @@ env:
   global:
   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
   #   via the "travis encrypt" command using the project repo's public key
-  - secure: "sGv81991Y1wsb8UasDslqT6zsE+fNVYSjtBvKNqqS+HOpZMQ8LlOPUI60YyKTh9qij/kM/c6J8p02u2ZQ1irVXNvfaNUTmu0evNWqeMSjlkulRyb9L3zrIFCSS/FM5mfwKTMZkg1VBH81voIkT0/K6T8DPLgP5LsA6FZ3lYyOcM="
+  - secure: "cKVBy6R8P5jGv+25g20vL+03WbeUJTu+1fvJkSwbV0UIg8eoVtLhSJPdMj8PF5LUHmsZVjqrmn5TfEK6IN4ybf2ndT/RETgyyRqAcqf+awAVJ4RbTQAswtgP0SRYBcFOzbSo9XbBGTjk0vsGt7Z81uqojE9a9WRVIGGzhvql5pyNCk2g+kkT0D8B1F/Eb+IvJI55TLwFWP4epqHC2+RRQzEzUET4QESuixbp5s2BN9nVUXpfEBSOgGgHlFHkE3MGGtrrah9qjh+HtPUV0a4WMUTMGPgI+VKK0mcKYv76H4DecU10VwpF0Lp3rxbXITdxcmh2PO4EMHMJinBM/tuOzJhtcfQrBrb5fZ8C3qDHSGES9PojPAzyNxvWZQYAR5RCWMO0UsBpMtJAVCKNEB9SgxWz5n9lHdKQFpWs+uA0+iM2fP6kvA+FnisSWnY1xo68GTvutBRSVcs3/5x3h1KxyNioyGFpqu+4FVwFm20w2f4Klv+PYBc8a+9stQm94EUYO8ngKwFi1ojkjTAq1MtqVXVRpME23zBfAPfbo0dqBKFZjgpy37ylyDMUiWDulrtY8M7c2SGW7cVZ6OnAlaCYaEk4fV8R9/ABQR3cFOFRZD9sBb9YmEv6hJa+ixX4TBOLdsx4TxGwnIdtuqSDB5UxZ/yZS21LLVev0AWchX2qtVw="
+
 
 addons:
   coverity_scan:
     project:
-      name: "prashrock-CPP"
+      name: "prashrock/CPP"
       token: "dvX_A9zwuQ5E3qF2SS_JFw"
       description: "CPP Algo/DS/Leetcode"
     notification_email: "prashrock@gmail.com"
     #build_command_prepend: "cd bld"
     # The command that will be added as an argument to "cov-build" to compile your project for analysis,
-    build_command: "make"
+    build_command: "make -j 4"
     #   https://scan.coverity.com/faq#frequency
     branch_pattern: "master"
 

@@ -28,6 +28,13 @@ using namespace std;
  * Output:  [-2, 0, 3, 5, 3]
  */
 
+/* Brute-force: Apply each update immediately                */
+vector<int> getModifiedArrayBrute(int len, vector<vector<int>>& updates) {
+   vector<int> ans(len, 0);
+   for(auto &up: updates)
+      for(int i = up[0]; i <= up[1]; ++i) ans[i] += up[2];
+   return ans;
+}
 
 int main()
 {
