@@ -1,4 +1,9 @@
-CC	 := g++ -std=c++11
+#If compiler is not specified, then assign default
+ifndef CXX
+CXX := g++
+endif
+
+CC	 := $(CXX) -std=c++11
 CXXFLAGS := -g3 -fno-inline -O0
 CFLAGS	 := -g -W -Wall -Wextra -pedantic -ggdb3 -Werror \
             -Wunused-function -fno-strict-aliasing
