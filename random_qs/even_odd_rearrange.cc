@@ -4,12 +4,13 @@
  * is at even place and odd number is at odd place.            *
  * Example : [2,1,3,4,7,9,24,98]                               *
  * Answer  : 1,2,3,4,7,24,9,98                                 */
-#include <iostream>          /* std::cout        */
-#include <iomanip>           /* std::setw        */
-#include <cmath>             /* pow              */
-#include <algorithm>         /* std::swap        */
+#include <iostream>          /* std::cout                      */
+#include <iomanip>           /* std::setw                      */
+#include <cmath>             /* pow                            */
+#include <algorithm>         /* std::swap                      */
+#include <vector>            /* std:vector                     */
 
-#include "../utils/print_utils.h"     /* print_table_row  */
+#include "../utils/print_utils.h"     /* print_table_row       */
 using namespace std;
 
 void even_odd_sorter(std::vector<int> val)

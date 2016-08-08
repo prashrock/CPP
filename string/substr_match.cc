@@ -3,6 +3,7 @@
 #include <cmath>             /* pow                          */
 #include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
+#include <vector>            /* std:vector                   */
 #include <string>            /* std::string                  */
 #include <unordered_map>     /* std::unordered_map container */
 

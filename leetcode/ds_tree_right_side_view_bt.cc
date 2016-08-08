@@ -9,6 +9,7 @@
 
 #include <iostream>          /* std::cout                    */
 #include <algorithm>         /* std::vector                  */
+#include <vector>            /* std:vector                   */
 using namespace std;
 
 /**

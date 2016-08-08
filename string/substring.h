@@ -5,8 +5,9 @@
  * @file  Substring
  * @brief Substring functions
  */
-
-#include "hash_fns.h"           /* rolling_hash()            */
+#include <vector>         /* std:vector                      */
+#include <algorithm>      /* std::max                        */
+#include "hash_fns.h"     /* rolling_hash()                  */
 
 /**
  * Naive Substring method:                                   *

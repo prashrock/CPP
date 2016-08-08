@@ -7,6 +7,7 @@
 #include <iomanip>                    /* std::setw           */
 #include <cmath>                      /* pow                 */
 #include <algorithm>                  /* std::sort           */
+#include <vector>                     /* std:vector          */
 #include <set>                        /* std::multiset       */
 #include "../utils/print_utils.h"     /* print_table_row     */
 #include "../utils/rand_generator.h"  /* init_rand()         */

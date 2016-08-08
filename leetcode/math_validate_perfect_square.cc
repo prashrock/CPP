@@ -12,6 +12,7 @@
 #include <cmath>             /* pow, tgamma(factorial)       */
 #include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
+#include <vector>            /* std:vector                   */
 #include <string>            /* std::string                  */
 #include "time_api.h"        /* C based time mgmt API        */
 #include "rand_generator.h"  /* fill_vector_rand (CPP based) */

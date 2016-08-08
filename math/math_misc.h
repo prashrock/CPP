@@ -5,6 +5,7 @@
 #include <cmath>             /* pow                          */
 #include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
+#include <vector>            /* std:vector                   */
 #include <cstdint>           /* uint8_t                      */
 
 /* In LE Machine order, we need to print in reverse order of *

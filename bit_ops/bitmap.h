@@ -2,6 +2,7 @@
 #define _BITMAP_CPP_
 
 #include <algorithm>           /* std::max                   */
+#include <vector>         /* std:vector                      */
 #include <cstring>             /* memset                     */
 #include <climits>             /* CHAR_BIT                   */
 #include <bitset>              /* std::bitset (dump)         */

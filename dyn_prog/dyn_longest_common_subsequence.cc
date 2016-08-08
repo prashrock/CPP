@@ -1,6 +1,7 @@
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
 #include <algorithm>         /* std::max                     */
+#include <vector>              /* std:vector                 */
 #include <string>            /* std::string                  */
 #include "print_utils.h"     /* print_table_row              */
 #include "rand_generator.h"  /* init_rand()                  */

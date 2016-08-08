@@ -3,6 +3,7 @@
 
 #include <algorithm>           /* std::max                   */
 #include <queue>               /* std::queue                 */
+#include <vector>              /* std:vector                 */
 #include <stack>               /* std::stack                 */
 #include <sstream>             /* std::stringstream          */
 #include "binary_tree_ops.h"   /* node + common operations   */

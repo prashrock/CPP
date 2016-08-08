@@ -9,6 +9,7 @@
 
 #include <iostream>          /* std::cout                    */
 #include <algorithm>         /* std::max                     */
+#include <vector>            /* std:vector                   */
 //#include "../utils/print_utils.h" /* print_table_row       */
 using namespace std;
 

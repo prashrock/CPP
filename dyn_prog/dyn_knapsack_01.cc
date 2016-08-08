@@ -1,8 +1,9 @@
-#include <iostream>          /* std::cout        */
-#include <algorithm>         /* std::max         */
-#include <string>            /* std::string      */
-#include "print_utils.h"     /* print_table_row  */
-#include "rand_generator.h"  /* init_rand()      */
+#include <iostream>          /* std::cout                    */
+#include <algorithm>         /* std::max                     */
+#include <vector>              /* std:vector                 */
+#include <string>            /* std::string                  */
+#include "print_utils.h"     /* print_table_row              */
+#include "rand_generator.h"  /* init_rand()                  */
 using namespace std;
 
 const int number_of_iterations = 100;

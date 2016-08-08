@@ -4,6 +4,7 @@
 #include <cmath>             /* pow                          */
 #include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
+#include <vector>         /* std:vector                      */
 
 #include "print_utils.h"     /* print_table_row, MILLION     */
 #include "rand_generator.h"  /* init_rand,fill_vector_rand   */

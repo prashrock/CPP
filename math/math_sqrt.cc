@@ -1,6 +1,7 @@
 #include <iostream>   /* std::cout        */
 #include <iomanip>    /* std::setw        */
 #include <algorithm>  /* std::max         */
+#include <vector>     /* std:vector       */
 
 #include "print_utils.h"
 #include "math_sqrt.h"

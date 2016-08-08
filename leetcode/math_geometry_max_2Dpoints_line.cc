@@ -9,6 +9,7 @@
 
 #include <iostream>          /* std::cout                    */
 #include <algorithm>         /* std::max                     */
+#include <vector>            /* std:vector                   */
 #include <unordered_map>     /* std::unordered_map           */
 using namespace std;
 

@@ -4,6 +4,7 @@
 #include <iostream>       /* std::cout               */
 #include <iomanip>        /* std::setw               */
 #include <algorithm>      /* std::vector             */
+#include <vector>         /* std:vector              */
 //using namespace std;
 
 #ifndef MILLION

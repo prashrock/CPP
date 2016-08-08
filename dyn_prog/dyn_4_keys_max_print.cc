@@ -1,8 +1,9 @@
-#include <iostream>   /* std::cout                           */
-#include <iomanip>    /* std::setw                           */
-#include <cmath>      /* pow                                 */
-#include <cassert>    /* assert                              */
-#include <algorithm>  /* std::max                            */
+#include <iostream>      /* std::cout                        */
+#include <iomanip>       /* std::setw                        */
+#include <cmath>         /* pow                              */
+#include <cassert>       /* assert                           */
+#include <algorithm>     /* std::max                         */
+#include <vector>        /* std:vector                       */
 #include "print_utils.h" /* print_table_row                  */
 using namespace std;
 /*

@@ -1,7 +1,8 @@
-#include <iostream>          /* std::cout        */
-#include <algorithm>         /* std::max         */
-#include "print_utils.h"     /* print_table_row  */
-#include "rand_generator.h"  /* init_rand()      */
+#include <iostream>          /* std::cout                    */
+#include <algorithm>         /* std::max                     */
+#include <vector>              /* std:vector                 */
+#include "print_utils.h"     /* print_table_row              */
+#include "rand_generator.h"  /* init_rand()                  */
 using namespace std;
 
 /* Given a set of integers & a target sum, find out if there *

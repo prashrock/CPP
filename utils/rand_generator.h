@@ -1,5 +1,7 @@
 #ifndef _RAND_GENERATORS_CPP_
 #define _RAND_GENERATORS_CPP_
+#include <algorithm>         /* std::max                     */
+#include <vector>         /* std:vector                      */
 #include <cstdlib>        /* srand, rand                     */
 #include <sys/time.h>     /* gettimeofday()                  */
 #include <unistd.h>       /* getpid()                        */

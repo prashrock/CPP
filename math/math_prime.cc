@@ -1,6 +1,7 @@
 #include <fstream>           /* std::ifstream                */
 #include <cmath>             /* pow                          */
 #include <algorithm>         /* std::max                     */
+#include <vector>            /* std:vector                   */
 
 #include "print_utils.h"     /* print_table_row, MILLION     */
 #include "rand_generator.h"  /* init_rand()                  */

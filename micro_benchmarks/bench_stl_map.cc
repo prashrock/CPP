@@ -3,18 +3,19 @@
 //strace -t ./bench_stl_map           ##syscalls for each API
 //ltrace ./bench_stl_map              ##libcalls for each API
 
-#include <iostream>          /* std::cout        */
-#include <iomanip>           /* std::setw        */
-#include <cmath>             /* pow              */
-#include <cassert>           /* assert           */
-#include <algorithm>         /* std::max         */
-#include <string>            /* std::string      */
-#include <chrono>            /* high_resolution_clock  */
-#include <map>               /* std::map container */
+#include <iostream>          /* std::cout                    */
+#include <iomanip>           /* std::setw                    */
+#include <cmath>             /* pow                          */
+#include <cassert>           /* assert                       */
+#include <algorithm>         /* std::max                     */
+#include <vector>            /* std:vector                   */
+#include <string>            /* std::string                  */
+#include <chrono>            /* high_resolution_clock        */
+#include <map>               /* std::map container           */
 #include <unordered_map>     /* std::unordered_map container */
 
-#include "print_utils.h"     /* print_table_row  */
-#include "rand_generator.h"  /* init_rand()      */
+#include "print_utils.h"     /* print_table_row              */
+#include "rand_generator.h"  /* init_rand()                  */
 using namespace std;
 
 const int number_of_iterations = 1000000000;

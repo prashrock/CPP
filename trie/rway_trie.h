@@ -2,6 +2,7 @@
 #define _CPP_TRIE_RWAYTRIE_H_
 #include <algorithm>           /* std::max                   */
 #include <bitset>              /* std:bitset                 */
+#include <vector>              /* std:vector                 */
 
 /**
  * R-way Trie class is a Trie ST impl of key-value pairs.    *
