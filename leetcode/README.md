@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [100 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [101 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -95,9 +95,10 @@ Data Structure based
 |7. | Medium     | Range Sum Query [Immutable](https://leetcode.com/problems/range-sum-query-immutable/) [Mutable](https://leetcode.com/problems/range-sum-query-mutable/) ([solution](./ds_list_range_sum_query.cc))                          |
 |8. | Medium     | Remove Duplicates from Sorted Array [I](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) [II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/) ([solution](./ds_list_remove_duplicates_sorted_i_ii.cc))  |
 |9. | Medium     | [Super Ugly Number](https://leetcode.com/problems/super-ugly-number/)  ([soln](./ds_list_super_ugly_numbers.cc))   |
-|10.| Hard       | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) ([solution](./ds_list_copy_list_with_random_pointer.cc))                                                                              |
-|11.| Hard       | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) ([solution](./ds_list_duplicate_number.cc))      |
-|12.| Hard       | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) ([solution](./ds_list_merge_sorted_arrays.cc)) <br> [Merge K Sorted Array](https://leetcode.com/problems/merge-k-sorted-lists/) ([solution](./ds_list_merge_k_sorted_lists.cc))      |
+|10.| Medium     | [Sub-array Range addition](https://leetcode.com/problems/range-addition/) ([solution](./ds_list_range_addition.cc))                                  |
+|11.| Hard       | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) ([solution](./ds_list_copy_list_with_random_pointer.cc))                                                                              |
+|12.| Hard       | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) ([solution](./ds_list_duplicate_number.cc))      |
+|13.| Hard       | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) ([solution](./ds_list_merge_sorted_arrays.cc)) <br> [Merge K Sorted Array](https://leetcode.com/problems/merge-k-sorted-lists/) ([solution](./ds_list_merge_k_sorted_lists.cc))      |
 
 ###Stack###
 |#  | Difficulty | Problem and Solution                          |

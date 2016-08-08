@@ -5,6 +5,9 @@ ifndef COMMON_C_ROOT
 COMMON_C_ROOT = $(COMMON_ROOT)/../C
 endif
 
+#order is important to have dependencies work, declare DEPS before include
+include $(COMMON_ROOT)/bld/Makefile.common
+
 INCLUDES = \
 	-I $(COMMON_ROOT)/utils	     \
 	-I $(COMMON_C_ROOT)/utils    \
@@ -39,9 +42,6 @@ DYN_OBJS = dyn_4_keys_max_print dyn_partition_set   \
 	   dyn_knapsack_01 dyn_subset_sum           \
 	   dyn_longest_common_subsequence           \
 	   dyn_str_min_edit_distance		    \
-
-#order is important to have dependencies work, declare DEPS before include
-include $(COMMON_ROOT)/bld/Makefile.common
 
 # cancel implicit program rule
 dyn_4_keys_max_print: $(DYN_4_KEYS_MAX_PRINT)

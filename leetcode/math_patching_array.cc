@@ -67,7 +67,7 @@ int minPatches(vector<int>& nums, int n) {
 
 
 struct test_vector {
-   vector<int> nums;
+   std::vector<int> nums;
    int n;
    int exp_num_patches;
 };
