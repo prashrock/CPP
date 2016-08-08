@@ -21,7 +21,6 @@ install:
 # Use g++5 and not 4.6 (C++11 missing)
   - if [ "$CXX" = "g++" ]; then export CXX="g++-5" CC="gcc-5"; fi
 script:
-  - g++ -v
   - make
 
 addons:

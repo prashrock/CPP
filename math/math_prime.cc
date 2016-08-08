@@ -1,3 +1,4 @@
+#include <iostream>          /* std::cout                    */
 #include <fstream>           /* std::ifstream                */
 #include <cmath>             /* pow                          */
 #include <algorithm>         /* std::max                     */
