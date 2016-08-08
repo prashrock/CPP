@@ -5,6 +5,7 @@
 #include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
 
+using namespace std;
 #include "bitmap.h"          /* My bitmap functions          */
 
 template<size_t N>
