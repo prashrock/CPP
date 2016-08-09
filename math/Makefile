@@ -5,6 +5,9 @@ ifndef COMMON_C_ROOT
 COMMON_C_ROOT = $(COMMON_ROOT)/../C
 endif
 
+#order is important to have dependencies work, declare DEPS before include
+include $(COMMON_ROOT)/bld/Makefile.common
+
 INCLUDES = \
 	-I $(COMMON_ROOT)/math	                       \
 	-I $(COMMON_ROOT)/utils                        \
@@ -32,9 +35,6 @@ DEPS = \
 
 OBJS = $(MATH_SQRT_OBJS) $(MATH_TWO_DIE_PROB_OBJS) $(MATH_PRIME_OBJS) \
 	$(MATH_PERM_COMB_TEST_OBJS)
-
-#order is important to have dependencies work, declare DEPS before include
-include $(COMMON_ROOT)/bld/Makefile.common
 
 # cancel implicit program rule
 math_sqrt: $(MATH_SQRT_OBJS)

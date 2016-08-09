@@ -5,20 +5,19 @@ ifndef COMMON_C_ROOT
 COMMON_C_ROOT = $(COMMON_ROOT)/../C
 endif
 
+#order is important to have dependencies work, declare DEPS before include
+include $(COMMON_ROOT)/bld/Makefile.common
+
+INCLUDES = \
+	-I $(COMMON_ROOT)/utils	                       \
 
 DEPS = \
 	$(COMMON_C_ROOT)/utils/compiler_api.h          \
 	$(COMMON_ROOT)/utils/print_utils.h             \
 	$(COMMON_ROOT)/tree/binary_tree.h              \
 
-INCLUDES = \
-	-I $(COMMON_ROOT)/utils	                       \
-
 BIN_TREE_TEST = \
 	$(COMMON_ROOT)/tree/binary_tree_test.o         \
-
-#order is important to have dependencies work, declare DEPS before include
-include $(COMMON_ROOT)/bld/Makefile.common
 
 OBJS = $(BIN_TREE_TEST)
 

@@ -21,19 +21,11 @@ Algo - Dynamic Programming
 ----------------------------------------------------------------------------------------
 Data Structures
 --------------------------------------------
-
-###Bitmap###
-- Simple resizable [Bitmap implementation](./bit_ops/bitmap.h) in under 200 lines using STL Vector as underlying container.
-- Supports bitmap resize and get_next_set_bit operation which are not available in STL Bitset.
-- Comparable in performance to STL Bitset, simple microbenchmark with 1 Million get/set/clear operations (code-included) shows:
-
-  | Measure                           |  STL Bitset | [Bitmap](./bit_ops/bitmap.h)      |
-  |:----------------------------------|:------------|:------------|
-  | Total time taken (1 million loop) |  71 ms      | 60 ms       | 
-  | Avg #Cycles per loop              |  189 cycles | 162 cycles  |
-  - Note: micro-benchmarks were measured on an Ubuntu 16.04 VM running on Intel(R) Xeon(R) CPU X5650 @ 2.67GHz with GCC 5.4.0 with C++11 and OPT flags(-O3 -Os, -march=native)
-- Refer to [C bit_ops header file](../C/bit_ops/bit_ops.h) for BIT manipulation functions (e.g., bit_reverse, bit_propagate_ones_to_right, bit_get_msb, bit_get_lsb, bit_population_cnt, bit_parity, bit_num_leading_zeros, bit_num_trailing_zeros, bit_snoob, bit_log2 (floor, ceil), bit_is_pow2, bit_in_place_permutate)
-
+###Bit operations###
+- **Simple resizable [Bitmap implementation](./bit_ops/bitmap.h)** implemented on STL vectors.
+- Almost branchless and type safe Bit manipulation algorithms:
+  - Includes implementation for Population Count, Gray code, Parity Check, Bit reverse, Log2, etc.
+  
 ###LRU###
 - STL Based O(1) [LRU Cache implementation](./lru/lru.h) in under 200 lines. Containers used:
   - List to maintain LRU keys in least recently used order (oldest element first)

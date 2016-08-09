@@ -5,6 +5,9 @@ ifndef COMMON_C_ROOT
 COMMON_C_ROOT = $(COMMON_ROOT)/../C
 endif
 
+#order is important to have dependencies work, declare DEPS before include
+include $(COMMON_ROOT)/bld/Makefile.common
+
 INCLUDES = \
 	-I $(COMMON_ROOT)/utils	     \
 	-I $(COMMON_C_ROOT)/utils   \
@@ -27,9 +30,6 @@ DEPS = \
 	$(COMMON_ROOT)/string/substring.h \
 
 OBJS = $(LONGEST_UNIQUE_SUBSTR) $(SUBSTR_MATCH) \
-
-#order is important to have dependencies work, declare DEPS before include
-include $(COMMON_ROOT)/bld/Makefile.common
 
 # cancel implicit program rule
 longest_unique_substring: $(LONGEST_UNIQUE_SUBSTR)

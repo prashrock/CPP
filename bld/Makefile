@@ -11,7 +11,7 @@ EXES = math_sqrt math_two_die_probability math_prime                    \
 	bench_stl_map bench_gettime                                     \
 	longest_unique_substring  substr_match word_freq_cnt            \
 	nqueens_backtrack                                               \
-	bitmap_test                                                     \
+	bitmap_test bitops_test                                         \
 	leetcode_progs							\
 
 .PHONY: all clean docs docs-clean etags $(EXES)
@@ -56,7 +56,7 @@ nqueens_backtrack:
 	@$(MAKE) -f $(COMMON_ROOT)/backtracking/Makefile \
 		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
 
-bitmap_test:
+bitmap_test bitops_test:
 	@$(MAKE) -f $(COMMON_ROOT)/bit_ops/Makefile \
 		COMMON_ROOT="$(COMMON_ROOT)" COMMON_C_ROOT="$(COMMON_C_ROOT)"  $@
 

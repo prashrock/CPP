@@ -4,12 +4,12 @@ CXX := g++
 endif
 
 CC	 := $(CXX) -std=c++11
-CXXFLAGS := -g3 -fno-inline -O0
+CXXFLAGS := -g
 CFLAGS	 := -g -W -Wall -Wextra -pedantic -ggdb3 -Werror \
             -Wunused-function -fno-strict-aliasing
 
 #OPT	 := -O4
-OPT      := -O3 -flto -march=native
+OPT      := -O2 -flto -march=native -ffast-math 
 EE	 := $(CC) -E
 LST	 := $(CC) -c $(CFLAGS) -Wa,-a,-ad 
 LDFLAGS	 := -L /usr/lib/x86_64-linux-gnu -pthread

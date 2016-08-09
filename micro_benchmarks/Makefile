@@ -5,6 +5,9 @@ ifndef COMMON_C_ROOT
 COMMON_C_ROOT = $(COMMON_ROOT)/../C
 endif
 
+#order is important to have dependencies work, declare DEPS before include
+include $(COMMON_ROOT)/bld/Makefile.common
+
 INCLUDES = \
 	-I $(COMMON_ROOT)/utils	     \
 	-I $(COMMON_ROOT)/micro_benchmarks   \
@@ -20,9 +23,6 @@ DEPS = \
 	$(COMMON_ROOT)/utils/print_utils.h \
 
 OBJS = $(BENCH_MAP_VS_UNORDERED_MAP) $(BENCH_GETTIME)       \
-
-#order is important to have dependencies work, declare DEPS before include
-include $(COMMON_ROOT)/bld/Makefile.common
 
 # cancel implicit program rule
 bench_stl_map: $(BENCH_MAP_VS_UNORDERED_MAP)

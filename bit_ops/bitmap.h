@@ -81,7 +81,7 @@ public:
       n = new_n;
    }
    void dump() const {
-      for(auto v:bw) cout << std::bitset<u64_bit>(v) << endl;
+      for(auto v:bw) std::cout << std::bitset<u64_bit>(v) << std::endl;
    }
 private:
    /* Bitmap class member variables                          */
