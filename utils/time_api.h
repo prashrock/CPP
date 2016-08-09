@@ -7,6 +7,7 @@
 #include <assert.h>                /* assert                            */
 #include <limits.h>                /* INT_MAX                           */
 #include <stdint.h>                /* uint64_t                          */
+#define __STDC_FORMAT_MACROS 1     /* activate PRIu64                   */
 #include <inttypes.h>              /* PRIu64                            */
 #include <time.h>                  /* timespec, clock_gettime           */
 #include <errno.h>                 /* errno                             */
