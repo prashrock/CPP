@@ -36,7 +36,7 @@ longest_unique_substring: $(LONGEST_UNIQUE_SUBSTR)
 
 substr_match: $(SUBSTR_MATCH)
 	@echo "LD   " $@
-	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	@$(CC) $(OPT) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 	@echo "--------------------------------------------------"
 
 word_freq_cnt: $(WORD_FREQ_CNT)
