@@ -4,6 +4,7 @@
 #include <cmath>               /* pow, log2                  */
 #include <cassert>             /* assert                     */
 #include <algorithm>           /* std::max                   */
+#include <random>              /* std::default_random_engine */
 
 #include "rand_generator.h"    /* init_rand()                */
 #include "lru.h"               /* LRU API                    */

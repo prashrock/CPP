@@ -7,14 +7,10 @@
 
 // https://leetcode.com/problems/kth-largest-element-in-an-array/
 
-#include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
-#include <algorithm>         /* std::max                     */
-#include <vector>            /* std:vector                   */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
+#include <iostream>            /* std::cout                  */
+#include <algorithm>           /* std::max                   */
+#include <vector>              /* std:vector                 */
+#include <random>              /* std::default_random_engine */
 using namespace std;
 
 /**
