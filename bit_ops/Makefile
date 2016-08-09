@@ -27,10 +27,10 @@ OBJS = $(BITMAP_TEST)  $(BITOPS_TEST)         \
 # cancel implicit program rule
 bitmap_test: $(BITMAP_TEST)
 	@echo "LD   " $@
-	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -O3 -Os -march=native -o $@ $^
+	@$(CC) $(OPT) $(CFLAGS)  -O3 -Os -march=native -o $@ $^ $(LDFLAGS)
 	@echo "--------------------------------------------------"
 
 bitops_test: $(BITOPS_TEST)
 	@echo "LD   " $@
-	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -O3 -Os -march=native -o $@ $^
+	@$(CC) $(OPT) $(CFLAGS) -O3 -Os -march=native -o $@ $^  $(LDFLAGS)
 	@echo "--------------------------------------------------"
