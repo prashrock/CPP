@@ -12,7 +12,7 @@ CFLAGS	 := -g -W -Wall -Wextra -pedantic -ggdb3 -Werror \
 OPT      := -O2 -flto -march=native -ffast-math 
 EE	 := $(CC) -E
 LST	 := $(CC) -c $(CFLAGS) -Wa,-a,-ad 
-LDFLAGS	 := -L /usr/lib/x86_64-linux-gnu -pthread
+LDFLAGS	 := -L /usr/lib/x86_64-linux-gnu -pthread -lrt
 
 # cancel implicit program rule
 %.o: %.cc $(DEPS)
