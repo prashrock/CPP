@@ -32,5 +32,5 @@ bench_stl_map: $(BENCH_MAP_VS_UNORDERED_MAP)
 
 bench_gettime: $(BENCH_GETTIME)
 	@echo "LD   " $@
-	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	@$(CC) $(OPT) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 	@echo "--------------------------------------------------"
