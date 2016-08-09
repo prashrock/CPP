@@ -11,7 +11,7 @@
 #include <sys/syscall.h>     /* syscall                      */
 #include <pthread.h>         /* Pthread Spinlock             */
 
-#include "../../C/utils/time_api.h"  /*C based time mgmt API */
+#include "time_api.h"        /*C based time mgmt API         */
 using namespace std;
 
 /* Check if pattern occurs in text. If yes return first idx  */

@@ -1,9 +1,6 @@
 ifndef COMMON_ROOT
 COMMON_ROOT = $(shell pwd)/..
 endif
-ifndef COMMON_C_ROOT
-COMMON_C_ROOT = $(COMMON_ROOT)/../C
-endif
 
 #order is important to have dependencies work, declare DEPS before include
 include $(COMMON_ROOT)/bld/Makefile.common

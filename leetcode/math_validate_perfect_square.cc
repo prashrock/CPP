@@ -1,4 +1,4 @@
-//g++ -O3 -Wall --std=c++11 -g -o math_validate_perfect_square math_validate_perfect_square.cc -I../../C/utils/ -I../utils/
+//g++ -O3 -Wall --std=c++11 -g -o math_validate_perfect_square math_validate_perfect_square.cc  -I../utils/
 
 /**
  * @file  Valid Perfect Square

@@ -1,9 +1,6 @@
 ifndef COMMON_ROOT
 COMMON_ROOT = $(shell pwd)/..
 endif
-ifndef COMMON_C_ROOT
-COMMON_C_ROOT = $(COMMON_ROOT)/../C
-endif
 
 #order is important to have dependencies work, declare DEPS before include
 include $(COMMON_ROOT)/bld/Makefile.common
@@ -19,9 +16,9 @@ BITOPS_TEST = \
 	$(COMMON_ROOT)/bit_ops/bitops_test.o \
 
 DEPS = \
-	$(COMMON_C_ROOT)/utils/compiler_api.h \
 	$(COMMON_ROOT)/utils/compiler_api.h   \
 	$(COMMON_ROOT)/utils/print_utils.h    \
+	$(COMMON_ROOT)/utils/time_api.h       \
 	$(COMMON_ROOT)/bit_ops/bitmap.h       \
 	$(COMMON_ROOT)/bit_ops/bit_ops.h      \
 

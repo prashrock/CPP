@@ -23,7 +23,7 @@ Data Structures
 --------------------------------------------
 ###Bit operations###
 - **Simple resizable [Bitmap implementation](./bit_ops/bitmap.h)** implemented on STL vectors.
-- Almost branchless and type safe Bit manipulation algorithms:
+- Almost branchless and type safe [Bit manipulation algorithms](./bit_ops/bit_ops.h):
   - Includes implementation for Population Count, Gray code, Parity Check, Bit reverse, Log2, etc.
   
 ###LRU###

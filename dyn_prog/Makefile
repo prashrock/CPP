@@ -1,16 +1,12 @@
 ifndef COMMON_ROOT
 COMMON_ROOT = $(shell pwd)/..
 endif
-ifndef COMMON_C_ROOT
-COMMON_C_ROOT = $(COMMON_ROOT)/../C
-endif
 
 #order is important to have dependencies work, declare DEPS before include
 include $(COMMON_ROOT)/bld/Makefile.common
 
 INCLUDES = \
 	-I $(COMMON_ROOT)/utils	     \
-	-I $(COMMON_C_ROOT)/utils    \
 	-I $(COMMON_ROOT)/dyn_prog   \
 
 DYN_4_KEYS_MAX_PRINT = \
@@ -32,8 +28,8 @@ DYN_STR_MIN_EDIT_DISTANCE = \
 	$(COMMON_ROOT)/dyn_prog/dyn_str_min_edit_distance.o \
 
 DEPS = \
-	$(COMMON_C_ROOT)/utils/compiler_api.h \
-	$(COMMON_ROOT)/utils/print_utils.h \
+	$(COMMON_ROOT)/utils/compiler_api.h \
+	$(COMMON_ROOT)/utils/print_utils.h  \
 
 OBJS = $(DYN_4_KEYS_MAX_PRINT) $(DYN_PARTITION_SET) \
        $(DYN_KNAPSACK_01)                           \

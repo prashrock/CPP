@@ -47,7 +47,7 @@ void mergeIntervals(vector<range_t> &inp)
    std::sort(inp.begin(), inp.end(), less_than_range_val());
 
    /* Iterate over entire list and merge in place            */
-   for(int i = 1; i < inp.size(); ++i) {
+   for(int i = 1; i < (int)inp.size(); ++i) {
       /* If current indx is out of merge range, then the     *
        * this has to be a new range (prev range is over)     */
       if(inp[midx].second < inp[i].first) inp[++midx] = inp[i];

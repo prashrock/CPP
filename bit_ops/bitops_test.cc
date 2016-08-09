@@ -9,7 +9,7 @@
 #include "print_utils.h"     /* print_table_row, MILLION     */
 #include "rand_generator.h"  /* init_rand,fill_vector_rand   */
 #include "bit_ops.h"         /* Bit Operations               */
-#include "../../C/utils/time_api.h"  /*C based time mgmt API */
+#include "time_api.h"        /*C based time mgmt API         */
 using namespace std;
 using namespace bit_ops;
 

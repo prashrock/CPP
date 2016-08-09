@@ -33,11 +33,4 @@
 #define _set_as_used(x) (void)(x)
 #define _set_as_unused __attribute__((__unused__))
 
-
-/* --- SFINAE to enable/disable code at compile time --- */
-template <bool, typename T = void>
-struct enable_if {};
-template <typename T>
-struct enable_if<true, T> {typedef T type;};
-
 #endif //_COMPILER_API_CPP_
