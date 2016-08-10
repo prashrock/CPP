@@ -61,8 +61,8 @@ void num_keystrokes_calculator(const int n)
 
 int main()
 {
-   int n;
+   unsigned int n;
    cout << "Please enter the number of key strokes: ";
    cin >> n;
-   num_keystrokes_calculator(n);
+   num_keystrokes_calculator( static_cast<int> (n) );
 }

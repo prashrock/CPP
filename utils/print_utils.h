@@ -19,12 +19,14 @@ template<typename T>
 static inline void
 print_table_row(std::string name, const std::vector<T>& v,
                 int str_size=20, int col_width=3) {
+   std::ios::fmtflags f( std::cout.flags() ); /* save prev   */
    std::cout << std::left << std::setw(str_size) << std::setfill(' ')
              << name;
    std::cout << ": ";
    for(auto i : v)
       std::cout << std::right << std::setw(col_width) << i << " ";
    std::cout << std::endl;
+   std::cout.flags( f );  /* Restore previous setw setting   */
 }
 
 #endif //_PRINT_UTILS_CPP_

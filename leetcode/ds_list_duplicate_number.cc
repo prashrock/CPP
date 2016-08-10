@@ -1,4 +1,4 @@
-//g++-5 --std=c++11 -g -o ds_list_duplicate_number ds_list_duplicate_number.cc
+//g++-5 --std=c++11 -Wall -g -o ds_list_duplicate_number ds_list_duplicate_number.cc
 
 /**
  * @file  Duplicate Number
@@ -34,14 +34,14 @@ using namespace std;
  * find the majority element (element occuring > half times) *
  * Since this problem doesnt make this claim, cant use this  */
 int booyerMooreMethod(vector<int>& nums) {
-   int candidate, cnt = 0;
-   for(int i = 0; i < nums.size(); ++i) {
+   int candidate = 0, cnt = 0;
+   for(int i = 0; i < (int)nums.size(); ++i) {
       if(cnt == 0)              candidate = nums[i];
       if(candidate == nums[i])  cnt++;
       else                      cnt--;
    }
-   int verify_cnt = 0;
-   for(int i = 0; i < nums.size(); ++i)
+   unsigned int verify_cnt = 0;
+   for(int i = 0; i < (int)nums.size(); ++i)
       if(candidate == nums[i]) verify_cnt++;
    
    if(verify_cnt >= (nums.size()+1)/2) return candidate;

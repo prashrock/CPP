@@ -114,12 +114,11 @@ int manual_test()
    if(d != 2) { cout << "Error:MinDepth two ret=" << d << endl; return -1; }
    d = maxDepth(x);
    if(d != 2) { cout << "Error:MaxDepth two ret=" << d << endl; return -1; }
-   return 0;
 
    x->right = &two;  /* Add second node into the BT         */
    x->right->left = &three;  /* Add third node into BT      */
    d = minDepth(x);
-   if(d != 2) { cout << "Error:MinDepth two ret=" << d << endl; return -1; }
+   if(d != 3) { cout << "Error:MinDepth two ret=" << d << endl; return -1; }
    d = maxDepth(x);
    if(d != 3) { cout << "Error:MaxDepth 3 ret=" << d << endl; return -1; }
    return 0;

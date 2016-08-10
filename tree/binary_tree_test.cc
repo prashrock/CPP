@@ -78,7 +78,7 @@ void bt_walkthrough()
 /* Manually crafted test-cases to validate BT functionality  */
 bool bt_manual_test()
 {
-   bool ret = true;
+   bool ret = false;
    std::vector<int> vec(num_inserts);
    binary_tree<int, int> bt;
 
@@ -97,7 +97,7 @@ bool bt_manual_test()
    else if(bt.height() != exp_ht)
       cout << "Error: After insert, BT height incorrect. Expecting "
            << exp_ht << " got " << bt.height() << endl;
-
+   else ret = true;
    if(ret == false) goto manual_test_end;
 	
    /* Delete operation and associated test-cases            */

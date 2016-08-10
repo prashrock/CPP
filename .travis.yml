@@ -6,7 +6,7 @@ language: cpp
 sudo:     required
 compiler: 
   - gcc
-  - clang
+#  - clang
 
 env:
   global:
@@ -30,7 +30,7 @@ addons:
     packages:
     - gcc-5
     - g++-5
-    - clang
+ #   - clang
   #coverity_scan:
   #  project:
   #    name: "prashrock/CPP"

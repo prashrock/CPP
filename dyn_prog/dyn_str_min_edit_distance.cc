@@ -47,6 +47,7 @@ int min_edit_dp(const T s1[], size_t m, const T s2[], size_t n,
    int min_edit_cost = dp[m][n];
    /* Core DP Logic done, now deduce min-edit dist and print */
    if(print_dp_table) {
+      std::ios::fmtflags f( std::cout.flags() ); /* save prev*/
       std::vector<T> s1v(s1, s1 + m), s2v(s2, s2 + n);
       print_table_row<T>("s1", s1v);
       print_table_row<T>("s2", s2v);
@@ -69,6 +70,7 @@ int min_edit_dp(const T s1[], size_t m, const T s2[], size_t n,
          cout << endl;
       }
       cout << endl;
+      std::cout.flags( f ); /* Restore previous setw setting */
    }
    return min_edit_cost;
 }
