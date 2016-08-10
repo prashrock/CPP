@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o ds_string_int_to_words ds_string_int_to_words.cc
+//g++-5 -Wall --std=c++11 -g -o ds_string_int_to_words ds_string_int_to_words.cc
 
 /**
  * @file  Integer to English Words

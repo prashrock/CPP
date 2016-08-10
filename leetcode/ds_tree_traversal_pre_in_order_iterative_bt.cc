@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_tree_traversal_pre_in_order_iterative_bt ds_tree_traversal_pre_in_order_iterative_bt.cc
+//g++-5 --std=c++11 -Wall -g -o ds_tree_traversal_pre_in_order_iterative_bt ds_tree_traversal_pre_in_order_iterative_bt.cc
 
 /**
  * @file  BT - Preorder/Inorder Traversal

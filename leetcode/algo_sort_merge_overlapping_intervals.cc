@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o algo_sort_merge_overlapping_intervals algo_sort_merge_overlapping_intervals.cc
+//g++-5 -Wall --std=c++11 -g -o algo_sort_merge_overlapping_intervals algo_sort_merge_overlapping_intervals.cc
 
 /**
  * @file  Merge Overlapping Intervals

@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o math_find_sqrt math_find_sqrt.cc
+//g++-5 -Wall --std=c++11 -g -o math_find_sqrt math_find_sqrt.cc
 
 /**
  * @file  Integer Square Root

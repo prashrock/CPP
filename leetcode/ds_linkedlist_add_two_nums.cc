@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_linkedlist_add_two_nums ds_linkedlist_add_two_nums.cc
+//g++-5 --std=c++11 -Wall -g -o ds_linkedlist_add_two_nums ds_linkedlist_add_two_nums.cc
 
 /**
  * @file  Add two positive numbers

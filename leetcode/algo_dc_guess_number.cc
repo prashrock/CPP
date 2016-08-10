@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o algo_dc_guess_number algo_dc_guess_number.cc
+//g++-5 --std=c++11 -Wall -g -o algo_dc_guess_number algo_dc_guess_number.cc
 
 /**
  * @file  Guess given number

@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o ds_string_multiply_strings ds_string_multiply_strings.cc
+//g++-5 --std=c++11 -g -o ds_string_multiply_strings ds_string_multiply_strings.cc
 
 /**
  * @file  Multiply Strings

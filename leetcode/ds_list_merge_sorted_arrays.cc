@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_list_merge_sorted_arrays ds_list_merge_sorted_arrays.cc
+//g++-5 --std=c++11 -Wall -g -o ds_list_merge_sorted_arrays ds_list_merge_sorted_arrays.cc
 
 /**
  * @file  Merge Sorted Arrays

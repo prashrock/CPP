@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o ds_list_easy_remove_duplicate_number ds_list_easy_remove_duplicate_number.cc
+//g++-5 -Wall --std=c++11 -g -o ds_list_easy_remove_duplicate_number ds_list_easy_remove_duplicate_number.cc
 
 /**
  * @file  Remove Duplicate

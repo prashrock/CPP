@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o ds_list_remove_duplicates_sorted_i_ii ds_list_remove_duplicates_sorted_i_ii.cc
+//g++-5 -Wall --std=c++11 -g -o ds_list_remove_duplicates_sorted_i_ii ds_list_remove_duplicates_sorted_i_ii.cc
 
 /**
  * @file  Remove Duplicate from Sorted Array

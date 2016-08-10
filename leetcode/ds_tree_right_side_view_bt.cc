@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_tree_right_side_view_bt ds_tree_right_side_view_bt.cc
+//g++-5 --std=c++11 -Wall -g -o ds_tree_right_side_view_bt ds_tree_right_side_view_bt.cc
 
 /**
  * @file  Binary Tree Right Side View

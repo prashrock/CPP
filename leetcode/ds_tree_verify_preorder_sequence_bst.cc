@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o ds_tree_verify_preorder_sequence_bst ds_tree_verify_preorder_sequence_bst.cc
+//g++-5 -Wall --std=c++11 -g -o ds_tree_verify_preorder_sequence_bst ds_tree_verify_preorder_sequence_bst.cc
 
 /**
  * @file  BST verify pre-order sequence

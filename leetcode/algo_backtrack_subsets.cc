@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o algo_backtrack_subsets algo_backtrack_subsets.cc
+//g++-5 --std=c++11 -Wall -g -o algo_backtrack_subsets algo_backtrack_subsets.cc
 
 /**
  * @file  Subsets

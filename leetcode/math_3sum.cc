@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o math_3sum math_3sum.cc
+//g++-5 --std=c++11 -Wall -g -o math_3sum math_3sum.cc
 
 /**
  * @file  3Sum Exact, Smaller, Closest

@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o ds_list_copy_list_with_random_pointer ds_list_copy_list_with_random_pointer.cc
+//g++-5 -Wall --std=c++11 -g -o ds_list_copy_list_with_random_pointer ds_list_copy_list_with_random_pointer.cc
 
 /**
  * @file  Copy list with random pointer

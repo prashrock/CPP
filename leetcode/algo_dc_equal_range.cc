@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o algo_dc_equal_range algo_dc_equal_range.cc
+//g++-5 --std=c++11 -Wall -g -o algo_dc_equal_range algo_dc_equal_range.cc
 
 /**
  * @file  Equal Range

@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o algo_sort_quick_select algo_sort_quick_select.cc
+//g++-5 -Wall --std=c++11 -g -o algo_sort_quick_select algo_sort_quick_select.cc
 
 /**
  * @file  Kth largest Element (Quick Select)

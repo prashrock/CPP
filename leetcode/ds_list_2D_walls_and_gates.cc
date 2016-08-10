@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_list_2D_walls_and_gates ds_list_2D_walls_and_gates.cc -I../utils/
+//g++-5 --std=c++11 -Wall -g -o ds_list_2D_walls_and_gates ds_list_2D_walls_and_gates.cc -I../utils/
 
 // https://leetcode.com/problems/walls-and-gates/
 

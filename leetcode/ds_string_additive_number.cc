@@ -1,5 +1,4 @@
-
-//g++ --std=c++11 -g -o ds_string_additive_number ds_string_additive_number.cc
+//g++-5 --std=c++11 -g -o ds_string_additive_number ds_string_additive_number.cc
 
 /**
  * @file  String Additive Number

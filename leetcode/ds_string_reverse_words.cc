@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o ds_string_reverse_words ds_string_reverse_words.cc
+//g++-5 -Wall --std=c++11 -g -o ds_string_reverse_words ds_string_reverse_words.cc
 
 /**
  * @file  Reverse Words in a String

@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o algo_dp_easy_house_robber algo_dp_easy_house_robber.cc
+//g++-5 -Wall --std=c++11 -g -o algo_dp_easy_house_robber algo_dp_easy_house_robber.cc
 
 /**
  * @file  House Robber

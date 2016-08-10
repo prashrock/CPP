@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_stack_math_reverse_polish_notation ds_stack_math_reverse_polish_notation.cc
+//g++-5 --std=c++11 -Wall -g -o ds_stack_math_reverse_polish_notation ds_stack_math_reverse_polish_notation.cc
 
 /**
  * @file  Evaluate Reverse Polish Notation

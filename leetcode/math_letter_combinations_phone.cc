@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o math_letter_combinations_phone math_letter_combinations_phone.cc
+//g++-5 --std=c++11 -g -o math_letter_combinations_phone math_letter_combinations_phone.cc
 
 /**
  * @file  Letter Combinations of a Phone Number

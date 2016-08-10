@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o math_patching_array math_patching_array.cc
+//g++-5 -Wall --std=c++11 -g -o math_patching_array math_patching_array.cc
 
 /**
  * @file  Math Patching Array

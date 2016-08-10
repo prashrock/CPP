@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o ds_list_missing_ranges ds_list_missing_ranges.cc
+//g++-5 --std=c++11 -g -o ds_list_missing_ranges ds_list_missing_ranges.cc
 
 /**
  * @file  Missing Ranges

@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -Wall -o ds_tree_sum_root_to_leaf_paths ds_tree_sum_root_to_leaf_paths.cc
+//g++-5 --std=c++11 -g -Wall -o ds_tree_sum_root_to_leaf_paths ds_tree_sum_root_to_leaf_paths.cc
 
 /**
  * @file  BT Sum Root to Leaf Paths

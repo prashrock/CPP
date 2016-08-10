@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o algo_backtrack_2D_number_of_islands algo_backtrack_2D_number_of_islands.cc
+//g++-5 --std=c++11 -Wall -g -o algo_backtrack_2D_number_of_islands algo_backtrack_2D_number_of_islands.cc
 
 /**
  * @file  Number of Islands

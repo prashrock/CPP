@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o algo_backtrack_word_search algo_backtrack_word_search.cc
+//g++-5 --std=c++11 -Wall -g -o algo_backtrack_word_search algo_backtrack_word_search.cc
 
 /**
  * @file  Word Search

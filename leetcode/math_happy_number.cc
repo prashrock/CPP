@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o math_happy_number math_happy_number.cc
+//g++-5 --std=c++11 -Wall -g -o math_happy_number math_happy_number.cc
 
 /**
  * @file  Math Happy Number

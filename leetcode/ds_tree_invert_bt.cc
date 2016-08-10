@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_tree_invert_bt ds_tree_invert_bt.cc
+//g++-5 --std=c++11 -Wall -g -o ds_tree_invert_bt ds_tree_invert_bt.cc
 
 /**
  * @file  Invert BT

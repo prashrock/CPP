@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o ds_string_isomorphic ds_string_isomorphic.cc
+//g++-5 -Wall --std=c++11 -g -o ds_string_isomorphic ds_string_isomorphic.cc
 
 /**
  * @file  String Isomorphic

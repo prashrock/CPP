@@ -1,4 +1,4 @@
-//g++ -O3 -Wall --std=c++11 -g -o algo_design_moving_average algo_design_moving_average.cc
+//g++-5 -O3 -Wall --std=c++11 -g -o algo_design_moving_average algo_design_moving_average.cc
 
 /**
  * @file  Moving Average from Data Stream

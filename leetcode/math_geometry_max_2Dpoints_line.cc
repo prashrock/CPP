@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o math_geometry_max_2Dpoints_line math_geometry_max_2Dpoints_line.cc
+//g++-5 --std=c++11 -Wall -g -o math_geometry_max_2Dpoints_line math_geometry_max_2Dpoints_line.cc
 
 /**
  * @file  Max Points on a Line

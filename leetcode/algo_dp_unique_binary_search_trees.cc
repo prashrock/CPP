@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -Wall -o algo_dp_unique_binary_search_trees algo_dp_unique_binary_search_trees.cc
+//g++-5 --std=c++11 -g -Wall -o algo_dp_unique_binary_search_trees algo_dp_unique_binary_search_trees.cc
 
 /**
  * @file  Structurally Unique Binary Search Trees

@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o ds_linkedlist_reverse ds_linkedlist_reverse.cc
+//g++-5 -Wall --std=c++11 -g -o ds_linkedlist_reverse ds_linkedlist_reverse.cc
 
 /**
  * @file  Reverse LinkedList

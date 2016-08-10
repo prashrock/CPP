@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o algo_dc_search_insert_position algo_dc_search_insert_position.cc
+//g++-5 --std=c++11 -Wall -g -o algo_dc_search_insert_position algo_dc_search_insert_position.cc
 
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */

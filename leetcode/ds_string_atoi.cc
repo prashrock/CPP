@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o ds_string_atoi ds_string_atoi.cc
+//g++-5 -Wall --std=c++11 -g -o ds_string_atoi ds_string_atoi.cc
 
 /**
  * @file  String atoi

@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o ds_string_palindromic_permutation_i_ii ds_string_palindromic_permutation_i_ii.cc
+//g++-5 --std=c++11 -g -o ds_string_palindromic_permutation_i_ii ds_string_palindromic_permutation_i_ii.cc
 
 /**
  * @file  String Palindromic Permutation

@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -Wall -Werror -o ds_graph_min_height_tree ds_graph_min_height_tree.cc
+//g++-5 --std=c++11 -g -Wall -Werror -o ds_graph_min_height_tree ds_graph_min_height_tree.cc
 
 /* NOTE THIS IS IMPLEMENTATION IS NOT COMPLETE */
 

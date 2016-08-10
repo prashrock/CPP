@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_list_super_ugly_numbers ds_list_super_ugly_numbers.cc
+//g++-5 --std=c++11 -Wall -g -o ds_list_super_ugly_numbers ds_list_super_ugly_numbers.cc
 
 /**
  * @file  Super Ugly Number

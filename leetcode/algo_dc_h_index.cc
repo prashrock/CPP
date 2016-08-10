@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o algo_dc_h_index algo_dc_h_index.cc
+//g++-5 --std=c++11 -Wall -g -o algo_dc_h_index algo_dc_h_index.cc
 
 /**
  * @file  H-Index

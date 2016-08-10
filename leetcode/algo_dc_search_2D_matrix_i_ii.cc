@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o algo_dc_search_2D_matrix_i_ii algo_dc_search_2D_matrix_i_ii.cc
+//g++-5 --std=c++11 -Wall -g -o algo_dc_search_2D_matrix_i_ii algo_dc_search_2D_matrix_i_ii.cc
 
 /**
  * @file  Search a 2D Matrix

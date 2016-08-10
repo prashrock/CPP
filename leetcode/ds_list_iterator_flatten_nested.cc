@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o ds_list_iterator_flatten_nested ds_list_iterator_flatten_nested.cc
+//g++-5 -Wall --std=c++11 -g -o ds_list_iterator_flatten_nested ds_list_iterator_flatten_nested.cc
 
 /**
  * @file  Flatten Nested List Iterator

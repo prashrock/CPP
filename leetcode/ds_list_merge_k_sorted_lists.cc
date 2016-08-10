@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_list_merge_k_sorted_lists ds_list_merge_k_sorted_lists.cc
+//g++-5 --std=c++11 -Wall -g -o ds_list_merge_k_sorted_lists ds_list_merge_k_sorted_lists.cc
 
 /**
  * @file  Merge K Sorted Lists

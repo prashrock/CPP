@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_string_strobogrammatic_num_i_ii_iii ds_string_strobogrammatic_num_i_ii_iii.cc
+//g++-5 --std=c++11 -Wall -g -o ds_string_strobogrammatic_num_i_ii_iii ds_string_strobogrammatic_num_i_ii_iii.cc
 
 /**
  * @file  String Strobogrammatic Number

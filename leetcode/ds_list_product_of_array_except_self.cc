@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_list_product_of_array_except_self ds_list_product_of_array_except_self.cc
+//g++-5 --std=c++11 -Wall -g -o ds_list_product_of_array_except_self ds_list_product_of_array_except_self.cc
 
 /**
  * @file  Product of Array Except Self

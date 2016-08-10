@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o algo_dc_rotated_array_search algo_dc_rotated_array_search.cc
+//g++-5 --std=c++11 -Wall -g -o algo_dc_rotated_array_search algo_dc_rotated_array_search.cc
 
 /**
  * @file  Search in Rotated Sorted Array

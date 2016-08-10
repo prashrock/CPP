@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_tree_lca_bt_bst ds_tree_lca_bt_bst.cc
+//g++-5 --std=c++11 -Wall -g -o ds_tree_lca_bt_bst ds_tree_lca_bt_bst.cc
 
 // https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
 // https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/

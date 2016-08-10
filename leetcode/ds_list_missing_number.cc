@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_list_missing_number ds_list_missing_number.cc
+//g++-5 --std=c++11 -Wall -g -o ds_list_missing_number ds_list_missing_number.cc
 
 /**
  * @file  Find Missing Number from Array

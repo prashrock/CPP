@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_list_range_sum_query ds_list_range_sum_query.cc
+//g++-5 --std=c++11 -Wall -g -o ds_list_range_sum_query ds_list_range_sum_query.cc
 
 /**
  * @file  Range Sum Query (Immutable and Muttable)

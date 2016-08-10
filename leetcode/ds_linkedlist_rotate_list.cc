@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_linkedlist_rotate_list ds_linkedlist_rotate_list.cc
+//g++-5 --std=c++11 -Wall -g -o ds_linkedlist_rotate_list ds_linkedlist_rotate_list.cc
 
 /**
  * @file  Rotate Linked List

@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_tree_min_max_depth_bt ds_tree_min_max_depth_bt.cc
+//g++-5 --std=c++11 -Wall -g -o ds_tree_min_max_depth_bt ds_tree_min_max_depth_bt.cc
 
 /**
  * @file  BT Find min and max depth

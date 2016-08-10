@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_stack_using_queue ds_stack_using_queue.cc
+//g++-5 --std=c++11 -Wall -g -o ds_stack_using_queue ds_stack_using_queue.cc
 
 /**
  * @file  Implement a Stack using Queue and vice-versa

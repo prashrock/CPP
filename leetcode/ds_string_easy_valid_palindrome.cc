@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o ds_string_easy_valid_palindrome ds_string_easy_valid_palindrome.cc
+//g++-5 -Wall --std=c++11 -g -o ds_string_easy_valid_palindrome ds_string_easy_valid_palindrome.cc
 
 /**
  * @file  Valid Palindrome

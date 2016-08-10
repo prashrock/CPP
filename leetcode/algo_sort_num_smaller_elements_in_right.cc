@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o algo_sort_num_smaller_elements_in_right algo_sort_num_smaller_elements_in_right.cc
+//g++-5 -Wall --std=c++11 -g -o algo_sort_num_smaller_elements_in_right algo_sort_num_smaller_elements_in_right.cc
 
 /**
  * @file  Count number of smaller elements to right

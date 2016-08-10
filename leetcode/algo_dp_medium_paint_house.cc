@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o algo_dp_medium_paint_house algo_dp_medium_paint_house.cc
+//g++-5 -Wall --std=c++11 -g -o algo_dp_medium_paint_house algo_dp_medium_paint_house.cc
 
 /**
  * @file  Paint House

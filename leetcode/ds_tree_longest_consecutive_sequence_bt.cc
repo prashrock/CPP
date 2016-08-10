@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -Wall -o ds_tree_longest_consecutive_sequence_bt ds_tree_longest_consecutive_sequence_bt.cc
+//g++-5 --std=c++11 -g -Wall -o ds_tree_longest_consecutive_sequence_bt ds_tree_longest_consecutive_sequence_bt.cc
 
 /**
  * @file  BT Length of Longest Consequtive sequence

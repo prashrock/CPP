@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o algo_dp_longest_increasing_subsequence algo_dp_longest_increasing_subsequence.cc
+//g++-5 --std=c++11 -g -o algo_dp_longest_increasing_subsequence algo_dp_longest_increasing_subsequence.cc
 
 /**
  * @file  Longest Increasing Subsequence

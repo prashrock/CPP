@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o ds_string_text_justification ds_string_text_justification.cc
+//g++-5 --std=c++11 -g -o ds_string_text_justification ds_string_text_justification.cc
 
 /**
  * @file  Text Justification

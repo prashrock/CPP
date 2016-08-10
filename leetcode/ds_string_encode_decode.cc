@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o ds_string_encode_decode ds_string_encode_decode.cc
+//g++-5 --std=c++11 -g -o ds_string_encode_decode ds_string_encode_decode.cc
 
 /**
  * @file  String Encode Decode

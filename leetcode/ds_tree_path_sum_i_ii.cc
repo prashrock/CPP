@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -Wall -o ds_tree_path_sum_i_ii ds_tree_path_sum_i_ii.cc
+//g++-5 --std=c++11 -g -Wall -o ds_tree_path_sum_i_ii ds_tree_path_sum_i_ii.cc
 
 /**
  * @file  BT Path Sum

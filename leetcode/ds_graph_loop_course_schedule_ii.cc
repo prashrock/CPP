@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -Wall -Werror -o ds_graph_loop_course_schedule_ii ds_graph_loop_course_schedule_ii.cc
+//g++-5 --std=c++11 -g -Wall -Werror -o ds_graph_loop_course_schedule_ii ds_graph_loop_course_schedule_ii.cc
 
 /**
  * @file Course Schedule II

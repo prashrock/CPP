@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o ds_string_easy_add_binary ds_string_easy_add_binary.cc
+//g++-5 --std=c++11 -Wall -g -o ds_string_easy_add_binary ds_string_easy_add_binary.cc
 
 /**
  * @file  Add Binary

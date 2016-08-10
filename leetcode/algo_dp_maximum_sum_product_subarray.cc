@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o algo_dp_maximum_sum_product_subarray algo_dp_maximum_sum_product_subarray.cc
+//g++-5 -Wall --std=c++11 -g -o algo_dp_maximum_sum_product_subarray algo_dp_maximum_sum_product_subarray.cc
 
 /**
  * @file  Maximum Sum & Product Subarray

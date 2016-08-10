@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o ds_lru_cache ds_lru_cache.cc
+//g++-5 --std=c++11 -g -o ds_lru_cache ds_lru_cache.cc
 
 /**
  * @file  LRU Cache

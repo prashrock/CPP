@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o math_integer_missing_int math_integer_missing_int.cc
+//g++-5 --std=c++11 -g -o math_integer_missing_int math_integer_missing_int.cc
 
 /**
  * @file  Integer Single Number

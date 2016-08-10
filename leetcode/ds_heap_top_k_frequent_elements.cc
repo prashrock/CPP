@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o ds_heap_top_k_frequent_elements ds_heap_top_k_frequent_elements.cc
+//g++-5 --std=c++11 -g -o ds_heap_top_k_frequent_elements ds_heap_top_k_frequent_elements.cc
 
 /**
  * @file  Top K Frequent Elements

@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_tree_is_symmetric_bt ds_tree_is_symmetric_bt.cc
+//g++-5 --std=c++11 -Wall -g -o ds_tree_is_symmetric_bt ds_tree_is_symmetric_bt.cc
 
 /**
  * @file  is BT symmetric

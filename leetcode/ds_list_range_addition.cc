@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_list_range_addition ds_list_range_addition.cc
+//g++-5 --std=c++11 -Wall -g -o ds_list_range_addition ds_list_range_addition.cc
 
 /**
  * @file  Range Addition

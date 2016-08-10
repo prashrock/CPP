@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o algo_sort_meeting_rooms_ii algo_sort_meeting_rooms_ii.cc
+//g++-5 --std=c++11 -g -o algo_sort_meeting_rooms_ii algo_sort_meeting_rooms_ii.cc
 
 /**
  * @file  Meeting Rooms II

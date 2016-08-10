@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall  -g -o ds_list_find_the_celebrity ds_list_find_the_celebrity.cc
+//g++-5 --std=c++11 -Wall  -g -o ds_list_find_the_celebrity ds_list_find_the_celebrity.cc
 
 /**
  * @file  Find the celebrity

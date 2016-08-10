@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o math_integer_break math_integer_break.cc -I../utils/
+//g++-5 --std=c++11 -Wall -g -o math_integer_break math_integer_break.cc -I../utils/
 
 /**
  * @file  Math Integer Break

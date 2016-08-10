@@ -1,4 +1,4 @@
-//g++ -Wall --std=c++11 -g -o algo_backtrack_flipgame2 algo_backtrack_flipgame2.cc
+//g++-5 -Wall --std=c++11 -g -o algo_backtrack_flipgame2 algo_backtrack_flipgame2.cc
 
 /**
  * @file  Flip Game II

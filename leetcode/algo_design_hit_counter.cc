@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o algo_design_hit_counter algo_design_hit_counter.cc
+//g++-5 --std=c++11 -Wall -g -o algo_design_hit_counter algo_design_hit_counter.cc
 
 /**
  * @file  Design Hit Counter

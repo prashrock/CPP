@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_hash_longest_consecutive_seq ds_hash_longest_consecutive_seq.cc
+//g++-5 --std=c++11 -Wall -g -o ds_hash_longest_consecutive_seq ds_hash_longest_consecutive_seq.cc
 
 /**
  * @file  Longest Consecutive Sequence

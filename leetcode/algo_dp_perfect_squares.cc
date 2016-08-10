@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -Wall -o algo_dp_perfect_squares algo_dp_perfect_squares.cc
+//g++-5 --std=c++11 -g -Wall -o algo_dp_perfect_squares algo_dp_perfect_squares.cc
 
 /**
  * @file  Perfect Squares

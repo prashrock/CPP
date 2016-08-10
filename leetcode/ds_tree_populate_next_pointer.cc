@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o ds_tree_populate_next_pointer ds_tree_populate_next_pointer.cc
+//g++-5 --std=c++11 -Wall -g -o ds_tree_populate_next_pointer ds_tree_populate_next_pointer.cc
 
 /**
  * @file  BT Populate next-pointer

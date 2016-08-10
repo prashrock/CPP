@@ -1,4 +1,4 @@
-//g++ --std=c++11 -g -o algo_dp_number_of_1_2_steps algo_dp_number_of_1_2_steps.cc
+//g++-5 --std=c++11 -g -o algo_dp_number_of_1_2_steps algo_dp_number_of_1_2_steps.cc
 
 /**
  * @file  Climbing stairs

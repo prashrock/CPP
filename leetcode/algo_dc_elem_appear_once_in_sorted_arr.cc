@@ -1,4 +1,4 @@
-//g++ --std=c++11 -Wall -g -o algo_dc_elem_appear_once_in_sorted_arr algo_dc_elem_appear_once_in_sorted_arr.cc
+//g++-5 --std=c++11 -Wall -g -o algo_dc_elem_appear_once_in_sorted_arr algo_dc_elem_appear_once_in_sorted_arr.cc
 
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
