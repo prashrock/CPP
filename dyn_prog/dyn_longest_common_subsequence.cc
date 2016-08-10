@@ -49,7 +49,6 @@ int lcs_dp(const T s1[], size_t m, const T s2[], size_t n,
       cout << "Length of Longest common subsequence = " << lcs_len << endl;
    }
    if(print_dp_table) {
-      std::ios::fmtflags f( std::cout.flags() ); /* save prev*/
       cout << "DP Table:" << endl;
       cout << "Rows = S1 | Columns = S2 (table stores #common)" << endl;
       for (size_t j = 0; j <= n; ++j) {
@@ -68,7 +67,7 @@ int lcs_dp(const T s1[], size_t m, const T s2[], size_t n,
          cout << endl;
       }
       cout << endl;
-      std::cout.flags( f ); /* Restore previous setw setting */
+      std::cout.copyfmt(std::ios(NULL));; /* Restore cout    */
    }
    /* Check if we should print the result backtrace          */
    if(print_backtrace) {

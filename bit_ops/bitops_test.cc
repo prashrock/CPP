@@ -31,6 +31,7 @@ static bool __attribute__((noinline)) bit_reverse_test() {
          std::cout << "Error: Reverse failed for 0x" << std::hex
                    << tst.n << " expected 0x" << tst.exp
                    << "got 0x" << ans << endl;
+         std::cout.copyfmt(std::ios(NULL));  /* Restore cout     */
          return false;
       }
       ans = bitReverse<uint32_t>(tst.exp);
@@ -38,6 +39,7 @@ static bool __attribute__((noinline)) bit_reverse_test() {
          std::cout << "Error: Reverse failed for 0x" << std::hex
                    << tst.exp << " expected 0x" << tst.n
                    << "got 0x" << ans << endl;
+         std::cout.copyfmt(std::ios(NULL)); /* Restore cout  */
          return false;
       }
    }
@@ -52,6 +54,7 @@ static bool __attribute__((noinline)) bit_gray_code_test(int lp=num_loops) {
          cout << "Error: Gray code failed for " << i
               << " gray= " << std::hex << gray
               << " and inv_gray= " << bin << endl;
+         std::cout.copyfmt(std::ios(NULL)); /* Restore cout  */
          return false;
       }
       else if(std::abs(bitPopCnt(gray)- bitPopCnt(prev_gray)) != 1) {

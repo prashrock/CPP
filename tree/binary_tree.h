@@ -19,7 +19,7 @@ template<typename Tkey=int, typename Tval=int>
 class binary_tree{
 public:
    /* Two constructors - Empty, Deserialize                  */
-   binary_tree(): ins_cnt(0),del_cnt(0),dup_ins_cnt(0),root(nullptr) { }
+   binary_tree(): ins_cnt(0),del_cnt(0),root(nullptr) { }
    binary_tree(std::string &s): ins_cnt(s.size()) {
       unsigned i = 0; /* need to pass a reference            */
       root = deserialize(s, i);
@@ -130,6 +130,7 @@ public:
          x->left  = ins(x->left, key, val);
       else   x->right = ins(x->right, key, val);
       x->cnt = calc_size(x);
+      ins_cnt++;
       return x;
    }
 
@@ -173,6 +174,7 @@ public:
             x->right = del_propagate_pointers(old_x->right,x);
             x->left  = old_x->left;
          }
+         del_cnt++;
          delete old_x;
       }
       if(x == nullptr) return x;
@@ -182,7 +184,6 @@ public:
 private:
    unsigned ins_cnt;
    unsigned del_cnt;
-   unsigned dup_ins_cnt;
    node<Tkey, Tval> *root;
 };
 

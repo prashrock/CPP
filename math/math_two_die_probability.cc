@@ -22,12 +22,17 @@ int main()
    
    cout << "\nEnter Number of trials:" << endl;
    cin >> trials;
-        
+
+   if(trials < sides) {
+      cout << "Error: Please enter more trials." << endl;
+      return -1;
+   }
+   
    for(unsigned int j = 0; j < trials; j++) {
       unsigned int d1 = r_sides();  /* First die outcome */
       unsigned int d2 = r_sides();  /* Second die outcome */
       if(d1 + d2 >= num_outcomes)
-         cout << "daiii" << d1 << " " << d2 << endl;
+         cout << "Error: " << d1 << " " << d2 << endl;
       outcomes[d1 + d2]++; /* Increment that outcome */
    }
    
