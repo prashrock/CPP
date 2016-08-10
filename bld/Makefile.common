@@ -9,7 +9,7 @@ CFLAGS	 := -g -W -Wall -Wextra -pedantic -ggdb3 -Werror \
             -Wunused-function -fno-strict-aliasing
 
 #OPT	 := -O4
-OPT      := -O2 -flto -march=native -ffast-math 
+OPT      := -O2 -march=native -ffast-math   #-flto
 EE	 := $(CC) -E
 LST	 := $(CC) -c $(CFLAGS) -Wa,-a,-ad 
 LDFLAGS	 := -L /usr/lib/x86_64-linux-gnu -pthread -lrt
