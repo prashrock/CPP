@@ -13,6 +13,7 @@
 #include <cmath>             /* pow                          */
 #include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
+#include <vector>            /* std::vector                  */
 #include <string>            /* std::string,                 */
 #include <cstring>           /* std::strtok                  */
 #include <stack>             /* std::stack                   */

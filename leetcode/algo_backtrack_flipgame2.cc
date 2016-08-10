@@ -20,6 +20,8 @@
 
 #include <iostream>          /* std::cout                    */
 #include <string>            /* std::string                  */
+#include <algorithm>         /* std::max                     */
+#include <vector>            /* std::vector                  */
 using namespace std;
 
 void setPos(string &s, int idx)   { s[idx] = s[idx + 1] = '-'; }

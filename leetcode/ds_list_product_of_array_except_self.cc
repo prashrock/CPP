@@ -7,6 +7,17 @@
 
 // https://leetcode.com/problems/product-of-array-except-self/
 
+#include <iostream>          /* std::cout                    */
+#include <iomanip>           /* std::setw                    */
+#include <cmath>             /* pow                          */
+#include <cassert>           /* assert                       */
+#include <algorithm>         /* std::max                     */
+#include <vector>            /* std:vector                   */
+#include <string>            /* std::string,                 */
+#include <cstring>           /* std::strtok                  */
+#include <unordered_map>     /* std::unordered_map container */
+using namespace std;
+
 /**
  * Given an array of n integers where n > 1, nums, return an array output such
  * that output[i] is equal to the product of all the elements of nums except nums[i].
@@ -16,16 +27,6 @@
  * Could you solve it with constant space complexity? (Note: The output array does not
  * count as extra space for the purpose of space complexity analysis.)
  */
-
-#include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
-#include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
-#include <unordered_map>     /* std::unordered_map container */
-using namespace std;
 
 /* Two pointers in opposite direction approach.              */
 vector<int> productExceptSelf(vector<int>& nums) {

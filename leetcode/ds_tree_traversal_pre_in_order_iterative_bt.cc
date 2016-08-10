@@ -10,6 +10,7 @@
 
 #include <iostream>          /* std::cout                    */
 #include <algorithm>         /* std::max                     */
+#include <vector>            /* std::vector                  */
 #include <stack>             /* std::stack                   */
 using namespace std;
 

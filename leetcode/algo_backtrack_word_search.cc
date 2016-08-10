@@ -5,18 +5,18 @@
  * @brief Find word from 2D board
  */
 
+//https://leetcode.com/problems/word-search/
 
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
 #include <cmath>             /* pow                          */
 #include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
+#include <vector>            /* std::vector                  */
 #include <string>            /* std::string,                 */
 #include <cstring>           /* std::strtok                  */
 #include <unordered_map>     /* std::unordered_map container */
 using namespace std;
-
-//https://leetcode.com/problems/word-search/
 
 /**
  * Given a 2D board and a word, find if the word exists in the grid.

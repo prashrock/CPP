@@ -26,6 +26,7 @@
 #include <cmath>             /* pow, tgamma(factorial)       */
 #include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
+#include <vector>            /* std::vector                  */
 #include <string>            /* std::string                  */
 #include "print_utils.h"     /* print_table_row              */
 using namespace std;

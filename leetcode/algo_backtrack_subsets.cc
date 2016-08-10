@@ -7,6 +7,17 @@
 
 //https://leetcode.com/problems/subsets/
 
+#include <iostream>          /* std::cout                    */
+#include <iomanip>           /* std::setw                    */
+#include <cmath>             /* pow                          */
+#include <cassert>           /* assert                       */
+#include <algorithm>         /* std::max                     */
+#include <vector>            /* std::vector                  */
+#include <string>            /* std::string,                 */
+#include <cstring>           /* std::strtok                  */
+#include <unordered_map>     /* std::unordered_map container */
+using namespace std;
+
 /**
  * Given set of distinct ints, return all possible subsets.  *
  * Note:                                                     *
@@ -15,17 +26,6 @@
  * For example, If nums = [1,2,3], a solution is:            *
  * [ [3], [1], [2], [1,2,3], [1,3], [2,3], [1,2], [] ]       *
  */
-
-
-#include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
-#include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
-#include <unordered_map>     /* std::unordered_map container */
-using namespace std;
 
 /**
  *-----------------------------------------------------------*

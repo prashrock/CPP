@@ -10,6 +10,7 @@
 #include <iostream>          /* std::cout                    */
 #include <climits>           /* CHAR_BIT                     */
 #include <algorithm>         /* std::max                     */
+#include <vector>            /* std::vector                  */
 using namespace std;
 
 /*

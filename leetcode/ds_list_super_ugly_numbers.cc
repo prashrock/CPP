@@ -7,6 +7,18 @@
 
 // https://leetcode.com/problems/super-ugly-number/
 
+#include <iostream>          /* std::cout                    */
+#include <iomanip>           /* std::setw                    */
+#include <cmath>             /* pow                          */
+#include <cassert>           /* assert                       */
+#include <algorithm>         /* std::max                     */
+#include <vector>            /* std::vector                  */
+#include <string>            /* std::string,                 */
+#include <cstring>           /* std::strtok                  */
+#include <unordered_map>     /* std::unordered_map container */
+using namespace std;
+
+
 /**
  * Write a program to find the nth super ugly number.
  * Super ugly numbers are positive numbers whose all prime factors
@@ -20,15 +32,6 @@
  * (3) 0 < k . 100, 0 < n . 106, 0 < primes[i] < 1000.
  */
 
-#include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
-#include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
-#include <unordered_map>     /* std::unordered_map container */
-using namespace std;
 
 /* Find the nth super ugly number                            */
 int nthSuperUglyNumber1(int n, vector<int>& primes) {
