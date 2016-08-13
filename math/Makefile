@@ -61,5 +61,5 @@ math_perm_comb_test: $(MATH_PERM_COMB_TEST_OBJS)
 
 math_shuffle_test: $(MATH_SHUFFLE_OBJS)
 	@echo "LD   " $@
-	@$(CC) $(OPT) $(CFLAGS) -O3 -Os -march=native -o $@ $^
+	@$(CC) $(OPT) $(CFLAGS) -O3 -Os -march=native -o $@ $^  $(LDFLAGS)
 	@echo "--------------------------------------------------"
