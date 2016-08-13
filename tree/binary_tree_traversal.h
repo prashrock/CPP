@@ -5,13 +5,14 @@
 #include <vector>              /* std:vector                 */
 #include <queue>               /* std::queue                 */
 #include <stack>               /* std::stack                 */
+#include <cstdint>             /* uint8_t                    */
 #include "binary_tree_ops.h"   /* node + common operations   */
 
  /* Implement all possible traversal orders for a BT/BST     */
 namespace bt
 {
- enum class Traversal { PREORDER, INORDER, POSTORDER, BFS,
-                        SPIRALORDER, BOTTOMUPORDER};
+ enum class Traversal : uint8_t {
+    PREORDER, INORDER, POSTORDER, BFS, SPIRALORDER, BOTTOMUPORDER};
  
 /* Recursive pre-order traversal of all nodes.               *
  * @param x   - root node of current sub-tree                *

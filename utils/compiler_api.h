@@ -10,6 +10,15 @@
                   std::is_same<MYT, int32_t>::value),        \
                  "Error: Only INT/UINT supported.")
 #endif
+#ifndef STATIC_ASSERT_TYPE_INT_UINT_INT16_UINT16
+#define STATIC_ASSERT_TYPE_INT_UINT_INT16_UINT16(MYT)        \
+   static_assert((std::is_same<MYT, unsigned int>::value  || \
+                  std::is_same<MYT, uint32_t>::value      || \
+                  std::is_same<MYT, int32_t>::value       || \
+                  std::is_same<MYT, int16_t>::value       || \
+                  std::is_same<MYT, uint16_t>::value),       \
+                 "Error: Only INT/UINT supported.")
+#endif
 #ifndef STATIC_ASSERT_TYPE_UINT_ULONG
 #define STATIC_ASSERT_TYPE_UINT_ULONG(MYT)                   \
    static_assert((std::is_same<MYT, unsigned int>::value  || \

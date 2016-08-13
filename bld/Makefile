@@ -1,6 +1,6 @@
 COMMON_ROOT = $(shell pwd)/..
 EXES = math_sqrt math_two_die_probability math_prime                    \
-	math_perm_comb_test                                             \
+	math_perm_comb_test math_shuffle_test                           \
 	dyn_4_keys_max_print dyn_partition_set dyn_knapsack_01          \
 	dyn_longest_common_subsequence dyn_subset_sum                   \
 	median_two_sorted_arrays                                        \
@@ -18,7 +18,7 @@ EXES = math_sqrt math_two_die_probability math_prime                    \
 all: $(EXES) etags
 MAKE := $(MAKE) --no-print-directory
 
-math_sqrt math_two_die_probability math_prime math_perm_comb_test:
+math_sqrt math_two_die_probability math_prime math_perm_comb_test math_shuffle_test:
 	@$(MAKE) -f $(COMMON_ROOT)/math/Makefile COMMON_ROOT="$(COMMON_ROOT)" $@
 
 median_two_sorted_arrays:

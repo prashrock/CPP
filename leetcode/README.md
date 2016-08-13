@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [101 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [102 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -153,7 +153,8 @@ Math based
 |5. | Medium     | [Single Number](https://leetcode.com/problems/single-number/) ([solution](./math_integer_missing_int.cc))         |
 |6. | Medium     | [Letter Combinations of Phone number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) ([solution](./math_letter_combinations_phone.cc))      |
 |7. | Medium     | [Validate Perfect Square](https://leetcode.com/problems/valid-perfect-square/) ([solution](./math_validate_perfect_square.cc))        |
-|8. | Hard       | [Patching Array](https://leetcode.com/problems/patching-array/) ([solution](./math_patching_array.cc))              |
-|9. | Hard       | [Max 2D points on line](https://leetcode.com/problems/max-points-on-a-line/) ([solution](./math_geometry_max_2Dpoints_line.cc))       |
+|8. | Medium     | [Math Shuffle](https://leetcode.com/problems/shuffle-an-array/) ([solution](./math_shuffle.cc))                   |
+|9. | Hard       | [Patching Array](https://leetcode.com/problems/patching-array/) ([solution](./math_patching_array.cc))            |
+|10.| Hard       | [Max 2D points on line](https://leetcode.com/problems/max-points-on-a-line/) ([solution](./math_geometry_max_2Dpoints_line.cc))       |
 
 ----------------------------------------------------------------------------------------

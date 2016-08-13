@@ -1,12 +1,13 @@
-[![Build Status](https://travis-ci.org/prashrock/C.svg?branch=master)](https://travis-ci.org/prashrock/CPP)
-[![Coverity Status](https://scan.coverity.com/projects/2883/badge.svg?flat=1)](https://scan.coverity.com/projects/prashrock-cpp)
-
 C++ Programs (Algo, DS)
 ===================
 - Note, each implementation aims for clarity (for quick reference) rather than optimal performance.
   - Some programs may exhibit poor cache locality, perform more comparisons/swaps than necessary.
   - Unless stated otherwise, implementations are NOT MT/Async safe.
-  
+- Any component can be built individually by issuing "make" in the respective directory. Continuous Integration status:
+| Branch Name       | Build Status      | Coverity Status             | Grok Access       |
+|:------------------|:------------------|:----------------------------|:------------------|
+| Master            | [![Build Status](https://travis-ci.org/prashrock/CPP.svg?branch=master)](https://travis-ci.org/prashrock/CPP) | [![Coverity Status](https://scan.coverity.com/projects/2883/badge.svg?flat=1)](https://scan.coverity.com/projects/prashrock-cpp) | [Grokbit](https://grokbit.com/prashrock/CPP/) |
+
 Algo - Dynamic Programming
 --------------------------------------------
 - Each program in [Dynamic Programming](./dyn_prog) has a brute-force and DP implementation along with a randomized test vector
@@ -33,5 +34,12 @@ Data Structures
 
 ###Binary Tree###
 - Binary Tree implementation
+
+----------------------------------------------------------------------------------------
+Math
+--------------------------------------------
+  | Algo                      | Description                                     |
+  |:--------------------------|:------------------------------------------------|
+  | **[Shuffle](./math/math_shuffle.h)** | Knuth Shuffle implementation         |
 
 ----------------------------------------------------------------------------------------

@@ -5,6 +5,7 @@
 #include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
 #include <vector>            /* std:vector                   */
+#include <random>            /* std:default_random_engine    */
 
 #include "print_utils.h"     /* print_table_row, MILLION     */
 #include "rand_generator.h"  /* init_rand,fill_vector_rand   */
@@ -81,6 +82,11 @@ static bool __attribute__((noinline)) bit_parity_test(int lp=num_loops) {
 }
 
 static bool __attribute__((noinline)) bit_misc_test(int lp=num_loops) {
+   std::default_random_engine generator( std::random_device{}() );
+   std::uniform_int_distribution<int>
+      intdistribution(std::numeric_limits<int>::min(),
+                      std::numeric_limits<int>::max()); /* [-2^31, 2^31-1]   */
+   
    if(avg<long long>(5, 6) != 5) {
       cout << "Error: avg(5, 6) failed" << endl; return false;
    }
@@ -97,6 +103,16 @@ static bool __attribute__((noinline)) bit_misc_test(int lp=num_loops) {
          cout << "Error: isEven() failed" << endl; return false;
       }
    }
+   for(int i = 0; i < lp; ++i) {
+      auto rand_num = intdistribution(generator);
+      unsigned exp_val  = std::abs(rand_num);
+      unsigned calc_val = bit_ops::abs(rand_num);
+      if(calc_val != exp_val) {
+         cout << "Error: abs() failed for " << rand_num
+              << " exp=" << exp_val << " got=" << calc_val << endl;
+         return false;
+      }
+   }  
    return true;
 }
 

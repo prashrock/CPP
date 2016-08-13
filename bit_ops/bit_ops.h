@@ -100,6 +100,22 @@ constexpr T avg(const T x, const T y) noexcept {
    /* Use x+y = carry + sum_without_carry =((x&y)<<1)+(x^y)) */
    return (x & y) + ((x ^ y) >> 1);
 }
+/* @brief Calculate absolute integer given + or -ve integer  *
+ *        abs{x} = !(x) + 1                                  *
+ * Use the property that -1 >> n will still be -1            */
+template<typename T=int>
+static inline typename std::make_unsigned<T>::type abs(T n) noexcept {
+   STATIC_ASSERT_TYPE_INTEGRAL(T);
+   typedef typename std::make_unsigned<T>::type Tu;
+   const Tu nbits = ((sizeof(T) * CHAR_BIT) - 1);
+   /* nmask is all 1's if n is -ve or 0 if n is +ve          *
+    * nmask is basically -1 (in 2s complement) if n is -ve   *
+    * Need a shift to set nmask = -1 to avoid if(-ve) branch */
+   const Tu nmask = n >> nbits;
+   /* Below applies 2's complement only for -ve numbers      *
+    * Use XOR(0xFF..) for NOT operator and -(-1(0xFF..))=+1  */
+   return (static_cast<Tu>(n ^ nmask) - nmask);
+}
 /* --------------------------------------------------------- */
 /* @brief Swap adjacent 'WIDTH' bit blocks (from LSB to MSB) *
  * @note  e.g. bit_swap<1>(010011) = 100011                  *
