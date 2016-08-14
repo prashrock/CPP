@@ -8,7 +8,7 @@ Shuffle
 - Note: Using [STL uniform int distribution](http://www.cplusplus.com/reference/random/uniform_int_distribution/) slows down performance, so going with a simple rand32() % N approach.
 - Comparable in performance to STL shuffle. Below results for a [simple microbenchmark](./math_shuffle_test.cc) (shuffle 1 million integers) shows:
 
-  | Measure                           |  STL Shuffle | [Shuffle (./math_shuffle.h)  |
+  | Measure                           |  STL Shuffle | [Shuffle] (./math_shuffle.h)  |
   |:----------------------------------|:------------|:------------|
   | Total time taken (1 million loop) |  29 ms      | 21 ms       | 
   | Avg #Cycles per loop              |  80 cycles  | 57 cycles   |
