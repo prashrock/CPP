@@ -5,9 +5,9 @@ endif
 #order is important to have dependencies work, declare DEPS before include
 include $(COMMON_ROOT)/bld/Makefile.common
 
-INCLUDES = \
-	-I $(COMMON_ROOT)/utils	     \
-	-I $(COMMON_ROOT)/string   \
+INCLUDES =                                  \
+	-I $(COMMON_ROOT)/utils	            \
+	-I $(COMMON_ROOT)/string            \
 
 DEPS = \
 	$(COMMON_ROOT)/utils/compiler_api.h \
@@ -36,7 +36,7 @@ longest_unique_substring: $(LONGEST_UNIQUE_SUBSTR)
 
 substr_match: $(SUBSTR_MATCH)
 	@echo "LD   " $@
-	@$(CC) $(OPT) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+	@$(CC) $(OPT) $(CFLAGS) -O3 -Os -march=native -o $@ $^ $(LDFLAGS)
 	@echo "--------------------------------------------------"
 
 word_freq_cnt: $(WORD_FREQ_CNT)

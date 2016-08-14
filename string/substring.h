@@ -13,7 +13,7 @@
  * Naive Substring method:                                   *
  * @param text                                               *
  *   Text in which to search for pattern (haystack)          *
- * @param pattern                                            *
+ * @param pat                                                *
  *   Pattern to search for (needle)                          *
  * @return                                                   *
  *   0-based pattern start idx  or -1 if pattern not found   *
@@ -23,14 +23,13 @@
  * Worst Case Time Complexity = O(NM) (Typical = O(1.1N))    *
  * Space Complexity           = O(1)                         */
 template<typename T=std::string>
-static inline int substring_brute(T text, T pattern)
-{
-   if(text.empty() || pattern.empty()) return -1;
-   for(size_t i = 0, j = 0; i <= text.size() - pattern.size(); ++i) {
-      for(j = 0; j < pattern.size() && i + j < text.size(); ++j) 
-         if(text[i + j] != pattern[j]) break;
+static inline int substring_brute(T text, T pat) {
+   if(text.empty() || pat.empty()) return -1;
+   for(size_t i = 0, j = 0; i <= (text.size() - pat.size()); ++i) {
+      for(j = 0; j < pat.size() && i + j < text.size(); ++j) 
+         if(text[i + j] != pat[j]) break;
       
-      if(j == pattern.size()) return i;
+      if(j == pat.size()) return i; /* Return on 1st match   */
    }
    return -1;
 }
@@ -39,7 +38,7 @@ static inline int substring_brute(T text, T pattern)
  * Optimized Naive method:                                   *
  * @param text                                               *
  *   Text in which to search for pattern (haystack)          *
- * @param pattern                                            *
+ * @param pat                                                *
  *   Pattern to search for (needle)                          *
  * @return                                                   *
  *   0-based pattern start idx  or -1 if pattern not found   *
@@ -50,20 +49,21 @@ static inline int substring_brute(T text, T pattern)
  * Worst Case Time Complexity = O(NM) (Typical = O(1.1N))    *
  * Space Complexity           = O(1)                         */
 template<typename T=std::string>
-static inline int substring_opt(T text, T pattern)
+static inline int substring_opt(T text, T pat)
 {
    size_t i, j;
-   if(text.empty() || pattern.empty()) return -1;
-   for(i = 0, j = 0; i < text.size() && j < pattern.size(); ++i) {
-      if(text[i] == pattern[j])      j++;
-      /* if mismatch, backtrack text by j and reset pattern*/
+   if(text.empty() || pat.empty()) return -1;
+   /* Break loop when either text or pat is fully traversed  */
+   for(i = 0, j = 0; i < text.size() && j < pat.size(); ++i) {
+      if(text[i] == pat[j]) j++;
+      /* if mismatch, backtrack text by j and reset pat      */
       else {
          i -= j;
-         j = 0;
+         j  = 0;
       }
    }
-   if(j == pattern.size())   return (i - pattern.size());
-   else                      return -1;
+   if(j == pat.size())   return (i - pat.size());
+   else                  return -1;
 }
 
 
@@ -93,11 +93,10 @@ static inline int substring_opt(T text, T pattern)
  * i.e., stay in case 3, till lps_len = 0 (i.e., case 2)     */
 template<typename T=std::string>
 static inline int kmp_prefix_dfa(T pat, int lps[], int n) {
-   /* length of previous longest prefix that is also suffix */
+   /* length of previous longest prefix that is also suffix  */
    int lps_len = 0;
-   lps[0] = 0;   /* single char string = no proper prefix   */
+   lps[0] = 0;   /* single char string = no proper prefix    */
    for(int i = 1; i < n;) {
-
       if(pat[lps_len] == pat[i]) lps[i] = ++lps_len;
       else if(lps_len == 0)      lps[i] = 0;
       else {
@@ -123,7 +122,7 @@ void kmp_lps_dump_helper(const std::string pattern_str) {
  * Knuth Morris Pratt Search Algo:                           *
  * @param text                                               *
  *   Text in which to search for pattern (haystack)          *
- * @param pattern                                            *
+ * @param pat                                                *
  *   Pattern to search for (needle)                          *
  * @return                                                   *
  *   0-based pattern start idx  or -1 if pattern not found   *
@@ -136,18 +135,18 @@ void kmp_lps_dump_helper(const std::string pattern_str) {
  * Advantages:                                               *
  * - No text backtrack needed (supports input text stream)   */
 template<typename T=std::string>
-static inline int substring_kmp(T text, T pattern) {
-   size_t M = pattern.size();
-   /* LPS = store the DFA result of longest prefix match    */
+static inline int substring_kmp(T text, T pat) {
+   size_t M = pat.size();
+   /* LPS = store the DFA result of longest prefix match     */
    std::vector<int> lps(M);
    size_t i, j;
-   if(text.empty() || pattern.empty()) return -1;
-   kmp_prefix_dfa(pattern, &lps[0], M);
+   if(text.empty() || pat.empty()) return -1;
+   kmp_prefix_dfa(pat, &lps[0], M);
    for(i = 0, j = 0; i < text.size() && j < M; ++i) {
-      /* Backtrack pattern if required but not the text    */
-      while (j > 0 && text[i] != pattern[j])
+      /* Backtrack pat if required but not the text          */
+      while (j > 0 && text[i] != pat[j])
          j = lps[j - 1];		
-      if(text[i] == pattern[j]) j++;
+      if(text[i] == pat[j]) j++;
    }
    if(j == M)   return (i - M);
    else         return -1;
@@ -171,25 +170,26 @@ static inline int substring_kmp(T text, T pattern) {
  * Note2- Implementation based on Robert Sedgewick lectures@ *
  * algs4.cs.princeton.edu/lectures/53SubstringSearch.pdf     */
 template<typename T=std::string, size_t R=256>
-static inline int substring_boyer_moore(T text, T pattern) {
-   int skip = 0; /* How many char to skip matching in text  */
-   if(text.empty() || pattern.empty()) return -1;
+static inline int substring_boyer_moore(T text, T pat) {
+   const auto  N = text.size(), M = pat.size();
+   if(text.empty() || pat.empty()) return -1;
    std::vector<int> radix(R, -1);
    
    /* Pre-processing - pre-compute the rightmost occurence  *
     * of each character 'c' in the pattern                  */
-   for(size_t i = 0; i < pattern.size(); ++i) {
-      unsigned pos = static_cast<char>(pattern[i]);
-      radix[pos] = i; /*Only store last occur of character */
+   for(size_t i = 0; i < M; ++i) {
+      unsigned pos = static_cast<char>(pat[i]);
+      radix[pos] = i; /*Only store last occur of character  */
    }
 	
-   /* Actual Boyer-Moore String Search Algorithm            *
-    * Use condition <= to facilitate text == pattern case   */
-   for(size_t i = 0; i <= text.size() - pattern.size(); i += skip) {
+   /* Actual Boyer-Moore String Search Algorithm            */
+   int skip = 0; /* How many char to skip matching in text  */
+   /* Use condition <= to facilitate text == pattern case   */
+   for(size_t i = 0; i <= (N - M); i += skip) {
       skip = 0;
-      for(int j = (int)pattern.size()-1; j >= 0; j--) {
-         if(text[i+j] != pattern[j]) {
-            skip = std::max(1, j - radix[text[i+j]]);
+      for(int j = M - 1; j >= 0; j--) {
+         if(text[i+j] != pat[j]) {
+            skip = std::max(1, j - radix[pat[j]]);
             break;
          }
       }
@@ -241,5 +241,12 @@ static inline int substring_rabin_karp(T text, T pattern) {
    }
    return -1;
 }
-	
+
+template<typename T=std::string>
+static inline int substring_stil_find(T text, T pat) {
+   if(text.empty() || pat.empty()) return -1;
+   auto ret = text.find(pat);
+   if(ret == std::string::npos)    return -1;
+   else                            return static_cast<int> (ret);
+}
 #endif //_SUBSTRING_UTILS_CPP_

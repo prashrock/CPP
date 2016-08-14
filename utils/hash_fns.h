@@ -7,7 +7,7 @@
  * @param radix - Base (10 for integer, 256 for extd ASCII)  *
  * @param prime - Prime number(hash range = [0, prime])      */
 template<typename T=std::string, typename Tret=unsigned long>
-Tret rolling_hash(T inp, unsigned radix=256, Tret prime=1009)
+static inline Tret rolling_hash(T inp, unsigned radix=256, Tret prime=1009)
 {
    Tret h = 0;
    for(size_t i = 0; i < inp.size(); ++i)

@@ -1,11 +1,8 @@
+//taskset -c 1 ./substr_match
 #include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
 #include <vector>            /* std:vector                   */
 #include <string>            /* std::string                  */
-#include <unordered_map>     /* std::unordered_map container */
 
 #include "print_utils.h"     /* print_table_row              */
 #include "rand_generator.h"  /* init_rand()                  */
@@ -15,16 +12,19 @@ using namespace std;
 
 /* Check if pattern occurs in text. If yes return first idx  */
 const int number_of_iterations = MILLION/10;
-const int text_length          = 3000;
+const int text_length          = 10000;
 const int pattern_length       = 100;
 const size_t RADIX             = 256; /* Extended ASCII      */
+const char radix_first         = 'A';
+const char radix_last          = 'D';
 
 /* Maintain a table of substring algo's for test purposes    */
 const std::vector<std::string> substr_types = {
-   "Brute", "Brute Opt", "KMP", "Boyer-Moore", "Rabin-Karp"
+   "STL Find", "Brute", "Brute Opt", "KMP", "Boyer-Moore", "Rabin-Karp"
 };
 const std::vector<int (*)(std::string, std::string)> substr =
 {
+   substring_stil_find,
    substring_brute,
    substring_opt,
    substring_kmp,
@@ -57,8 +57,8 @@ void substring_match_randomized_test()
    for(int i = 0; i < number_of_iterations; ++i) {
       vector<char> text(text_length);
       vector<char> pattern(pattern_length);
-      fill_vector_rand<char>(text, 'A', 'B');
-      fill_vector_rand<char>(pattern, 'A', 'B');
+      fill_vector_rand<char>(text, radix_first, radix_last);
+      fill_vector_rand<char>(pattern, radix_first, radix_last);
       string txt_str(text.begin(), text.end());
       string pat_str(pattern.begin(), pattern.end());
 
@@ -138,4 +138,5 @@ int main()
    init_rand();
    if(substring_match_manual_test())
       substring_match_randomized_test();
+   return 0;
 }
