@@ -1,13 +1,13 @@
 Leetcode Programs
 ===================
-This is a collection of my [102 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [103 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
 Algorithm based
 --------------------------------------------
 ###Backtracking###
-|#  | Difficulty | Problem and Solution                          |
+|#  | Difficulty | Problem and Solution                         |
 |:--|:-----------|:---------------------------------------------|
 |1. | Medium     | [Number of 2D Islands](https://leetcode.com/problems/number-of-islands/) ([solution](./algo_backtrack_2D_number_of_islands.cc))                                                                                |
 |2. | Medium     | [Flip Game II](https://leetcode.com/problems/flip-game-ii/) ([solution](./algo_backtrack_flipgame2.cc))            |
@@ -15,7 +15,7 @@ Algorithm based
 |4. | Medium     | [Word Search](https://leetcode.com/problems/word-search/) ([solution](./algo_backtrack_word_search.cc))            |
 
 ###Divide and Conquer###
-|#  | Difficulty | Problem and Solution                          |
+|#  | Difficulty | Problem and Solution                         |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | Find Duplicate([solution](./algo_dc_elem_appear_once_in_sorted_arr.cc))                                            |
 |2. | Medium     | [Equal Range](https://leetcode.com/problems/search-for-a-range/) ([solution](./algo_dc_equal_range.cc))            |
@@ -25,30 +25,35 @@ Algorithm based
 |6. | Medium     | [Search insert position](https://leetcode.com/problems/search-insert-position/) ([solution](./algo_dc_search_insert_position.cc))                                      |7. | Hard       | [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) <br> [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) ([solution](./algo_dc_rotated_array_search.cc))  |                         |
 
 ###Design###
-|#  | Difficulty | Problem and Solution                          |
+|#  | Difficulty | Problem and Solution                         |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | [Moving Average from Data Stream](https://leetcode.com/problems/moving-average-from-data-stream/) ([soln](./algo_design_moving_average.cc))   |
 |2. | Medium     | [Hit counter](https://leetcode.com/problems/design-hit-counter/) ([solution](./algo_design_hit_counter.cc))                                   |
 
 ###Dynamic Programming###
-|#  | Difficulty | Problem and Solution                          |
+|#  | Difficulty | Problem and Solution                         |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | [House Robber](https://leetcode.com/problems/house-robber/) ([solution](./algo_dp_easy_house_robber.cc))           |
 |2. | Easy       | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) ([solution](./algo_dp_number_of_1_2_steps.cc))   |
-|3. | Medium     | [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) ([solution](./algo_dp_longest_increasing_subsequence.cc))                                                                             |
+|3. | Medium     | [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) ([solution](./algo_dp_longest_increasing_subsequence.cc))    |
 |4. | Medium     | [Maximum Subarray Sum](https://leetcode.com/problems/maximum-subarray/) ([solution](./algo_dp_maximum_sum_product_subarray.cc)) <br> [Maximum Subarray Product](https://leetcode.com/problems/maximum-product-subarray/) ([solution](./algo_dp_maximum_sum_product_subarray.cc))                                                   |
 |5. | Medium     | [Paint House](https://leetcode.com/problems/paint-house/) ([solution](./algo_dp_medium_paint_house.cc))            |
 |6. | Medium     | [Perfect Squares](https://leetcode.com/problems/perfect-squares/) ([solution](./algo_dp_perfect_squares.cc))       |
-|7. | Medium     | [Structurally Unique BST](https://leetcode.com/problems/unique-binary-search-trees/) ([solution](./algo_dp_unique_binary_search_trees.cc))                                                                                 |
+|7. | Medium     | [Structurally Unique BST](https://leetcode.com/problems/unique-binary-search-trees/) ([solution](./algo_dp_unique_binary_search_trees.cc))         |
 
 ###Sort###
-|#  | Difficulty | Problem and Solution                          |
+|#  | Difficulty | Problem and Solution                         |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | [Meeting Rooms](https://leetcode.com/problems/meeting-rooms/) ([solution](./algo_sort_meeting_rooms.cc))           |
 |2. | Medium     | [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/) ([solution](./algo_sort_meeting_rooms_ii.cc))  |
 |3. | Medium     | Merge Overlapping Intervals ([solution](./algo_sort_merge_overlapping_intervals.cc))                               |
-|4. | Medium     | [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) ([solution](./algo_sort_quick_select.cc))                                                                                             |
-|5. | Hard       | [Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) ([solution](./algo_sort_num_smaller_elements_in_right.cc))                                                                            |
+|4. | Medium     | [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) ([solution](./algo_sort_quick_select.cc))                            |
+|5. | Hard       | [Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) ([solution](./algo_sort_num_smaller_elements_in_right.cc))   |
+
+###Greedy###
+|#  | Difficulty | Problem and Solution                         |
+|:--|:-----------|:---------------------------------------------|
+|1. | Hard       | [Candy - Local Minima counter](https://leetcode.com/problems/candy/) ([solution](./algo_greedy_local_minimum_candy.cc)) | |
 
 ----------------------------------------------------------------------------------------
 Data Structure based
