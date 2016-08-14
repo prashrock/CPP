@@ -4,9 +4,10 @@ C++ Programs (Algo, DS)
   - Some programs may exhibit poor cache locality, perform more comparisons/swaps than necessary.
   - Unless stated otherwise, implementations are NOT MT/Async safe.
 - Any component can be built individually by issuing "make" in the respective directory. Continuous Integration status:
-| Branch Name       | Build Status      | Coverity Status             | Grok Access       |
-|:------------------|:------------------|:----------------------------|:------------------|
-| Master            | [![Build Status](https://travis-ci.org/prashrock/CPP.svg?branch=master)](https://travis-ci.org/prashrock/CPP) | [![Coverity Status](https://scan.coverity.com/projects/2883/badge.svg?flat=1)](https://scan.coverity.com/projects/prashrock-cpp) | [Grokbit](https://grokbit.com/prashrock/CPP/) |
+  
+  | Branch Name       | Build Status      | Coverity Status             | Grok Access       |
+  |:------------------|:------------------|:----------------------------|:------------------|
+  | Master            | [![Build Status](https://travis-ci.org/prashrock/CPP.svg?branch=master)](https://travis-ci.org/prashrock/CPP) | [![Coverity Status](https://scan.coverity.com/projects/2883/badge.svg?flat=1)](https://scan.coverity.com/projects/prashrock-cpp) | [Grokbit](https://grokbit.com/prashrock/CPP/) |
 
 Algo - Dynamic Programming
 --------------------------------------------
@@ -38,6 +39,8 @@ Data Structures
 ----------------------------------------------------------------------------------------
 Math
 --------------------------------------------
+- All implementations can be found in respective header files: 
+
   | Algo                      | Description                                     |
   |:--------------------------|:------------------------------------------------|
   | **[Shuffle](./math/math_shuffle.h)** | Knuth Shuffle implementation         |
