@@ -7,6 +7,7 @@ Shuffle
 - [An implementation](./math_shuffle.h) of Knuth Shuffle(Fisher-Yates Shuffle) to shuffle a given vector of objects(of any type).
 - Note: Using [STL uniform int distribution](http://www.cplusplus.com/reference/random/uniform_int_distribution/) slows down performance, so going with a simple rand32() % N approach.
 - Comparable in performance to STL shuffle. Below results for a [simple microbenchmark](./math_shuffle_test.cc) (shuffle 1 million integers) shows:
+
   | Measure                           |  STL Shuffle | [Shuffle (./math_shuffle.h)  |
   |:----------------------------------|:------------|:------------|
   | Total time taken (1 million loop) |  29 ms      | 21 ms       | 
@@ -18,4 +19,5 @@ Shuffle
   - Confirm that the shuffled distribution is "fair" aka uniform.
   - Make shuffle work with iterators.
   - Try out [Daniel Lemire's implementation](http://lemire.me/blog/2016/06/30/fast-random-shuffling/) approach with a custom pseudo random generator.
+
 ----------------------------------------------------------------------------------------
