@@ -6,6 +6,7 @@ Implementations
 --------------------------------------------
 - Each [Dynamic Programming](./) solution has a brute-force and DP implementation.
 - Most programs include a backtrack approach to get the optimum solution along with a randomized test vector.
+
 |#  | Name       | Purpose                                      |
 |:--|:-----------|:---------------------------------------------|
 |1. |  [Subset Sum](./dyn_subset_sum.cc)  | Given a set of integers and a target sum, find out if there is a subset whose sum equals to the target sum.                                                          | 
