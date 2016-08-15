@@ -16,7 +16,7 @@ Algo
   | Topic             | List of algorithms                                                                    |
   |:------------------|:--------------------------------------------------------------------------------------|
   | [Dynamic Programming](./dyn_prog) | [Subset Sum](./dyn_prog/dyn_subset_sum.cc),  [Binary Knapsack](./dyn_prog/dyn_knapsack_01.cc), [Longest Common Subsequence](./dyn_prog/dyn_longest_common_subsequence.cc), [Longest Increasing Subsequence](./leetcode/algo_dp_longest_increasing_subsequence.cc), [Levenstein Minimum edit distance](./dyn_prog/dyn_str_min_edit_distance.cc) |
-  | [Substring Search](./string/substring.h) | [Brute Force](./string/substring.h#L52), [KMP](./string/substring.h#L138), [Boyer Moore](./string/substring.h#L173), [Rabin Karp (Monte Carlo approach)](L220) |
+  | [Substring Search](./string/substring.h) | [Brute Force](./string/substring.h#L52), [KMP](./string/substring.h#L138), [Boyer Moore](./string/substring.h#L173), [Rabin Karp (Monte Carlo approach)](./string/substring.h#L220) |
 
 ----------------------------------------------------------------------------------------
 Data Structures
@@ -27,9 +27,7 @@ Data Structures
   - Includes implementation for Population Count, Gray code, Parity Check, Bit reverse, Log2, etc.
   
 ###LRU###
-- STL Based O(1) [LRU Cache implementation](./lru/lru.h) in under 200 lines. Containers used:
-  - List to maintain LRU keys in least recently used order (oldest element first)
-  - Unordered Map for O(1) LRU Key Lookup. In addition to storing the value, Map also stores the key's pointer in List (for direct access during age refresh).
+- STL Based O(1) [LRU Cache implementation](./lru/lru.h) in under 200 lines.
 
 ###Binary Tree###
 - Binary Tree implementation
