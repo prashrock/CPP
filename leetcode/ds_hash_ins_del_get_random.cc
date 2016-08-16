@@ -8,14 +8,10 @@
 // https://leetcode.com/problems/insert-delete-getrandom-o1/
 
 #include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
 #include <vector>            /* std:vector                   */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
 #include <unordered_map>     /* std::unordered_map           */
+#include <random>            /* std::default_random_engine   */
 using namespace std;
 
 /**

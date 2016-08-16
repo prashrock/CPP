@@ -8,13 +8,8 @@
 // https://leetcode.com/problems/find-median-from-data-stream/
 
 #include <iostream>          /* std::cout                    */
-#include <iomanip>           /* std::setw                    */
-#include <cmath>             /* pow                          */
-#include <cassert>           /* assert                       */
 #include <algorithm>         /* std::max                     */
 #include <vector>            /* std:vector                   */
-#include <string>            /* std::string,                 */
-#include <cstring>           /* std::strtok                  */
 #include <queue>             /* std::priority_queue          */
 using namespace std;
 
