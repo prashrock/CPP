@@ -29,18 +29,22 @@ static bool __attribute__((noinline)) bit_reverse_test() {
    for(auto tst : reverse_test) {
       auto ans = bitReverse<uint32_t>(tst.n);
       if(ans != tst.exp) {
-         std::cout << "Error: Reverse failed for 0x" << std::hex
-                   << tst.n << " expected 0x" << tst.exp
-                   << "got 0x" << ans << endl;
-         std::cout.copyfmt(std::ios(NULL));  /* Restore cout     */
+         std::cout.setf(std::ios::hex, std::ios::basefield);
+         std::cout.setf(std::ios::showbase ); /* hex as base */
+         std::cout << "Error: Reverse failed for "
+                   << tst.n << " expected " << tst.exp
+                   << "got " << ans << endl;
+         std::cout.unsetf(std::ios::basefield); /* reset base */
          return false;
       }
       ans = bitReverse<uint32_t>(tst.exp);
       if(ans != tst.n) {
-         std::cout << "Error: Reverse failed for 0x" << std::hex
-                   << tst.exp << " expected 0x" << tst.n
-                   << "got 0x" << ans << endl;
-         std::cout.copyfmt(std::ios(NULL)); /* Restore cout  */
+         std::cout.setf(std::ios::hex, std::ios::basefield);
+         std::cout.setf(std::ios::showbase ); /* hex as base */
+         std::cout << "Error: Reverse failed for "
+                   << tst.exp << " expected " << tst.n
+                   << "got " << ans << endl;
+         std::cout.unsetf(std::ios::basefield); /* reset base */
          return false;
       }
    }
@@ -53,9 +57,8 @@ static bool __attribute__((noinline)) bit_gray_code_test(int lp=num_loops) {
       auto bin =  inverseGrayCode(gray);
       if(i != bin) {
          cout << "Error: Gray code failed for " << i
-              << " gray= " << std::hex << gray
+              << " gray= " << gray
               << " and inv_gray= " << bin << endl;
-         std::cout.copyfmt(std::ios(NULL)); /* Restore cout  */
          return false;
       }
       else if(std::abs(bitPopCnt(gray)- bitPopCnt(prev_gray)) != 1) {

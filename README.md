@@ -1,6 +1,6 @@
 C++ Programs (Algo, DS)
 ===================
-- Note, each implementation aims for clarity (for quick reference) rather than optimal performance.
+- Note, this project is mainly for learning purposes. Most implementation aim for clarity rather than optimal performance.
   - Some programs may exhibit poor cache locality, perform more comparisons/swaps than necessary.
   - Unless stated otherwise, implementations are NOT MT/Async safe.
 - Any component can be built individually by issuing "make" in the respective directory. Continuous Integration status:

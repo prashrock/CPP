@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [103 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [104 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -72,14 +72,14 @@ Data Structure based
 ###Hash###
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
-|1. | Hard       | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) ([solution](./ds_hash_longest_consecutive_seq.cc))                                                                                    |
+|1. | Hard       | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) ([solution](./ds_hash_longest_consecutive_seq.cc))  |
+|2. | Hard       | [O(1) Insert/Del/Get_Random](https://leetcode.com/problems/insert-delete-getrandom-o1/) ([solution](./ds_hash_ins_del_get_random.cc))  |
 
 ###Heap###
-|#  | Difficulty | Problem and Solution                          |
+|#  | Difficulty | Problem and Solution                         |
 |:--|:-----------|:---------------------------------------------|
-|1. | Medium     | [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) ([solution](./ds_heap_top_k_frequent_elements.cc))                                                                                    |
-|2. | Hard       | [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) ([solution](./ds_heap_find_median_in_stream.cc))                                                                                      |
-
+|1. | Medium     | [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) ([solution](./ds_heap_top_k_frequent_elements.cc))      |
+|2. | Hard       | [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) ([solution](./ds_heap_find_median_in_stream.cc))                                                                                           |
 
 ###Linked List###
 |#  | Difficulty | Problem and Solution                          |
