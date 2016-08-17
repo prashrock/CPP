@@ -7,6 +7,7 @@ EXES = math_sqrt math_two_die_probability math_prime                    \
 	binary_tree_test	                                        \
 	trie_test                                                       \
 	lru_test                                                        \
+	graph_test                                                      \
 	bench_stl_map bench_gettime                                     \
 	longest_unique_substring  substr_match word_freq_cnt            \
 	nqueens_backtrack                                               \
@@ -37,6 +38,9 @@ trie_test:
 lru_test:
 	@$(MAKE) -f $(COMMON_ROOT)/lru/Makefile COMMON_ROOT="$(COMMON_ROOT)"  $@
 
+graph_test:
+	@$(MAKE) -f $(COMMON_ROOT)/graph/Makefile COMMON_ROOT="$(COMMON_ROOT)"  $@
+
 bench_stl_map bench_gettime:
 	@$(MAKE) -f $(COMMON_ROOT)/micro_benchmarks/Makefile COMMON_ROOT="$(COMMON_ROOT)" $@
 
@@ -59,6 +63,7 @@ clean:
 	$(MAKE) -C $(COMMON_ROOT)/tree/         COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/trie/         COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/lru/          COMMON_ROOT="$(COMMON_ROOT)" clean
+	$(MAKE) -C $(COMMON_ROOT)/graph/        COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/string/       COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/backtracking/ COMMON_ROOT="$(COMMON_ROOT)" clean
 	$(MAKE) -C $(COMMON_ROOT)/bit_ops/      COMMON_ROOT="$(COMMON_ROOT)" clean

@@ -1,5 +1,4 @@
 #include <iostream>            /* std::cout                  */
-#include <iomanip>             /* std::setw                  */
 #include <vector>              /* std::vector                */
 #include <cmath>               /* pow, log2                  */
 #include <cassert>             /* assert                     */

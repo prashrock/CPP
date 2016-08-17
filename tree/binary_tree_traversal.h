@@ -1,6 +1,7 @@
 #ifndef _BT_TRAVERSAL_CPP_
 #define _BT_TRAVERSAL_CPP_
 
+#include <iomanip>             /* std::setw                  */
 #include <algorithm>           /* std::max                   */
 #include <vector>              /* std:vector                 */
 #include <queue>               /* std::queue                 */
@@ -179,7 +180,7 @@ namespace bt
        print_col = col + 1;
        print_row = row;
     }
-    std::cout << std::endl;
+    std::cout << std::setw(0) << std::endl;
  }
  
  /* Given a traversal order, traverse nodes and get keys  */

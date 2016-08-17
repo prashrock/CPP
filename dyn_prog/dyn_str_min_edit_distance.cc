@@ -68,8 +68,8 @@ int min_edit_dp(const T s1[], size_t m, const T s2[], size_t n,
                       << std::setfill(' ') << dp[i][j];
          cout << endl;
       }
-      cout << endl;
-      std::cout.copyfmt(std::ios(NULL)); /* Restore cout     */
+      
+      cout << std::setw(0) << endl;
    }
    return min_edit_cost;
 }
