@@ -10,6 +10,7 @@ EXES = math_sqrt math_two_die_probability math_prime                    \
 	graph_test                                                      \
 	bench_stl_map bench_gettime                                     \
 	longest_unique_substring  substr_match word_freq_cnt            \
+	base64_test                                                     \
 	nqueens_backtrack                                               \
 	bitmap_test bitops_test                                         \
 	leetcode_progs							\
@@ -44,7 +45,7 @@ graph_test:
 bench_stl_map bench_gettime:
 	@$(MAKE) -f $(COMMON_ROOT)/micro_benchmarks/Makefile COMMON_ROOT="$(COMMON_ROOT)" $@
 
-longest_unique_substring substr_match word_freq_cnt:
+longest_unique_substring substr_match word_freq_cnt base64_test:
 	@$(MAKE) -f $(COMMON_ROOT)/string/Makefile COMMON_ROOT="$(COMMON_ROOT)" $@
 
 nqueens_backtrack:

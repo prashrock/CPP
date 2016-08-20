@@ -1,7 +1,8 @@
 #ifndef _RAND_GENERATORS_CPP_
 #define _RAND_GENERATORS_CPP_
-#include <algorithm>         /* std::max                     */
+#include <algorithm>      /* std::max                        */
 #include <vector>         /* std:vector                      */
+#include <random>         /* std::default_random_engine      */
 #include <cstdlib>        /* srand, rand                     */
 #include <sys/time.h>     /* gettimeofday()                  */
 #include <unistd.h>       /* getpid()                        */
@@ -36,6 +37,23 @@ static inline int get_rand(unsigned int limit)
    return get_rand(0, limit-1);
 }
 
+/* Get a random string of given size. Note: by default the   *
+ * random string will contain only alphabets, but this can   *
+ * easily be customized by passing a different charset       */
+static inline std::string get_rand_str(size_t size,
+                                   const std::string chars =
+                                   "abcdefghijklmnopqrstuvwxyz"
+                                   "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+{
+   std::default_random_engine rand_gen{std::random_device{}()};
+   std::string s;
+   s.reserve(size);
+   const int N = chars.size();
+   std::uniform_int_distribution<int> pick(0, N - 1);
+   for(size_t i = 0; i < size; ++i) s += chars[pick(rand_gen)];
+   return s;
+}
+
 /* Given an input integer vector, fill it up with random     *
  * numbers in the range [min, max]                           */
 template<typename T = int>
@@ -44,5 +62,5 @@ static inline void fill_vector_rand(std::vector<T>& v, int min=0,
 {
    for(auto &i : v) i = static_cast<T> (get_rand(min, max));
 }
-
+   
 #endif //_RAND_GENERATORS_CPP_

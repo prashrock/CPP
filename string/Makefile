@@ -25,8 +25,10 @@ SUBSTR_MATCH = \
 WORD_FREQ_CNT = \
 	$(COMMON_ROOT)/string/word_freq_cnt.o \
 
+BASE64_TEST = \
+	$(COMMON_ROOT)/string/base64_test.o \
 
-OBJS = $(LONGEST_UNIQUE_SUBSTR) $(SUBSTR_MATCH) \
+OBJS = $(LONGEST_UNIQUE_SUBSTR) $(SUBSTR_MATCH) $(BASE64_TEST) \
 
 # cancel implicit program rule
 longest_unique_substring: $(LONGEST_UNIQUE_SUBSTR)
@@ -43,3 +45,9 @@ word_freq_cnt: $(WORD_FREQ_CNT)
 	@echo "LD   " $@
 	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -o $@ $^
 	@echo "--------------------------------------------------"
+
+base64_test: $(BASE64_TEST)
+	@echo "LD   " $@
+	@$(CC) $(OPT) $(CFLAGS) -O3 -Os -march=native -o $@ $^ $(LDFLAGS)
+	@echo "--------------------------------------------------"
+

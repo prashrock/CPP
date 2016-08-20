@@ -16,7 +16,7 @@ Algo
   | Topic             | List of algorithms                                                                    |
   |:------------------|:--------------------------------------------------------------------------------------|
   | [Dynamic Programming](./dyn_prog) | [Subset Sum](./dyn_prog/dyn_subset_sum.cc),  [Binary Knapsack](./dyn_prog/dyn_knapsack_01.cc), [Longest Common Subsequence](./dyn_prog/dyn_longest_common_subsequence.cc), [Longest Increasing Subsequence](./leetcode/algo_dp_longest_increasing_subsequence.cc), [Levenstein Minimum edit distance](./dyn_prog/dyn_str_min_edit_distance.cc) |
-  | [Substring Search](./string/substring.h) | [Brute Force](./string/substring.h#L52), [KMP](./string/substring.h#L138), [Boyer Moore](./string/substring.h#L173), [Rabin Karp (Monte Carlo approach)](./string/substring.h#L220) |
+  | [String Related](./string/) | [Substring Search](./string/substring.h) - [Brute Force](./string/substring.h#L52), [KMP](./string/substring.h#L138), [Boyer Moore](./string/substring.h#L173), [Rabin Karp (Monte Carlo approach)](./string/substring.h#L220) <br> [Base64 Encode / Decode](./string/base64.h) |
 
 ----------------------------------------------------------------------------------------
 Data Structures
