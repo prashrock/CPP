@@ -72,7 +72,7 @@ void bt_walkthrough()
            << endl;
    }
    cout << "-----------------------" << endl;
-   cout << "Info: BT Walkthrough complete" << endl << endl;
+   cout << "Info: BT Walkthrough complete" << endl;
 }
 
 /* Manually crafted test-cases to validate BT functionality  */
@@ -134,7 +134,6 @@ bool validate_bi_tree_and_vector(std::vector<int>& vec,
                                  bin_idx_tree<int>& bi_tree) {
    /* 1) Verify if BIT and Vector have the same size         */
    if(bi_tree.size() != vec.size()) return false;
-#if 0
    /* 2) Check the value at each index across BIT and Vector */
    for(size_t i = 0; i < vec.size(); ++i) {
       if(vec[i] != bi_tree.getVal(i)) {
@@ -144,7 +143,6 @@ bool validate_bi_tree_and_vector(std::vector<int>& vec,
          return false;
       }
    }
-#endif
    /* 3) Check range sum [0, idx] for each index             */
    for(auto it = vec.begin(); it != vec.end(); ++it) {
       size_t idx= std::distance(vec.begin(), it);
@@ -189,6 +187,7 @@ bool bit_random_test(size_t N = num_inserts,
    }
    /* Validate the sum after doing range_sum checks on BIT   */
    if(validate_bi_tree_and_vector(vec, bi_tree) == false) return false;
+   cout << bi_tree;
    cout << "Info: Binary Indexed Tree randomized test-cases complete" << endl;
    return true;
 }

@@ -97,16 +97,16 @@ static inline int kmp_prefix_dfa(T pat, int lps[], int n) {
    int lps_len = 0;
    lps[0] = 0;   /* single char string = no proper prefix    */
    for(int i = 1; i < n;) {
-      if(pat[lps_len] == pat[i]) lps[i] = ++lps_len;
-      else if(lps_len == 0)      lps[i] = 0;
-      else {
-         lps_len = lps[lps_len - 1];
-         continue;
-      }
-      i++;
+      /* Case 1: Cur Prefix and the ith char match, move fwd */
+      if(pat[lps_len] == pat[i]) lps[i++] = ++lps_len;
+      /* Case 2: No match and the lps_length is 0, move fwd  */
+      else if(lps_len == 0)      lps[i++] = 0;
+      /* Case 3: No match and lps_length is non-zero (stay)  */
+      else                       lps_len  = lps[lps_len - 1];
    }
    return 0;
 }
+
 
 /* Dump the pattern string and LPS table from a pattern str  */
 void kmp_lps_dump_helper(const std::string pattern_str) {
