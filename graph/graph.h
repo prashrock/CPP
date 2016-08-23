@@ -11,7 +11,8 @@ namespace graph
 {
    
 /* Undirected Graph Implementation                           */
-class undirected_graph{
+<typename ET=int>
+class digraph{
 public:
 
 private:

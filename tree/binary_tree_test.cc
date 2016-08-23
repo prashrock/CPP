@@ -1,13 +1,14 @@
-#include <iostream>            /* std::cout                  */
-#include <vector>              /* std::vector                */
-#include <cmath>               /* pow, log2                  */
-#include <cassert>             /* assert                     */
-#include <algorithm>           /* std::max                   */
+#include <iostream>              /* std::cout                */
+#include <vector>                /* std::vector              */
+#include <cmath>                 /* pow, log2                */
+#include <cassert>               /* assert                   */
+#include <algorithm>             /* std::max                 */
 #include <random>              /* std::default_random_engine */
 
-#include "rand_generator.h"    /* init_rand()                */
-#include "binary_tree.h"       /* BT API                     */
-#include "print_utils.h"       /*print_table_row             */
+#include "rand_generator.h"      /* init_rand()              */
+#include "binary_tree.h"         /* BT API                   */
+#include "binary_indexed_tree.h" /* Binary Indexed Tree API  */
+#include "print_utils.h"         /* print_table_row          */
 using namespace std;
 using namespace bt;
 
@@ -127,12 +128,79 @@ bool bt_manual_test()
    return ret;
 }
 
+/* Given a vector and its equivalent contents in BIT format  *
+ * use std::accumulate and bit ops to check both contents    */
+bool validate_bi_tree_and_vector(std::vector<int>& vec,
+                                 bin_idx_tree<int>& bi_tree) {
+   /* 1) Verify if BIT and Vector have the same size         */
+   if(bi_tree.size() != vec.size()) return false;
+#if 0
+   /* 2) Check the value at each index across BIT and Vector */
+   for(size_t i = 0; i < vec.size(); ++i) {
+      if(vec[i] != bi_tree.getVal(i)) {
+         cout << "Error: BIT validate failed at " << i
+              << " expected val=" << vec[i]
+              << " got=" << bi_tree.getVal(i)     << endl;
+         return false;
+      }
+   }
+#endif
+   /* 3) Check range sum [0, idx] for each index             */
+   for(auto it = vec.begin(); it != vec.end(); ++it) {
+      size_t idx= std::distance(vec.begin(), it);
+      auto sum  = std::accumulate(vec.begin(), it+1, 0);
+      auto bsum = bi_tree.getSum(idx);
+      if(sum != bsum) {
+         print_table_row<int>("Input_vec", vec);
+         cout << "Error: BIT Sum failed at " << idx
+              << " expected sum=" << sum << " got=" << bsum << endl;
+         return false;
+      }
+   }
+   return true;
+}
+
+bool bit_random_test(size_t N = num_inserts,
+                     size_t n_updates = 10000) {
+   std::vector<int> vec(N);
+   fill_vector_rand(vec, min_key, max_key);
+   bin_idx_tree<int> bi_tree(vec);
+   /* Validate the sum before doing any operations on BIT    */
+   if(validate_bi_tree_and_vector(vec, bi_tree) == false) return false;
+   /* Perform random updates on BIT and then check result    */
+   for(size_t i = 0; i < n_updates; ++i) {
+      size_t idx = get_rand(0, N-1);
+      int val = get_rand(max_key);
+      vec[idx] += val;
+      bi_tree.update(idx, val);
+   }
+   if(validate_bi_tree_and_vector(vec, bi_tree) == false) return false;
+   /* Perform random range_sum checks on BIT                 */
+   for(size_t i = 0; i < n_updates; ++i) {
+      size_t b = get_rand(0, N-2), e = get_rand(b, N-1);
+      int exp_sum = 0;
+      for(size_t j = b; j <= e; ++j) exp_sum += vec[j];
+      if(exp_sum != bi_tree.getSum(b, e)) {
+         cout << "Error: BIT RangeSum failed @ [" << b << "," << e
+              << "] expected sum=" << exp_sum
+              << " got=" << bi_tree.getSum(b, e) << endl;
+         return false;
+      }
+   }
+   /* Validate the sum after doing range_sum checks on BIT   */
+   if(validate_bi_tree_and_vector(vec, bi_tree) == false) return false;
+   cout << "Info: Binary Indexed Tree randomized test-cases complete" << endl;
+   return true;
+}
+
 int main()
 {
    init_rand();
    bt_walkthrough();
    for(int i = 0; i < num_iters; ++i)
-      if(bt_manual_test() == false)    return -1;;
-   cout << "Info: Manual tests passed successfully" << endl;
+      if(bt_manual_test() == false)    return -1;
+   
+   if(bit_random_test() == false)      return -1;
+   cout << "Info: All manual tests passed successfully" << endl;
    return 0;
 }

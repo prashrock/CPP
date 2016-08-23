@@ -26,7 +26,10 @@
  * = Given 2's comp int (x,y), implement ternary condition (?) operator*
  *   without branch, assuming rt shift extends sign (not portable in C)*
  *   (a<b)?x=c:x=d => x = ( ( ((a-b) >> (WORDBITS-1)) & (c^d) ) ^ d)   *
- */
+ * = Power of two rule (divisor). Given N and P (P = 2^X):             *
+ *   N % P = N & (P - 1)                                               *
+ *   N / P = N >> X                                                    *
+ *   N * P = N << X                                                    */
 
 namespace bit_ops
 {

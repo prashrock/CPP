@@ -12,7 +12,6 @@ DEPS = \
 	$(COMMON_ROOT)/utils/compiler_api.h            \
 	$(COMMON_ROOT)/utils/print_utils.h             \
 	$(COMMON_ROOT)/tree/binary_tree.h              \
-	$(COMMON_ROOT)/tree/binary_indexed_tree.h      \
 
 BIN_TREE_TEST = \
 	$(COMMON_ROOT)/tree/binary_tree_test.o         \

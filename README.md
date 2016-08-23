@@ -38,6 +38,7 @@ Data Structures
   | **[Bitmap](./bit_ops/bitmap.h)** | Simple, template based, resizable bitmap implementation using STL Vector    |
   | **[LRU Cache](./lru/lru.h)**     | O(1) Least Recently Used Cache implementation (STL Unordered Map + List)    |
   | **[Binary Tree](./tree/binary_tree.h)** | Binary Tree implementation with below [tree traversal operations](./tree/binary_tree_traversal.h) <br> - BFS, Pre/In/Post DFS Order, Spiral Order, Bottom-up Order.    |
+  | **[Binary index tree/Fenwick Tree](./tree/binary_indexed_tree.h)** | Binary Index Tree implementation. Useful for O(log n) range sum operations.  |
 
 ----------------------------------------------------------------------------------------
 Math
