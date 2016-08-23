@@ -10,21 +10,6 @@
 namespace graph
 {
    
-/* Undirected Graph Implementation                           */
-<typename ET=int>
-class digraph{
-public:
-
-private:
-
-};
-
-template<typename Tkey, typename Tval>
-std::ostream& operator<<(std::ostream& os, undirected_graph& bin) {
-   //pretty_print(bin.get_root());
-   os << std::endl;
-   return os;
-}
 
 } //end namespace
 
