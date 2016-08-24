@@ -13,6 +13,9 @@ INCLUDES = \
 MATH_PRIME_OBJS =                                      \
 	$(COMMON_ROOT)/math/math_prime.o               \
 
+MATH_MISC_OBJS =                                       \
+	$(COMMON_ROOT)/math/math_misc_test.o           \
+
 MATH_SQRT_OBJS =                                       \
 	$(COMMON_ROOT)/math/math_sqrt.o                \
 
@@ -29,6 +32,7 @@ DEPS = \
 	$(COMMON_ROOT)/math/math_sqrt.h                \
 	$(COMMON_ROOT)/math/math_shuffle.h             \
 	$(COMMON_ROOT)/math/math_prime.h               \
+	$(COMMON_ROOT)/math/math_fact.h                \
 	$(COMMON_ROOT)/math/math_perm_comb.h           \
 	$(COMMON_ROOT)/utils/rand_generator.h          \
 	$(COMMON_ROOT)/utils/compiler_api.h            \
@@ -36,7 +40,7 @@ DEPS = \
 	$(COMMON_ROOT)/bit_ops/bitmap.h                \
 
 OBJS = $(MATH_SQRT_OBJS) $(MATH_TWO_DIE_PROB_OBJS) $(MATH_PRIME_OBJS) \
-	$(MATH_PERM_COMB_TEST_OBJS) $(MATH_SHUFFLE_OBJS)
+	$(MATH_PERM_COMB_TEST_OBJS) $(MATH_SHUFFLE_OBJS) $(MATH_MISC_OBJS) \
 
 # cancel implicit program rule
 math_sqrt: $(MATH_SQRT_OBJS)
@@ -50,6 +54,11 @@ math_two_die_probability: $(MATH_TWO_DIE_PROB_OBJS)
 	@echo "--------------------------------------------------"
 
 math_prime: $(MATH_PRIME_OBJS)
+	@echo "LD   " $@
+	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -lm -o $@ $^
+	@echo "--------------------------------------------------"
+
+math_misc_test: $(MATH_MISC_OBJS)
 	@echo "LD   " $@
 	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -lm -o $@ $^
 	@echo "--------------------------------------------------"

@@ -167,6 +167,7 @@ static inline int substring_kmp(T text, T pat) {
  * Space Complexity           = O(R) where R = Radix         *
  * Note - below impl assumes Radix is 256 (Extended ASCII    *
  * char sequence).                                           *
+ * Note - GNU grep uses Boyer Moore with unrolled inner loop *
  * Note2- Implementation based on Robert Sedgewick lectures@ *
  * algs4.cs.princeton.edu/lectures/53SubstringSearch.pdf     */
 template<typename T=std::string, size_t R=256>

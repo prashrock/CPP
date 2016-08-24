@@ -1,14 +1,18 @@
 C++ Programs (Algo, DS)
 ===================
-- Note, this project is mainly for learning purposes. Most implementation aim for clarity rather than optimal performance.
-  - Some programs may exhibit poor cache locality, perform more comparisons/swaps than necessary.
-  - Unless stated otherwise, implementations are NOT MT/Async safe.
-- Any component can be built individually by issuing "make" in the respective directory. Continuous Integration status:
+- Note, this project is mainly for learning purposes. Implementations are typically concise, wrapped within respective header files and aim for clarity.
+- CI Status:
   
   | Branch Name       | Build Status      | Coverity Status             | Grok Access       |
   |:------------------|:------------------|:----------------------------|:------------------|
   | Master            | [![Build Status](https://travis-ci.org/prashrock/CPP.svg?branch=master)](https://travis-ci.org/prashrock/CPP) | [![Coverity Status](https://scan.coverity.com/projects/2883/badge.svg?flat=1)](https://scan.coverity.com/projects/prashrock-cpp) | [Grokbit](https://grokbit.com/prashrock/CPP/) |
 
+----------------------------------------------------------------------------------------
+Leetcode
+--------------------------------------------
+- A cataloged list of Leetcode solutions can be found [here](./leetcode/README.md)
+
+----------------------------------------------------------------------------------------
 Algo
 --------------------------------------------
 - Below are a list of algorithms categorized by topic. Refer to the per-directory Readme for more details:
@@ -17,7 +21,7 @@ Algo
   |:------------------|:--------------------------------------------------------------------------------------|
   | [Bit manipulation algorithms](./bit_ops/bit_ops.h) | Almost branchless and type safe implementations for: <br> - Population Count, Gray code, Parity Check, Bit reverse, Log2, etc. |
   | [Dynamic Programming](./dyn_prog) | - [Subset Sum](./dyn_prog/dyn_subset_sum.cc),  [Binary Knapsack](./dyn_prog/dyn_knapsack_01.cc) <br> - [Longest Common Subsequence](./dyn_prog/dyn_longest_common_subsequence.cc), [Longest Increasing Subsequence](./leetcode/algo_dp_longest_increasing_subsequence.cc) <br> - [Levenstein Minimum edit distance](./dyn_prog/dyn_str_min_edit_distance.cc) |
-  | [String Related](./string/) | - [Substring Search](./string/substring.h) - [Brute Force](./string/substring.h#L52), [KMP](./string/substring.h#L138), [Boyer Moore](./string/substring.h#L173), [Rabin Karp (Monte Carlo approach)](./string/substring.h#L220) <br> - Base64 [Encode / Decode](./string/base64.h) |
+  | [String Related](./string/) | - [Substring Search](./string/substring.h) - [Brute Force](./string/substring.h#L52), [KMP](./string/substring.h#L138), [Boyer Moore](./string/substring.h#L174), [Rabin Karp (Monte Carlo approach)](./string/substring.h#L221) <br> - Base64 [Encode / Decode](./string/base64.h) |
 
 ----------------------------------------------------------------------------------------
 Utils and Micro-Benchmarks
@@ -48,5 +52,6 @@ Math
   | Algo                      | Description                                     |
   |:--------------------------|:------------------------------------------------|
   | **[Shuffle](./math/math_shuffle.h)** | Knuth Shuffle implementation         |
+  | **[Factorial](./math/math_fact.h)**  | [Iterative factorial](./math/math_fact.h#15) [Large factorial(bigger than uint64_t)](./math/math_fact.h#26) [Number of Zeros in factorial](./math/math_fact.h#40)          |
 
 ----------------------------------------------------------------------------------------
