@@ -60,7 +60,7 @@ math_prime: $(MATH_PRIME_OBJS)
 
 math_misc_test: $(MATH_MISC_OBJS)
 	@echo "LD   " $@
-	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -lm -o $@ $^
+	@$(CC) $(OPT) $(CFLAGS) $(LDFLAGS) -lm -o $@ $^ $(LDFLAGS)
 	@echo "--------------------------------------------------"
 
 math_perm_comb_test: $(MATH_PERM_COMB_TEST_OBJS)
