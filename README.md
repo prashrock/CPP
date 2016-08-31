@@ -1,6 +1,7 @@
 C++ Programs (Algo, DS)
 ===================
-- Note, this project is mainly for learning purposes. Implementations are typically concise, wrapped within respective header files and aim for clarity.
+- This is a minimal C++ Library of Algorithms and Data Structures for fun and for practice. Implementations are not production ready (concise/clarity over performance/features)
+- Headers only, most implementations are contained in respective headers.
 - CI Status:
   
   | Branch Name       | Build Status      | Coverity Status             | Grok Access       |

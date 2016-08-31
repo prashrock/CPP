@@ -11,6 +11,23 @@
 
 namespace math {
 
+/* Calculate (base ^ exp) % modulus; This is based on        *
+ * Applied Cryptography by Bruce Schneier (Stackoverflow)    *
+ * http://stackoverflow.com/questions/8496182/calculating-powa-b-mod-n *
+ * Wiki notes -  http://en.wikipedia.org/wiki/Modular_exponentiation   */
+template <typename T1=int, typename T2=unsigned int>
+T1 modpow(T1 base, T2 exp, T1 modulus) {
+   STATIC_ASSERT_TYPE_UINT_ULONG(T2); /* ensure T2 unsigned  */
+   base %= modulus;
+   T1 result = 1;
+   for(;exp > 0; exp /= 2) {
+      if (exp & 1) /* If exp is odd, multiply res with base  */
+         result = (result * base) % modulus;
+      base = (base * base) % modulus;
+   }
+   return result;
+}
+ 
 /*------------- Big integer multiplication (start) ----------*/
 /* In LE Machine order, we need to print in reverse order of *
  * computation.                                              */
