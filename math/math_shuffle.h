@@ -19,6 +19,7 @@ namespace math
  * Check Algo (Random) notes for more details                */
 template<typename T=int>
 static inline void shuffle(std::vector<T>& inp) noexcept {
+   if(inp.size() == 0) return;      /* Handle 0 size vectors */
    const size_t N = inp.size();
    /* Knuth Shuffle main loop (Fisher-Yates Shuffle)         */
    for(size_t i = N-1; i >= 1; --i) {
