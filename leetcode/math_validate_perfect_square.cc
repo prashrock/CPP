@@ -35,7 +35,7 @@ using namespace std;
 bool isPerfectSquareLinear(int num) {
    /* Use the series [2, 3, 5, 7, .... ] to find and remove  *
     * all the factors of the given number(num)               */
-   for(int i = 2; num > 1 && i <= num / i; i++) {
+   for(int i = 2; i <= num / i; i++) {
       /* If i is a factor then remove all multiple of i      */
       while(num % i == 0) {
          if(num % (i*i) == 0) num /= i*i;
