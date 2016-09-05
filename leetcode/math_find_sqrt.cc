@@ -21,14 +21,8 @@ using namespace std;
  * Compute and return the square root of x.
  */
 
-/**
- * @brief -                                                  *
- * Time Complexity = O(n) and Space Complexity = O(1)        */
-int mySqrtIterative(int num) {
-   return 0;
-}
 
-/* Binary Search to find out the square root                 *
+/* @brief -Binary Search to find out the square root         *
  * Time Complexity = O(lg n) and Space Complexity = O(1)     */
 int mySqrtBS(int num) {
    int b = 1;
