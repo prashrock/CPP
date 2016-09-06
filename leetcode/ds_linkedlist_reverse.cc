@@ -6,6 +6,7 @@
  */
 
 // https://leetcode.com/problems/reverse-linked-list/
+// https://leetcode.com/problems/reverse-linked-list-ii/
 
 #include <iostream>          /* std::cout                    */
 #include <iomanip>           /* std::setw                    */
@@ -17,7 +18,6 @@
 #include <unordered_map>     /* std::unordered_map container */
 using namespace std;
 
-
 /**
  * Definition for singly-linked list.
  */
@@ -27,6 +27,12 @@ struct ListNode {
    ListNode(int x) : val(x), next(NULL) {}
 };
 
+/** 
+ * Reverse a singly linked list.
+ * Hint:
+ * A linked list can be reversed either iteratively or recursively. 
+ * Could you implement both?
+ */
 
 /** @brief - Reverse Linkedlist given first pointer          *
  * @param head - Input list head pointer                     *
@@ -48,6 +54,17 @@ bool reverseListTest() {
    return true;
 }
 
+/**
+ * Reverse a linked list from position m to n. 
+ * Do it in-place and in one-pass.
+ * For example:
+ * Given 1->2->3->4->5->NULL, m = 2 and n = 4,
+ * return 1->4->3->2->5->NULL.
+ * Note:
+ * Given m, n satisfy the following condition:
+ * 1 ≤ m ≤ n ≤ length of list.
+ */
+ 
 ListNode* reverseBetween(ListNode* head, int m, int n) {
    if(m == n) return head;
    ListNode dummy(0);
