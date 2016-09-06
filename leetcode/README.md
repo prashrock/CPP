@@ -88,6 +88,8 @@ Data Structure based
 |1. | Medium     | [Reverse Linked-List](https://leetcode.com/problems/reverse-linked-list/) <br> [Reverse Linked-List range](https://leetcode.com/problems/reverse-linked-list-ii/) ([solution](./ds_linkedlist_reverse.cc)) |
 |2. | Medium     | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) ([solution](./ds_linkedlist_add_two_nums.cc))    |
 |3. | Medium     | [Rotate List](https://leetcode.com/problems/rotate-list/) ([solution](./ds_linkedlist_rotate_list.cc))             |
+|4. | Hard       | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) ([solution](./ds_linkedlist_copy_with_random_pointer.cc))                                                                             |
+
 
 ###List###
 |#  | Difficulty | Problem and Solution                          |
@@ -101,9 +103,8 @@ Data Structure based
 |7. | Medium     | Remove Duplicates from Sorted Array [I](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) [II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/) ([solution](./ds_list_remove_duplicates_sorted_i_ii.cc))  |
 |8. | Medium     | [Super Ugly Number](https://leetcode.com/problems/super-ugly-number/)  ([soln](./ds_list_super_ugly_numbers.cc))   |
 |9. | Medium     | [Sub-array Range addition](https://leetcode.com/problems/range-addition/) ([solution](./ds_list_range_addition.cc))                                  |
-|10.| Hard       | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) ([solution](./ds_list_copy_list_with_random_pointer.cc))                                                                              |
-|11.| Hard       | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) ([solution](./ds_list_duplicate_number.cc))      |
-|12.| Hard       | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) ([solution](./ds_list_merge_sorted_arrays.cc)) <br> [Merge K Sorted Array](https://leetcode.com/problems/merge-k-sorted-lists/) ([solution](./ds_list_merge_k_sorted_lists.cc))      |
+|10.| Hard       | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) ([solution](./ds_list_duplicate_number.cc))      |
+|11.| Hard       | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) ([solution](./ds_list_merge_sorted_arrays.cc)) <br> [Merge K Sorted Array](https://leetcode.com/problems/merge-k-sorted-lists/) ([solution](./ds_list_merge_k_sorted_lists.cc))      |
 
 ###Stack###
 |#  | Difficulty | Problem and Solution                          |
