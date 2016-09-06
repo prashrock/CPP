@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [106 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [107 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -84,7 +84,7 @@ Data Structure based
 ###Linked List###
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
-|1. | Easy       | [Reverse Linked-List](https://leetcode.com/problems/reverse-linked-list/) ([solution](./ds_linkedlist_reverse.cc)) |
+|1. | Medium     | [Reverse Linked-List](https://leetcode.com/problems/reverse-linked-list/) <br> [Reverse Linked-List range](https://leetcode.com/problems/reverse-linked-list-ii/) ([solution](./ds_linkedlist_reverse.cc)) |
 |2. | Medium     | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) ([solution](./ds_linkedlist_add_two_nums.cc))    |
 |3. | Medium     | [Rotate List](https://leetcode.com/problems/rotate-list/) ([solution](./ds_linkedlist_rotate_list.cc))             |
 
