@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [107 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [108 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -88,7 +88,8 @@ Data Structure based
 |1. | Medium     | [Reverse Linked-List](https://leetcode.com/problems/reverse-linked-list/) <br> [Reverse Linked-List range](https://leetcode.com/problems/reverse-linked-list-ii/) ([solution](./ds_linkedlist_reverse.cc)) |
 |2. | Medium     | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) ([solution](./ds_linkedlist_add_two_nums.cc))    |
 |3. | Medium     | [Rotate List](https://leetcode.com/problems/rotate-list/) ([solution](./ds_linkedlist_rotate_list.cc))             |
-|4. | Hard       | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) ([solution](./ds_linkedlist_copy_with_random_pointer.cc))                                                                             |
+|4. | Medium     | [Plus One](https://leetcode.com/problems/plus-one-linked-list/) ([solution](./ds_linkedlist_plus_one.cc))          |
+|5. | Hard       | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) ([solution](./ds_linkedlist_copy_with_random_pointer.cc))                                                                             |
 
 
 ###List###
