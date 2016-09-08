@@ -70,6 +70,10 @@ void flatten(TreeNode* root) {
    }
 }
 
+/* There is a similar solution on Leetcode but instead of a  *
+ * stack, use Morris Algorithm for tree traversal:           *
+ * https://discuss.leetcode.com/topic/3995/share-my-simple-non-recursive-solution-o-1-space-complexity */
+
 int main()
 {
    cout << "Info: Manual test-cases yet to be written" << endl;
