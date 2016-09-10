@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [111 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [112 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -87,11 +87,12 @@ Data Structure based
 |:--|:-----------|:----------------------------------------------|
 |1. | Easy       |  [Remove Linked-List Elements](https://leetcode.com/problems/remove-linked-list-elements/) ([solution](./ds_linkedlist_delete_val.cc))   |
 |2. | Easy       |  [Delete Node in Linked-List](https://leetcode.com/problems/delete-node-in-a-linked-list/) ([solution](./ds_linkedlist_delete_cur_node.cc))                                      |
-|3. | Medium     | [Reverse Linked-List](https://leetcode.com/problems/reverse-linked-list/) <br> [Reverse Linked-List range](https://leetcode.com/problems/reverse-linked-list-ii/) ([solution](./ds_linkedlist_reverse.cc)) |
-|4. | Medium     | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) ([solution](./ds_linkedlist_add_two_nums.cc))    |
-|5. | Medium     | [Rotate List](https://leetcode.com/problems/rotate-list/) ([solution](./ds_linkedlist_rotate_list.cc))             |
-|6. | Medium     | [Plus One](https://leetcode.com/problems/plus-one-linked-list/) ([solution](./ds_linkedlist_plus_one.cc))          |
-|7. | Hard       | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) ([solution](./ds_linkedlist_copy_with_random_pointer.cc))                                                                             |
+|3. | Easy       |  [Merge two sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) ([solution](./ds_linkedlist_merge_two_sorted_lists.cc)) |
+|4. | Medium     | [Reverse Linked-List](https://leetcode.com/problems/reverse-linked-list/) <br> [Reverse Linked-List range](https://leetcode.com/problems/reverse-linked-list-ii/) ([solution](./ds_linkedlist_reverse.cc)) |
+|5. | Medium     | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) ([solution](./ds_linkedlist_add_two_nums.cc))    |
+|6. | Medium     | [Rotate List](https://leetcode.com/problems/rotate-list/) ([solution](./ds_linkedlist_rotate_list.cc))             |
+|7. | Medium     | [Plus One](https://leetcode.com/problems/plus-one-linked-list/) ([solution](./ds_linkedlist_plus_one.cc))          |
+|8. | Hard       | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) ([solution](./ds_linkedlist_copy_with_random_pointer.cc))                                                                             |
 
 
 ###List###
