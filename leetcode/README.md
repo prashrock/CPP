@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [113 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [115 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -127,14 +127,15 @@ Data Structure based
 |4. | Easy       | [Bijection Check Word Pattern](https://leetcode.com/problems/word-pattern/)  ([solution](./ds_string_word_pattern.cc))                                     |
 |5. | Easy       | [Palindrome Permutation](https://leetcode.com/problems/palindrome-permutation/)  ([solution](./ds_string_palindromic_permutation_i_ii.cc))                 |
 |6. | Easy       | [atoi](https://leetcode.com/problems/string-to-integer-atoi/)  ([solution](./ds_string_atoi.cc))                                                           |
-|7. | Medium     | [Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)  ([solution](./ds_string_encode_decode.cc))                          |
-|8. | Medium     | [Integer to Roman](https://leetcode.com/problems/integer-to-roman/)  ([solution](./ds_string_int_to_roman_numerals.cc))                                    |
-|9. | Medium     | [Multiply Strings](https://leetcode.com/problems/multiply-strings/)    ([soln](./ds_string_multiply_strings.cc))                                           |
-|10.| Medium     | [One Edit Distance](https://leetcode.com/problems/one-edit-distance/)    ([solution](./ds_string_one_edit_distance.cc))                                    |
-|11.| Medium     | [Reverse String](https://leetcode.com/problems/reverse-string/) <br> [Reverse vowels of string](https://leetcode.com/problems/reverse-vowels-of-a-string/) <br>  [Reverse words in string](https://leetcode.com/problems/reverse-words-in-a-string/)    ([solution](./ds_string_reverse_words.cc))                                                     |
-|12.| Hard       | [Is Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/) <br> [Find Strobogrammatic Numbers of length n](https://leetcode.com/problems/strobogrammatic-number-ii/) <br> [Find Strobogrammatic Numbers within range](https://leetcode.com/problems/strobogrammatic-number-iii/)  ([solution](./ds_string_strobogrammatic_num_i_ii_iii.cc)) |
-|13.| Hard       | [Integer to Words](https://leetcode.com/problems/integer-to-english-words/)  ([solution](./ds_string_int_to_words.cc))                                     |
-|14.| Hard       | [Text Justification](https://leetcode.com/problems/text-justification/)    ([solution](./ds_string_text_justification.cc))                                 |
+|7. | Easy       | [ZigZag Converter](https://leetcode.com/problems/zigzag-conversion/)  ([solution](./ds_string_zigzag_conversion.cc))                                       |
+|8. | Medium     | [Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)  ([solution](./ds_string_encode_decode.cc))                          |
+|9. | Medium     | [Integer to Roman](https://leetcode.com/problems/integer-to-roman/)  ([solution](./ds_string_int_to_roman_numerals.cc))                                    |
+|10.| Medium     | [Multiply Strings](https://leetcode.com/problems/multiply-strings/)    ([soln](./ds_string_multiply_strings.cc))                                           |
+|11.| Medium     | [One Edit Distance](https://leetcode.com/problems/one-edit-distance/)    ([solution](./ds_string_one_edit_distance.cc))                                    |
+|12.| Medium     | [Reverse String](https://leetcode.com/problems/reverse-string/) <br> [Reverse vowels of string](https://leetcode.com/problems/reverse-vowels-of-a-string/) <br>  [Reverse words in string](https://leetcode.com/problems/reverse-words-in-a-string/)    ([solution](./ds_string_reverse_words.cc))                                                     |
+|13.| Hard       | [Is Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/) <br> [Find Strobogrammatic Numbers of length n](https://leetcode.com/problems/strobogrammatic-number-ii/) <br> [Find Strobogrammatic Numbers within range](https://leetcode.com/problems/strobogrammatic-number-iii/)  ([solution](./ds_string_strobogrammatic_num_i_ii_iii.cc)) |
+|14.| Hard       | [Integer to Words](https://leetcode.com/problems/integer-to-english-words/)  ([solution](./ds_string_int_to_words.cc))                                     |
+|15.| Hard       | [Text Justification](https://leetcode.com/problems/text-justification/)    ([solution](./ds_string_text_justification.cc))                                 |
 
 ###Tree###
 |#  | Difficulty | Problem and Solution                          |
@@ -167,8 +168,9 @@ Math based
 |7. | Medium     | [Letter Combinations of Phone number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) ([solution](./math_letter_combinations_phone.cc))      |
 |8. | Medium     | [Validate Perfect Square](https://leetcode.com/problems/valid-perfect-square/) ([solution](./math_validate_perfect_square.cc))        |
 |9. | Medium     | [Math Shuffle](https://leetcode.com/problems/shuffle-an-array/) ([solution](./math_shuffle.cc))                   |
-|10.| Medium     | [Math Rotate Array](https://leetcode.com/problems/rotate-array/) <br> [Math Rotate Matrix](https://leetcode.com/problems/rotate-image/) <br> ([solution](./math_rotate_array_matrix.cc))                        |
-|11. | Hard      | [Patching Array](https://leetcode.com/problems/patching-array/) ([solution](./math_patching_array.cc))            |
-|12.| Hard       | [Max 2D points on line](https://leetcode.com/problems/max-points-on-a-line/) ([solution](./math_geometry_max_2Dpoints_line.cc))       |
+|10.| Medium     | [Math Rotate Array](https://leetcode.com/problems/rotate-array/) <br> [Math Rotate Matrix](https://leetcode.com/problems/rotate-image/) <br> ([solution](./math_rotate_array_matrix.cc))                       |
+|11.| Medium       | [Next Permutation](https://leetcode.com/problems/next-permutation/) <br> ([solution](./math_permutate.cc)) implements Heap and Dijkstra permutation   |
+|12. | Hard      | [Patching Array](https://leetcode.com/problems/patching-array/) ([solution](./math_patching_array.cc))            |
+|13.| Hard       | [Max 2D points on line](https://leetcode.com/problems/max-points-on-a-line/) ([solution](./math_geometry_max_2Dpoints_line.cc))       |
 
 ----------------------------------------------------------------------------------------
