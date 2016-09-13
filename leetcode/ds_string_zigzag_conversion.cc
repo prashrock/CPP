@@ -9,7 +9,8 @@
 
 #include <iostream>          /* std::cout                    */
 #include <algorithm>         /* std::max                     */
-#include <string>            /* std::string,                 */
+#include <string>            /* std::string                  */
+#include <vector>            /* std:vector                   */
 using namespace std;
 
 /*
