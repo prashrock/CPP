@@ -39,7 +39,7 @@ string convert(string s, size_t numRows) {
    /* Corner case: If #rows < 2, this function is a no-op    */
    if(numRows < 2)       return s;
    /* 2-D vector holding characters one row at a time        */
-   vector<vector<char>> srows(numRows, vector<char>(0));
+   std::vector<std::vector<char>> srows(numRows, std::vector<char>(0));
    /* i tracks the input char sequence, i in [0, n)          *
     * row holds row idx to insert the cur char [0, numRows)  */
    for(size_t i = 0, row = 0; i < s.size(); ++i, row += rowadd) {
