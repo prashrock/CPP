@@ -70,9 +70,31 @@ void flatten(TreeNode* root) {
    }
 }
 
-/* There is a similar solution on Leetcode but instead of a  *
- * stack, use Morris Algorithm for tree traversal:           *
+/* Morris Algorithm for pre-order traversal (No stack used)  *
+ * Time Complexity = O(n)     Space Complexity = O(1)        *
+ * Every node is visited by cur exactly once and by pre at   *
+ * most once. So runtime = #steps of cur/pre = O(n)          *
+ * Inspired by Leetcode solution @                           *
  * https://discuss.leetcode.com/topic/3995/share-my-simple-non-recursive-solution-o-1-space-complexity */
+void flatten_without_stack(TreeNode* root) {
+   if (root == nullptr)       return;
+   TreeNode *cur = root;
+   while(cur) {
+      if(cur->left) {
+         /* Find right-most node in the left sub-tree (pre)  */
+         TreeNode *pre = cur->left;
+         while(pre->right)  pre = pre->right;
+         /* Add cur's right sub-tree to end of left-subtree  */
+         pre->right = cur->right;
+         /* Finish processing cur-node. Move left pointer to *
+          * right and empty the left pointer. Then repeat..  */
+         cur->right = cur->left;
+         cur->left  = nullptr;
+      }
+      cur = cur->right;
+   }
+}
+
 
 int main()
 {
