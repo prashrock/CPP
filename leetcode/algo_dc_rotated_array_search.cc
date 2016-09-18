@@ -20,6 +20,13 @@ using namespace std;
  * Find the minimum element. You may assume no duplicate exists in the array.
  */
 
+/** @brief - STL based approach to find min in rotated array */
+int findMinSTL(vector<int>& nums) {
+   auto it = std::is_sorted_until(nums.begin(), nums.end());
+   if(it == nums.end()) return nums[0];
+   else                 return *it;
+}
+
 /**
  * @brief - Modified Iterative Binary Search implementation. *
  * Additional check to check we are in rotated array along   *
