@@ -22,7 +22,7 @@ using namespace std;
  * For example:
  *            1
  *           /  \
- *	         2    3
+ *          2    3
  *         / \  / \
  *        4  5  6  7
  * After calling your function, the tree should look like this:
