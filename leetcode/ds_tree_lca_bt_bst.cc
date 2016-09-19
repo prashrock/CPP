@@ -31,7 +31,7 @@ struct TreeNode {
  * @param p, q = Nodes known to be in BT, whose LCA we want  *
  * @ret   LCA node pointer                                   *
  * Note since this is not a BST, need to handle 2 cases      *
- * Check https://github.com/prashrock/CPP/blob/master/tree/binary_tree.h#L369 *
+ * Check https://github.com/prashrock/CPP/blob/master/tree/binary_tree.h#L86 *
  * for more documentation                                    *
  */
 TreeNode* bt_lca(TreeNode* root, TreeNode* p, TreeNode* q) {
