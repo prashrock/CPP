@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [115 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [117 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -108,8 +108,9 @@ Data Structure based
 |7. | Medium     | Remove Duplicates from Sorted Array [I](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) [II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/) ([solution](./ds_list_remove_duplicates_sorted_i_ii.cc))  |
 |8. | Medium     | [Super Ugly Number](https://leetcode.com/problems/super-ugly-number/)  ([soln](./ds_list_super_ugly_numbers.cc))   |
 |9. | Medium     | [Sub-array Range addition](https://leetcode.com/problems/range-addition/) ([solution](./ds_list_range_addition.cc))                                  |
-|10.| Hard       | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) ([solution](./ds_list_duplicate_number.cc))      |
-|11.| Hard       | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) ([solution](./ds_list_merge_sorted_arrays.cc)) <br> [Merge K Sorted Array](https://leetcode.com/problems/merge-k-sorted-lists/) ([solution](./ds_list_merge_k_sorted_lists.cc))      |
+|10.| Medium     | [ZigZag iterator](https://leetcode.com/problems/zigzag-iterator/) ([solution](./ds_list_zigzag_iterator.cc))       |
+|11.| Hard       | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) ([solution](./ds_list_duplicate_number.cc))      |
+|12.| Hard       | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) ([solution](./ds_list_merge_sorted_arrays.cc)) <br> [Merge K Sorted Array](https://leetcode.com/problems/merge-k-sorted-lists/) ([solution](./ds_list_merge_k_sorted_lists.cc))      |
 
 ###Stack###
 |#  | Difficulty | Problem and Solution                          |
@@ -170,7 +171,8 @@ Math based
 |9. | Medium     | [Math Shuffle](https://leetcode.com/problems/shuffle-an-array/) ([solution](./math_shuffle.cc))                   |
 |10.| Medium     | [Math Rotate Array](https://leetcode.com/problems/rotate-array/) <br> [Math Rotate Matrix](https://leetcode.com/problems/rotate-image/) <br> ([solution](./math_rotate_array_matrix.cc))                       |
 |11.| Medium       | [Next Permutation](https://leetcode.com/problems/next-permutation/) <br> ([solution](./math_permutate.cc)) implements Heap and Dijkstra permutation   |
-|12. | Hard      | [Patching Array](https://leetcode.com/problems/patching-array/) ([solution](./math_patching_array.cc))            |
-|13.| Hard       | [Max 2D points on line](https://leetcode.com/problems/max-points-on-a-line/) ([solution](./math_geometry_max_2Dpoints_line.cc))       |
+|12.| Medium       | [Uniform Random Sampling](https://leetcode.com/problems/linked-list-random-node/) ([solution](./math_uniform_rand_sampling.cc))     |
+|13. | Hard      | [Patching Array](https://leetcode.com/problems/patching-array/) ([solution](./math_patching_array.cc))            |
+|14.| Hard       | [Max 2D points on line](https://leetcode.com/problems/max-points-on-a-line/) ([solution](./math_geometry_max_2Dpoints_line.cc))       |
 
 ----------------------------------------------------------------------------------------
