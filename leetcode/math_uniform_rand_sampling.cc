@@ -10,6 +10,7 @@
 #include <iostream>          /* std::cout                    */
 #include <algorithm>         /* std::max                     */
 #include <vector>            /* std::vector                  */
+#include <random>            /* std::default_random_engine   */
 using namespace std;
 
 /**
