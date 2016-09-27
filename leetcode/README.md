@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [119 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [120 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -37,7 +37,7 @@ Algorithm based
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | [House Robber](https://leetcode.com/problems/house-robber/) ([solution](./algo_dp_easy_house_robber.cc))           |
 |2. | Easy       | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) ([solution](./algo_dp_number_of_1_2_steps.cc))   |
-|3. | Medium     | [Subset Sum - Coin CHange])(https://leetcode.com/problems/coin-change/ ([solution](./algo_dp_subset_sum.cc))       |
+|3. | Medium     | [Subset Sum - Coin Cange](https://leetcode.com/problems/coin-change/) ([solution](./algo_dp_subset_sum.cc))       |
 |4. | Medium     | [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) ([solution](./algo_dp_longest_increasing_subsequence.cc))    |
 |5. | Medium     | [Maximum Subarray Sum](https://leetcode.com/problems/maximum-subarray/) ([solution](./algo_dp_maximum_sum_product_subarray.cc)) <br> [Maximum Subarray Product](https://leetcode.com/problems/maximum-product-subarray/) ([solution](./algo_dp_maximum_sum_product_subarray.cc))                                                   |
 |6. | Medium     | [Paint House](https://leetcode.com/problems/paint-house/) ([solution](./algo_dp_medium_paint_house.cc))            |
@@ -134,14 +134,15 @@ Data Structure based
 |5. | Easy       | [Palindrome Permutation](https://leetcode.com/problems/palindrome-permutation/)  ([solution](./ds_string_palindromic_permutation_i_ii.cc))                 |
 |6. | Easy       | [atoi](https://leetcode.com/problems/string-to-integer-atoi/)  ([solution](./ds_string_atoi.cc))                                                           |
 |7. | Easy       | [ZigZag Converter](https://leetcode.com/problems/zigzag-conversion/)  ([solution](./ds_string_zigzag_conversion.cc))                                       |
-|8. | Medium     | [Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)  ([solution](./ds_string_encode_decode.cc))                          |
-|9. | Medium     | [Integer to Roman](https://leetcode.com/problems/integer-to-roman/)  ([solution](./ds_string_int_to_roman_numerals.cc))                                    |
-|10.| Medium     | [Multiply Strings](https://leetcode.com/problems/multiply-strings/)    ([soln](./ds_string_multiply_strings.cc))                                           |
-|11.| Medium     | [One Edit Distance](https://leetcode.com/problems/one-edit-distance/)    ([solution](./ds_string_one_edit_distance.cc))                                    |
-|12.| Medium     | [Reverse String](https://leetcode.com/problems/reverse-string/) <br> [Reverse vowels of string](https://leetcode.com/problems/reverse-vowels-of-a-string/) <br>  [Reverse words in string](https://leetcode.com/problems/reverse-words-in-a-string/)    ([solution](./ds_string_reverse_words.cc))                                                     |
-|13.| Hard       | [Is Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/) <br> [Find Strobogrammatic Numbers of length n](https://leetcode.com/problems/strobogrammatic-number-ii/) <br> [Find Strobogrammatic Numbers within range](https://leetcode.com/problems/strobogrammatic-number-iii/)  ([solution](./ds_string_strobogrammatic_num_i_ii_iii.cc)) |
-|14.| Hard       | [Integer to Words](https://leetcode.com/problems/integer-to-english-words/)  ([solution](./ds_string_int_to_words.cc))                                     |
-|15.| Hard       | [Text Justification](https://leetcode.com/problems/text-justification/)    ([solution](./ds_string_text_justification.cc))                                 |
+|8. | Easy       | [Length of last word](https://leetcode.com/problems/length-of-last-word/)  ([solution](./ds_string_length_of_last_word.cc))                                |
+|9. | Medium     | [Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)  ([solution](./ds_string_encode_decode.cc))                          |
+|10.| Medium     | [Integer to Roman](https://leetcode.com/problems/integer-to-roman/)  ([solution](./ds_string_int_to_roman_numerals.cc))                                    |
+|11.| Medium     | [Multiply Strings](https://leetcode.com/problems/multiply-strings/)    ([soln](./ds_string_multiply_strings.cc))                                           |
+|12.| Medium     | [One Edit Distance](https://leetcode.com/problems/one-edit-distance/)    ([solution](./ds_string_one_edit_distance.cc))                                    |
+|13.| Medium     | [Reverse String](https://leetcode.com/problems/reverse-string/) <br> [Reverse vowels of string](https://leetcode.com/problems/reverse-vowels-of-a-string/) <br>  [Reverse words in string](https://leetcode.com/problems/reverse-words-in-a-string/)    ([solution](./ds_string_reverse_words.cc))                                                     |
+|14.| Hard       | [Is Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/) <br> [Find Strobogrammatic Numbers of length n](https://leetcode.com/problems/strobogrammatic-number-ii/) <br> [Find Strobogrammatic Numbers within range](https://leetcode.com/problems/strobogrammatic-number-iii/)  ([solution](./ds_string_strobogrammatic_num_i_ii_iii.cc)) |
+|15.| Hard       | [Integer to Words](https://leetcode.com/problems/integer-to-english-words/)  ([solution](./ds_string_int_to_words.cc))                                     |
+|16.| Hard       | [Text Justification](https://leetcode.com/problems/text-justification/)    ([solution](./ds_string_text_justification.cc))                                 |
 
 
 ###Tree###
