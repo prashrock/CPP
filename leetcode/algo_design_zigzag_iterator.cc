@@ -1,4 +1,4 @@
-//g++-5 --std=c++11 -Wall -g -o ds_list_zigzag_iterator ds_list_zigzag_iterator.cc -I../utils/
+//g++-5 --std=c++11 -Wall -g -o algo_design_zigzag_iterator algo_design_zigzag_iterator.cc -I../utils/
 
 /**
  * @file  Zigzag iterator

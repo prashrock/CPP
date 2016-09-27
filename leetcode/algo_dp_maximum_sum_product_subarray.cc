@@ -8,7 +8,6 @@
 #include <iostream>          /* std::cout                    */
 #include <algorithm>         /* std::max                     */
 #include <vector>            /* std::vector                  */
-#include <vector>            /* std:vector                   */
 using namespace std;
 
 // https://leetcode.com/problems/maximum-subarray/

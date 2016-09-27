@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [117 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [119 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -29,17 +29,20 @@ Algorithm based
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | [Moving Average from Data Stream](https://leetcode.com/problems/moving-average-from-data-stream/) ([soln](./algo_design_moving_average.cc))   |
 |2. | Medium     | [Hit counter](https://leetcode.com/problems/design-hit-counter/) ([solution](./algo_design_hit_counter.cc))                                   |
+|3. | Medium     | [ZigZag iterator](https://leetcode.com/problems/zigzag-iterator/) ([solution](./algo_design_zigzag_iterator.cc))                              |
+|4. | Medium     | [Peeking iterator](https://leetcode.com/problems/peeking-iterator/) ([solution](./algo_design_peeking_iterator.cc))                           |
 
 ###Dynamic Programming###
 |#  | Difficulty | Problem and Solution                         |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | [House Robber](https://leetcode.com/problems/house-robber/) ([solution](./algo_dp_easy_house_robber.cc))           |
 |2. | Easy       | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) ([solution](./algo_dp_number_of_1_2_steps.cc))   |
-|3. | Medium     | [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) ([solution](./algo_dp_longest_increasing_subsequence.cc))    |
-|4. | Medium     | [Maximum Subarray Sum](https://leetcode.com/problems/maximum-subarray/) ([solution](./algo_dp_maximum_sum_product_subarray.cc)) <br> [Maximum Subarray Product](https://leetcode.com/problems/maximum-product-subarray/) ([solution](./algo_dp_maximum_sum_product_subarray.cc))                                                   |
-|5. | Medium     | [Paint House](https://leetcode.com/problems/paint-house/) ([solution](./algo_dp_medium_paint_house.cc))            |
-|6. | Medium     | [Perfect Squares](https://leetcode.com/problems/perfect-squares/) ([solution](./algo_dp_perfect_squares.cc))       |
-|7. | Medium     | [Structurally Unique BST](https://leetcode.com/problems/unique-binary-search-trees/) ([solution](./algo_dp_unique_binary_search_trees.cc))         |
+|3. | Medium     | [Subset Sum - Coin CHange])(https://leetcode.com/problems/coin-change/ ([solution](./algo_dp_subset_sum.cc))       |
+|4. | Medium     | [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) ([solution](./algo_dp_longest_increasing_subsequence.cc))    |
+|5. | Medium     | [Maximum Subarray Sum](https://leetcode.com/problems/maximum-subarray/) ([solution](./algo_dp_maximum_sum_product_subarray.cc)) <br> [Maximum Subarray Product](https://leetcode.com/problems/maximum-product-subarray/) ([solution](./algo_dp_maximum_sum_product_subarray.cc))                                                   |
+|6. | Medium     | [Paint House](https://leetcode.com/problems/paint-house/) ([solution](./algo_dp_medium_paint_house.cc))            |
+|7. | Medium     | [Perfect Squares](https://leetcode.com/problems/perfect-squares/) ([solution](./algo_dp_perfect_squares.cc))       |
+|8. | Medium     | [Structurally Unique BST](https://leetcode.com/problems/unique-binary-search-trees/) ([solution](./algo_dp_unique_binary_search_trees.cc))         |
 
 ###Sort###
 |#  | Difficulty | Problem and Solution                         |
@@ -66,16 +69,19 @@ Data Structure based
 |3. | Medium     | [Walls and Gates](https://leetcode.com/problems/walls-and-gates/) ([solution](./ds_graph_2D_walls_and_gates.cc))   |
 |4. | Medium     | [Word Break](https://leetcode.com/problems/word-break/) ([solution](./ds_graph_word_break.cc))   |
 
+
 ###LRU###
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Hard       | [LRU Cache](https://leetcode.com/problems/lru-cache/) ([solution](./ds_lru_cache.cc))        |
+
 
 ###Hash###
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Hard       | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) ([solution](./ds_hash_longest_consecutive_seq.cc))  |
 |2. | Hard       | [O(1) Insert/Del/Get_Random](https://leetcode.com/problems/insert-delete-getrandom-o1/) ([solution](./ds_hash_ins_del_get_random.cc))  |
+
 
 ###Heap###
 |#  | Difficulty | Problem and Solution                         |
@@ -95,7 +101,6 @@ Data Structure based
 |7. | Medium     | [Plus One](https://leetcode.com/problems/plus-one-linked-list/) ([solution](./ds_linkedlist_plus_one.cc))          |
 |8. | Hard       | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) ([solution](./ds_linkedlist_copy_with_random_pointer.cc))                                                                             |
 
-
 ###List###
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
@@ -108,17 +113,17 @@ Data Structure based
 |7. | Medium     | Remove Duplicates from Sorted Array [I](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) [II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/) ([solution](./ds_list_remove_duplicates_sorted_i_ii.cc))  |
 |8. | Medium     | [Super Ugly Number](https://leetcode.com/problems/super-ugly-number/)  ([soln](./ds_list_super_ugly_numbers.cc))   |
 |9. | Medium     | [Sub-array Range addition](https://leetcode.com/problems/range-addition/) ([solution](./ds_list_range_addition.cc))                                  |
-|10.| Medium     | [ZigZag iterator](https://leetcode.com/problems/zigzag-iterator/) ([solution](./ds_list_zigzag_iterator.cc))       |
-|11.| Hard       | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) ([solution](./ds_list_duplicate_number.cc))      |
-|12.| Hard       | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) ([solution](./ds_list_merge_sorted_arrays.cc)) <br> [Merge K Sorted Array](https://leetcode.com/problems/merge-k-sorted-lists/) ([solution](./ds_list_merge_k_sorted_lists.cc))      |
+|10.| Hard       | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) ([solution](./ds_list_duplicate_number.cc))      |
+|11.| Hard       | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) ([solution](./ds_list_merge_sorted_arrays.cc)) <br> [Merge K Sorted Array](https://leetcode.com/problems/merge-k-sorted-lists/) ([solution](./ds_list_merge_k_sorted_lists.cc))      |
+
 
 ###Stack###
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy      | [Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/) <br> [Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)  ([solution](./ds_stack_using_queue.cc))                   |
 |2. | Easy       | [Valid Parantheses](https://leetcode.com/problems/valid-parentheses/) ([solution](./ds_stack_valid_parantheses.cc))|
-|3. | Medium     | [Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/)  ([solution](./ds_stack_math_reverse_polish_notation.cc))                                                                              |
-
+|3. | Medium     | [Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/)  ([solution](./ds_stack_math_reverse_polish_notation.cc))
+|
 ###String###
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
@@ -137,6 +142,7 @@ Data Structure based
 |13.| Hard       | [Is Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/) <br> [Find Strobogrammatic Numbers of length n](https://leetcode.com/problems/strobogrammatic-number-ii/) <br> [Find Strobogrammatic Numbers within range](https://leetcode.com/problems/strobogrammatic-number-iii/)  ([solution](./ds_string_strobogrammatic_num_i_ii_iii.cc)) |
 |14.| Hard       | [Integer to Words](https://leetcode.com/problems/integer-to-english-words/)  ([solution](./ds_string_int_to_words.cc))                                     |
 |15.| Hard       | [Text Justification](https://leetcode.com/problems/text-justification/)    ([solution](./ds_string_text_justification.cc))                                 |
+
 
 ###Tree###
 |#  | Difficulty | Problem and Solution                          |
