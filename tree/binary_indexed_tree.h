@@ -14,7 +14,8 @@
  * Note:                                                     *
  * - Not Multi-Thread safe and cannot change size dynamically*
  * - Need to implement Range update (need 2 index trees)     *
- * - Inspired by http://codesay.blogspot.com/2014/03/fenwick-trees-bit-index-tree-easy-way.html  */
+ * - Inspired by http://codesay.blogspot.com/2014/03/fenwick-trees-bit-index-tree-easy-way.html
+ * - Inspired by https://www.youtube.com/watch?v=CWDQJGaN1gY */
 
 template<typename Tval=int>
 class bin_idx_tree {
