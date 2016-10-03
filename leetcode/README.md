@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [123 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [124 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -44,6 +44,7 @@ Algorithm based
 |6. | Medium     | [Paint House](https://leetcode.com/problems/paint-house/) ([solution](./algo_dp_medium_paint_house.cc))            |
 |7. | Medium     | [Perfect Squares](https://leetcode.com/problems/perfect-squares/) ([solution](./algo_dp_perfect_squares.cc))       |
 |8. | Medium     | [Structurally Unique BST](https://leetcode.com/problems/unique-binary-search-trees/) ([solution](./algo_dp_unique_binary_search_trees.cc))         |
+|9. | Medium     | [Triangle](https://leetcode.com/problems/triangle/)(./algo_dp_triangle.cc))                                        |
 
 ###Sort###
 |#  | Difficulty | Problem and Solution                         |
