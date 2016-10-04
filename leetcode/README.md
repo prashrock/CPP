@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [125 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [126 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -106,17 +106,18 @@ Data Structure based
 ###List###
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
-|1. | Easy       | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) ([solution](./ds_list_easy_remove_duplicate_number.cc))                                                                               |
-|2. | Medium     | [Find the Celebrity](https://leetcode.com/problems/find-the-celebrity/) ([solution](./ds_list_find_the_celebrity.cc))                                                                                         |
-|3. | Medium     | [Missing Number](https://leetcode.com/problems/missing-number/) ([solution](./ds_list_missing_number.cc))          |
-|4. | Medium     | [Missing Ranges](https://leetcode.com/problems/missing-ranges/) ([solution](./ds_list_missing_ranges.cc))          |
-|5. | Medium     | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) ([solution](./ds_list_product_of_array_except_self.cc))                                                                               |
-|6. | Medium     | Range Sum Query [Immutable](https://leetcode.com/problems/range-sum-query-immutable/) [Mutable](https://leetcode.com/problems/range-sum-query-mutable/) ([solution](./ds_list_range_sum_query.cc))                          |
-|7. | Medium     | Remove Duplicates from Sorted Array [I](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) [II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/) ([solution](./ds_list_remove_duplicates_sorted_i_ii.cc))  |
-|8. | Medium     | [Super Ugly Number](https://leetcode.com/problems/super-ugly-number/)  ([soln](./ds_list_super_ugly_numbers.cc))   |
-|9. | Medium     | [Sub-array Range addition](https://leetcode.com/problems/range-addition/) ([solution](./ds_list_range_addition.cc))                                  |
-|10.| Hard       | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) ([solution](./ds_list_duplicate_number.cc))      |
-|11.| Hard       | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) ([solution](./ds_list_merge_sorted_arrays.cc)) <br> [Merge K Sorted Array](https://leetcode.com/problems/merge-k-sorted-lists/) ([solution](./ds_list_merge_k_sorted_lists.cc))      |
+|1. | Easy       | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) ([solution](./ds_list_easy_remove_duplicate_number.cc))  |
+|2. | Easy       | [Move Zeroes](https://leetcode.com/problems/move-zeroes/) ([solution](./ds_list_easy_stl_remove.cc))                                               |
+|3. | Medium     | [Find the Celebrity](https://leetcode.com/problems/find-the-celebrity/) ([solution](./ds_list_find_the_celebrity.cc))                              |
+|4. | Medium     | [Missing Number](https://leetcode.com/problems/missing-number/) ([solution](./ds_list_missing_number.cc))          |
+|5. | Medium     | [Missing Ranges](https://leetcode.com/problems/missing-ranges/) ([solution](./ds_list_missing_ranges.cc))          |
+|6. | Medium     | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) ([solution](./ds_list_product_of_array_except_self.cc)) |
+|7. | Medium     | Range Sum Query [Immutable](https://leetcode.com/problems/range-sum-query-immutable/) [Mutable](https://leetcode.com/problems/range-sum-query-mutable/) ([solution](./ds_list_range_sum_query.cc))                          |
+|8. | Medium     | Remove Duplicates from Sorted Array [I](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) [II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/) ([solution](./ds_list_remove_duplicates_sorted_i_ii.cc))  |
+|9. | Medium     | [Super Ugly Number](https://leetcode.com/problems/super-ugly-number/)  ([soln](./ds_list_super_ugly_numbers.cc))   |
+|10.| Medium     | [Sub-array Range addition](https://leetcode.com/problems/range-addition/) ([solution](./ds_list_range_addition.cc))                                  |
+|11.| Hard       | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) ([solution](./ds_list_duplicate_number.cc))      |
+|12.| Hard       | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) ([solution](./ds_list_merge_sorted_arrays.cc)) <br> [Merge K Sorted Array](https://leetcode.com/problems/merge-k-sorted-lists/) ([solution](./ds_list_merge_k_sorted_lists.cc))      |
 
 
 ###Stack###
