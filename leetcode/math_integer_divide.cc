@@ -20,18 +20,15 @@ using namespace std;
 int divide(int dividend, int divisor) {
    /* Handle Edge-cases of divisor first 0, 1, -1            */
    const int int_max = std::numeric_limits<int>::max();
-   if(divisor == 1)                        return dividend;
-   else if(dividend == 0 || divisor == 0)  return 0;
+   if(dividend == 0)                       return 0;
    else if(dividend == divisor)            return 1;
-   else if(divisor == -1)  {
-      if(dividend < -(int_max))            return int_max;
-      else                                 return -(dividend);
-   }
+   else if(divisor == 0 || (dividend < -(int_max) && divisor == -1))
+       return int_max;
 
    int ans = 0;
-   unsigned int udividend = (dividend > 0) ? dividend : -(dividend),
-      udivisor  = (divisor  > 0) ? divisor  : -(divisor);
    bool neg_flag = (dividend < 0) ^ (divisor < 0);
+   unsigned int udividend = (dividend > 0) ? dividend : -(dividend),
+                udivisor  = (divisor  > 0) ? divisor  : -(divisor);
    /* Find the largest power of divisor and subtract it from *
     * dividend. Repeat this still dividend >= divisor        */
    for(; udividend >= udivisor; ) {
