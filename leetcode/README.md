@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [127 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [131 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -44,8 +44,10 @@ Algorithm based
 |6. | Medium     | [Paint House](https://leetcode.com/problems/paint-house/) ([solution](./algo_dp_medium_paint_house.cc))            |
 |7. | Medium     | [Perfect Squares](https://leetcode.com/problems/perfect-squares/) ([solution](./algo_dp_perfect_squares.cc))       |
 |8. | Medium     | [Structurally Unique BST](https://leetcode.com/problems/unique-binary-search-trees/) ([solution](./algo_dp_unique_binary_search_trees.cc))         |
-|9. | Medium     | [Triangle](https://leetcode.com/problems/triangle/)(./algo_dp_triangle.cc))                                        |
-|10.| Medium     | [Decode Ways](https://leetcode.com/problems/decode-ways/)(./algo_dp_decode_ways.cc))                               |
+|9. | Medium     | [Triangle](https://leetcode.com/problems/triangle/) ([solution](./algo_dp_triangle.cc))                            |
+|10.| Medium     | [Decode Ways](https://leetcode.com/problems/decode-ways/) ([solution](./algo_dp_decode_ways.cc))                   |
+|11.| Hard       | [Wildcard Match](https://leetcode.com/problems/wildcard-matching/) ([solution](./algo_dp_wildcard_match.cc))       |
+|12.| Hard       | [Regex Match](https://leetcode.com/problems/regular-expression-matching/) ([solution](./algo_dp_regex_match.cc))   |
 
 ###Sort###
 |#  | Difficulty | Problem and Solution                         |
@@ -117,8 +119,9 @@ Data Structure based
 |8. | Medium     | Remove Duplicates from Sorted Array [I](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) [II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/) ([solution](./ds_list_remove_duplicates_sorted_i_ii.cc))  |
 |9. | Medium     | [Super Ugly Number](https://leetcode.com/problems/super-ugly-number/)  ([soln](./ds_list_super_ugly_numbers.cc))   |
 |10.| Medium     | [Sub-array Range addition](https://leetcode.com/problems/range-addition/) ([solution](./ds_list_range_addition.cc))                                  |
-|11.| Hard       | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) ([solution](./ds_list_duplicate_number.cc))      |
-|12.| Hard       | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) ([solution](./ds_list_merge_sorted_arrays.cc)) <br> [Merge K Sorted Array](https://leetcode.com/problems/merge-k-sorted-lists/) ([solution](./ds_list_merge_k_sorted_lists.cc))      |
+|11.| Medium     | [Flatten 2D List](https://leetcode.com/problems/flatten-2d-vector/) ([solution](./ds_list_flatten_2D_list.cc))                         |
+|12.| Hard       | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) ([solution](./ds_list_duplicate_number.cc))      |
+|13.| Hard       | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) ([solution](./ds_list_merge_sorted_arrays.cc)) <br> [Merge K Sorted Array](https://leetcode.com/problems/merge-k-sorted-lists/) ([solution](./ds_list_merge_k_sorted_lists.cc))      |
 
 
 ###Stack###
@@ -185,7 +188,8 @@ Math based
 |11.| Medium       | [Next Permutation](https://leetcode.com/problems/next-permutation/) <br> ([solution](./math_permutate.cc)) implements Heap and Dijkstra permutation   |
 |12.| Medium       | [Uniform Random Sampling](https://leetcode.com/problems/linked-list-random-node/) ([solution](./math_uniform_rand_sampling.cc))     |
 |13.| Medium       | [Sort Transformed Array](https://leetcode.com/problems/sort-transformed-array/) ([solution](math_sort_transformed_array.cc))        |
-|14.| Hard      | [Patching Array](https://leetcode.com/problems/patching-array/) ([solution](./math_patching_array.cc))             |
-|15.| Hard       | [Max 2D points on line](https://leetcode.com/problems/max-points-on-a-line/) ([solution](./math_geometry_max_2Dpoints_line.cc))       |
+|14.| Medium       | [Integer Divide](https://leetcode.com/problems/divide-two-integers/) ([solution](math_integer_divide.cc))       |
+|15.| Hard      | [Patching Array](https://leetcode.com/problems/patching-array/) ([solution](./math_patching_array.cc))             |
+|16.| Hard       | [Max 2D points on line](https://leetcode.com/problems/max-points-on-a-line/) ([solution](./math_geometry_max_2Dpoints_line.cc))       |
 
 ----------------------------------------------------------------------------------------
