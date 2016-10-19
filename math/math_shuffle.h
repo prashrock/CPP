@@ -21,12 +21,15 @@ template<typename T=int>
 static inline void shuffle(std::vector<T>& inp) noexcept {
    if(inp.size() == 0) return;      /* Handle 0 size vectors */
    const size_t N = inp.size();
-   /* Knuth Shuffle main loop (Fisher-Yates Shuffle)         */
-   for(size_t i = N-1; i >= 1; --i) {
-      const auto j = get_rand(i + 1);      /* 0 <= j <= i    */
-      std::swap(inp[i], inp[j]);
+   for(size_t i = N; i > 1; --i) {  /*consider using uint32_t*/
+      const auto j = get_rand(i);      /* 0 <= j < i         */
+      std::swap(inp[i - 1], inp[j]);
    }
 }
 
+/* Note: Refer to Daniel Lemire's blog for a perf comparison *
+ * between STL shuffle and a hand-written version @          *
+ * http://lemire.me/blog/2016/10/10/a-case-study-in-the-performance-cost-of-abstraction-cs-stdshuffle/                                                    */
+ 
 } //end namespace
 #endif //_MATH_SHUFFLE_CPP

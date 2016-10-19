@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [131 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [136 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -31,7 +31,8 @@ Algorithm based
 |2. | Medium     | [Hit counter](https://leetcode.com/problems/design-hit-counter/) ([solution](./algo_design_hit_counter.cc))                                   |
 |3. | Medium     | [ZigZag iterator](https://leetcode.com/problems/zigzag-iterator/) ([solution](./algo_design_zigzag_iterator.cc))                              |
 |4. | Medium     | [Peeking iterator](https://leetcode.com/problems/peeking-iterator/) ([solution](./algo_design_peeking_iterator.cc))                           |
-|5. | Hard       | [ReadN characters given Read4](https://leetcode.com/problems/read-n-characters-given-read4-ii-call-multiple-times/) ([solution](./algo_design_readn_chars.cc))    |
+|5. | Medium     | Sliding Window based - Containing Duplicates [I](https://leetcode.com/problems/contains-duplicate/) [II](https://leetcode.com/problems/contains-duplicate-ii/) [III](https://leetcode.com/problems/contains-duplicate-iii/) ([solution]())                           |
+|6. | Hard       | [ReadN characters given Read4](https://leetcode.com/problems/read-n-characters-given-read4-ii-call-multiple-times/) ([solution](./algo_design_readn_chars.cc))    |
 
 ###Dynamic Programming###
 |#  | Difficulty | Problem and Solution                         |
@@ -46,8 +47,9 @@ Algorithm based
 |8. | Medium     | [Structurally Unique BST](https://leetcode.com/problems/unique-binary-search-trees/) ([solution](./algo_dp_unique_binary_search_trees.cc))         |
 |9. | Medium     | [Triangle](https://leetcode.com/problems/triangle/) ([solution](./algo_dp_triangle.cc))                            |
 |10.| Medium     | [Decode Ways](https://leetcode.com/problems/decode-ways/) ([solution](./algo_dp_decode_ways.cc))                   |
-|11.| Hard       | [Wildcard Match](https://leetcode.com/problems/wildcard-matching/) ([solution](./algo_dp_wildcard_match.cc))       |
-|12.| Hard       | [Regex Match](https://leetcode.com/problems/regular-expression-matching/) ([solution](./algo_dp_regex_match.cc))   |
+|11.| Medium     | Best Time to Buy Sell Stocks [I](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) [II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)  ([solution](./algo_dp_buy_sell_stocks.cc))   |
+|12.| Hard       | [Wildcard Match](https://leetcode.com/problems/wildcard-matching/) ([solution](./algo_dp_wildcard_match.cc))       |
+|13.| Hard       | [Regex Match](https://leetcode.com/problems/regular-expression-matching/) ([solution](./algo_dp_regex_match.cc))   |
 
 ###Sort###
 |#  | Difficulty | Problem and Solution                         |
