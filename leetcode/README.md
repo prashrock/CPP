@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [138 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [139 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -158,20 +158,21 @@ Data Structure based
 
 ###Tree###
 |#  | Difficulty | Problem and Solution                          |
-|:--|:-----------|:---------------------------------------------|
+|:--|:-----------|:----------------------------------------------|
 |1. | Easy       | [Is Same Binary Tree](https://leetcode.com/problems/same-tree/)    ([solution](./ds_tree_is_same_tree_bt.cc))     |
-|2. | Easy       | [Is Symmetric Binary Tree](https://leetcode.com/problems/symmetric-tree/)    ([solution](./ds_tree_is_symmetric_bt.cc))                                                                                           |
-|3. | Easy       | [Is BT Height Balanced](https://leetcode.com/problems/balanced-binary-tree/) <br> [Min Depth of BT](https://leetcode.com/problems/minimum-depth-of-binary-tree/) <br> [Max Depth of BT](https://leetcode.com/problems/maximum-depth-of-binary-tree/)   ([solution](./ds_tree_min_max_depth_bt.cc))                       |
+|2. | Easy       | [Is Symmetric Binary Tree](https://leetcode.com/problems/symmetric-tree/)    ([solution](./ds_tree_is_symmetric_bt.cc))        |
+|3. | Easy       | [Is BT Height Balanced](https://leetcode.com/problems/balanced-binary-tree/) <br> [Min Depth of BT](https://leetcode.com/problems/minimum-depth-of-binary-tree/) <br> [Max Depth of BT](https://leetcode.com/problems/maximum-depth-of-binary-tree/)   ([solution](./ds_tree_min_max_depth_bt.cc))  |
 |4. | Easy       | [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) ([solution](./ds_tree_invert_bt.cc))  |
 |5. | Medium       | [Level order BT traversal](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/) <br>[BT ZigZag Level order traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/) <br> ([solution](./ds_tree_traversal_levelorder_bt.cc))                                |
 |6. | Medium     | Path Sum [I](https://leetcode.com/problems/path-sum/) and [II](https://leetcode.com/problems/path-sum-ii/) ([solution](./ds_tree_path_sum_i_ii.cc))                |
 |7. | Medium     | [Longest Consecutive Sequence BT](https://leetcode.com/problems/binary-tree-longest-consecutive-sequence/) ([soln](./ds_tree_longest_consecutive_sequence_bt.cc))  |
 |8. | Medium     | [Lowest Common Ancestor of Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) <br> [Lowest Common Ancestor of Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) ([solution](./ds_tree_lca_bt_bst.cc))                |
-|9. | Medium     | [Populate Right pointers in BT](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/) ([solution](./ds_tree_populate_next_pointer.cc))     |
-|10.| Medium     | [Binary Tree Preorder traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)  <br> [Binary Tree Inorder traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) ([solution](./ds_tree_traversal_pre_in_order_iterative_bt.cc))                                                                       |
-|11.| Medium     | [Flatten BT to LinkedList](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/) ([solution](./ds_tree_traversal_preorder_to_list.cc))              |
-|12.| Medium     | [Verify Preorder sequence in BST ](https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree) ([soln](./ds_tree_verify_preorder_sequence_bst.cc))  |
-|13.| Medium     | [Right side view in BT(level-order)](https://leetcode.com/problems/binary-tree-right-side-view/) ([solution](./ds_tree_right_side_view_bt.cc))  |
+|9. | Medium     | [Populate Right pointers in BT](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/) ([solution](./ds_tree_populate_next_pointer.cc))    |
+|10.| Medium     | [Binary Tree Preorder traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)  <br> [Binary Tree Inorder traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) ([solution](./ds_tree_traversal_pre_in_order_iterative_bt.cc))                                     |
+|11.| Medium     | [kth smallest element in BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) ([solution](./ds_tree_traversal_inorder_kth_smallest.cc))           |
+|12.| Medium     | [Flatten BT to LinkedList](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/) ([solution](./ds_tree_traversal_preorder_to_list.cc))             |
+|13.| Medium     | [Verify Preorder sequence in BST ](https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree) ([soln](./ds_tree_verify_preorder_sequence_bst.cc))  |
+|14.| Medium     | [Right side view in BT(level-order)](https://leetcode.com/problems/binary-tree-right-side-view/) ([solution](./ds_tree_right_side_view_bt.cc))  |
 
 ----------------------------------------------------------------------------------------
 Math based
