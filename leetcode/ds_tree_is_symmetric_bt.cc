@@ -41,8 +41,7 @@ struct TreeNode {
  * @ret   true if tree is symmetrical around center          *
  */
 bool isSymmetric(TreeNode* left, TreeNode* right) {
-   if     (left == NULL && right == NULL)                  return true;
-   else if(left == NULL || right == NULL)                  return false;
+   if(left == NULL || right == NULL)             return (left == right);
    else if(left->val != right->val)                        return false;
    else if(isSymmetric(left->left, right->right) == false) return false;
    else                    return isSymmetric(left->right, right->left);
