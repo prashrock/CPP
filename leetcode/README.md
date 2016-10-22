@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [139 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [140 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -179,21 +179,22 @@ Math based
 --------------------------------------------
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
-|1. | Easy       | [Happy Number](https://leetcode.com/problems/happy-number/) ([soln](./math_happy_number.cc))                      |
-|2. | Easy       | [Reverse Integer](https://leetcode.com/problems/reverse-integer/) ([soln](./math_reverse_int_overflow.cc))        |
-|3. | Medium     | [3 sum smaller](https://leetcode.com/problems/3sum-smaller/) <br> [3 sum ](https://leetcode.com/problems/3sum/) ([solution](./math_3sum.cc))          |
-|4. | Medium     | [Find Sqrt](https://leetcode.com/problems/sqrtx/) ([solution](./math_find_sqrt.cc))                               |
-|5. | Medium     | [Integer Break](https://leetcode.com/problems/integer-break/) ([solution](./math_integer_break.cc))               |
-|6. | Medium     | [Single Number](https://leetcode.com/problems/single-number/) ([solution](./math_integer_missing_int.cc))         |
-|7. | Medium     | [Letter Combinations of Phone number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) ([solution](./math_letter_combinations_phone.cc))      |
-|8. | Medium     | [Validate Perfect Square](https://leetcode.com/problems/valid-perfect-square/) ([solution](./math_validate_perfect_square.cc))        |
-|9. | Medium     | [Math Shuffle](https://leetcode.com/problems/shuffle-an-array/) ([solution](./math_shuffle.cc))                   |
-|10.| Medium     | [Math Rotate Array](https://leetcode.com/problems/rotate-array/) <br> [Math Rotate Matrix](https://leetcode.com/problems/rotate-image/) <br> ([solution](./math_rotate_array_matrix.cc))                       |
-|11.| Medium       | [Next Permutation](https://leetcode.com/problems/next-permutation/) <br> ([solution](./math_permutate.cc)) implements Heap and Dijkstra permutation   |
-|12.| Medium       | [Uniform Random Sampling](https://leetcode.com/problems/linked-list-random-node/) ([solution](./math_uniform_rand_sampling.cc))     |
-|13.| Medium       | [Sort Transformed Array](https://leetcode.com/problems/sort-transformed-array/) ([solution](math_sort_transformed_array.cc))        |
-|14.| Medium       | [Integer Divide](https://leetcode.com/problems/divide-two-integers/) ([solution](math_integer_divide.cc))       |
-|15.| Hard      | [Patching Array](https://leetcode.com/problems/patching-array/) ([solution](./math_patching_array.cc))             |
-|16.| Hard       | [Max 2D points on line](https://leetcode.com/problems/max-points-on-a-line/) ([solution](./math_geometry_max_2Dpoints_line.cc))       |
+|1. | Easy       | [Happy Number](https://leetcode.com/problems/happy-number/) ([solution](./math_happy_number.cc))                      |
+|2. | Easy       | [Reverse Integer](https://leetcode.com/problems/reverse-integer/) ([solution](./math_reverse_int_overflow.cc))        |
+|3. | Easy       | [Rotate Function](https://leetcode.com/problems/rotate-function/) ([solution](./math_rotate_function.cc))             |
+|4. | Medium     | [3 sum smaller](https://leetcode.com/problems/3sum-smaller/) <br> [3 sum ](https://leetcode.com/problems/3sum/) ([solution](./math_3sum.cc))          |
+|5. | Medium     | [Find Sqrt](https://leetcode.com/problems/sqrtx/) ([solution](./math_find_sqrt.cc))                               |
+|6. | Medium     | [Integer Break](https://leetcode.com/problems/integer-break/) ([solution](./math_integer_break.cc))               |
+|7. | Medium     | [Single Number](https://leetcode.com/problems/single-number/) ([solution](./math_integer_missing_int.cc))         |
+|8. | Medium     | [Letter Combinations of Phone number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) ([solution](./math_letter_combinations_phone.cc))      |
+|9. | Medium     | [Validate Perfect Square](https://leetcode.com/problems/valid-perfect-square/) ([solution](./math_validate_perfect_square.cc))        |
+|10.| Medium     | [Math Shuffle](https://leetcode.com/problems/shuffle-an-array/) ([solution](./math_shuffle.cc))                   |
+|11.| Medium     | [Math Rotate Array](https://leetcode.com/problems/rotate-array/) <br> [Math Rotate Matrix](https://leetcode.com/problems/rotate-image/) <br> ([solution](./math_rotate_array_matrix.cc))                       |
+|12.| Medium       | [Next Permutation](https://leetcode.com/problems/next-permutation/) <br> ([solution](./math_permutate.cc)) implements Heap and Dijkstra permutation   |
+|13.| Medium       | [Uniform Random Sampling](https://leetcode.com/problems/linked-list-random-node/) ([solution](./math_uniform_rand_sampling.cc))     |
+|14.| Medium       | [Sort Transformed Array](https://leetcode.com/problems/sort-transformed-array/) ([solution](math_sort_transformed_array.cc))        |
+|15.| Medium       | [Integer Divide](https://leetcode.com/problems/divide-two-integers/) ([solution](math_integer_divide.cc))       |
+|16.| Hard      | [Patching Array](https://leetcode.com/problems/patching-array/) ([solution](./math_patching_array.cc))             |
+|17.| Hard       | [Max 2D points on line](https://leetcode.com/problems/max-points-on-a-line/) ([solution](./math_geometry_max_2Dpoints_line.cc))       |
 
 ----------------------------------------------------------------------------------------
