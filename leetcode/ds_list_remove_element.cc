@@ -50,7 +50,7 @@ int removeElementII(vector<int>& nums, int val) {
    /* Increase i manually. What if last element is also val  */
    for(int i = 0; i < n;) {
       if(nums[i] == val) nums[i] = nums[--n];
-      else i++;
+      else               i++;
    }
    nums.resize(n);
    return n;
