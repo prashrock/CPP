@@ -43,16 +43,13 @@ int removeElementI(vector<int>& nums, int val) {
    return cur;
 }
 
-/* Optimization over the two pointer approach*
- * If elements to remove are rare, then move *
- * duplicate elements to the end             */
+/* Optimization over the two pointer approach. If elements   *
+ * to remove are rare, then move duplicate elements to end   */
 int removeElementII(vector<int>& nums, int val) {
    int n = nums.size();
+   /* Increase i manually. What if last element is also val  */
    for(int i = 0; i < n;) {
-      if(nums[i] == val)
-         nums[i] = nums[--n];
-      /* Increase i manually. What if the  *
-       * last element is also val          */
+      if(nums[i] == val) nums[i] = nums[--n];
       else i++;
    }
    nums.resize(n);
