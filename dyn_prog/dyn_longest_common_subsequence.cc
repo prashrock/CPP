@@ -129,6 +129,54 @@ bool lcs_tester(size_t set_size)
    return true;
 }
 
+/** @brief Find the Longest common substring                 *
+ *  @param s1, s2: Two strings                               *
+ *  Time Complexity = O(n^2) Space Complexity = O(1)         */
+std::string longestCommonSubstring(std::string &s1, std::string &s2) {
+   int maxlen = 0, b = 0;
+   int n = s1.size(), m = s2.size();
+   for(int i = 0; i < n; ++i) {
+      for(int j = 0; j < m; ++j) {
+         int len = 0;
+         while((i + len < n) && (j + len < m) &&
+               (s1[i+len] == s2[j+len]))  len++;
+         if(len > maxlen) { b = i; maxlen = len; }
+      }
+   }
+   /* First longest substring in s1 that matches s2          */
+   return s1.substr(b, maxlen);
+}
+
+struct lcs_test_vector {
+   std::string s1;
+   std::string s2;
+   std::string exp;
+};
+
+const struct lcs_test_vector lcs_test[7] =  {
+   {"",               "",               ""            },
+   {"a",              "",               ""            },
+   {"a",              "b",              ""            },
+   {"hello world",    "hello world",    "hello world" },
+   {"hello world",    "ello world",     "ello world"  },
+   {"abcdef",         "xyzdefyq",       "def"         },
+   {"abcdef",         "wxyzcba",        "a"           },
+};
+
+bool longestCommonSubstringTest() {
+   for(auto tst : lcs_test) {
+      auto ans = longestCommonSubstring(tst.s1, tst.s2);
+      if(ans != tst.exp) {
+         cout << "Error:longestCommonSubstring failed. Exp "
+              << tst.exp << " Got " << ans << " for "
+              << tst.s1  << " and " << tst.s2 << endl;
+         return false;
+      }
+   }
+   cout << "Info: All longest_common_substring testcases passed" << endl;
+   return true;
+}
+
 int main()
 {   
    cout << "Running " << number_of_iterations << " iterations "
@@ -137,5 +185,6 @@ int main()
    for(int i = 1; i <= number_of_iterations; i++)
       if(lcs_tester(max_set_size) == false) return -1;
    cout << "Info: All LCS test-cases completed successfully " << endl;
+   longestCommonSubstringTest();
    return 0;
 }

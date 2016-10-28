@@ -21,7 +21,7 @@ Algo
   | Topic             | List of algorithms                                                                    |
   |:------------------|:--------------------------------------------------------------------------------------|
   | [Bit manipulation algorithms](./bit_ops/bit_ops.h) | Almost branchless and type safe implementations for: <br> - Population Count, Gray code, Parity Check, Bit reverse, Log2, etc. |
-  | [Dynamic Programming](./dyn_prog) | - [Subset Sum](./dyn_prog/dyn_subset_sum.cc),  [Binary Knapsack](./dyn_prog/dyn_knapsack_01.cc) <br> - [Longest Common Subsequence](./dyn_prog/dyn_longest_common_subsequence.cc), [Longest Increasing Subsequence](./leetcode/algo_dp_longest_increasing_subsequence.cc) <br> - [Levenstein Minimum edit distance](./dyn_prog/dyn_str_min_edit_distance.cc) |
+  | [Dynamic Programming](./dyn_prog) | - [Subset Sum](./dyn_prog/dyn_subset_sum.cc),  [Binary Knapsack](./dyn_prog/dyn_knapsack_01.cc) <br> - [Longest Common Substring and Subsequence](./dyn_prog/dyn_longest_common_subsequence.cc), [Longest Increasing Subsequence](./leetcode/algo_dp_longest_increasing_subsequence.cc) <br> - [Levenstein Minimum edit distance](./dyn_prog/dyn_str_min_edit_distance.cc) |
   | [String Related](./string/) | - [Substring Search](./string/substring.h) - [Brute Force](./string/substring.h#L52), [KMP](./string/substring.h#L138), [Boyer Moore](./string/substring.h#L174), [Rabin Karp (Monte Carlo approach)](./string/substring.h#L221) <br> - Base64 [Encode / Decode](./string/base64.h)  |
   | [Graph Algorithms](./graph/)| -[Shortest Path](./graph/graph_sssp.h) - [Dijkstra single source shortest path](./graph/graph_sssp.h)       |
 
