@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [143 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [144 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -86,8 +86,9 @@ Data Structure based
 ###Hash###
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
-|1. | Hard       | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) ([solution](./ds_hash_longest_consecutive_seq.cc))  |
-|2. | Hard       | [O(1) Insert/Del/Get_Random](https://leetcode.com/problems/insert-delete-getrandom-o1/) ([solution](./ds_hash_ins_del_get_random.cc))  |
+|1. | Medium     | [Group Anagrams](https://leetcode.com/problems/anagrams/) ([solution](./ds_hash_group_anagrams.cc ))                                   |
+|2. | Hard       | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) ([solution](./ds_hash_longest_consecutive_seq.cc))  |
+|3. | Hard       | [O(1) Insert/Del/Get_Random](https://leetcode.com/problems/insert-delete-getrandom-o1/) ([solution](./ds_hash_ins_del_get_random.cc))  |
 
 
 ###Heap###
@@ -153,10 +154,10 @@ Data Structure based
 |12.| Medium     | [One Edit Distance](https://leetcode.com/problems/one-edit-distance/)    ([solution](./ds_string_one_edit_distance.cc))                                    |
 |13.| Medium     | [Reverse String](https://leetcode.com/problems/reverse-string/) <br> [Reverse vowels of string](https://leetcode.com/problems/reverse-vowels-of-a-string/) <br>  [Reverse words in string](https://leetcode.com/problems/reverse-words-in-a-string/)    ([solution](./ds_string_reverse_words.cc))                                                     |
 |14.| Medium     | [Is Subsequence](https://leetcode.com/problems/is-subsequence/)  ([solution](./ds_string_is_subsequence.cc))                                               |
-|14.| Medium     | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)  ([solution](./ds_string_longest_palindromic_substring.cc )) |
-|15.| Hard       | [Is Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/) <br> [Find Strobogrammatic Numbers of length n](https://leetcode.com/problems/strobogrammatic-number-ii/) <br> [Find Strobogrammatic Numbers within range](https://leetcode.com/problems/strobogrammatic-number-iii/)  ([solution](./ds_string_strobogrammatic_num_i_ii_iii.cc)) |
-|16.| Hard       | [Integer to Words](https://leetcode.com/problems/integer-to-english-words/)  ([solution](./ds_string_int_to_words.cc))                                     |
-|17.| Hard       | [Text Justification](https://leetcode.com/problems/text-justification/)    ([solution](./ds_string_text_justification.cc))                                 |
+|15.| Medium     | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)  ([solution](./ds_string_longest_palindromic_substring.cc )) |
+|16.| Hard       | [Is Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/) <br> [Find Strobogrammatic Numbers of length n](https://leetcode.com/problems/strobogrammatic-number-ii/) <br> [Find Strobogrammatic Numbers within range](https://leetcode.com/problems/strobogrammatic-number-iii/)  ([solution](./ds_string_strobogrammatic_num_i_ii_iii.cc)) |
+|17.| Hard       | [Integer to Words](https://leetcode.com/problems/integer-to-english-words/)  ([solution](./ds_string_int_to_words.cc))                                     |
+|18.| Hard       | [Text Justification](https://leetcode.com/problems/text-justification/)    ([solution](./ds_string_text_justification.cc))                                 |
 
 
 ###Tree###
