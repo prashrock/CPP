@@ -11,6 +11,7 @@
 #include <algorithm>         /* std::max                     */
 #include <string>            /* std::string                  */
 #include <cstring>           /* std::strtok                  */
+#include <vector>            /* std::vector                  */
 using namespace std;
 
 /**
