@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [146 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [148 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -48,8 +48,9 @@ Algorithm based
 |9. | Medium     | [Triangle](https://leetcode.com/problems/triangle/) ([solution](./algo_dp_triangle.cc))                            |
 |10.| Medium     | [Decode Ways](https://leetcode.com/problems/decode-ways/) ([solution](./algo_dp_decode_ways.cc))                   |
 |11.| Medium     | Best Time to Buy Sell Stocks [I](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) [II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)  ([solution](./algo_dp_buy_sell_stocks.cc))   |
-|12.| Hard       | [Wildcard Match](https://leetcode.com/problems/wildcard-matching/) ([solution](./algo_dp_wildcard_match.cc))       |
-|13.| Hard       | [Regex Match](https://leetcode.com/problems/regular-expression-matching/) ([solution](./algo_dp_regex_match.cc))   |
+|12.| Medium     | [Sentence Screen Fitting](https://leetcode.com/problems/sentence-screen-fitting/) ([solution](./algo_dp_sentence_screen_fitting.cc ))   |
+|13.| Hard       | [Wildcard Match](https://leetcode.com/problems/wildcard-matching/) ([solution](./algo_dp_wildcard_match.cc))       |
+|14.| Hard       | [Regex Match](https://leetcode.com/problems/regular-expression-matching/) ([solution](./algo_dp_regex_match.cc))   |
 
 ###Sort###
 |#  | Difficulty | Problem and Solution                         |
@@ -183,6 +184,7 @@ Data Structure based
 |12.| Medium     | [Flatten BT to LinkedList](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/) ([solution](./ds_tree_traversal_preorder_to_list.cc))             |
 |13.| Medium     | [Verify Preorder sequence in BST ](https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree) ([soln](./ds_tree_verify_preorder_sequence_bst.cc))  |
 |14.| Medium     | [Right side view in BT(level-order)](https://leetcode.com/problems/binary-tree-right-side-view/) ([solution](./ds_tree_right_side_view_bt.cc))  |
+|15.| Hard       | [Serialize/De-Serialize BT](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) ([solution](./ds_tree_serialize_deserialize_bt.cc ))      |
 
 ----------------------------------------------------------------------------------------
 Math based
