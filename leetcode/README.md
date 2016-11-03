@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [148 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [149 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -138,15 +138,15 @@ Data Structure based
 
 ###Stack###
 |#  | Difficulty | Problem and Solution                          |
-|:--|:-----------|:---------------------------------------------|
+|:--|:-----------|:----------------------------------------------|
 |1. | Easy      | [Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/) <br> [Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)  ([solution](./ds_stack_using_queue.cc))                   |
 |2. | Easy       | [Valid Parantheses](https://leetcode.com/problems/valid-parentheses/) ([solution](./ds_stack_valid_parantheses.cc))|
 |3. | Medium     | [Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/)  ([solution](./ds_stack_math_reverse_polish_notation.cc))
 |
 ###String###
 |#  | Difficulty | Problem and Solution                          |
-|:--|:-----------|:---------------------------------------------|
-|1. | Easy       | [Add Binary](https://leetcode.com/problems/add-binary/)  ([solution](./ds_string_easy_add_binary.cc))                                                      |
+|:--|:-----------|:----------------------------------------------|
+|1. | Easy       | [Add Binary](https://leetcode.com/problems/add-binary/)  ([solution](./ds_string_easy_add_binary.cc)                                                       |
 |2. | Easy       | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)  ([solution](./ds_string_easy_valid_palindrome.cc))                                    |
 |3. | Easy       | [Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)  ([solution](./ds_string_isomorphic.cc))                                           |
 |4. | Easy       | [Bijection Check Word Pattern](https://leetcode.com/problems/word-pattern/)  ([solution](./ds_string_word_pattern.cc))                                     |
@@ -154,9 +154,9 @@ Data Structure based
 |6. | Easy       | [atoi](https://leetcode.com/problems/string-to-integer-atoi/)  ([solution](./ds_string_atoi.cc))                                                           |
 |7. | Easy       | [ZigZag Converter](https://leetcode.com/problems/zigzag-conversion/)  ([solution](./ds_string_zigzag_conversion.cc))                                       |
 |8. | Easy       | [Length of last word](https://leetcode.com/problems/length-of-last-word/)  ([solution](./ds_string_length_of_last_word.cc))                                |
-|9. | Medium     | [Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)  ([solution](./ds_string_encode_decode.cc))                          |
-|10.| Medium     | [Integer to Roman](https://leetcode.com/problems/integer-to-roman/)  ([solution](./ds_string_int_to_roman_numerals.cc))                                    |
-|11.| Medium     | [Multiply Strings](https://leetcode.com/problems/multiply-strings/)    ([soln](./ds_string_multiply_strings.cc))                                           |
+|9. | Medium     | [Add Strings](https://leetcode.com/problems/add-strings/)  ([solution](./ds_string_add_strings.cc)) <br> [Multiply Strings](https://leetcode.com/problems/multiply-strings/)    ([soln](./ds_string_multiply_strings.cc))                              |
+|10.| Medium     | [Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)  ([solution](./ds_string_encode_decode.cc))                          |
+|11.| Medium     | [Integer to Roman](https://leetcode.com/problems/integer-to-roman/)  ([solution](./ds_string_int_to_roman_numerals.cc))                                    |
 |12.| Medium     | [One Edit Distance](https://leetcode.com/problems/one-edit-distance/)    ([solution](./ds_string_one_edit_distance.cc))                                    |
 |13.| Medium     | [Reverse String](https://leetcode.com/problems/reverse-string/) <br> [Reverse vowels of string](https://leetcode.com/problems/reverse-vowels-of-a-string/) <br>  [Reverse words in string](https://leetcode.com/problems/reverse-words-in-a-string/)    ([solution](./ds_string_reverse_words.cc))                                                     |
 |14.| Medium     | [Is Subsequence](https://leetcode.com/problems/is-subsequence/)  ([solution](./ds_string_is_subsequence.cc))                                               |
