@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [151 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [153 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -48,9 +48,10 @@ Algorithm based
 |9. | Medium     | [Triangle](https://leetcode.com/problems/triangle/) ([solution](./algo_dp_triangle.cc))                            |
 |10.| Medium     | [Decode Ways](https://leetcode.com/problems/decode-ways/) ([solution](./algo_dp_decode_ways.cc))                   |
 |11.| Medium     | Best Time to Buy Sell Stocks [I](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) [II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)  ([solution](./algo_dp_buy_sell_stocks.cc))   |
-|12.| Medium     | [Sentence Screen Fitting](https://leetcode.com/problems/sentence-screen-fitting/) ([solution](./algo_dp_sentence_screen_fitting.cc ))   |
-|13.| Hard       | [Wildcard Match](https://leetcode.com/problems/wildcard-matching/) ([solution](./algo_dp_wildcard_match.cc))       |
-|14.| Hard       | [Regex Match](https://leetcode.com/problems/regular-expression-matching/) ([solution](./algo_dp_regex_match.cc))   |
+|12.| Medium     | [Unique Paths I](https://leetcode.com/problems/unique-paths/) [Unique Paths II](https://leetcode.com/problems/unique-paths-ii/) ([solution](./algo_dp_unique_paths.cc ))                          |
+|13.| Medium     | [Sentence Screen Fitting](https://leetcode.com/problems/sentence-screen-fitting/) ([solution](./algo_dp_sentence_screen_fitting.cc ))   |
+|14.| Hard       | [Wildcard Match](https://leetcode.com/problems/wildcard-matching/) ([solution](./algo_dp_wildcard_match.cc))       |
+|15.| Hard       | [Regex Match](https://leetcode.com/problems/regular-expression-matching/) ([solution](./algo_dp_regex_match.cc))   |
 
 ###Sort###
 |#  | Difficulty | Problem and Solution                         |
