@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [153 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [154 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -149,24 +149,25 @@ Data Structure based
 |:--|:-----------|:----------------------------------------------|
 |1. | Easy       | [Add Binary](https://leetcode.com/problems/add-binary/)  ([solution](./ds_string_easy_add_binary.cc)                                                       |
 |2. | Easy       | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)  ([solution](./ds_string_easy_valid_palindrome.cc))                                    |
-|3. | Easy       | [Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)  ([solution](./ds_string_isomorphic.cc))                                           |
-|4. | Easy       | [Bijection Check Word Pattern](https://leetcode.com/problems/word-pattern/)  ([solution](./ds_string_word_pattern.cc))                                     |
-|5. | Easy       | [Palindrome Permutation](https://leetcode.com/problems/palindrome-permutation/)  ([solution](./ds_string_palindromic_permutation_i_ii.cc))                 |
-|6. | Easy       | [atoi](https://leetcode.com/problems/string-to-integer-atoi/)  ([solution](./ds_string_atoi.cc))                                                           |
-|7. | Easy       | [ZigZag Converter](https://leetcode.com/problems/zigzag-conversion/)  ([solution](./ds_string_zigzag_conversion.cc))                                       |
-|8. | Easy       | [Length of last word](https://leetcode.com/problems/length-of-last-word/)  ([solution](./ds_string_length_of_last_word.cc))                                |
-|9. | Medium     | [Add Strings](https://leetcode.com/problems/add-strings/)  ([solution](./ds_string_add_strings.cc)) <br> [Multiply Strings](https://leetcode.com/problems/multiply-strings/)    ([soln](./ds_string_multiply_strings.cc))                              |
-|10.| Medium     | [Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)  ([solution](./ds_string_encode_decode.cc))                          |
-|11.| Medium     | [Integer to Roman](https://leetcode.com/problems/integer-to-roman/)  ([solution](./ds_string_int_to_roman_numerals.cc))                                    |
-|12.| Medium     | [One Edit Distance](https://leetcode.com/problems/one-edit-distance/)    ([solution](./ds_string_one_edit_distance.cc))                                    |
-|13.| Medium     | [Reverse String](https://leetcode.com/problems/reverse-string/) <br> [Reverse vowels of string](https://leetcode.com/problems/reverse-vowels-of-a-string/) <br>  [Reverse words in string](https://leetcode.com/problems/reverse-words-in-a-string/)    ([solution](./ds_string_reverse_words.cc))                                                     |
-|14.| Medium     | [Is Subsequence](https://leetcode.com/problems/is-subsequence/)  ([solution](./ds_string_is_subsequence.cc))                                               |
-|15.| Medium     | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)  ([solution](./ds_string_longest_palindromic_substring.cc )) |
-|16.| Medium     | [Longest Absolute File Path](https://leetcode.com/problems/longest-absolute-file-path/)  ([solution](./ds_string_longest_absolute_file_path.cc))  |
-|17.| Hard       | [Is Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/) <br> [Find Strobogrammatic Numbers of length n](https://leetcode.com/problems/strobogrammatic-number-ii/) <br> [Find Strobogrammatic Numbers within range](https://leetcode.com/problems/strobogrammatic-number-iii/)  ([solution](./ds_string_strobogrammatic_num_i_ii_iii.cc)) |
-|18.| Hard       | [Integer to Words](https://leetcode.com/problems/integer-to-english-words/)  ([solution](./ds_string_int_to_words.cc))                                     |
-|19.| Hard       | [Text Justification](https://leetcode.com/problems/text-justification/)    ([solution](./ds_string_text_justification.cc))                                 |
-|20.| Hard       | [Longest Substring with At Most Two Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/) [Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)  ([solution](./ds_string_longest_substring_with_atmost_k_distinct_chars.cc))              |
+|3. | Easy       | [Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)  ([solution](./ds_string_isomorphic.cc))                                            |
+|4. | Easy       | [Bijection Check Word Pattern](https://leetcode.com/problems/word-pattern/)  ([solution](./ds_string_word_pattern.cc))                                      |
+|5. | Easy       | [Find all anagrams](https://leetcode.com/problems/find-all-anagrams-in-a-string/)  ([solution](./ds_string_find_all_anagrams_in_string.cc))                 |
+|6. | Easy       | [Palindrome Permutation](https://leetcode.com/problems/palindrome-permutation/)  ([solution](./ds_string_palindromic_permutation_i_ii.cc))                  |
+|7. | Easy       | [atoi](https://leetcode.com/problems/string-to-integer-atoi/)  ([solution](./ds_string_atoi.cc))                                                            |
+|8. | Easy       | [ZigZag Converter](https://leetcode.com/problems/zigzag-conversion/)  ([solution](./ds_string_zigzag_conversion.cc))                                       |
+|9. | Easy       | [Length of last word](https://leetcode.com/problems/length-of-last-word/)  ([solution](./ds_string_length_of_last_word.cc))                                |
+|10.| Medium     | [Add Strings](https://leetcode.com/problems/add-strings/)  ([solution](./ds_string_add_strings.cc)) <br> [Multiply Strings](https://leetcode.com/problems/multiply-strings/)    ([soln](./ds_string_multiply_strings.cc))                              |
+|11.| Medium     | [Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)  ([solution](./ds_string_encode_decode.cc))                          |
+|12.| Medium     | [Integer to Roman](https://leetcode.com/problems/integer-to-roman/)  ([solution](./ds_string_int_to_roman_numerals.cc))                                    |
+|13.| Medium     | [One Edit Distance](https://leetcode.com/problems/one-edit-distance/)    ([solution](./ds_string_one_edit_distance.cc))                                    |
+|14.| Medium     | [Reverse String](https://leetcode.com/problems/reverse-string/) <br> [Reverse vowels of string](https://leetcode.com/problems/reverse-vowels-of-a-string/) <br>  [Reverse words in string](https://leetcode.com/problems/reverse-words-in-a-string/)    ([solution](./ds_string_reverse_words.cc))                                                     |
+|15.| Medium     | [Is Subsequence](https://leetcode.com/problems/is-subsequence/)  ([solution](./ds_string_is_subsequence.cc))                                               |
+|16.| Medium     | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)  ([solution](./ds_string_longest_palindromic_substring.cc )) |
+|17.| Medium     | [Longest Absolute File Path](https://leetcode.com/problems/longest-absolute-file-path/)  ([solution](./ds_string_longest_absolute_file_path.cc))  |
+|18.| Hard       | [Is Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/) <br> [Find Strobogrammatic Numbers of length n](https://leetcode.com/problems/strobogrammatic-number-ii/) <br> [Find Strobogrammatic Numbers within range](https://leetcode.com/problems/strobogrammatic-number-iii/)  ([solution](./ds_string_strobogrammatic_num_i_ii_iii.cc)) |
+|19.| Hard       | [Integer to Words](https://leetcode.com/problems/integer-to-english-words/)  ([solution](./ds_string_int_to_words.cc))                                     |
+|20.| Hard       | [Text Justification](https://leetcode.com/problems/text-justification/)    ([solution](./ds_string_text_justification.cc))                                 |
+|21.| Hard       | [Longest Substring with At Most Two Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/) [Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)  ([solution](./ds_string_longest_substring_with_atmost_k_distinct_chars.cc))              |
 
 
 ###Tree###
