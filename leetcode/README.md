@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [155 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [156 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -77,6 +77,7 @@ Data Structure based
 |2. | Medium     | [Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) ([solution](./ds_graph_loop_course_schedule_ii.cc))                                                                                   |
 |3. | Medium     | [Walls and Gates](https://leetcode.com/problems/walls-and-gates/) ([solution](./ds_graph_2D_walls_and_gates.cc))   |
 |4. | Medium     | [Word Break](https://leetcode.com/problems/word-break/) ([solution](./ds_graph_word_break.cc))   |
+|5. | Medium     | [Graph Valid Tree](https://leetcode.com/problems/graph-valid-tree/) ([solution](./ds_graph_valid_tree.cc))       |
 
 
 ###Union-Find###
