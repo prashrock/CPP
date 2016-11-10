@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [154 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [155 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -79,10 +79,17 @@ Data Structure based
 |4. | Medium     | [Word Break](https://leetcode.com/problems/word-break/) ([solution](./ds_graph_word_break.cc))   |
 
 
+###Union-Find###
+|#  | Difficulty | Problem and Solution                          |
+|:--|:-----------|:----------------------------------------------|
+|1. | Medium     | [Number of connected components](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/) ([solution](./ds_uf_number_connected_components.cc))             |
+
+
 ###LRU###
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:----------------------------------------------|
 |1. | Hard       | [LRU Cache](https://leetcode.com/problems/lru-cache/) ([solution](./ds_lru_cache.cc))        |
+
 
 ###Trie###
 |#  | Difficulty | Problem and Solution                          |
