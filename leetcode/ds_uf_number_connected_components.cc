@@ -11,6 +11,7 @@
 #include <algorithm>         /* std::max                     */
 #include <vector>            /* std::vector                  */
 #include <stack>             /* std::stack                   */
+#include <numeric>           /* std::iota                    */
 #include <unordered_set>     /* std::unordered_set container */
 using namespace std;
 
