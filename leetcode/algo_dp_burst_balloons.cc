@@ -70,7 +70,7 @@ struct test_vector {
    int exp_profit;
 };
 
-const struct test_vector test[3] =  {
+const struct test_vector test[4] =  {
    { {1,2,3,4},                                       40},
    { {3,1,5,8},                                      167},
    { {5,0,1,3},                                       35},
