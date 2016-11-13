@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [160 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [161 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -52,6 +52,7 @@ Algorithm based
 |13.| Medium     | [Sentence Screen Fitting](https://leetcode.com/problems/sentence-screen-fitting/) ([solution](./algo_dp_sentence_screen_fitting.cc ))   |
 |14.| Hard       | [Wildcard Match](https://leetcode.com/problems/wildcard-matching/) ([solution](./algo_dp_wildcard_match.cc))       |
 |15.| Hard       | [Regex Match](https://leetcode.com/problems/regular-expression-matching/) ([solution](./algo_dp_regex_match.cc))   |
+|16.| Hard       | [Burst Balloons](https://leetcode.com/problems/burst-balloons/) ([solution](./algo_dp_burst_balloons.cc))          |
 
 ###Sort###
 |#  | Difficulty | Problem and Solution                         |
