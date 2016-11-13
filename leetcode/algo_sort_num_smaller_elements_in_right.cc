@@ -66,7 +66,55 @@ vector<int> countSmaller2(vector<int>& nums) {
 
 
 /* Approach 3 - BST + Rank after each insert                 */
+/* https://discuss.leetcode.com/topic/43595/c-36ms-bst-solution */
+
 /* Approach 4 - Merge sort + Count-inversions at each index  */
+/** Recursive Merge sort approach with inversion counting    *
+ * Time Complexity = O(n lg n).   Space Complexity = O(n)    */
+struct vi {int idx; int val;}; /* Hold value and original pos*/
+
+/* Pre-condition: nums[b:mid] and nums[mid+1:e] are sorted   */
+void merge(std::vector<vi>& nums,   std::vector<vi>& tmp,
+           std::vector<int>& invcnt,int b, int mid, int e) {
+   for(int i = b, j = mid + 1, k = b, inverted = 0; k <= e; ++k) {
+      if(i <= mid && j <= e) {
+         if(nums[j].val < nums[i].val) { tmp[k] = nums[j++]; inverted++; }
+         else     { invcnt[nums[i].idx] += inverted; tmp[k] = nums[i++]; }
+      }
+      else if(i <= mid) {invcnt[nums[i].idx] += inverted; tmp[k]=nums[i++];}
+      else               tmp[k] = nums[j++];
+   }
+}
+
+void mergeSortInvCnt(std::vector<vi>& nums, std::vector<vi>& tmp,
+                     std::vector<int>& invcnt, int b, int e) {
+   if(e <= b) return;            /* base-case of merge-sort  */
+   int mid = b + (e - b) / 2;
+   mergeSortInvCnt(tmp, nums, invcnt, b,     mid);
+   mergeSortInvCnt(tmp, nums, invcnt, mid+1, e);
+   merge(tmp, nums, invcnt, b, mid, e);
+}
+
+std::vector<int> countSmaller4(std::vector<int>& vals) {
+   std::vector<int> invcnt(vals.size(), 0);
+   std::vector<vi>  nums(vals.size()), tmp(vals.size());
+   for(int i = 0; i < (int)vals.size(); ++i)
+      nums[i] = tmp[i] = {i, vals[i]};
+   mergeSortInvCnt(nums, tmp, invcnt, 0, nums.size()-1);
+   return invcnt;
+}
+
+
+struct test_vector {
+   std::vector<int> nums;
+   std::vector<int> exp;
+};
+
+const struct test_vector test[3] =  {
+   {{2, 0, 1},            {2, 0, 0}},
+   {{5, 2, 6, 1},      {2, 1, 1, 0}},
+   {{-1, -1},                {0, 0}},
+};
 
 void dump(const vector<int> &a) {
    for(auto val: a) cout << val << ", "; cout << endl;
@@ -76,34 +124,36 @@ bool match(const vector<int> &a, const vector<int> &b) {
    return std::equal(a.begin(), a.end(), b.begin());
 }
 
-void error_dump(const vector<int> &a, const vector<int> &ans,
-                const vector<int> &expected) {
-   cout << "Error: Failed at Input: "; dump(a);
+void error_dump(const std::string name, const vector<int> &a,
+                const vector<int> &ans, const vector<int> &expected) {
+   cout << "Error: Failed at " << name;
+   cout << " for input: "; dump(a);
    cout << "       Expected: "; dump(expected);
    cout << "       Got: ";      dump(ans);
 }
 
-
-/* Given an input vector and expected result, valdiate it    */
-int test_driver(vector<int> &a, const vector<int> &exp) {
-   auto ans = countSmaller1(a);
-   if(match(exp, ans) == false) { error_dump(a, ans, exp); return -1; }	
-   else return 0;
-}
-
 int main()
 {
-   vector<int> a = {2, 0, 1};
-   vector<int> exp = {2, 0, 0};
-   if(test_driver(a, exp) != 0) return -1;
-
-   a = {5, 2, 6, 1};
-   exp = {2, 1, 1, 0};
-   if(test_driver(a, exp) != 0) return -1;
-   
-   a = {-1, -1};
-   exp = {0, 0};
-   if(test_driver(a, exp) != 0) return -1;
-   cout << "All manual test-cases passed." << endl;
+   for(auto tst : test) {
+      auto nums = tst.nums;
+      auto ans = countSmaller1(nums);
+      if(match(ans, tst.exp) == false) {
+         error_dump("countSmaller1", tst.nums, ans, tst.exp);
+         return -1;
+      }
+      nums = tst.nums;
+      ans = countSmaller2(nums);
+      if(match(ans, tst.exp) == false) {
+         error_dump("countSmaller2", tst.nums, ans, tst.exp);
+         return -1;
+      }
+      nums = tst.nums;
+      ans = countSmaller4(nums);
+      if(match(ans, tst.exp) == false) {
+         error_dump("countSmaller4", tst.nums, ans, tst.exp);
+         return -1;
+      }
+   }
+   cout << "Info: All manual testcases passed" << endl;
    return 0;
 }
