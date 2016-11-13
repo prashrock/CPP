@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [161 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [162 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -175,11 +175,12 @@ Data Structure based
 |15.| Medium     | [Sort characters by frequency](https://leetcode.com/problems/sort-characters-by-frequency/)    ([solution](./ds_string_sort_chars_by_frequency.cc))        |
 |16.| Medium     | [Is Subsequence](https://leetcode.com/problems/is-subsequence/)  ([solution](./ds_string_is_subsequence.cc))                                               |
 |17.| Medium     | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)  ([solution](./ds_string_longest_palindromic_substring.cc )) |
-|18.| Medium     | [Longest Absolute File Path](https://leetcode.com/problems/longest-absolute-file-path/)  ([solution](./ds_string_longest_absolute_file_path.cc))  |
-|19.| Hard       | [Is Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/) <br> [Find Strobogrammatic Numbers of length n](https://leetcode.com/problems/strobogrammatic-number-ii/) <br> [Find Strobogrammatic Numbers within range](https://leetcode.com/problems/strobogrammatic-number-iii/)  ([solution](./ds_string_strobogrammatic_num_i_ii_iii.cc)) |
-|20.| Hard       | [Integer to Words](https://leetcode.com/problems/integer-to-english-words/)  ([solution](./ds_string_int_to_words.cc))                                     |
-|21.| Hard       | [Text Justification](https://leetcode.com/problems/text-justification/)    ([solution](./ds_string_text_justification.cc))                                 |
-|22.| Hard       | [Longest Substring with At Most Two Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/) [Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)  ([solution](./ds_string_longest_substring_with_atmost_k_distinct_chars.cc))              |
+|18.| Medium     | [Longest Absolute File Path](https://leetcode.com/problems/longest-absolute-file-path/)  ([solution](./ds_string_longest_absolute_file_path.cc))           |
+|19.| Medium     |   [Longest substring without repeating characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) ([solution](./ds_string_longest_substring_without_repeating_chars.cc)                                                 |
+|20.| Hard       | [Is Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/) <br> [Find Strobogrammatic Numbers of length n](https://leetcode.com/problems/strobogrammatic-number-ii/) <br> [Find Strobogrammatic Numbers within range](https://leetcode.com/problems/strobogrammatic-number-iii/)  ([solution](./ds_string_strobogrammatic_num_i_ii_iii.cc)) |
+|21.| Hard       | [Integer to Words](https://leetcode.com/problems/integer-to-english-words/)  ([solution](./ds_string_int_to_words.cc))                                     |
+|22.| Hard       | [Text Justification](https://leetcode.com/problems/text-justification/)    ([solution](./ds_string_text_justification.cc))                                 |
+|23.| Hard       | [Longest Substring with At Most Two Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/) [Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)  ([solution](./ds_string_longest_substring_with_atmost_k_distinct_chars.cc))              |
 
 
 ###Tree###
