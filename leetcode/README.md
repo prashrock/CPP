@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [162 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [163 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -201,7 +201,8 @@ Data Structure based
 |13.| Medium     | [Verify Preorder sequence in BST ](https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree) ([soln](./ds_tree_verify_preorder_sequence_bst.cc))  |
 |14.| Medium     | [Right side view in BT(level-order)](https://leetcode.com/problems/binary-tree-right-side-view/) ([solution](./ds_tree_right_side_view_bt.cc))  |
 |15.| Medium     | [Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/) ([solution](./ds_tree_del_node_bst.cc))  |
-|16.| Hard       | [Serialize/De-Serialize BT](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) ([solution](./ds_tree_serialize_deserialize_bt.cc ))      |
+|16.| Medium     | [ Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes/) ([solution](./ds_tree_count_complete_tree_nodes.cc))     |
+|17.| Hard       | [Serialize/De-Serialize BT](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) ([solution](./ds_tree_serialize_deserialize_bt.cc ))      |
 
 ----------------------------------------------------------------------------------------
 Math based
