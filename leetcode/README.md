@@ -144,8 +144,9 @@ Data Structure based
 |11.| Medium     | [Super Ugly Number](https://leetcode.com/problems/super-ugly-number/)  ([soln](./ds_list_super_ugly_numbers.cc))        |
 |12.| Medium     | [Sub-array Range addition](https://leetcode.com/problems/range-addition/) ([solution](./ds_list_range_addition.cc))     |
 |13.| Medium     | [Flatten 2D List](https://leetcode.com/problems/flatten-2d-vector/) ([solution](./ds_list_flatten_2D_list.cc))          |
-|14.| Hard       | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) ([solution](./ds_list_duplicate_number.cc))      |
-|15.| Hard       | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) ([solution](./ds_list_merge_sorted_arrays.cc)) <br> [Merge K Sorted Array](https://leetcode.com/problems/merge-k-sorted-lists/) ([solution](./ds_list_merge_k_sorted_lists.cc))      |
+|14.| Medium     | [Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/) ([solution](./ds_list_minimum_size_subarray_sum.cc))    |
+|15.| Hard       | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) ([solution](./ds_list_duplicate_number.cc))      |
+|16.| Hard       | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) ([solution](./ds_list_merge_sorted_arrays.cc)) <br> [Merge K Sorted Array](https://leetcode.com/problems/merge-k-sorted-lists/) ([solution](./ds_list_merge_k_sorted_lists.cc))      |
 
 
 ###Stack###
