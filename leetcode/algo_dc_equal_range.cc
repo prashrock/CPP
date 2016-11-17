@@ -59,7 +59,7 @@ vector<int> searchRangeBS(vector<int>& num, int t) {
       else                        e = mid - 1;
    }
    /* If no LB, there can be no UB                           */
-   if(num[b] == t)                v[0] = b;
+   if(b < N && num[b] == t)       v[0] = b;
    else                           return v;
 
    /* Second, find the UB                                    */
@@ -78,9 +78,10 @@ struct test_vector {
    std::vector<int> exp;
 };
 
-const struct test_vector test[11] =  {
+const struct test_vector test[12] =  {
    {{},                       2,  {-1, -1}},
    {{1},                      0,  {-1, -1}},
+   {{0},                      1,  {-1, -1}},
    {{3},                      3,  {0, 0}  },
    {{0, 1},                   2,  {-1, -1}},
    {{5, 7},                   4,  {-1, -1}},
