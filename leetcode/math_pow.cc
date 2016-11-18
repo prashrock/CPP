@@ -9,6 +9,7 @@
 
 #include <iostream>          /* std::cout                    */
 #include <algorithm>         /* std::max                     */
+#include <cmath>             /* std::round                   */
 using namespace std;
 
 /**  Implement int pow(x, n)                                 */
@@ -30,8 +31,6 @@ double myPow(double x, int n) {
    }
    return ans;
 }
-
-
 
 struct test_vector {
    double x;
