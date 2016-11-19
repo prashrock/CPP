@@ -30,21 +30,14 @@ using namespace std;
  * Note: can use an array/vector instead of unordered_map    *
  * since we can only have 256 possible options               */
 /* A char is duplicate if its seen more than once            */
-inline bool duplicate_in_window(std::unordered_map<char, int> &map, char c) {
-   return (map[c] > 1);
-}
 int lengthOfLongestSubstring(string s) {
-   int counter = 0, d = 0;    /* counter tracks #duplicates  */
+   int d = 0; /* longest unique substring seen so far */
    std::unordered_map<char, int> map; /* keeps count of each char seen */
    for(int b = 0, e = 0; e < (int)s.size(); ++e) {
-      auto c = s[e];
-      map[c]++;         /* Add to window */
-      if(duplicate_in_window(map, c)) counter++;
-      /* If we've found a complete window */
-      for(; counter > 0; ++b) {
-         c = s[b];
-         if(--map[c] == 1) counter--;
-      }
+      map[s[e]]++;               /* Add to window  */
+      /* If we've found a duplicate move b forward till no duplicate   */
+      for(; map[s[e]] > 1; ++b) --map[s[b]];
+      /* If we reach here, there is no duplicate, record substr length */
       d = std::max(d, e - b + 1);
    }
    return d;
