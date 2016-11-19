@@ -49,11 +49,9 @@ static std::unordered_map<char, char> stmap = {
 bool isStrobogrammatic(string num) {
    auto fit = num.begin();
    auto rit = num.rbegin();
-   for(; fit != num.end() && rit != num.rend(); ++fit, ++rit) {
+   for(; fit != num.end() && fit != rit.base(); ++fit, ++rit) {
       if     (stmap.find(*fit) == stmap.end()) return false;
-      else if(stmap.find(*rit) == stmap.end()) return false;
       else if(stmap[*fit] != *rit)             return false;
-      if(fit == rit.base())      break;  /* half-way there */
    }
    return true;
 }
