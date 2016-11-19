@@ -9,11 +9,6 @@ C++ Programs (Algo, DS)
   | Master            | [![Build Status](https://travis-ci.org/prashrock/CPP.svg?branch=master)](https://travis-ci.org/prashrock/CPP) | [![Coverity Status](https://scan.coverity.com/projects/2883/badge.svg?flat=1)](https://scan.coverity.com/projects/prashrock-cpp) | [Grokbit](https://grokbit.com/prashrock/CPP/) |
 
 ----------------------------------------------------------------------------------------
-Leetcode
---------------------------------------------
-- A cataloged list of Leetcode solutions can be found [here](./leetcode/README.md)
-
-----------------------------------------------------------------------------------------
 Algo
 --------------------------------------------
 - Below are a list of algorithms categorized by topic. Refer to the per-directory Readme for more details:
