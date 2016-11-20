@@ -45,9 +45,8 @@ ListNode* removeElements1(ListNode* head, int val) {
       }
       /* If cur node does not have val, update pointers      */
       else {
-         if(prev == nullptr) prev = cur;
-         else                prev = prev->next;
-         cur = cur->next;
+         prev = cur;
+         cur  = cur->next;
       }
    }
    return head;
