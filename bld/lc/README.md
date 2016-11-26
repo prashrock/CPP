@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [165 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [166 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -173,15 +173,16 @@ Data Structure based
 |12.| Medium     | [Integer to Roman](https://leetcode.com/problems/integer-to-roman/)  ([solution](./ds_string_int_to_roman_numerals.cc))                                    |
 |13.| Medium     | [One Edit Distance](https://leetcode.com/problems/one-edit-distance/)    ([solution](./ds_string_one_edit_distance.cc))                                    |
 |14.| Medium     | [Reverse String](https://leetcode.com/problems/reverse-string/) <br> [Reverse vowels of string](https://leetcode.com/problems/reverse-vowels-of-a-string/) <br>  [Reverse words in string](https://leetcode.com/problems/reverse-words-in-a-string/)    ([solution](./ds_string_reverse_words.cc))                                                   |
-|15.| Medium     | [Sort characters by frequency](https://leetcode.com/problems/sort-characters-by-frequency/)    ([solution](./ds_string_sort_chars_by_frequency.cc))        |
-|16.| Medium     | [Is Subsequence](https://leetcode.com/problems/is-subsequence/)  ([solution](./ds_string_is_subsequence.cc))                                               |
-|17.| Medium     | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)  ([solution](./ds_string_longest_palindromic_substring.cc )) |
-|18.| Medium     | [Longest Absolute File Path](https://leetcode.com/problems/longest-absolute-file-path/)  ([solution](./ds_string_longest_absolute_file_path.cc))           |
-|19.| Medium     |   [Longest substring without repeating characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) ([solution](./ds_string_longest_substring_without_repeating_chars.cc)                                                 |
-|20.| Hard       | [Is Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/) <br> [Find Strobogrammatic Numbers of length n](https://leetcode.com/problems/strobogrammatic-number-ii/) <br> [Find Strobogrammatic Numbers within range](https://leetcode.com/problems/strobogrammatic-number-iii/)  ([solution](./ds_string_strobogrammatic_num_i_ii_iii.cc)) |
-|21.| Hard       | [Integer to Words](https://leetcode.com/problems/integer-to-english-words/)  ([solution](./ds_string_int_to_words.cc))                                     |
-|22.| Hard       | [Text Justification](https://leetcode.com/problems/text-justification/)    ([solution](./ds_string_text_justification.cc))                                 |
-|23.| Hard       | [Longest Substring with At Most Two Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/) [Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)  ([solution](./ds_string_longest_substring_with_atmost_k_distinct_chars.cc))              |
+|15.| Medium     | IP string to uint32  ([solution](./ds_string_ipv4_str_to_uint32.cc))  |
+|16.| Medium     | [Sort characters by frequency](https://leetcode.com/problems/sort-characters-by-frequency/)    ([solution](./ds_string_sort_chars_by_frequency.cc))        |
+|17.| Medium     | [Is Subsequence](https://leetcode.com/problems/is-subsequence/)  ([solution](./ds_string_is_subsequence.cc))                                               |
+|18.| Medium     | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)  ([solution](./ds_string_longest_palindromic_substring.cc )) |
+|19.| Medium     | [Longest Absolute File Path](https://leetcode.com/problems/longest-absolute-file-path/)  ([solution](./ds_string_longest_absolute_file_path.cc))           |
+|20.| Medium     |   [Longest substring without repeating characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) ([solution](./ds_string_longest_substring_without_repeating_chars.cc)                                                 |
+|21.| Hard       | [Is Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/) <br> [Find Strobogrammatic Numbers of length n](https://leetcode.com/problems/strobogrammatic-number-ii/) <br> [Find Strobogrammatic Numbers within range](https://leetcode.com/problems/strobogrammatic-number-iii/)  ([solution](./ds_string_strobogrammatic_num_i_ii_iii.cc)) |
+|22.| Hard       | [Integer to Words](https://leetcode.com/problems/integer-to-english-words/)  ([solution](./ds_string_int_to_words.cc))                                     |
+|23.| Hard       | [Text Justification](https://leetcode.com/problems/text-justification/)    ([solution](./ds_string_text_justification.cc))                                 |
+|24.| Hard       | [Longest Substring with At Most Two Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/) [Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)  ([solution](./ds_string_longest_substring_with_atmost_k_distinct_chars.cc))              |
 
 
 ###Tree###

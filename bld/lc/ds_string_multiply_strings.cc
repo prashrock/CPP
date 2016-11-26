@@ -135,6 +135,12 @@ int main()
    if(ans1 != exp) goto ErrMain1;
    if(ans2 != exp) goto ErrMain2;
 
+   num1 = "99"; num2 = "99"; exp = "9801";
+   ans1 = multiply1(num1, num2);
+   ans2 = multiply2(num1, num2);
+   if(ans1 != exp) goto ErrMain1;
+   if(ans2 != exp) goto ErrMain2;
+
    num1 = "123"; num2 = "456"; exp = "56088";
    ans1 = multiply1(num1, num2);
    ans2 = multiply2(num1, num2);
