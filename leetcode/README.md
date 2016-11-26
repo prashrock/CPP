@@ -1,6 +1,6 @@
 Leetcode Programs
 ===================
-This is a collection of my [166 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
+This is a collection of my [167 Leetcode solutions](./) with comments. Most programs have test-cases and a few even have performance benchmarks. I've tried to put each problem into a broad category for quick reference.
 
 Note: Solutions inspired from Leetcode discussions have explicit comments and links.
 
@@ -145,8 +145,9 @@ Data Structure based
 |12.| Medium     | [Sub-array Range addition](https://leetcode.com/problems/range-addition/) ([solution](./ds_list_range_addition.cc))     |
 |13.| Medium     | [Flatten 2D List](https://leetcode.com/problems/flatten-2d-vector/) ([solution](./ds_list_flatten_2D_list.cc))          |
 |14.| Medium     | [Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/) ([solution](./ds_list_minimum_size_subarray_sum.cc))    |
-|15.| Hard       | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) ([solution](./ds_list_duplicate_number.cc))      |
-|16.| Hard       | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) ([solution](./ds_list_merge_sorted_arrays.cc)) <br> [Merge K Sorted Array](https://leetcode.com/problems/merge-k-sorted-lists/) ([solution](./ds_list_merge_k_sorted_lists.cc))      |
+|15.| Medium     | [Maximum Subarray Sum equals k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/) ([solution](./ds_list_maximum_size_subarray_sum_equals_k.cc))  |
+|16.| Hard       | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) ([solution](./ds_list_duplicate_number.cc))      |
+|17.| Hard       | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) ([solution](./ds_list_merge_sorted_arrays.cc)) <br> [Merge K Sorted Array](https://leetcode.com/problems/merge-k-sorted-lists/) ([solution](./ds_list_merge_k_sorted_lists.cc))      |
 
 
 ###Stack###
