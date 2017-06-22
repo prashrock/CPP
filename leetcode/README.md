@@ -7,14 +7,19 @@ Note: Solutions inspired from Leetcode discussions have explicit comments and li
 Algorithm based
 --------------------------------------------
 ###Backtracking###
+
 |#  | Difficulty | Problem and Solution                         |
 |:--|:-----------|:---------------------------------------------|
-|1. | Medium     | [Number of 2D Islands](https://leetcode.com/problems/number-of-islands/) ([solution](./algo_backtrack_2D_number_of_islands.cc))                                                                                |
-|2. | Medium     | [Flip Game II](https://leetcode.com/problems/flip-game-ii/) ([solution](./algo_backtrack_flipgame2.cc))            |
-|3. | Medium     | [Subsets](https://leetcode.com/problems/subsets/) ([solution](./algo_backtrack_subsets.cc))                        |
-|4. | Medium     | [Word Search](https://leetcode.com/problems/word-search/) ([solution](./algo_backtrack_word_search.cc))            |
+|1. | Medium     | [Number of 2D Islands](https://leetcode.com/problems/number-of-islands/) ([solution](./algo_backtrack_2D_number_of_islands.cc))                                                |
+|2. | Medium     | [Flip Game II](https://leetcode.com/problems/flip-game-ii/) ([solution](./algo_backtrack_flipgame2.cc))  |
+|3. | Medium     | [Subsets](https://leetcode.com/problems/subsets/) ([solution](./algo_backtrack_subsets.cc))              |
+|4. | Medium     | [Word Search](https://leetcode.com/problems/word-search/) ([solution](./algo_backtrack_word_search.cc))  |
+
+
+
 
 ###Divide and Conquer###
+
 |#  | Difficulty | Problem and Solution                         |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | Find Duplicate([solution](./algo_dc_elem_appear_once_in_sorted_arr.cc))                                            |
@@ -26,7 +31,9 @@ Algorithm based
 |7. | Hard       | [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) <br> [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) ([solution](./algo_dc_rotated_array_search.cc)) <br> [Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/) ([solution](./algo_dc_rotated_array_search_ii.cc))           |
 |8. | Hard       | [Insert Interval](https://leetcode.com/problems/insert-interval/) ([solution](./algo_dc_insert_interval.cc)) |
 
+
 ###Design###
+
 |#  | Difficulty | Problem and Solution                         |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | [Moving Average from Data Stream](https://leetcode.com/problems/moving-average-from-data-stream/) ([soln](./algo_design_moving_average.cc))   |
@@ -36,7 +43,9 @@ Algorithm based
 |5. | Medium     | Sliding Window based - Containing Duplicates [I](https://leetcode.com/problems/contains-duplicate/) [II](https://leetcode.com/problems/contains-duplicate-ii/) [III](https://leetcode.com/problems/contains-duplicate-iii/) ([solution](./algo_design_contains_duplicates.cc))                     |
 |6. | Hard       | [ReadN characters given Read4](https://leetcode.com/problems/read-n-characters-given-read4-ii-call-multiple-times/) ([solution](./algo_design_readn_chars.cc))    |
 
+
 ###Dynamic Programming###
+
 |#  | Difficulty | Problem and Solution                         |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | [House Robber](https://leetcode.com/problems/house-robber/) ([solution](./algo_dp_easy_house_robber.cc))           |
@@ -56,7 +65,9 @@ Algorithm based
 |15.| Hard       | [Regex Match](https://leetcode.com/problems/regular-expression-matching/) ([solution](./algo_dp_regex_match.cc))   |
 |16.| Hard       | [Burst Balloons](https://leetcode.com/problems/burst-balloons/) ([solution](./algo_dp_burst_balloons.cc))          |
 
+
 ###Sort###
+
 |#  | Difficulty | Problem and Solution                         |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | [Meeting Rooms](https://leetcode.com/problems/meeting-rooms/) ([solution](./algo_sort_meeting_rooms.cc))           |
@@ -65,7 +76,9 @@ Algorithm based
 |4. | Medium     | [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) ([solution](./algo_sort_quick_select.cc))                            |
 |5. | Hard       | [Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) ([solution](./algo_sort_num_smaller_elements_in_right.cc))   |
 
+
 ###Greedy###
+
 |#  | Difficulty | Problem and Solution                         |
 |:--|:-----------|:---------------------------------------------|
 |1. | Hard       | [Candy - Local Minima counter](https://leetcode.com/problems/candy/) ([solution](./algo_greedy_local_minimum_candy.cc)) | |
@@ -73,7 +86,9 @@ Algorithm based
 ----------------------------------------------------------------------------------------
 Data Structure based
 --------------------------------------------
+
 ###Graph###
+
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:----------------------------------------------|
 |1. | Medium     | [Course Schedule](https://leetcode.com/problems/course-schedule/) ([solution](./ds_graph_loop_course_schedule.cc)) |
@@ -86,24 +101,31 @@ Data Structure based
 
 
 ###Union-Find###
+
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:----------------------------------------------|
 |1. | Medium     | [Number of connected components](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/) ([solution](./ds_uf_number_connected_components.cc))             |
 
 
+
 ###LRU###
+
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:----------------------------------------------|
 |1. | Hard       | [LRU Cache](https://leetcode.com/problems/lru-cache/) ([solution](./ds_lru_cache.cc))        |
 
 
+
 ###Trie###
+
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:----------------------------------------------|
 |1. | Medium     | [Add and Search word](https://leetcode.com/problems/add-and-search-word-data-structure-design/) ([solution](./ds_trie_add_search_word.cc))        |
 
 
+
 ###Hash###
+
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Medium     | [Group Anagrams](https://leetcode.com/problems/anagrams/) ([solution](./ds_hash_group_anagrams.cc ))                                   |
@@ -111,13 +133,17 @@ Data Structure based
 |3. | Hard       | [O(1) Insert/Del/Get_Random](https://leetcode.com/problems/insert-delete-getrandom-o1/) ([solution](./ds_hash_ins_del_get_random.cc))  |
 
 
+
 ###Heap###
+
 |#  | Difficulty | Problem and Solution                         |
 |:--|:-----------|:---------------------------------------------|
 |1. | Medium     | [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) ([solution](./ds_heap_top_k_frequent_elements.cc))      |
 |2. | Hard       | [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) ([solution](./ds_heap_find_median_in_stream.cc))                                                                                           |
 
+
 ###Linked List###
+
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:----------------------------------------------|
 |1. | Easy       |  [Remove Linked-List Elements](https://leetcode.com/problems/remove-linked-list-elements/) ([solution](./ds_linkedlist_delete_val.cc))   |
@@ -130,7 +156,10 @@ Data Structure based
 |7. | Medium     | Linked List Cycle [I](https://leetcode.com/problems/linked-list-cycle/) [II](https://leetcode.com/problems/linked-list-cycle-ii/) ([solution](./ds_linkedlist_cycle.cc))                  |
 |8. | Hard       | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) ([solution](./ds_linkedlist_copy_with_random_pointer.cc))                                                                             |
 
+
+
 ###List###
+
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:----------------------------------------------|
 |1. | Easy       | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) ([solution](./ds_list_easy_remove_duplicate_number.cc))                                        |
@@ -153,14 +182,19 @@ Data Structure based
 |18.| Hard       | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) ([solution](./ds_list_merge_sorted_arrays.cc)) <br> [Merge K Sorted Array](https://leetcode.com/problems/merge-k-sorted-lists/) ([solution](./ds_list_merge_k_sorted_lists.cc))      |
 
 
+
 ###Stack###
+
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:----------------------------------------------|
 |1. | Easy      | [Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/) <br> [Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)  ([solution](./ds_stack_using_queue.cc))                   |
 |2. | Easy       | [Valid Parantheses](https://leetcode.com/problems/valid-parentheses/) ([solution](./ds_stack_valid_parantheses.cc))|
 |3. | Medium     | [Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/)  ([solution](./ds_stack_math_reverse_polish_notation.cc))
 |
+
+
 ###String###
+
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:----------------------------------------------|
 |1. | Easy       | [Add Binary](https://leetcode.com/problems/add-binary/)  ([solution](./ds_string_easy_add_binary.cc)                                                       |
@@ -189,7 +223,9 @@ Data Structure based
 |24.| Hard       | [Longest Substring with At Most Two Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/) [Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)  ([solution](./ds_string_longest_substring_with_atmost_k_distinct_chars.cc))              |
 
 
+
 ###Tree###
+
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:----------------------------------------------|
 |1. | Easy       | [Is Same Binary Tree](https://leetcode.com/problems/same-tree/)    ([solution](./ds_tree_is_same_tree_bt.cc))     |
@@ -213,6 +249,7 @@ Data Structure based
 ----------------------------------------------------------------------------------------
 Math based
 --------------------------------------------
+
 |#  | Difficulty | Problem and Solution                          |
 |:--|:-----------|:---------------------------------------------|
 |1. | Easy       | [Happy Number](https://leetcode.com/problems/happy-number/) ([solution](./math_happy_number.cc))                      |
