@@ -6,7 +6,8 @@ Note: Solutions inspired from Leetcode discussions have explicit comments and li
 
 Algorithm based
 --------------------------------------------
-###Backtracking###
+
+###Backtracking
 
 |#  | Difficulty | Problem and Solution                         |
 |:--|:-----------|:---------------------------------------------|
